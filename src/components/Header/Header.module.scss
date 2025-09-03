@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  margin-bottom: 16px;
+}
+
+.logo img {
+  height: 36px;
+}
+
+.logoMobile img {
+  height: 24px;
+}
+
+.cartCount {
+  background-color: #1abc9c;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  margin-left: 4px;
+}

@@ -1,0 +1,23 @@
+.topBlockContainer {
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  width: 50%;
+  height: 861px;
+  position: relative;
+}
+
+.right {
+  width: 50%;
+  height: 861px;
+}
+.right img {
+  width: 100%;
+  height: 861px;
+}
+
+.imageWrapper {
+  margin-top: 80px;
+}

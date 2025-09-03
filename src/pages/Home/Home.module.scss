@@ -1,0 +1,13 @@
+@use "@/style/variables.scss" as *;
+
+.homeContainer {
+  padding: 0 32px;
+  height: 100vh;
+  background-color: $white;
+}
+
+@media (max-width: 450px) {
+  .homeContainer {
+    padding: 0 12px;
+  }
+}

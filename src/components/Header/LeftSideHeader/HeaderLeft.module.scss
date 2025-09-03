@@ -1,0 +1,25 @@
+@use "@/style/variables.scss" as *;
+
+.navLeft a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: $black;
+  font-size: 18px;
+}
+.navLeft a:first-child {
+  margin: 0 20px 0 0;
+}
+
+@media (max-width: 1024px) {
+  .navLeft a {
+    margin: 0 12px;
+  }
+}
+
+@media (max-width: 932px) {
+  .navLeft a {
+    font-size: 14px;
+
+    margin: 0 8px;
+  }
+}
