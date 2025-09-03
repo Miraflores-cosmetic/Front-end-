@@ -14,8 +14,8 @@ const TopBlock: React.FC = () => {
     <section className={styles.topBlockContainer}>
       <article className={styles.left}>
         <div className={styles.imageWrapper}>
-          <img src={txt2} alt="flower" />
-          <img src={txt1} alt="flower" />
+          <img src={txt2} alt="text" />
+          <img src={txt1} alt="text2" />
         </div>
       </article>
       <article className={styles.right}>
