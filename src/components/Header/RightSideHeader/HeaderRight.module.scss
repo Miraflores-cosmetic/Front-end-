@@ -2,16 +2,13 @@
 
 .navRight {
   display: flex;
+  gap: 32px;
 }
 
 .navRight a {
-  margin: 0 20px;
   text-decoration: none;
   color: $black;
   font-size: 14px;
-}
-.navRight a:last-child {
-  margin: 0 0 0 20px;
 }
 
 .basket {
@@ -42,14 +39,14 @@
 }
 
 @media (max-width: 1024px) {
-  .navRight a {
-    margin: 0 12px;
+  .navRight {
+    gap: 20px;
   }
 }
 
 @media (max-width: 932px) {
-  .navLeft a {
+  .navRight {
     font-size: 14px;
-    margin: 0 8px;
+    gap: 8px;
   }
 }
