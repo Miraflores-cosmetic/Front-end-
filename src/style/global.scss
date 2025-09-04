@@ -8,8 +8,25 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("/src/assets/fonts/Avenir.woff2") format("woff2");
+  src: url("/src/assets/fonts/Avenir Next W1G UltraLight Italic.ttf")
+    format("truetype");
   font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AveniRregular";
+  src: url("/src/assets/fonts/AvenirNextWorldRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("/src/assets/fonts/AvenirNextMedium.ttf") format("truetype");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -28,25 +45,6 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
-
-@font-face {
-  font-family: "TestLato";
-  src: url("/src/assets/fonts/Lato-Thin.ttf") format("truetype");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Lato";
-  src: url("/src/assets/fonts/Lato-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Lato";
-  src: url("/src/assets/fonts/Lato-Bold.ttf") format("truetype");
-  font-weight: 700;
 }
 
 body {
