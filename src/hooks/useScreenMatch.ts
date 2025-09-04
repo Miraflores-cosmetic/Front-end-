@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-export function useIsMobile(maxWidth: number = 450) {
-  const [isMobile, setIsMobile] = useState(
+export function useScreenMatch(maxWidth: number = 450) {
+  const [isScreenMatch, setScreenMatch] = useState(
     typeof window !== "undefined" ? window.innerWidth < maxWidth : false
   );
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < maxWidth);
+      setScreenMatch(window.innerWidth < maxWidth);
     };
 
     window.addEventListener("resize", handleResize);
@@ -15,5 +15,5 @@ export function useIsMobile(maxWidth: number = 450) {
     return () => window.removeEventListener("resize", handleResize);
   }, [maxWidth]);
 
-  return isMobile;
+  return isScreenMatch;
 }

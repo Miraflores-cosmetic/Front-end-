@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./HeaderRight.module.scss";
 import { Link } from "react-router-dom";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 const HeaderRight: React.FC = () => {
-  const isMobile = useIsMobile(850);
+  const isMobile = useScreenMatch(850);
 
   return (
     <div>

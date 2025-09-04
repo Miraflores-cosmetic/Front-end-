@@ -3,11 +3,11 @@ import React from "react";
 import styles from "./Header.module.scss";
 import logo from "@/assets/icons/Miraflores_logo.svg";
 import logoMobile from "@/assets/icons/MirafloresMobile.svg";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 import HeaderLeft from "./LeftSideHeader/HeaderLeftPart";
 import HeaderRight from "./RightSideHeader/HeaderRightPart";
 const Header: React.FC = () => {
-  const isMobile = useIsMobile(450);
+  const isMobile = useScreenMatch(450);
 
   console.log(isMobile, "isMobile");
 

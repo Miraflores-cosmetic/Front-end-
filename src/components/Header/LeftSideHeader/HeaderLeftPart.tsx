@@ -3,10 +3,10 @@ import React from "react";
 import styles from "./HeaderLeft.module.scss";
 import { Link } from "react-router-dom";
 import menu from "@/assets/icons/menu.svg";
-import { useIsMobile } from "@/hooks/useIsMobile";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 const HeaderLeft: React.FC = () => {
-  const isMobile = useIsMobile(850);
+  const isMobile = useScreenMatch(850);
 
   console.log(isMobile, "isMobile");
   return (
