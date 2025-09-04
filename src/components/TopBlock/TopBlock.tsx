@@ -18,9 +18,11 @@ const TopBlock: React.FC = () => {
       <article className={styles.left}>
         <div className={styles.wrapper}>
           {isMobile ? (
-            <div className={styles.marqueeContent}>
-              <p className={styles.textIcon}>Ботаническая</p>
-              <p className={styles.textIcon}>Косметика</p>
+            <div className={styles.marqueeWrapper}>
+              <div className={styles.marqueeContent}>
+                <p className={styles.textIcon}>Ботаническая</p>
+                <p className={styles.textIcon}>Косметика</p>
+              </div>
             </div>
           ) : (
             <div className={styles.imageWrapper}>

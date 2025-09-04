@@ -73,6 +73,7 @@
 .marqueeContent {
   display: flex;
   flex-direction: column;
+  margin-top: -60px;
   animation: marquee 10s linear infinite;
 }
 
