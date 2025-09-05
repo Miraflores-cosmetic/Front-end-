@@ -7,46 +7,121 @@
 }
 
 @font-face {
-  font-family: "Avenir";
-  src: url("/src/assets/fonts/Avenir Next W1G UltraLight Italic.ttf")
-    format("truetype");
+  font-family: "avanir";
+  src: url("/src/assets/fonts/AvenirNextRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "avanir";
+  src: url("/src/assets/fonts/AvenirNextLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "avanir";
+  src: url("/src/assets/fonts/AvenirNextMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "avanir";
+  src: url("/src/assets/fonts/AvenirNextDemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "avanir";
+  src: url("/src/assets/fonts/AvenirNextHeavy.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "avanir";
+  src: url("/src/assets/fonts/AvenirNextBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "AveniRregular";
-  src: url("/src/assets/fonts/AvenirNextWorldRegular.ttf") format("truetype");
+  font-family: "trial";
+  src: url("/src/assets/fonts/TRIALOceanicLight.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "trial";
+  src: url("/src/assets/fonts/TRIALOceanicRegular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
-  font-family: "Avenir";
-  src: url("/src/assets/fonts/AvenirNextMedium.ttf") format("truetype");
+  font-family: "trial";
+  src: url("/src/assets/fonts/TRIALOceanicMedium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
-  font-family: "TRIAL";
-  src: url("/src/assets/fonts/TRIAL.woff2") format("woff2");
-  font-weight: 200;
+  font-family: "trial";
+  src: url("/src/assets/fonts/TRIALOceanicBold.otf") format("opentype");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Bimbo";
-  src: url("/src/assets/fonts/Bimbo Sharpie Trial.ttf") format("ttf");
+  font-family: "bimbo";
+  src: url("/src/assets/fonts/Bimbo200.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bimbo";
+  src: url("/src/assets/fonts/Bimbo300.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bimbo";
+  src: url("/src/assets/fonts/Bimbo400.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bimbo";
+  src: url("/src/assets/fonts/Bimbo600.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bimbo";
+  src: url("/src/assets/fonts/Bimbo700.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bimbo";
+  src: url("/src/assets/fonts/Bimbo800.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "bimbo";
+  src: url("/src/assets/fonts/Bimbo900.ttf") format("truetype");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: "Avenir";
+  font-family: "avanir";
 }

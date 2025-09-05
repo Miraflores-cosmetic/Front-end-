@@ -14,6 +14,15 @@ const products = [
     image: krem,
   },
   {
+    id: 1,
+    title: "Энзимный мусс для умывания",
+    description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+    price: 3590,
+    oldPrice: 4600,
+    discount: 22,
+    image: krem,
+  },
+  {
     id: 2,
     title: "Цветочный мист",
     description: "Мист для мягкой и сияющей кожи с экстрактом розы",
@@ -62,16 +71,36 @@ export default function Bestsellers() {
     arrows: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3.1,
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024,
-        settings: { slidesToShow: 2 },
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 2.3,
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: false,
+        },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 1 },
+        settings: {
+          slidesToShow: 1.1,
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1.1,
+          slidesToScroll: 1,
+          arrows: false,
+          centerMode: false,
+          dots: false,
+        },
       },
     ],
   };
