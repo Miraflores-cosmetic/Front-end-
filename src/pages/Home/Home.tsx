@@ -3,6 +3,7 @@ import styles from "./Home.module.scss";
 import Header from "@/components/Header/Header";
 import TopBlock from "@/components/TopBlock/TopBlock";
 import Bestsellers from "@/components/bestsellers/Bestsellers";
+import AboutBlock from "@/components/AboutBlock";
 
 const Home: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const Home: React.FC = () => {
       <Header />
       <TopBlock />
       <Bestsellers />
+      <AboutBlock />
     </main>
   );
 };
