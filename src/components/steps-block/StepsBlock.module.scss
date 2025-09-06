@@ -1,0 +1,33 @@
+.stepsContainer {
+  padding-top: 160px;
+  .title {
+    font-family: "trial";
+    font-weight: 300;
+    font-size: 64px;
+    text-transform: uppercase;
+  }
+  .desc {
+    font-family: "avenir";
+    font-weight: 400;
+    font-size: 16px;
+    color: #6e6d67;
+  }
+}
+
+.stepsWrapper {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.descWrapper {
+  margin-bottom: 56px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+}
