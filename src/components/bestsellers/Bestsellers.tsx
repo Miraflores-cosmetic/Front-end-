@@ -2,6 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import styles from "./Bestsellers.module.scss";
 import krem from "@/assets/images/krem.png";
+import girlwithsmile from "@/assets/images/girlsmile.webp";
+import { ProductCard } from "./product-card/ProductCard";
 
 const products = [
   {
@@ -12,6 +14,7 @@ const products = [
     oldPrice: 4600,
     discount: 22,
     image: krem,
+    hoverImage: girlwithsmile,
   },
   {
     id: 1,
@@ -21,6 +24,7 @@ const products = [
     oldPrice: 4600,
     discount: 22,
     image: krem,
+    hoverImage: girlwithsmile,
   },
   {
     id: 2,
@@ -30,6 +34,7 @@ const products = [
     oldPrice: 4600,
     discount: 23,
     image: krem,
+    hoverImage: girlwithsmile,
   },
   {
     id: 3,
@@ -38,6 +43,7 @@ const products = [
     price: 3590,
     label: "Новинка",
     image: krem,
+    hoverImage: girlwithsmile,
   },
   {
     id: 3,
@@ -46,6 +52,7 @@ const products = [
     price: 3590,
     label: "Новинка",
     image: krem,
+    hoverImage: girlwithsmile,
   },
   {
     id: 3,
@@ -54,6 +61,7 @@ const products = [
     price: 3590,
     label: "Новинка",
     image: krem,
+    hoverImage: girlwithsmile,
   },
   {
     id: 3,
@@ -62,6 +70,7 @@ const products = [
     price: 3590,
     label: "Новинка",
     image: krem,
+    hoverImage: girlwithsmile,
   },
 ];
 
@@ -110,35 +119,7 @@ export default function Bestsellers() {
       <h2 className={styles.title}>Бестселлеры</h2>
       <Slider {...settings}>
         {products.map((product) => (
-          <div key={product.id} className={styles.card}>
-            <div className={styles.imageWrapper}>
-              <div>
-                {product.discount && (
-                  <span className={styles.discount}>-{product.discount}%</span>
-                )}
-                {product.label && (
-                  <span className={styles.label}>{product.label}</span>
-                )}
-              </div>
-              <img src={product.image} alt={product.title} />
-              <div className={styles.sizeWrapper}>
-                <button className={styles.size50}>50 мл</button>
-                <button className={styles.size100}>100 мл</button>
-              </div>
-            </div>
-            <div className={styles.info}>
-              <div className={styles.txtWrapper}>
-                <h3 className={styles.name}>{product.title}</h3>
-                <p className={styles.desc}>{product.description}</p>
-              </div>
-              <div className={styles.priceWrapper}>
-                {product.oldPrice && (
-                  <span className={styles.oldPrice}>{product.oldPrice}₽</span>
-                )}
-                <span className={styles.price}>{product.price}₽</span>
-              </div>
-            </div>
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </Slider>
     </section>

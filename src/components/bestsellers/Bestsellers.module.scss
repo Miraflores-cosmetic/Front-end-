@@ -15,8 +15,47 @@
     position: relative;
     width: 432px;
     height: 432px;
-    background-color: rgba(246, 245, 239, 1);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+    .addToCardWrapper {
+      width: 100%;
+      display: flex;
+      padding: 5px;
+      gap: 5px;
+      .addToCart {
+        cursor: pointer;
+        height: 54px;
+        border: none;
+        width: 90%;
+        background-color: white;
+        font-weight: 600;
+        font-size: 16px;
+        transition: background-color 0.3s ease, color 0.3s ease; // сразу в базовом состоянии
 
+        &:hover {
+          background-color: #000; // фон при ховере
+          color: #fff; // текст белым
+        }
+      }
+
+      .gift {
+        height: 54px;
+        width: 54px;
+        border: none;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          background-color: #000; // фон при ховере
+        }
+        img {
+          width: 23px;
+          height: 23px;
+        }
+      }
+    }
     img {
       margin: 0 auto;
       display: block;
@@ -44,6 +83,12 @@
       right: 0;
       width: 79px;
       background: #0000003d;
+    }
+  }
+
+  .card:hover {
+    .addToCart {
+      opacity: 1;
     }
   }
 
