@@ -17,7 +17,19 @@
 .stepsWrapper {
   width: 100%;
   display: flex;
-  gap: 10px;
+  justify-content: space-between;
+
+  flex-wrap: nowrap; // запрет переносов
+  overflow-x: auto; // включаем горизонтальный скролл
+  overflow-y: hidden;
+  max-width: 100%;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.stepsWrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .descWrapper {
@@ -30,4 +42,26 @@
 .titleWrapper {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 930px) {
+  .stepsContainer {
+    padding-top: 380px;
+  }
+}
+
+@media (max-width: 820px) {
+  .stepsContainer {
+    .title {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 1010px) {
+  .stepsContainer {
+    .stepsWrapper {
+      gap: 10px;
+    }
+  }
 }

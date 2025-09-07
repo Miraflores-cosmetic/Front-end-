@@ -27,3 +27,45 @@
     }
   }
 }
+
+@media (max-width: 1800px) {
+  .step {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .step {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .step {
+    width: 280px;
+  }
+}
+
+@media (max-width: 1256px) {
+  .step {
+    width: 260px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .step {
+    width: 240px;
+  }
+}
+
+@media (max-width: 1070px) {
+  .step {
+    width: 230px;
+  }
+}
+
+@media (max-width: 1010px) {
+  .step {
+    min-width: 220px;
+  }
+}
