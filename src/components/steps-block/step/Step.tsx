@@ -35,10 +35,12 @@ const Step: React.FC<StepProps> = ({
           <img src={image} alt={title} className={styles.stepImage} />
         </div>
       )}
-      <div className={styles.textContent}>
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
+      {isHovered && (
+        <div className={styles.textContent}>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+      )}
     </div>
   );
 };

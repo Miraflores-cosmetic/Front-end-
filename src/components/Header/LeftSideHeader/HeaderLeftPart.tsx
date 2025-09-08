@@ -1,4 +1,3 @@
-// Header.tsx
 import React from "react";
 import styles from "./HeaderLeft.module.scss";
 import { Link } from "react-router-dom";

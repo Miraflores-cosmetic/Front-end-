@@ -5,6 +5,7 @@ import TopBlock from "@/components/TopBlock/TopBlock";
 import Bestsellers from "@/components/bestsellers/Bestsellers";
 import AboutBlock from "@/components/AboutBlock";
 import StepsBlock from "@/components/steps-block/StepsBlock";
+import { InfoTest } from "@/components/take-test/InfoTestBlock";
 
 const Home: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
       <Bestsellers />
       <AboutBlock />
       <StepsBlock />
+      <InfoTest />
     </main>
   );
 };

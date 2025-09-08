@@ -6,7 +6,6 @@ import AboutLeft from "@/assets/images/AboutLeft.webp";
 import arrowToRoght from "@/assets/icons/ArrowToRight.svg";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 
-// --- Small reusable blocks ---
 const AboutText: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <p className={styles.text}>{children}</p>
 );
@@ -30,7 +29,6 @@ const AboutMore: React.FC<{ isMobile?: boolean }> = ({ isMobile }) => (
   </div>
 );
 
-// --- Main Component ---
 const AboutBlock: React.FC = () => {
   const isTablet = useScreenMatch(1024);
   const isMobile = useScreenMatch(950);
@@ -42,7 +40,6 @@ const AboutBlock: React.FC = () => {
       </h2>
 
       <div className={isMobile ? styles.containerMobile : styles.container}>
-        {/* Left Column */}
         <div className={styles.left}>
           <div className={styles.leftTop}>
             <AboutText>
