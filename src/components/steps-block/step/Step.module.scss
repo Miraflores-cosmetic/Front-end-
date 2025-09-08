@@ -9,33 +9,55 @@
     display: block;
   }
 
+  .stepWrapper {
+    position: relative;
+    p {
+      position: absolute;
+      background-color: green;
+      width: 64px;
+      height: 32px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
   .textContent {
-    margin-top: 20px; // отступ от картинки
+    width: 320px;
+
+    margin-top: 20px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
-  &:hover {
-    .stepImage {
-      height: 450px; // увеличиваем картинку
-    }
+  // &:hover {
+  //   .stepImage {
+  //     height: 450px;
+  //   }
 
-    .textContent {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  //   .textContent {
+  //     opacity: 1;
+  //     transform: translateY(0);
+  //   }
+  // }
 }
 
 @media (max-width: 1800px) {
   .step {
     width: 320px;
   }
+  .textContent {
+    width: 360px;
+  }
 }
 
 @media (max-width: 1600px) {
   .step {
+    width: 300px;
+  }
+  .textContent {
     width: 300px;
   }
 }
@@ -44,10 +66,16 @@
   .step {
     width: 280px;
   }
+  .textContent {
+    width: 280px;
+  }
 }
 
 @media (max-width: 1256px) {
   .step {
+    width: 260px;
+  }
+  .textContent {
     width: 260px;
   }
 }
@@ -56,10 +84,16 @@
   .step {
     width: 240px;
   }
+  .textContent {
+    width: 240px;
+  }
 }
 
 @media (max-width: 1070px) {
   .step {
+    width: 230px;
+  }
+  .textContent {
     width: 230px;
   }
 }
@@ -67,5 +101,8 @@
 @media (max-width: 1010px) {
   .step {
     min-width: 220px;
+    .textContent {
+      width: 220px;
+    }
   }
 }

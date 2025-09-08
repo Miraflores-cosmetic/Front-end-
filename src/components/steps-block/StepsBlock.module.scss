@@ -12,13 +12,13 @@
     font-size: 16px;
     color: #6e6d67;
   }
+  min-height: 400px;
 }
 
 .stepsWrapper {
   width: 100%;
   display: flex;
   justify-content: space-between;
-
   flex-wrap: nowrap; // запрет переносов
   overflow-x: auto; // включаем горизонтальный скролл
   overflow-y: hidden;
