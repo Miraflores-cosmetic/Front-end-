@@ -21,7 +21,7 @@ const Step: React.FC<StepProps> = ({
   return (
     <div
       className={styles.step}
-      // onMouseEnter={() => setIsHover(true)}
+      onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
       {isHovered ? (

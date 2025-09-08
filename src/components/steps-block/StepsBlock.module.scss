@@ -65,3 +65,15 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .stepsContainer {
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stepsContainer {
+    padding-top: 32px;
+  }
+}

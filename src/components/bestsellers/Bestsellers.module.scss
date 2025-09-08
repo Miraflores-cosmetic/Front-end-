@@ -2,8 +2,10 @@
   padding: 40px 0;
 
   .title {
-    font-size: 32px;
+    font-family: "trial";
+    font-size: 64px;
     font-weight: 600;
+    font-weight: 300;
     margin-bottom: 30px;
     text-transform: uppercase;
   }
@@ -209,6 +211,15 @@
 @media (max-width: 565px) {
   @include image-size(316px, 316px);
 }
+
+@media (max-width: 470px) {
+  .bestsellers {
+    .title {
+      font-size: 24px;
+    }
+  }
+}
+
 @media (max-width: 400px) {
   @include image-size(300px, 300px);
 }
