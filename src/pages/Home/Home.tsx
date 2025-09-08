@@ -6,6 +6,7 @@ import Bestsellers from "@/components/bestsellers/Bestsellers";
 import AboutBlock from "@/components/AboutBlock";
 import StepsBlock from "@/components/steps-block/StepsBlock";
 import { InfoTest } from "@/components/take-test/InfoTestBlock";
+import { Sets } from "@/components/sets/Sets";
 
 const Home: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
       <AboutBlock />
       <StepsBlock />
       <InfoTest />
+      <Sets />
     </main>
   );
 };
