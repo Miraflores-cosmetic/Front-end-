@@ -10,6 +10,7 @@ import { Sets } from "@/components/sets/Sets";
 import { Reviews } from "@/components/take-test/reviews/Reviews";
 import { GratitudeProgram } from "@/components/gratitude-program/GratitudeProgram";
 import { Awards } from "@/components/awards/Awards";
+import Footer from "@/components/Footer/Footer";
 
 const Home: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
       <Reviews />
       <GratitudeProgram />
       <Awards />
+      <Footer />
     </main>
   );
 };
