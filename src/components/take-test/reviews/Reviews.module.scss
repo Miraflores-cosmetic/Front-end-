@@ -17,12 +17,12 @@
     width: 100%;
     display: flex;
     margin-bottom: 49px;
-    @media (max-width: 450px) {
-      margin-bottom: 24px;
-    }
 
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 450px) {
+      margin-bottom: 24px;
+    }
     .title {
       font-family: "trial";
       font-weight: 300;
