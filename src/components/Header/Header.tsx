@@ -8,8 +8,6 @@ import HeaderRight from "./RightSideHeader/HeaderRightPart";
 const Header: React.FC = () => {
   const isMobile = useScreenMatch(450);
 
-  console.log(isMobile, "isMobile");
-
   return (
     <header className={styles.header}>
       <HeaderLeft />

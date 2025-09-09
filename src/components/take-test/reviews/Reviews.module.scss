@@ -1,7 +1,6 @@
 .reviewsContainer {
   width: 100%;
   padding-top: 50px;
-  height: 655px;
 
   .allWrapper {
     display: flex;
@@ -35,9 +34,12 @@
     }
     .setReview {
       font-family: "trial";
+      color: black;
       font-weight: 300;
       font-size: 18px;
       text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
     }
   }
 }

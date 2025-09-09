@@ -4,10 +4,9 @@ import img1 from "@/assets/images/etap3.webp";
 import img2 from "@/assets/images/etap2.webp";
 import ArrowToRight from "@/assets/icons/ArrowToRight.svg";
 
-import { useScreenMatch } from "@/hooks/useScreenMatch";
 import { Review } from "./review/Review";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
-// Типизация для одного отзыва
 interface ReviewData {
   images: string[];
   title: string;
@@ -18,9 +17,8 @@ interface ReviewData {
 }
 
 export const Reviews: React.FC = () => {
-  const isMobile = useScreenMatch(680);
+  const isMobile = useScreenMatch(500);
 
-  // 🔹 массив с данными
   const reviews: ReviewData[] = [
     {
       images: [img1, img2],
@@ -64,10 +62,12 @@ export const Reviews: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.allWrapper}>
-        <p>все отзывы</p>
-        <img src={ArrowToRight} alt="" />
-      </div>
+      {!isMobile && (
+        <div className={styles.allWrapper}>
+          <p>все отзывы</p>
+          <img src={ArrowToRight} alt="" />
+        </div>
+      )}
     </section>
   );
 };

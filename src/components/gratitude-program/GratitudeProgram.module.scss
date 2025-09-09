@@ -1,0 +1,138 @@
+.gratitudeContainer {
+  width: 100%;
+  padding-top: 50px;
+
+  .titleWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+
+    justify-content: space-between;
+    align-items: start;
+    gap: 16px;
+    .title {
+      font-family: "trial";
+      font-weight: 300;
+      font-size: 64px;
+      text-align: start;
+      @media (max-width: 450px) {
+        font-size: 24px;
+      }
+    }
+    .desc {
+      color: #6e6d67;
+    }
+  }
+  .content {
+    width: 100%;
+    .gratitudeImageWrapper {
+      margin-bottom: 24px;
+      @media (max-width: 1100px) {
+        min-width: 1100px;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        max-width: 100%;
+        scroll-behavior: smooth;
+        gap: 20px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      .gratitudeWrapper {
+        display: flex;
+        justify-content: space-between;
+        .gratitude {
+          width: 25%;
+          text-align: center;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+      .gratitudeLine {
+        width: 100%;
+      }
+    }
+
+    .gratitudeImages {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 1100px) {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        max-width: 100%;
+        scroll-behavior: smooth;
+        gap: 20px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      @media (max-width: 450px) {
+        gap: 12px;
+      }
+      .imageBlock {
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        background-color: #f6f5ef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 1900px) {
+          width: 400px;
+          height: 400px;
+        }
+
+        @media (max-width: 1720px) {
+          width: 370px;
+          height: 370px;
+        }
+        @media (max-width: 1590px) {
+          width: 350px;
+          height: 350px;
+        }
+        @media (max-width: 1500px) {
+          width: 325px;
+          height: 325px;
+        }
+        @media (max-width: 1440px) {
+          width: 300px;
+          height: 300px;
+        }
+
+        @media (max-width: 1300px) {
+          width: 280px;
+          height: 280px;
+        }
+        @media (max-width: 1220px) {
+          width: 250px;
+          height: 250px;
+        }
+        @media (max-width: 1100px) {
+          min-width: 230px;
+          height: 220px;
+        }
+        @media (max-width: 450px) {
+          min-width: 161px;
+          height: 161px;
+        }
+        .kremImage {
+          width: 230px;
+          transform: rotate(10.45deg);
+          @media (max-width: 1100px) {
+            min-width: 200px;
+            height: 200px;
+          }
+          @media (max-width: 450px) {
+            min-width: 123px;
+            height: 123px;
+          }
+        }
+      }
+    }
+  }
+}
