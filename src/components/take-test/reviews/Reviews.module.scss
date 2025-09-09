@@ -1,0 +1,19 @@
+.reviewsContainer {
+  width: 100%;
+  padding-top: 50px;
+  height: 655px;
+  @include flex-center(column);
+
+  .title {
+    font-family: "trial";
+    font-weight: 300;
+    font-size: 64px;
+    width: 100%;
+    text-align: start;
+    margin-bottom: 49px;
+    @media (max-width: 450px) {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+}

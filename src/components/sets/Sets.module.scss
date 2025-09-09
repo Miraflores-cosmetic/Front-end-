@@ -26,6 +26,10 @@
     width: 100%;
     text-align: start;
     margin-bottom: 49px;
+    @media (max-width: 450px) {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
   }
 
   .setsWrapper {
