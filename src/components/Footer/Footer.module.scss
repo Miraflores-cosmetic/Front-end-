@@ -13,6 +13,56 @@
     gap: 25px;
   }
 
+  .footerMobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .mobileContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      .mobileLeft {
+        .bimoTxtMobile {
+          position: absolute;
+          bottom: 20px;
+          @media (max-width: 656px) {
+            bottom: 175px;
+            font-family: "bimbo";
+            font-size: 20px;
+            font-weight: 400;
+            color: #9747ff;
+            transform: rotate(-10.45deg);
+          }
+          @media (max-width: 360px) {
+            font-size: 16px;
+          }
+        }
+        .lineToMobile {
+          position: absolute;
+          bottom: 30px;
+          left: 30px;
+        }
+      }
+      .mobileRight {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .footerBottomMobile {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      p {
+        color: #6e6d67;
+        font-size: 13px;
+      }
+    }
+  }
+
   .footerLeft {
     display: flex;
     flex-direction: column;
@@ -55,7 +105,7 @@
         position: absolute;
         color: #9747ff;
         transform: rotate(-10.45deg);
-        bottom: 130px;
+        bottom: 160px;
         left: -30px;
         font-size: 20px;
       }

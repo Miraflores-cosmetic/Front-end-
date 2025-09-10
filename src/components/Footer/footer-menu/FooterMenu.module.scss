@@ -7,9 +7,21 @@
     font-family: "trial";
     font-weight: 300;
     font-size: 24px;
+
     color: #6e6d67;
     text-transform: uppercase;
     width: 190px;
+    @media (max-width: 450px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 340px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 450px) {
+      width: 150px;
+    }
   }
 
   .menuList {
@@ -24,11 +36,17 @@
       font-family: "onest";
       font-weight: 300;
       width: 150px;
+      @media (max-width: 450px) {
+        width: 130px;
+      }
 
       a {
         color: #6e6d67;
         text-decoration: none;
         font-size: 14px;
+        @media (max-width: 450px) {
+          font-size: 13px;
+        }
 
         &:hover {
           text-decoration: underline;
