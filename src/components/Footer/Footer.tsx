@@ -7,109 +7,100 @@ import lineToMobile from "@/assets/icons/lineToMobile.svg";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import FooterMenu from "./footer-menu/FooterMenu";
 
+const menuData = {
+  navigation: {
+    title: "навигация",
+    items: [
+      { label: "Каталог", href: "/" },
+      { label: "Наша история", href: "/about" },
+      { label: "Полезные статьи", href: "/contacts" },
+      { label: "Программа благодарности", href: "/contacts" },
+      { label: "Подарочные сертификаты", href: "/contacts" },
+    ],
+  },
+  info: {
+    title: "Информация",
+    items: [
+      { label: "Условия пользования", href: "/" },
+      { label: "Политика конфеденциальности ", href: "/about" },
+      { label: "Оплата и доставка", href: "/contacts" },
+      { label: "FAQ", href: "/contacts" },
+      { label: "Контакты", href: "/contacts" },
+      { label: "Реквизиты", href: "/contacts" },
+    ],
+  },
+  support: {
+    title: "Поддержка",
+    items: [
+      { label: "Статус заказа", href: "/" },
+      { label: "info@miraflores.ru", href: "/about" },
+      { label: "+7 (800) 890 78 99", href: "/contacts" },
+      { label: "Телеграм →", href: "/contacts" },
+    ],
+  },
+};
+
+const socialLinks = ["Телеграмм канал", "Pinterest", "© Miraflores 2025"];
+
 const Footer = () => {
   const isTablet = useScreenMatch(1024);
   const isMobile = useScreenMatch(657);
 
   return (
     <footer className={styles.footer}>
+      {/* Left side (only for desktop/tablet) */}
       {!isTablet && (
         <div className={styles.footerLeft}>
-          <img src={footerImage} alt="footerImage" />
-          <img src={footerLogo} alt="footerImage" />
+          <img src={footerImage} alt="footer" />
+          <img src={footerLogo} alt="logo" />
         </div>
       )}
+
+      {/* Desktop / Tablet */}
       {!isMobile ? (
         <div className={styles.footerRightWrapper}>
           <div className={styles.footerRight}>
-            <FooterMenu
-              title="навигация"
-              items={[
-                { label: "Каталог", href: "/" },
-                { label: "Наша история", href: "/about" },
-                { label: "Полезные статьи", href: "/contacts" },
-                { label: "Программа благодарности", href: "/contacts" },
-                { label: "Подарочные сертификаты", href: "/contacts" },
-              ]}
-            />
-            <FooterMenu
-              title="Информация"
-              items={[
-                { label: "Условия пользования", href: "/" },
-                { label: "Политика конфеденциальности ", href: "/about" },
-                { label: "Оплата и доставка", href: "/contacts" },
-                { label: "FAQ", href: "/contacts" },
-                { label: "Контакты", href: "/contacts" },
-                { label: "Реквизиты", href: "/contacts" },
-              ]}
-            />
-
-            <FooterMenu
-              title="Поддержка"
-              items={[
-                { label: "Статус заказа", href: "/" },
-                { label: "info@miraflores.ru", href: "/about" },
-                { label: "+7 (800) 890 78 99", href: "/contacts" },
-                { label: "Телеграм →", href: "/contacts" },
-              ]}
-            />
+            <FooterMenu {...menuData.navigation} />
+            <FooterMenu {...menuData.info} />
+            <FooterMenu {...menuData.support} />
           </div>
+
           <div className={styles.footerBottom}>
-            <p className={styles.fotterBottmotxt}>Телеграмм канал</p>
-            <p className={styles.fotterBottmotxt}>Pinterest</p>
-            <p className={styles.fotterBottmotxt}>© Miraflores 2025</p>
+            {socialLinks.map((text) => (
+              <p key={text} className={styles.fotterBottmotxt}>
+                {text}
+              </p>
+            ))}
             <p className={styles.bimoTxt}>тут промокоды</p>
-            <img src={lineTo} className={styles.lineTo} alt="footerImage" />
+            <img src={lineTo} className={styles.lineTo} alt="line" />
           </div>
         </div>
       ) : (
+        // Mobile
         <div className={styles.footerMobile}>
           <div className={styles.mobileContainer}>
             <div className={styles.mobileLeft}>
-              <FooterMenu
-                title="навигация"
-                items={[
-                  { label: "Каталог", href: "/" },
-                  { label: "Наша история", href: "/about" },
-                  { label: "Полезные статьи", href: "/contacts" },
-                  { label: "Программа благодарности", href: "/contacts" },
-                  { label: "Подарочные сертификаты", href: "/contacts" },
-                ]}
-              />
+              <FooterMenu {...menuData.navigation} />
               <p className={styles.bimoTxtMobile}>тут промокоды</p>
               <img
                 src={lineToMobile}
                 className={styles.lineToMobile}
-                alt="footerImage"
+                alt="line"
               />
             </div>
+
             <div className={styles.mobileRight}>
-              <FooterMenu
-                title="Информация"
-                items={[
-                  { label: "Условия пользования", href: "/" },
-                  { label: "Политика конфеденциальности ", href: "/about" },
-                  { label: "Оплата и доставка", href: "/contacts" },
-                  { label: "FAQ", href: "/contacts" },
-                  { label: "Контакты", href: "/contacts" },
-                  { label: "Реквизиты", href: "/contacts" },
-                ]}
-              />
-              <FooterMenu
-                title="Поддержка"
-                items={[
-                  { label: "Статус заказа", href: "/" },
-                  { label: "info@miraflores.ru", href: "/about" },
-                  { label: "+7 (800) 890 78 99", href: "/contacts" },
-                  { label: "Телеграм →", href: "/contacts" },
-                ]}
-              />
+              <FooterMenu {...menuData.info} />
+              <FooterMenu {...menuData.support} />
             </div>
           </div>
+
           <div className={styles.footerBottomMobile}>
-            <p className={styles.fotterBottmotxt}>Телеграмм канал</p>
-            <p className={styles.fotterBottmotxt}>Pinterest</p>
-            <p className={styles.fotterBottmotxt}>© Miraflores 2025</p>
+            {socialLinks.map((text) => (
+              <p key={text} className={styles.fotterBottmotxt}>
+                {text}
+              </p>
+            ))}
           </div>
         </div>
       )}
