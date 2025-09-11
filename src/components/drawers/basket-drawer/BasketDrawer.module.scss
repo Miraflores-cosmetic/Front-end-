@@ -12,6 +12,9 @@
   @media (max-width: 664px) {
     width: 393px;
   }
+  @media (max-width: 393px) {
+    width: 100%;
+  }
   .contentWrapper {
     width: 100%;
     height: calc(100% - 127px);
@@ -74,6 +77,9 @@
       flex-direction: column;
       padding: 0 24px;
       gap: 17px;
+      @media (max-width: 393px) {
+        padding: 0 12px;
+      }
     }
   }
   .orderButtonContainer {
@@ -120,14 +126,18 @@
       height: 40px;
       display: flex;
       justify-content: space-between;
+      gap: 10px;
       .orderButtonLeft {
-        width: 90%;
+        width: calc(100% - 50px);
         border-radius: 50px;
         background-color: black;
         color: white;
         border: none;
         font-size: 15px;
         font-weight: 500;
+      }
+      img {
+        width: 40px;
       }
     }
   }
