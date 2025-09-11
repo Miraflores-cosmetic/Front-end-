@@ -1,7 +1,7 @@
 .drawer {
   position: fixed;
   top: 0;
-  right: 0;
+  right: calc((100vw - 100%) / 2);
   width: 664px;
   height: 100vh;
   background: white;
@@ -9,6 +9,9 @@
   transform: translateX(100%); // скрыт
   transition: transform 2s;
   z-index: 1000;
+  @media (max-width: 664px) {
+    width: 393px;
+  }
   .contentWrapper {
     width: 100%;
     height: calc(100% - 127px);
@@ -46,6 +49,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 664px) {
+          width: 104px;
+        }
         .txt1 {
           position: absolute;
           right: 0;
@@ -68,91 +74,6 @@
       flex-direction: column;
       padding: 0 24px;
       gap: 17px;
-      .basketCard {
-        display: flex;
-        width: 100%;
-        height: 142px;
-        justify-content: last baseline;
-        .basketImage {
-          img {
-            background-color: #f6f5ef;
-            width: 142px;
-            height: 142px;
-          }
-        }
-        .basketInfo {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          width: 100%;
-          height: 100%;
-          margin-left: 10px;
-          .topInfo {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            .productName {
-              font-size: 16px;
-              font-weight: 600;
-              color: black;
-            }
-            .productSize {
-              font-size: 14px;
-              font-weight: 600;
-              color: #6e6d67;
-            }
-          }
-          .bottomInfo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            .trashCount {
-              font-size: 15px;
-              font-weight: 600;
-            }
-          }
-        }
-        .baskePrice {
-          display: flex;
-          height: 100%;
-          flex-direction: column;
-          justify-content: space-around;
-          align-items: end;
-          .discount {
-            width: 54px;
-            height: 31px;
-            background-color: #297230;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-          }
-          .fromTo {
-            display: flex;
-            gap: 10px;
-            .from {
-              position: relative;
-              color: #6e6d67;
-              font-size: 16px;
-              font-weight: 600;
-              &::after {
-                content: "";
-                position: absolute;
-                left: -5%;
-                top: 50%;
-                width: 110%;
-                height: 2px;
-                background: red;
-                transform: rotate(-10deg);
-              }
-            }
-            .to {
-              font-size: 16px;
-              font-weight: 600;
-            }
-          }
-        }
-      }
     }
   }
   .orderButtonContainer {

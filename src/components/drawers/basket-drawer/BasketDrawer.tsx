@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./BasketDrawer.module.scss";
 import basketKrem from "@/assets/images/krem.png";
-import trash from "@/assets/icons/trash.svg";
-import add from "@/assets/icons/add.svg";
+
 import blackBasketTrash from "@/assets/icons/blackBasketTrash.svg";
+import BasketCard from "./basket-card/BascetCard";
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -11,6 +11,35 @@ interface CartDrawerProps {
 }
 
 const BasketDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
+  const items = [
+    {
+      image: basketKrem,
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      count: 1,
+      discount: "-23%",
+      fromPrice: "4800₽",
+      toPrice: "3900₽",
+    },
+    {
+      image: basketKrem,
+      name: "Мист с экстрактом лаванды",
+      size: "100 мл",
+      count: 2,
+      discount: "-15%",
+      fromPrice: "5600₽",
+      toPrice: "4760₽",
+    },
+    {
+      image: basketKrem,
+      name: "Увлажняющий мист для лица",
+      size: "75 мл",
+      count: 1,
+      discount: "-10%",
+      fromPrice: "4200₽",
+      toPrice: "3780₽",
+    },
+  ];
   return (
     <div className={`${styles.drawer} ${isOpen ? styles.open : ""}`}>
       <div className={styles.contentWrapper}>
@@ -28,93 +57,9 @@ const BasketDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
         </div>
 
         <div className={styles.basketList}>
-          <div className={styles.basketCard}>
-            <div className={styles.basketImage}>
-              <img
-                src={basketKrem}
-                alt={`basketKrem`}
-                className={styles.kremImage}
-              />
-            </div>
-            <div className={styles.basketInfo}>
-              <div className={styles.topInfo}>
-                <p className={styles.productName}>
-                  Цветочный мист с экстрактами розы
-                </p>
-                <p className={styles.productSize}>50 мл</p>
-              </div>
-              <div className={styles.bottomInfo}>
-                <img src={trash} alt={`trash`} className={styles.trashImage} />
-                <p className={styles.trashCount}>1</p>
-                <img src={add} alt={`add`} className={styles.addImage} />
-              </div>
-            </div>
-            <div className={styles.baskePrice}>
-              <p className={styles.discount}>-23%</p>
-              <div className={styles.fromTo}>
-                <p className={styles.from}>4800₽</p>
-                <p className={styles.to}>3900₽</p>
-              </div>
-            </div>
-          </div>
-          <div className={styles.basketCard}>
-            <div className={styles.basketImage}>
-              <img
-                src={basketKrem}
-                alt={`basketKrem`}
-                className={styles.kremImage}
-              />
-            </div>
-            <div className={styles.basketInfo}>
-              <div className={styles.topInfo}>
-                <p className={styles.productName}>
-                  Цветочный мист с экстрактами розы
-                </p>
-                <p className={styles.productSize}>50 мл</p>
-              </div>
-              <div className={styles.bottomInfo}>
-                <img src={trash} alt={`trash`} className={styles.trashImage} />
-                <p className={styles.trashCount}>1</p>
-                <img src={add} alt={`add`} className={styles.addImage} />
-              </div>
-            </div>
-            <div className={styles.baskePrice}>
-              <p className={styles.discount}>-23%</p>
-              <div className={styles.fromTo}>
-                <p className={styles.from}>4800₽</p>
-                <p className={styles.to}>3900₽</p>
-              </div>
-            </div>
-          </div>
-          <div className={styles.basketCard}>
-            <div className={styles.basketImage}>
-              <img
-                src={basketKrem}
-                alt={`basketKrem`}
-                className={styles.kremImage}
-              />
-            </div>
-            <div className={styles.basketInfo}>
-              <div className={styles.topInfo}>
-                <p className={styles.productName}>
-                  Цветочный мист с экстрактами розы
-                </p>
-                <p className={styles.productSize}>50 мл</p>
-              </div>
-              <div className={styles.bottomInfo}>
-                <img src={trash} alt={`trash`} className={styles.trashImage} />
-                <p className={styles.trashCount}>1</p>
-                <img src={add} alt={`add`} className={styles.addImage} />
-              </div>
-            </div>
-            <div className={styles.baskePrice}>
-              <p className={styles.discount}>-23%</p>
-              <div className={styles.fromTo}>
-                <p className={styles.from}>4800₽</p>
-                <p className={styles.to}>3900₽</p>
-              </div>
-            </div>
-          </div>
+          {items.map((item, idx) => (
+            <BasketCard key={idx} {...item} />
+          ))}
         </div>
       </div>
       <div className={styles.orderButtonContainer}>

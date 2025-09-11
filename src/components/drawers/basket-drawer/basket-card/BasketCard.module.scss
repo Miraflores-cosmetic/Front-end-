@@ -1,0 +1,133 @@
+.basketCard {
+  display: flex;
+  width: 100%;
+  height: 142px;
+  justify-content: space-between;
+  @media (max-width: 664px) {
+    height: 88px;
+  }
+  .basketImage {
+    @media (max-width: 664px) {
+      width: 88px;
+      height: 88px;
+    }
+    img {
+      background-color: #f6f5ef;
+      width: 142px;
+      height: 142px;
+      @media (max-width: 664px) {
+        width: 88px;
+        height: 88px;
+      }
+    }
+  }
+  .basketInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    .topInfo {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .productName {
+        font-size: 16px;
+        font-weight: 600;
+        color: black;
+        @media (max-width: 664px) {
+          font-size: 13px;
+        }
+      }
+      .productSize {
+        font-size: 14px;
+        font-weight: 600;
+        color: #6e6d67;
+        @media (max-width: 664px) {
+          font-size: 12px;
+        }
+      }
+      .fromToMobile {
+        display: flex;
+        gap: 10px;
+        .fromMobile {
+          position: relative;
+          color: #6e6d67;
+          font-size: 13px;
+          font-weight: 600;
+          &::after {
+            content: "";
+            position: absolute;
+            left: -5%;
+            top: 50%;
+            width: 110%;
+            height: 2px;
+            background: #ff0808;
+            transform: rotate(-10deg);
+          }
+        }
+        .toMobile {
+          font-size: 13px;
+          font-weight: 600;
+        }
+      }
+    }
+    .bottomInfo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .trashCount {
+        font-size: 15px;
+        font-weight: 600;
+      }
+      @media (max-width: 664px) {
+        display: none;
+      }
+    }
+  }
+  .baskePrice {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+    .discount {
+      width: 54px;
+      height: 31px;
+      background-color: #297230;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .fromTo {
+      display: flex;
+      gap: 10px;
+      .from {
+        position: relative;
+        color: #6e6d67;
+        font-size: 16px;
+        font-weight: 600;
+        &::after {
+          content: "";
+          position: absolute;
+          left: -5%;
+          top: 50%;
+          width: 110%;
+          height: 2px;
+          background: #ff0808;
+          transform: rotate(-10deg);
+        }
+      }
+      .to {
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+
+    @media (max-width: 664px) {
+      display: none;
+    }
+  }
+}
