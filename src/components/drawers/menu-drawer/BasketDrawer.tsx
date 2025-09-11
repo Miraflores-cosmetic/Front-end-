@@ -3,7 +3,7 @@ import styles from "./BasketDrawer.module.scss";
 import basketKrem from "@/assets/images/krem.png";
 
 import blackBasketTrash from "@/assets/icons/blackBasketTrash.svg";
-import BasketCard from "./basket-card/BascetCard";
+import BasketCard from "../basket-drawer/basket-card/BascetCard";
 
 interface CartDrawerProps {
   onClose: () => void;
@@ -45,7 +45,7 @@ const BasketDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
         <div className={styles.header}>
           <p className={styles.title}>Корзина</p>
           <button onClick={onClose} className={styles.closeTxt}>
-            Закрытьp
+            Закрыть
           </button>
         </div>
         <div className={styles.progresContainer}>

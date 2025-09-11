@@ -1,6 +1,7 @@
 import About from "./pages/About";
 import Home from "./pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
+import "react-modern-drawer/dist/index.css";
 
 const App: React.FC = () => {
   return (

@@ -23,9 +23,6 @@
         font-weight: 300;
         color: black;
         font-size: 24px;
-        @media (max-width: 393px) {
-          width: 100%;
-        }
       }
 
       .closeTxt {
@@ -142,8 +139,4 @@
 
 .open {
   transform: translateX(0);
-}
-
-.aaaaaaaaaaaaaaaaaaa {
-  transition: 2s;
 }
