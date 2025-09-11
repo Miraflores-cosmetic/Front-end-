@@ -25,7 +25,7 @@ const Home: React.FC = () => {
   );
   const dispatch = useDispatch();
 
-  const isOpen = activeDrawer ? true : false;
+  const isOpen = activeDrawer === "basket" ? true : false;
   const isMobile = useScreenMatch(664);
 
   return (
