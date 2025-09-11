@@ -14,7 +14,12 @@ const DrawerManager: React.FC<DrawerManagerProps> = ({
 
   switch (activeDrawer) {
     case "basket":
-      return <BasketDrawer isOpen={activeDrawer} onClose={onClose} />;
+      return (
+        <BasketDrawer
+          isOpen={activeDrawer === null ? false : true}
+          onClose={onClose}
+        />
+      );
 
     default:
       return null;

@@ -1,38 +1,162 @@
 .drawer {
   position: fixed;
   top: 0;
-  right: -100%;
-  width: 420px;
-  height: 100%;
-  background: #fff;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15);
-  transition: right 0.3s ease-in-out;
+  right: 0;
+  width: 664px; // ширина ящика
+  height: 100vh;
+  background: white;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%); // скрыт
+  transition: transform 2s; // плавное открытие/закрытие
   z-index: 1000;
-  display: flex;
-  flex-direction: column;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    .title {
+      text-transform: uppercase;
+      font-family: "trial";
+      font-weight: 300;
+      color: black;
+      font-size: 24px;
+    }
+
+    .closeTxt {
+      text-transform: uppercase;
+      cursor: pointer;
+      color: black;
+      font-size: 14px;
+      border: none;
+      background-color: white;
+    }
+  }
+  .progresContainer {
+    width: 100%;
+    height: 36px;
+    background-color: #29723029;
+    .progresContent {
+      position: relative;
+      width: 477px;
+      height: 36px;
+      background-color: #297230;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .txt1 {
+        position: absolute;
+        right: 0;
+        font-size: 15px;
+        color: white;
+      }
+      .txt2 {
+        position: absolute;
+        right: -162px;
+        font-size: 15px;
+        color: #297230;
+      }
+    }
+  }
+
+  .basketList {
+    width: 100%;
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 17px;
+    .basketCard {
+      display: flex;
+      width: 100%;
+      height: 142px;
+      justify-content: last baseline;
+      .basketImage {
+        img {
+          background-color: #f6f5ef;
+          width: 142px;
+          height: 142px;
+        }
+      }
+      .basketInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        margin-left: 10px;
+        .topInfo {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          .productName {
+            font-size: 16px;
+            font-weight: 600;
+            color: black;
+          }
+          .productSize {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6e6d67;
+          }
+        }
+        .bottomInfo {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .trashCount {
+            font-size: 15px;
+            font-weight: 600;
+          }
+        }
+      }
+      .baskePrice {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: end;
+        .discount {
+          width: 54px;
+          height: 31px;
+          background-color: #297230;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+        }
+        .fromTo {
+          display: flex;
+          gap: 10px;
+          .from {
+            position: relative;
+            color: #6e6d67;
+            font-size: 16px;
+            font-weight: 600;
+            &::after {
+              content: "";
+              position: absolute;
+              left: -5%;
+              top: 50%;
+              width: 110%;
+              height: 2px;
+              background: red;
+              transform: rotate(-10deg);
+            }
+          }
+          .to {
+            font-size: 16px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+
+  .orderContainer {
+    background-color: yellow;
+  }
 }
 
 .open {
-  right: 0;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid #eee;
-}
-
-.closeBtn {
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.content {
-  flex: 1;
-  padding: 16px;
-  overflow-y: auto;
+  transform: translateX(0);
 }
