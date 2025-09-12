@@ -18,7 +18,7 @@ import { RootState } from "@/store/store";
 import { closeDrawer } from "@/store/slices/drawerSlice";
 import BasketDrawer from "@/components/drawers/basket-drawer/BasketDrawer";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
-// import MenuDrawer from "@/components/drawers/menu-drawer/MenuDrawer";
+import MenuDrawer from "@/components/drawers/menu-drawer/MenuDrawer";
 
 const Home: React.FC = () => {
   const activeDrawer = useSelector(
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
       >
         <BasketDrawer />
       </Drawer>
-      {/* <Drawer
+      <Drawer
         open={isOpenMenu}
         onClose={() => dispatch(closeDrawer())}
         size={"100%"}
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
         direction="right"
       >
         <MenuDrawer />
-      </Drawer> */}
+      </Drawer>
     </main>
   );
 };

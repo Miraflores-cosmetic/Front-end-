@@ -3,6 +3,8 @@ import styles from "./MenuDrawer.module.scss";
 import MenuList from "./menu-list/MenuList";
 import kosmetika from "@/assets/images/kosmetika.png";
 import sun from "@/assets/icons/sun.svg";
+import lineTo from "@/assets/icons/linToMenu.png";
+
 import { useDispatch } from "react-redux";
 import { closeDrawer } from "@/store/slices/drawerSlice";
 
@@ -71,6 +73,10 @@ const MenuDrawer: React.FC = () => {
               <p className={styles.size50}>50 мл</p>
               <p className={styles.size100}>100 мл</p>
             </div>
+            <img src={lineTo} alt="lineTo" className={styles.lineTo} />
+            <p className={styles.textTo}>
+              обноснование почему именно этот товар здесь
+            </p>
           </div>
           <div className={styles.infoWrapper}>
             <div className={styles.infoTop}>
