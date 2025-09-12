@@ -25,6 +25,25 @@
     }
   }
 
+  .mobileWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    .mobileImage {
+      width: 100%;
+    }
+    .mobileBtn {
+      width: 100%;
+      height: 35px;
+      background-color: #297230;
+      border-radius: 50%;
+      border: none;
+      color: white;
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+
   .menuList {
     list-style: none;
     padding: 0;

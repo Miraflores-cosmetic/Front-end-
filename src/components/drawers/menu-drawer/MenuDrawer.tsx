@@ -8,9 +8,11 @@ import lineTo from "@/assets/icons/linToMenu.svg";
 
 import { useDispatch } from "react-redux";
 import { closeDrawer } from "@/store/slices/drawerSlice";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 const MenuDrawer: React.FC = () => {
   const dispatch = useDispatch();
+  const isMobile = useScreenMatch(450);
 
   const menuData = {
     navigation: {
@@ -46,6 +48,13 @@ const MenuDrawer: React.FC = () => {
         { label: "Контакты", href: "/contacts" },
       ],
     },
+
+    ...(isMobile && {
+      account: {
+        title: "Аккаунт",
+        items: [],
+      },
+    }),
   };
 
   return (

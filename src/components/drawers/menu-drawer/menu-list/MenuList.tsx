@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./MenuList.module.scss";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import arrow from "@/assets/icons/ArrowToRight.svg";
+import mobileImage from "@/assets/images/mobileImage.webp";
 
 type MenuItem = {
   label: string;
@@ -27,6 +28,16 @@ const MenuList: React.FC<MenuListProps> = ({ title, items, withColor }) => {
         </p>
         <img src={arrow} alt="" className={styles.arraw} />
       </div>
+      {isMobile && title === "Аккаунт" && (
+        <div className={styles.mobileWrapper}>
+          <img
+            src={mobileImage}
+            alt="mobileImage"
+            className={styles.mobileImage}
+          />
+          <button className={styles.mobileBtn}>Пройти тест</button>
+        </div>
+      )}
       <ul className={styles.menuList}>
         {items.map((item, index) => (
           <li key={index} className={styles.menuItem}>
