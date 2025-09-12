@@ -34,7 +34,12 @@ const HeaderRight: React.FC = () => {
             <p className={styles.cartCount}>2</p>
           </div>
           <Link to="#">Поиск</Link>
-          <Link to="#">Меню</Link>
+          <Link
+            to="#"
+            // onClick={() => dispatch(openDrawer("menu"))}
+          >
+            Меню
+          </Link>
         </nav>
       )}
     </div>

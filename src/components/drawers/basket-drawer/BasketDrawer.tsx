@@ -4,12 +4,12 @@ import basketKrem from "@/assets/images/krem.png";
 
 import blackBasketTrash from "@/assets/icons/blackBasketTrash.svg";
 import BasketCard from "./basket-card/BascetCard";
+import { useDispatch } from "react-redux";
+import { closeDrawer } from "@/store/slices/drawerSlice";
 
-interface CartDrawerProps {
-  onClose: () => void;
-}
+const BasketDrawer: React.FC = () => {
+  const dispatch = useDispatch();
 
-const BasketDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
   const items = [
     {
       image: basketKrem,
@@ -44,8 +44,11 @@ const BasketDrawer: React.FC<CartDrawerProps> = ({ onClose }) => {
       <div className={styles.contentWrapper}>
         <div className={styles.header}>
           <p className={styles.title}>Корзина</p>
-          <button onClick={onClose} className={styles.closeTxt}>
-            Закрытьp
+          <button
+            onClick={() => dispatch(closeDrawer())}
+            className={styles.closeTxt}
+          >
+            Закрыть
           </button>
         </div>
         <div className={styles.progresContainer}>

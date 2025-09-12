@@ -18,6 +18,7 @@ import { RootState } from "@/store/store";
 import { closeDrawer } from "@/store/slices/drawerSlice";
 import BasketDrawer from "@/components/drawers/basket-drawer/BasketDrawer";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+// import MenuDrawer from "@/components/drawers/menu-drawer/MenuDrawer";
 
 const Home: React.FC = () => {
   const activeDrawer = useSelector(
@@ -25,8 +26,9 @@ const Home: React.FC = () => {
   );
   const dispatch = useDispatch();
 
-  const isOpen = activeDrawer === "basket" ? true : false;
-  const isMobile = useScreenMatch(664);
+  const isOpenBasket = activeDrawer === "basket" ? true : false;
+  const isOpenMenu = activeDrawer === "menu" ? true : false;
+  const isMobileBasket = useScreenMatch(664);
 
   return (
     <main className={styles.homeContainer}>
@@ -42,13 +44,22 @@ const Home: React.FC = () => {
       <Awards />
       <Footer />
       <Drawer
-        open={isOpen}
+        open={isOpenBasket}
         onClose={() => dispatch(closeDrawer())}
-        size={isMobile ? "100%" : 664}
+        size={isMobileBasket ? "100%" : 664}
         direction="right"
       >
-        <BasketDrawer onClose={() => dispatch(closeDrawer())} />
+        <BasketDrawer />
       </Drawer>
+      {/* <Drawer
+        open={isOpenMenu}
+        onClose={() => dispatch(closeDrawer())}
+        size={"100%"}
+        duration={1000}
+        direction="right"
+      >
+        <MenuDrawer />
+      </Drawer> */}
     </main>
   );
 };
