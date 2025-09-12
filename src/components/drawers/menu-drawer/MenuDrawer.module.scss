@@ -9,6 +9,12 @@
     background-color: #f6f5ef;
     padding: 26px;
     margin: auto;
+    @media (max-width: 940px) {
+      padding: 26px 10px;
+    }
+    @media (max-width: 720px) {
+      display: none;
+    }
     .centerImageContainer {
       display: flex;
       flex-direction: column;
@@ -28,15 +34,10 @@
       }
     }
 
-    @media (max-width: 940px) {
-      padding: 26px 10px;
-    }
-    @media (max-width: 720px) {
-      display: none;
-    }
-
     .close {
+      cursor: pointer;
       position: absolute;
+      z-index: 3;
       right: 26px;
       top: 26px;
       text-transform: uppercase;

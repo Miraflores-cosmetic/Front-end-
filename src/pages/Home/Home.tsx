@@ -52,6 +52,7 @@ const Home: React.FC = () => {
         <BasketDrawer />
       </Drawer>
       <Drawer
+        className={styles.drawerContainer}
         open={isOpenMenu}
         onClose={() => dispatch(closeDrawer())}
         size={"100%"}
