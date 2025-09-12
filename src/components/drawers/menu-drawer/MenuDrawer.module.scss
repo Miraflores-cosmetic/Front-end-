@@ -1,6 +1,7 @@
 .menuContainer {
   width: 100%;
   display: flex;
+
   .right {
     position: relative;
     width: 100%;
@@ -8,6 +9,24 @@
     background-color: #f6f5ef;
     padding: 26px;
     margin: auto;
+    .centerImageContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: absolute;
+      bottom: 35px;
+      left: -100px;
+      button {
+        width: 188px;
+        height: 40px;
+        border: 1px solid #297230;
+        background-color: white;
+        color: #297230;
+        font-size: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
 
     @media (max-width: 940px) {
       padding: 26px 10px;
@@ -57,12 +76,12 @@
           @media (max-width: 940px) {
             width: 100px;
             left: -100px;
-            bottom: 200px;
+            bottom: 170px;
           }
           @media (max-width: 840px) {
             width: 100px;
             left: -100px;
-            bottom: 100px;
+            bottom: 110px;
           }
           @media (max-width: 750px) {
             width: 90px;
@@ -78,6 +97,12 @@
           left: -200px;
           top: -110px;
           transform: rotate(-10.45deg);
+          @media (max-width: 1024px) {
+            top: -100px;
+          }
+          @media (max-width: 940px) {
+            top: -90px;
+          }
         }
         @media (max-width: 940px) {
           width: 332px;

@@ -2,8 +2,9 @@ import React from "react";
 import styles from "./MenuDrawer.module.scss";
 import MenuList from "./menu-list/MenuList";
 import kosmetika from "@/assets/images/kosmetika.png";
+import centerImageMenu from "@/assets/images/centerImageMenu.png";
 import sun from "@/assets/icons/sun.svg";
-import lineTo from "@/assets/icons/linToMenu.png";
+import lineTo from "@/assets/icons/linToMenu.svg";
 
 import { useDispatch } from "react-redux";
 import { closeDrawer } from "@/store/slices/drawerSlice";
@@ -90,6 +91,10 @@ const MenuDrawer: React.FC = () => {
               Мист для влажной, глянцевой кожи с экстрактом розы
             </p>
           </div>
+        </div>
+        <div className={styles.centerImageContainer}>
+          <img src={centerImageMenu} alt="centerImageMenu" />
+          <button>Подобрать уход</button>
         </div>
       </div>
     </div>
