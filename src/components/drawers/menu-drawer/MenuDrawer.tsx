@@ -5,6 +5,8 @@ import kosmetika from "@/assets/images/kosmetika.png";
 import centerImageMenu from "@/assets/images/centerImageMenu.png";
 import sun from "@/assets/icons/sun.svg";
 import lineTo from "@/assets/icons/linToMenu.svg";
+import linToMenu from "@/assets/icons/Miraflores_logo.svg";
+import menuLine from "@/assets/icons/menuLine.svg";
 
 import { useDispatch } from "react-redux";
 import { closeDrawer } from "@/store/slices/drawerSlice";
@@ -59,6 +61,12 @@ const MenuDrawer: React.FC = () => {
 
   return (
     <div className={styles.menuContainer}>
+      {isMobile && (
+        <div className={styles.menuMobileHeader}>
+          <img src={menuLine} alt="menuLine" />
+          <img src={linToMenu} alt="linToMenu" />
+        </div>
+      )}
       <div className={styles.left}>
         {Object.entries(menuData).map(([key, section]) => (
           <MenuList
