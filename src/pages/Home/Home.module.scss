@@ -5,6 +5,9 @@
   height: 100vh;
   background-color: $white;
   overflow-x: hidden;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 }
 
 .drawerContainer {
