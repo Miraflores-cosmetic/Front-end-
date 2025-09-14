@@ -13,10 +13,12 @@
 
 .basket {
   display: flex;
+  align-items: center;
 }
 
 .basketMobile {
   display: flex;
+  align-items: center;
 }
 
 .basketMobile a {
@@ -36,6 +38,7 @@
   height: 16px;
   border-radius: 50%;
   font-size: 11px;
+  margin-left: 2px;
 }
 
 @media (max-width: 1024px) {
