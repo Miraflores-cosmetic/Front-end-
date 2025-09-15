@@ -1,0 +1,47 @@
+import styles from "./DrawerWrapper.module.scss";
+import "react-modern-drawer/dist/index.css";
+
+import Drawer from "react-modern-drawer";
+
+import { useDispatch, useSelector } from "react-redux";
+import BasketDrawer from "./basket-drawer/BasketDrawer";
+import MenuDrawer from "./menu-drawer/MenuDrawer";
+import { closeDrawer } from "@/store/slices/drawerSlice";
+import { RootState } from "@/store/store";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
+
+const DrawerWrapper: React.FC = () => {
+  const activeDrawer = useSelector(
+    (state: RootState) => state.drawer.activeDrawer
+  );
+  const dispatch = useDispatch();
+
+  const isOpenBasket = activeDrawer === "basket" ? true : false;
+  const isOpenMenu = activeDrawer === "menu" ? true : false;
+  const isMobileBasket = useScreenMatch(664);
+
+  return (
+    <>
+      <Drawer
+        open={isOpenBasket}
+        onClose={() => dispatch(closeDrawer())}
+        size={isMobileBasket ? "100%" : 664}
+        direction="right"
+      >
+        <BasketDrawer />
+      </Drawer>
+      <Drawer
+        className={styles.drawerContainer}
+        open={isOpenMenu}
+        onClose={() => dispatch(closeDrawer())}
+        size={"100%"}
+        duration={1000}
+        direction="right"
+      >
+        <MenuDrawer />
+      </Drawer>
+    </>
+  );
+};
+
+export default DrawerWrapper;
