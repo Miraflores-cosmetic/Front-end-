@@ -26,10 +26,6 @@ const CatalogList: React.FC = () => {
     { id: 10, title: "Крем 10", image: krem },
     { id: 11, title: "Крем 11", image: krem },
     { id: 12, title: "Крем 12", image: krem },
-    { id: 13, title: "Крем 12", image: krem },
-    { id: 14, title: "Крем 12", image: krem },
-    { id: 16, title: "Крем 12", image: krem },
-    { id: 15, title: "Крем 12", image: krem },
   ];
 
   /**
@@ -44,10 +40,10 @@ const CatalogList: React.FC = () => {
     // row 2
     [{ index: null }, { index: null }, { index: 3, col: 3 }, { index: null }],
     // row 3
-    [{ index: 4 }, { index: 5 }, { index: 6, span: 2 }],
-    // row 4
+    [{ index: 4 }, { index: 5 }, { index: 6, span: 2 }, { index: null }],
+    // row 4 – Крем 8
     [{ index: null }, { index: 7, col: 2 }, { index: null }, { index: null }],
-    // row 5 – просто подряд четыре
+    // // row 5 – Крем 9–12
     [{ index: 8 }, { index: 9 }, { index: 10 }, { index: 11 }],
   ];
 
@@ -57,9 +53,7 @@ const CatalogList: React.FC = () => {
         row.map((cell, cIdx) => {
           // пустая колонка → placeholder
           if (cell.index === null) {
-            return (
-              <div key={`ph-${rIdx}-${cIdx}`} className={styles.placeholder} />
-            );
+            return <div key={`ph-${cIdx}`} className={styles.placeholder} />;
           }
 
           const item = items[cell.index];
@@ -67,7 +61,8 @@ const CatalogList: React.FC = () => {
 
           const gridStyle: React.CSSProperties = {};
           if (cell.span) gridStyle.gridColumn = `span ${cell.span}`;
-          if (cell.col) gridStyle.gridColumnStart = cell.col;
+          if (cell.span) gridStyle.gridRow = `span 2`;
+          if (cell.col) gridStyle.gridColumnStart = cell.col; // col = 3 → класс start-3
 
           return (
             <div key={item.id} className={styles.item} style={gridStyle}>

@@ -1,16 +1,17 @@
 .catalog-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto auto auto auto;
+  grid-auto-rows: 200px; // базовая высота
   gap: 16px;
 
   .item {
     background: #eee;
     padding: 20px;
     text-align: center;
+
+    img {
+      height: 120px;
+    }
   }
 
   /* универсальный плейсхолдер */
@@ -20,32 +21,17 @@
     pointer-events: none; /* не кликается */
   }
 
-  /* Раскладка */
-  .row-1-item-1 {
+  /* классы для шахматной раскладки */
+  .span-2 {
     grid-column: span 2;
-  }
-  .row-1-item-2 {
-    grid-column: span 1;
-  }
-  .row-1-item-3 {
-    grid-column: span 1;
+    grid-row: span 2;
   }
 
-  .row-2-item-1 {
-    grid-column: 3;
-  } /* реальный элемент во 2-й строке, 3-я колонка */
-
-  .row-3-item-1 {
-    grid-column: span 1;
-  }
-  .row-3-item-2 {
-    grid-column: span 1;
-  }
-  .row-3-item-3 {
-    grid-column: span 2;
+  .start-2 {
+    grid-column-start: 2;
   }
 
-  .row-4-item-1 {
-    grid-column: 2;
-  } /* реальный элемент во 2-й строке, 3-я колонка */
+  .start-3 {
+    grid-column-start: 3;
+  }
 }
