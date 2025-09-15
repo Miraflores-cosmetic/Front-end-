@@ -19,6 +19,7 @@ const MenuDrawer: React.FC = () => {
   const menuData = {
     navigation: {
       title: "Каталог",
+      link: "catalog",
       items: [
         { label: "Наборы", href: "/" },
         { label: "Кожа", href: "/about" },
@@ -33,6 +34,7 @@ const MenuDrawer: React.FC = () => {
     },
     about: {
       title: "О Компании",
+      link: "company",
       withColor: true,
       items: [
         { label: "Полезные статьи", href: "/contacts" },
@@ -42,6 +44,7 @@ const MenuDrawer: React.FC = () => {
     },
     info: {
       title: "Информация",
+      link: "info",
       items: [
         { label: "Условия пользования", href: "/contacts" },
         { label: "Политика конфеденциальности", href: "/contacts" },

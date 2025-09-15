@@ -3,6 +3,7 @@ import styles from "./MenuList.module.scss";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import arrow from "@/assets/icons/ArrowToRight.svg";
 import mobileImage from "@/assets/images/mobileImage.webp";
+import { useNavigate } from "react-router-dom";
 
 type MenuItem = {
   label: string;
@@ -17,6 +18,7 @@ type MenuListProps = {
 
 const MenuList: React.FC<MenuListProps> = ({ title, items, withColor }) => {
   const isMobile = useScreenMatch(450);
+  const navigate = useNavigate();
 
   return (
     <div className={styles.menu}>
@@ -26,7 +28,12 @@ const MenuList: React.FC<MenuListProps> = ({ title, items, withColor }) => {
         >
           {title}
         </p>
-        <img src={arrow} alt="" className={styles.arraw} />
+        <img
+          src={arrow}
+          alt=""
+          className={styles.arraw}
+          onClick={() => navigate("catalog")}
+        />
       </div>
       {isMobile && title === "Аккаунт" && (
         <div className={styles.mobileWrapper}>
