@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./BasketDrawer.module.scss";
-import basketKrem from "@/assets/images/krem.png";
+import basketKrem from "@/assets/images/krem.webp";
 
 import blackBasketTrash from "@/assets/icons/blackBasketTrash.svg";
 import BasketCard from "./basket-card/BascetCard";

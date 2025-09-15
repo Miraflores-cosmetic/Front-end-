@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./GratitudeProgram.module.scss";
-import krem from "@/assets/images/krem.png";
+import krem from "@/assets/images/krem.webp";
 import gratitudeLine from "@/assets/icons/gratitudeLine.svg";
 
 const gratitudeAmounts = ["от 5000₽", "от 10.000₽", "от 15.000₽", "от 20.000₽"];

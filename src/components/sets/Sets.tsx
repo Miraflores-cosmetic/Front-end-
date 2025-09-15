@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Sets.module.scss";
 import arrowToRight from "@/assets/icons/ArrowToRight.svg";
 import etap4 from "@/assets/images/etap4.webp";
-import krem from "@/assets/images/krem.png";
+import krem from "@/assets/images/krem.webp";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 interface SetData {

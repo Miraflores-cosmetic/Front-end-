@@ -6,6 +6,12 @@
   background-color: $white;
   overflow-x: hidden;
 
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+@media (max-width: 450px) {
+  .catalogContainer {
+    padding: 0 12px;
+  }
 }

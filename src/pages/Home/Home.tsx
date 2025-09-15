@@ -9,6 +9,8 @@ import { Sets } from "@/components/sets/Sets";
 import { Reviews } from "@/components/take-test/reviews/Reviews";
 import { GratitudeProgram } from "@/components/gratitude-program/GratitudeProgram";
 import { Awards } from "@/components/awards/Awards";
+import krem from "@/assets/images/krem.webp";
+import girlwithsmile from "@/assets/images/girlsmile.webp";
 import Drawer from "react-modern-drawer";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -30,11 +32,80 @@ const Home: React.FC = () => {
   const isOpenMenu = activeDrawer === "menu" ? true : false;
   const isMobileBasket = useScreenMatch(664);
 
+  const products = [
+    {
+      id: 1,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 1,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 2,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 3,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 3,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 3,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 3,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+  ];
+
   return (
     <main className={styles.homeContainer}>
       <Header />
       <TopBlock />
-      <Bestsellers />
+      <Bestsellers products={products} />
       <AboutBlock />
       <StepsBlock />
       <InfoTest />

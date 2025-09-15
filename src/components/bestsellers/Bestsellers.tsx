@@ -1,80 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
 import styles from "./Bestsellers.module.scss";
-import krem from "@/assets/images/krem.png";
-import girlwithsmile from "@/assets/images/girlsmile.webp";
 import { ProductCard } from "./product-card/ProductCard";
+import { ProductBasteller } from "@/types/types";
 
-const products = [
-  {
-    id: 1,
-    title: "Энзимный мусс для умывания",
-    description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
-    price: 3590,
-    oldPrice: 4600,
-    discount: 22,
-    image: krem,
-    hoverImage: girlwithsmile,
-  },
-  {
-    id: 1,
-    title: "Энзимный мусс для умывания",
-    description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
-    price: 3590,
-    oldPrice: 4600,
-    discount: 22,
-    image: krem,
-    hoverImage: girlwithsmile,
-  },
-  {
-    id: 2,
-    title: "Цветочный мист",
-    description: "Мист для мягкой и сияющей кожи с экстрактом розы",
-    price: 3590,
-    oldPrice: 4600,
-    discount: 23,
-    image: krem,
-    hoverImage: girlwithsmile,
-  },
-  {
-    id: 3,
-    title: "Цветочный мист",
-    description: "Мист для мягкой и сияющей кожи с экстрактом розы",
-    price: 3590,
-    label: "Новинка",
-    image: krem,
-    hoverImage: girlwithsmile,
-  },
-  {
-    id: 3,
-    title: "Цветочный мист",
-    description: "Мист для мягкой и сияющей кожи с экстрактом розы",
-    price: 3590,
-    label: "Новинка",
-    image: krem,
-    hoverImage: girlwithsmile,
-  },
-  {
-    id: 3,
-    title: "Цветочный мист",
-    description: "Мист для мягкой и сияющей кожи с экстрактом розы",
-    price: 3590,
-    label: "Новинка",
-    image: krem,
-    hoverImage: girlwithsmile,
-  },
-  {
-    id: 3,
-    title: "Цветочный мист",
-    description: "Мист для мягкой и сияющей кожи с экстрактом розы",
-    price: 3590,
-    label: "Новинка",
-    image: krem,
-    hoverImage: girlwithsmile,
-  },
-];
+interface BestsellersProps {
+  products: ProductBasteller[];
+}
 
-export default function Bestsellers() {
+export default function Bestsellers({ products }: BestsellersProps) {
   const settings = {
     dots: true,
     arrows: true,
