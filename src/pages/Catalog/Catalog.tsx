@@ -9,6 +9,7 @@ import Footer from "@/components/Footer/Footer";
 import krem from "@/assets/images/krem.webp";
 import girlwithsmile from "@/assets/images/girlsmile.webp";
 import Bestsellers from "@/components/bestsellers/Bestsellers";
+import CatalogList from "@/components/catalog-list/CatalogList";
 
 const Catalog: React.FC = () => {
   const activeDrawer = useSelector(
@@ -91,6 +92,7 @@ const Catalog: React.FC = () => {
   return (
     <main className={styles.catalogContainer}>
       <Header />
+      <CatalogList />
       <Bestsellers products={products} />
       <Footer />
     </main>
