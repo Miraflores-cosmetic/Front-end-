@@ -7,65 +7,76 @@ interface CatalogItem {
   title: string;
   image: string;
 }
-
 interface CatalogProps {
   items: CatalogItem[];
 }
 
 const CatalogList: React.FC = () => {
+  // например, передаем из родителя
+  const items = [
+    { id: 1, title: "Крем 1", image: krem },
+    { id: 2, title: "Крем 2", image: krem },
+    { id: 3, title: "Крем 3", image: krem },
+    { id: 4, title: "Крем 4", image: krem },
+    { id: 5, title: "Крем 5", image: krem },
+    { id: 6, title: "Крем 6", image: krem },
+    { id: 7, title: "Крем 7", image: krem },
+    { id: 8, title: "Крем 8", image: krem },
+    { id: 9, title: "Крем 9", image: krem },
+    { id: 10, title: "Крем 10", image: krem },
+    { id: 11, title: "Крем 11", image: krem },
+    { id: 12, title: "Крем 12", image: krem },
+    { id: 13, title: "Крем 12", image: krem },
+    { id: 14, title: "Крем 12", image: krem },
+    { id: 16, title: "Крем 12", image: krem },
+    { id: 15, title: "Крем 12", image: krem },
+  ];
+
+  /**
+   * Схема сетки: каждая строка – массив «ячейки».
+   * В ячейке либо индекс элемента из items (по порядку),
+   * либо null для плейсхолдера.
+   * Дополнительно можно задать span и col.
+   */
+  const layout: { index: number | null; span?: number; col?: number }[][] = [
+    // row 1
+    [{ index: 0, span: 2 }, { index: 1 }, { index: 2 }],
+    // row 2
+    [{ index: null }, { index: null }, { index: 3, col: 3 }, { index: null }],
+    // row 3
+    [{ index: 4 }, { index: 5 }, { index: 6, span: 2 }],
+    // row 4
+    [{ index: null }, { index: 7, col: 2 }, { index: null }, { index: null }],
+    // row 5 – просто подряд четыре
+    [{ index: 8 }, { index: 9 }, { index: 10 }, { index: 11 }],
+  ];
+
   return (
     <div className={styles["catalog-grid"]}>
-      {/* Row 1 */}
-      <div className={`${styles.item} ${styles["row-1-item-1"]}`}>
-        <img src={krem} />
-      </div>
-      <div className={`${styles.item} ${styles["row-1-item-2"]}`}>
-        {" "}
-        <img src={krem} />
-      </div>
-      <div className={`${styles.item} ${styles["row-1-item-3"]}`}>
-        {" "}
-        <img src={krem} />
-      </div>
-      {/* Row 2: три занятых колонки — две пустые + реальный + ещё одна пустая */}
-      <div className={styles.placeholder}></div> {/* колонка 1 */}
-      <div className={styles.placeholder}></div> {/* колонка 2 */}
-      <div className={`${styles.item} ${styles["row-2-item-1"]}`}>
-        {" "}
-        <img src={krem} />
-      </div>
-      <div className={styles.placeholder}></div> {/* колонка 4 */}
-      {/* Row 3 */}
-      <div className={`${styles.item} ${styles["row-3-item-1"]}`}>
-        {" "}
-        <img src={krem} />
-      </div>
-      <div className={`${styles.item} ${styles["row-3-item-2"]}`}>
-        I <img src={krem} />
-      </div>
-      <div className={`${styles.item} ${styles["row-3-item-3"]}`}>
-        I <img src={krem} />
-      </div>
-      {/* Row 4: три занятых колонки — две пустые + реальный + ещё одна пустая */}
-      <div className={styles.placeholder}></div> {/* колонка 1 */}
-      <div className={`${styles.item} ${styles["row-4-item-1"]}`}>
-        <img src={krem} />
-      </div>
-      <div className={styles.placeholder}></div> {/* колонка 2 */}
-      <div className={styles.placeholder}></div> {/* колонка 4 */}
-      {/* Row 5 */}
-      <div className={`${styles.item} ${styles["row-5-item-5"]}`}>
-        <img src={krem} />
-      </div>
-      <div className={`${styles.item} ${styles["row-5-item-5"]}`}>
-        <img src={krem} />
-      </div>
-      <div className={`${styles.item} ${styles["row-5-item-5"]}`}>
-        <img src={krem} />
-      </div>
-      <div className={`${styles.item} ${styles["row-5-item-5"]}`}>
-        <img src={krem} />
-      </div>
+      {layout.map((row, rIdx) =>
+        row.map((cell, cIdx) => {
+          // пустая колонка → placeholder
+          if (cell.index === null) {
+            return (
+              <div key={`ph-${rIdx}-${cIdx}`} className={styles.placeholder} />
+            );
+          }
+
+          const item = items[cell.index];
+          if (!item) return null;
+
+          const gridStyle: React.CSSProperties = {};
+          if (cell.span) gridStyle.gridColumn = `span ${cell.span}`;
+          if (cell.col) gridStyle.gridColumnStart = cell.col;
+
+          return (
+            <div key={item.id} className={styles.item} style={gridStyle}>
+              <img src={item.image} alt={item.title} />
+              <p>{item.title}</p>
+            </div>
+          );
+        })
+      )}
     </div>
   );
 };
