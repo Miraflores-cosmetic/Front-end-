@@ -10,12 +10,6 @@
   -ms-overflow-style: none; /* IE 10+ */
 }
 
-.drawerContainer {
-  @media (max-width: 450px) {
-    overflow-y: auto;
-  }
-}
-
 @media (max-width: 450px) {
   .homeContainer {
     padding: 0 12px;

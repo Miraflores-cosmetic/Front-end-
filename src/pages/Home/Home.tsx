@@ -11,27 +11,11 @@ import { GratitudeProgram } from "@/components/gratitude-program/GratitudeProgra
 import { Awards } from "@/components/awards/Awards";
 import krem from "@/assets/images/krem.webp";
 import girlwithsmile from "@/assets/images/girlsmile.webp";
-import Drawer from "react-modern-drawer";
 
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/store/store";
-import { closeDrawer } from "@/store/slices/drawerSlice";
-import BasketDrawer from "@/components/drawers/basket-drawer/BasketDrawer";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
-import MenuDrawer from "@/components/drawers/menu-drawer/MenuDrawer";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 
 const Home: React.FC = () => {
-  const activeDrawer = useSelector(
-    (state: RootState) => state.drawer.activeDrawer
-  );
-  const dispatch = useDispatch();
-
-  const isOpenBasket = activeDrawer === "basket" ? true : false;
-  const isOpenMenu = activeDrawer === "menu" ? true : false;
-  const isMobileBasket = useScreenMatch(664);
-
   const products = [
     {
       id: 1,
@@ -114,24 +98,6 @@ const Home: React.FC = () => {
       <GratitudeProgram />
       <Awards />
       <Footer />
-      <Drawer
-        open={isOpenBasket}
-        onClose={() => dispatch(closeDrawer())}
-        size={isMobileBasket ? "100%" : 664}
-        direction="right"
-      >
-        <BasketDrawer />
-      </Drawer>
-      <Drawer
-        className={styles.drawerContainer}
-        open={isOpenMenu}
-        onClose={() => dispatch(closeDrawer())}
-        size={"100%"}
-        duration={1000}
-        direction="right"
-      >
-        <MenuDrawer />
-      </Drawer>
     </main>
   );
 };
