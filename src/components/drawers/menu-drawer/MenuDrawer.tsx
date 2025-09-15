@@ -94,27 +94,7 @@ const MenuDrawer: React.FC = () => {
               <p className={styles.size50}>50 мл</p>
               <p className={styles.size100}>100 мл</p>
             </div>
-            <img src={lineTo} alt="lineTo" className={styles.lineTo} />
-            <p className={styles.textTo}>
-              обноснование почему именно этот товар здесь
-            </p>
           </div>
-          <div className={styles.infoWrapper}>
-            <div className={styles.infoTop}>
-              <p className={styles.infoTopName}>Цветочный мист</p>
-              <div className={styles.infoPrice}>
-                <p className={styles.from}>4000₽</p>
-                <p className={styles.to}>3590₽</p>
-              </div>
-            </div>
-            <p className={styles.description}>
-              Мист для влажной, глянцевой кожи с экстрактом розы
-            </p>
-          </div>
-        </div>
-        <div className={styles.centerImageContainer}>
-          <img src={centerImageMenu} alt="centerImageMenu" />
-          <button>Подобрать уход</button>
         </div>
       </div>
     </div>

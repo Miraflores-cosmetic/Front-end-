@@ -2,7 +2,7 @@ import About from "./pages/About";
 import Home from "./pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import "react-modern-drawer/dist/index.css";
-import Catalog from "./pages/Catalog/Catalog";
+// import Catalog from "./pages/Catalog/Catalog";
 import { RootState } from "./store/store";
 
 import { useSelector } from "react-redux";
@@ -10,15 +10,15 @@ import { useSelector } from "react-redux";
 import DrawerWrapper from "./components/drawers/DrawerWrapper";
 
 const App: React.FC = () => {
-  const activeDrawer = useSelector(
-    (state: RootState) => state.drawer.activeDrawer
-  );
+  // const activeDrawer = useSelector(
+  //   (state: RootState) => state.drawer.activeDrawer
+  // );
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
+        {/* <Route path="/catalog" element={<Catalog />} /> */}
         <Route path="/about" element={<About />} />
       </Routes>
 
