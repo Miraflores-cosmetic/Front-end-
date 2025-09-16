@@ -37,6 +37,9 @@ const MenuList: React.FC<MenuListProps> = ({ title, items, withColor }) => {
       </div>
       {isMobile && title === "Аккаунт" && (
         <div className={styles.mobileWrapper}>
+          <p className={styles.mobileWrapperTxt}>
+            Подберем персональный уход за 5 мин!
+          </p>
           <img
             src={mobileImage}
             alt="mobileImage"

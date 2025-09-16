@@ -1,19 +1,13 @@
 import React from "react";
 import styles from "./MenuDrawer.module.scss";
 import MenuList from "./menu-list/MenuList";
-import kosmetika from "@/assets/images/kosmetika.png";
-import centerImageMenu from "@/assets/images/centerImageMenu.png";
-import sun from "@/assets/icons/sun.svg";
-import lineTo from "@/assets/icons/linToMenu.svg";
 import linToMenu from "@/assets/icons/Miraflores_logo.svg";
 import menuLine from "@/assets/icons/menuLine.svg";
 
-import { useDispatch } from "react-redux";
-import { closeDrawer } from "@/store/slices/drawerSlice";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+import MenuRightPart from "./menu-right-part/MenuRightPart";
 
 const MenuDrawer: React.FC = () => {
-  const dispatch = useDispatch();
   const isMobile = useScreenMatch(450);
 
   const menuData = {
@@ -81,22 +75,7 @@ const MenuDrawer: React.FC = () => {
         ))}
       </div>
 
-      <div className={styles.right}>
-        <p className={styles.close} onClick={() => dispatch(closeDrawer())}>
-          Закрыть
-        </p>
-        <div className={styles.rightWraeer}>
-          <div className={styles.imgWrapper}>
-            <img src={kosmetika} alt="kosmetika" className={styles.kosmetika} />
-            <img src={sun} alt="sun" className={styles.sun} />
-            <p className={styles.discount}>23%</p>
-            <div className={styles.size}>
-              <p className={styles.size50}>50 мл</p>
-              <p className={styles.size100}>100 мл</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <MenuRightPart />
     </div>
   );
 };
