@@ -7,6 +7,7 @@ import { useScreenMatch } from "@/hooks/useScreenMatch";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import krem from "@/assets/images/krem.webp";
+import kremgroup from "@/assets/images/kremgroup.webp";
 import girlwithsmile from "@/assets/images/girlsmile.webp";
 import Bestsellers from "@/components/bestsellers/Bestsellers";
 import CatalogList from "@/components/catalog-list/CatalogList";
@@ -92,6 +93,7 @@ const Catalog: React.FC = () => {
   return (
     <main className={styles.catalogContainer}>
       <Header />
+      <p className={styles.title}>Каталог</p>
       <CatalogList />
       <Bestsellers products={products} />
       <Footer />

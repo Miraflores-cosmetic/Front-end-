@@ -1,6 +1,12 @@
 import React, { JSX } from "react";
 import styles from "./CatalogList.module.scss";
-import krem from "@/assets/images/krem.webp";
+import kremgroup from "@/assets/images/kremgroup.webp";
+import hear from "@/assets/images/hear.webp";
+import etap3 from "@/assets/images/etap3.webp";
+import etap2 from "@/assets/images/etap2.webp";
+import etap4 from "@/assets/images/etap4.webp";
+import face from "@/assets/images/face.webp";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 interface CatalogItem {
   id: number;
@@ -11,29 +17,21 @@ interface CatalogProps {
   items: CatalogItem[];
 }
 const CatalogList: React.FC = () => {
+  const isMobile = useScreenMatch(768);
+
   const items = [
-    { id: 1, title: "Крем 1", image: krem },
-    { id: 2, title: "Крем 2", image: krem },
-    { id: 3, title: "Крем 3", image: krem },
-    { id: 4, title: "Крем 4", image: krem },
-    { id: 5, title: "Крем 5", image: krem },
-    { id: 6, title: "Крем 6", image: krem },
-    { id: 7, title: "Крем 7", image: krem },
-    { id: 8, title: "Крем 8", image: krem },
-    { id: 9, title: "Крем 9", image: krem },
-    { id: 10, title: "Крем 10", image: krem },
-    { id: 11, title: "Крем 11", image: krem },
-    { id: 12, title: "Крем 12", image: krem },
-    { id: 13, title: "Крем 13", image: krem },
-    { id: 14, title: "Крем 14", image: krem },
-    { id: 15, title: "Крем 15", image: krem },
-    { id: 16, title: "Крем 16", image: krem },
-    { id: 17, title: "Крем 16", image: krem },
-    { id: 18, title: "Крем 17", image: krem },
-    { id: 18, title: "Крем 18", image: krem },
-    { id: 18, title: "Крем 18", image: krem },
-    { id: 18, title: "Крем 20", image: krem },
-    { id: 18, title: "Крем 21", image: krem },
+    { id: 1, title: "Наборы", image: kremgroup },
+    { id: 2, title: "Волосы", image: hear },
+    { id: 3, title: "Лицо", image: etap3 },
+    { id: 4, title: "Волосы", image: hear },
+    { id: 5, title: "Волосы", image: etap2 },
+    { id: 6, title: "Лицо", image: face },
+    { id: 7, title: "Наборы", image: etap4 },
+    { id: 8, title: "Волосы", image: hear },
+    { id: 9, title: "Лицо", image: etap2 },
+    { id: 10, title: "Лицо", image: face },
+    { id: 11, title: "Лицо", image: etap3 },
+    { id: 12, title: "Лицо", image: etap4 },
   ];
 
   const layout: { index: number | null; span?: number; col?: number }[][] = [
@@ -44,7 +42,7 @@ const CatalogList: React.FC = () => {
     [{ index: 8 }, { index: 9 }, { index: 10 }, { index: 11 }],
   ];
 
-  let renderedIndex = 0; // чтобы пройтись по всем items
+  let renderedIndex = 0;
 
   const totalRows: JSX.Element[] = [];
 
@@ -63,14 +61,15 @@ const CatalogList: React.FC = () => {
         } else {
           const item = items[renderedIndex];
           const gridStyle: React.CSSProperties = {};
-          if (cell.span) gridStyle.gridColumn = `span ${cell.span}`;
-          if (cell.span) gridStyle.gridRow = `span 2`;
-          if (cell.col) gridStyle.gridColumnStart = cell.col;
+          if (cell.span && !isMobile)
+            gridStyle.gridColumn = `span ${cell.span}`;
+          if (cell.span && !isMobile) gridStyle.gridRow = `span ${cell.span}`;
+          if (cell.col && !isMobile) gridStyle.gridColumnStart = cell.col;
 
           totalRows.push(
             <div key={item.id} className={styles.item} style={gridStyle}>
               <img src={item.image} alt={item.title} />
-              <p>{item.title}</p>
+              <p className={styles.itemTitle}>{item.title}</p>
             </div>
           );
 
