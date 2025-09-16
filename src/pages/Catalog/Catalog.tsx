@@ -7,7 +7,8 @@ import { useScreenMatch } from "@/hooks/useScreenMatch";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import krem from "@/assets/images/krem.webp";
-import kremgroup from "@/assets/images/kremgroup.webp";
+import Ellipse from "@/assets/images/Ellipse.webp";
+import kremgroup from "@/assets/images/kremGroupElipse.webp";
 import girlwithsmile from "@/assets/images/girlsmile.webp";
 import Bestsellers from "@/components/bestsellers/Bestsellers";
 import CatalogList from "@/components/catalog-list/CatalogList";
@@ -20,7 +21,7 @@ const Catalog: React.FC = () => {
 
   const isOpenBasket = activeDrawer === "basket" ? true : false;
   // const isOpenMenu = activeDrawer === "menu" ? true : false;
-  const isMobileBasket = useScreenMatch(664);
+  const isMobile = useScreenMatch(768);
   const products = [
     {
       id: 1,
@@ -94,6 +95,14 @@ const Catalog: React.FC = () => {
     <main className={styles.catalogContainer}>
       <Header />
       <p className={styles.title}>Каталог</p>
+      {isMobile && (
+        <div className={styles.elipseWrapper}>
+          <img src={Ellipse} alt="Ellipse" className={styles.elipsImage} />
+          <img src={kremgroup} alt="kremgroup" className={styles.kremgroup} />
+          <p className={styles.name}>Наборы</p>
+        </div>
+      )}
+
       <CatalogList />
       <Bestsellers products={products} />
       <Footer />
