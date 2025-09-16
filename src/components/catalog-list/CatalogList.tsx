@@ -20,18 +20,26 @@ const CatalogList: React.FC = () => {
   const isMobile = useScreenMatch(768);
 
   const items = [
-    { id: 1, title: "Наборы", image: kremgroup },
-    { id: 2, title: "Волосы", image: hear },
-    { id: 3, title: "Лицо", image: etap3 },
-    { id: 4, title: "Волосы", image: hear },
-    { id: 5, title: "Волосы", image: etap2 },
-    { id: 6, title: "Лицо", image: face },
-    { id: 7, title: "Наборы", image: etap4 },
-    { id: 8, title: "Волосы", image: hear },
-    { id: 9, title: "Лицо", image: etap2 },
-    { id: 10, title: "Лицо", image: face },
-    { id: 11, title: "Лицо", image: etap3 },
-    { id: 12, title: "Лицо", image: etap4 },
+    {
+      id: 1,
+      title: isMobile ? "Волосы" : "Наборы",
+      image: isMobile ? hear : kremgroup,
+    },
+    { id: 2, title: "Лицо", image: isMobile ? etap3 : hear },
+    { id: 3, title: "Волосы", image: isMobile ? hear : etap3 },
+    { id: 4, title: "Лицо", image: isMobile ? etap3 : hear },
+    { id: 5, title: "Волосы", image: isMobile ? hear : etap2 },
+    { id: 6, title: "Лицо", image: isMobile ? etap3 : face },
+    {
+      id: 7,
+      title: isMobile ? "Волосы" : "Наборы",
+      image: isMobile ? hear : etap4,
+    },
+    { id: 8, title: "Лицо", image: isMobile ? etap3 : hear },
+    { id: 9, title: "Волосы", image: isMobile ? hear : etap2 },
+    { id: 10, title: "Лицо", image: isMobile ? etap3 : face },
+    { id: 11, title: "Волосы", image: isMobile ? hear : etap3 },
+    { id: 12, title: "Лицо", image: isMobile ? etap3 : etap4 },
   ];
 
   const layout: { index: number | null; span?: number; col?: number }[][] = [
