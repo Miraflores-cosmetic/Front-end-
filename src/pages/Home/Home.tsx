@@ -11,6 +11,7 @@ import { GratitudeProgram } from "@/components/gratitude-program/GratitudeProgra
 import { Awards } from "@/components/awards/Awards";
 import krem from "@/assets/images/krem.webp";
 import girlwithsmile from "@/assets/images/girlsmile.webp";
+import footerImage from "@/assets/images/footerImage.webp";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -97,7 +98,7 @@ const Home: React.FC = () => {
       <Reviews />
       <GratitudeProgram />
       <Awards />
-      <Footer />
+      <Footer footerImage={footerImage} />
     </main>
   );
 };

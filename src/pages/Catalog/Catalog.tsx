@@ -7,7 +7,9 @@ import { useScreenMatch } from "@/hooks/useScreenMatch";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import krem from "@/assets/images/krem.webp";
+import krem2 from "@/assets/images/krem2.webp";
 import Ellipse from "@/assets/images/Ellipse.webp";
+import footerImageCatalog from "@/assets/images/footerImageCatalog.webp";
 import kremgroup from "@/assets/images/kremGroupElipse.webp";
 import girlwithsmile from "@/assets/images/girlsmile.webp";
 import Bestsellers from "@/components/bestsellers/Bestsellers";
@@ -25,8 +27,8 @@ const Catalog: React.FC = () => {
   const products = [
     {
       id: 1,
-      title: "Энзимный мусс для умывания",
-      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      title: "Цветочный мист с экстрактами розы",
+      description: "Мист для влажной, глянцевой кожи с экстрактом розы",
       price: 3590,
       oldPrice: 4600,
       discount: 22,
@@ -35,12 +37,12 @@ const Catalog: React.FC = () => {
     },
     {
       id: 1,
-      title: "Энзимный мусс для умывания",
-      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      title: "Цветочный мист",
+      description: "Мист для влажной, глянцевой кожи с экстрактом розы",
       price: 3590,
       oldPrice: 4600,
       discount: 22,
-      image: krem,
+      image: krem2,
       hoverImage: girlwithsmile,
     },
     {
@@ -105,7 +107,7 @@ const Catalog: React.FC = () => {
 
       <CatalogList />
       <Bestsellers products={products} />
-      <Footer />
+      <Footer footerImage={footerImageCatalog} />
     </main>
   );
 };

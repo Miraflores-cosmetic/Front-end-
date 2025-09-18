@@ -4,6 +4,8 @@ import { useScreenMatch } from "@/hooks/useScreenMatch";
 import arrow from "@/assets/icons/ArrowToRight.svg";
 import mobileImage from "@/assets/images/mobileImage.webp";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { closeDrawer } from "@/store/slices/drawerSlice";
 
 type MenuItem = {
   label: string;
@@ -19,6 +21,12 @@ type MenuListProps = {
 const MenuList: React.FC<MenuListProps> = ({ title, items, withColor }) => {
   const isMobile = useScreenMatch(450);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const handletoCatalog = () => {
+    dispatch(closeDrawer());
+    navigate("catalog");
+  };
 
   return (
     <div className={styles.menu}>
@@ -32,7 +40,7 @@ const MenuList: React.FC<MenuListProps> = ({ title, items, withColor }) => {
           src={arrow}
           alt=""
           className={styles.arraw}
-          onClick={() => navigate("catalog")}
+          onClick={handletoCatalog}
         />
       </div>
       {isMobile && title === "Аккаунт" && (

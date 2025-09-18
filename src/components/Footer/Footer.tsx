@@ -1,11 +1,15 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-import footerImage from "@/assets/images/footerImage.webp";
 import footerLogo from "@/assets/icons/footerLogo.svg";
 import lineTo from "@/assets/icons/lineTofooter.svg";
 import lineToMobile from "@/assets/icons/lineToMobile.svg";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import FooterMenu from "./footer-menu/FooterMenu";
+
+interface FooterProps {
+  /** URL or imported image for the left side background */
+  footerImage: string;
+}
 
 const menuData = {
   navigation: {
@@ -42,13 +46,12 @@ const menuData = {
 
 const socialLinks = ["Телеграмм канал", "Pinterest", "© Miraflores 2025"];
 
-const Footer = () => {
+const Footer: React.FC<FooterProps> = ({ footerImage }) => {
   const isTablet = useScreenMatch(1024);
   const isMobile = useScreenMatch(657);
 
   return (
     <footer className={styles.footer}>
-      {/* Left side (only for desktop/tablet) */}
       {!isTablet && (
         <div className={styles.footerLeft}>
           <img src={footerImage} alt="footer" />
@@ -56,7 +59,6 @@ const Footer = () => {
         </div>
       )}
 
-      {/* Desktop / Tablet */}
       {!isMobile ? (
         <div className={styles.footerRightWrapper}>
           <div className={styles.footerRight}>
@@ -76,7 +78,6 @@ const Footer = () => {
           </div>
         </div>
       ) : (
-        // Mobile
         <div className={styles.footerMobile}>
           <div className={styles.mobileContainer}>
             <div className={styles.mobileLeft}>

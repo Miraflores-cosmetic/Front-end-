@@ -35,7 +35,7 @@ const DrawerWrapper: React.FC = () => {
         open={isOpenMenu}
         onClose={() => dispatch(closeDrawer())}
         size={"100%"}
-        duration={1000}
+        duration={400}
         direction="right"
       >
         <MenuDrawer />
