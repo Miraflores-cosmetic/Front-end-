@@ -11,10 +11,11 @@ interface BestsellersProps {
 export default function Bestsellers({ products }: BestsellersProps) {
   const settings = {
     dots: true,
+    // customPaging: () => <div className={styles.customDot}></div>,
     arrows: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3.5,
+    slidesToShow: 3.5, // we need 3 item when we want to change pagination bar
     slidesToScroll: 1,
     responsive: [
       {
