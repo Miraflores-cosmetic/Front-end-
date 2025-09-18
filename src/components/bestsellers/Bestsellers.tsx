@@ -9,14 +9,27 @@ interface BestsellersProps {
 }
 
 export default function Bestsellers({ products }: BestsellersProps) {
+  const [activeIndex, setActiveIndex] = React.useState(0);
   const settings = {
     dots: true,
-    // customPaging: () => <div className={styles.customDot}></div>,
     arrows: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3.5, // we need 3 item when we want to change pagination bar
+    slidesToShow: 3.5,
     slidesToScroll: 1,
+
+    afterChange: (current: number) => {
+      const num = Number.isInteger(current) ? current : Math.ceil(current);
+      setActiveIndex(num);
+    },
+    customPaging: (i: number) => (
+      <div
+        className={`${styles.customDot} ${
+          i === activeIndex ? styles.activeDot : ""
+        }`}
+      ></div>
+    ),
+
     responsive: [
       {
         breakpoint: 1750,

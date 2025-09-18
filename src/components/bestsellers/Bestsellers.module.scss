@@ -229,20 +229,24 @@
   @include image-size(245px, 245px);
 }
 
-// :global(.slick-dots li.slick-active div) {
-//   display: flex;
-//   background-color: black;
-//   transform: scale(1.3);
-// }
+:global(.slick-dots li) {
+  margin: 0 6px;
+  width: 12px;
+}
 
-// :global(.slick-dots) {
-//   justify-content: center;
-// }
+.customDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: transparent;
+  margin: 0 5px;
 
-// .customDot {
-//   width: 10px;
-//   height: 10px;
-//   background: transparent;
-//   border: 1px solid black;
-//   border-radius: 50%;
-// }
+  &:hover {
+    background: #0000001a; // имитация activeDot при hover
+  }
+}
+
+.activeDot {
+  background: black;
+}
