@@ -4,12 +4,14 @@ import "react-modern-drawer/dist/index.css";
 import Catalog from "./pages/Catalog/Catalog";
 
 import DrawerWrapper from "./components/drawers/DrawerWrapper";
+import SignIn from "./pages/SignIn/SignIn";
 
 const App: React.FC = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/sign-in" element={<SignIn />} />
         <Route path="/catalog/" element={<Catalog />} />
         <Route path="/bestseller/" element={<div>bastreller page</div>} />
       </Routes>
