@@ -16,10 +16,11 @@ $transition-fast: 0.2s ease;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   margin: auto;
   padding: 0 12px;
   .signInWrapper {
+    margin-top: 230px;
     width: 452px;
     .imageWrapper {
       width: 100%;
