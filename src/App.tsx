@@ -5,6 +5,7 @@ import Catalog from "./pages/Catalog/Catalog";
 
 import DrawerWrapper from "./components/drawers/DrawerWrapper";
 import SignIn from "./pages/SignIn/SignIn";
+import SignUp from "./pages/SignUp/SignUp";
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
         <Route path="/catalog/" element={<Catalog />} />
         <Route path="/bestseller/" element={<div>bastreller page</div>} />
       </Routes>
