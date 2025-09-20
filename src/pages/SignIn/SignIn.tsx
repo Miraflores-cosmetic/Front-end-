@@ -15,9 +15,9 @@ const SignIn: React.FC = () => {
   // const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleNavigatetoHome = () => {};
-  const handleSignUp = () => {};
-  const handleLogin = () => {};
+  const handleNavigatetoHome = () => navigate("/");
+  const handleSignUp = () => navigate("/sign-up");
+  const handleRequest = () => {};
 
   return (
     <section className={styles.signInContainer}>
@@ -31,9 +31,8 @@ const SignIn: React.FC = () => {
           />
         </div>
         <h2 className={styles.title}>Вход в аккаунт</h2>
-        <p className={styles.login} onClick={handleSignUp}>
-          Впервые у нас?{" "}
-          <span onClick={() => navigate("/sign-up")}>Зарегистрироваться</span>
+        <p className={styles.login}>
+          Впервые у нас? <span onClick={handleSignUp}>Зарегистрироваться</span>
         </p>
         <div className={styles.socialButtonsWrapper}>
           <SocialButton
@@ -62,7 +61,7 @@ const SignIn: React.FC = () => {
             onRightLinkClick={() => console.log("Forgot password")}
           />
         </div>
-        <Button text="Войти" onClick={handleLogin} />
+        <Button text="Войти" onClick={handleRequest} />
       </div>
     </section>
   );
