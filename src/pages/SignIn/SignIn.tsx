@@ -17,6 +17,7 @@ const SignIn: React.FC = () => {
 
   const handleNavigatetoHome = () => navigate("/");
   const handleSignUp = () => navigate("/sign-up");
+  const handleForgotPassword = () => navigate("/forgot-password");
   const handleRequest = () => {};
 
   return (
@@ -58,7 +59,7 @@ const SignIn: React.FC = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             rightLinkText="Забыли?"
-            onRightLinkClick={() => console.log("Forgot password")}
+            onRightLinkClick={handleForgotPassword}
           />
         </div>
         <Button text="Войти" onClick={handleRequest} />
