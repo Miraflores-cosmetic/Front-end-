@@ -2,12 +2,16 @@ import React from "react";
 import styles from "./HeaderRight.module.scss";
 import { Link } from "react-router-dom";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closeDrawer, openDrawer } from "@/store/slices/drawerSlice";
+import { RootState } from "@/store/store";
 
 const HeaderRight: React.FC = () => {
   const isMobile = useScreenMatch(850);
   const dispatch = useDispatch();
+  const count = useSelector(
+    (state: RootState) => state.bestSeller.bestSellers.length
+  );
 
   const handleNavigatetoAccount = () => {};
 
@@ -31,7 +35,7 @@ const HeaderRight: React.FC = () => {
             onClick={() => dispatch(openDrawer("basket"))}
           >
             <Link to="#">Корзина</Link>
-            <p className={styles.cartCount}>2</p>
+            <p className={styles.cartCount}>{count}</p>
           </div>
           <Link to="#">Поиск</Link>
           <Link to="#" onClick={() => dispatch(openDrawer("menu"))}>

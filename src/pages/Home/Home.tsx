@@ -29,7 +29,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 1,
+      id: 2,
       title: "Энзимный мусс для умывания",
       description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
       price: 3590,
@@ -39,7 +39,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 2,
+      id: 3,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 4,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 5,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 6,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 7,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,

@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import styles from "../Bestsellers.module.scss";
 import gift from "@/assets/icons/gift.svg";
 import whiteGift from "@/assets/icons/whiteGift.png";
+import { useDispatch } from "react-redux";
+import {
+  addBestSellerToList,
+  setBestSeller,
+} from "@/store/slices/bestSellerSlice";
+import { useNavigate } from "react-router-dom";
 
 interface Product {
   id: number;
@@ -18,6 +24,14 @@ interface Product {
 export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isHoveredGift, setIsHoveredGift] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    dispatch(setBestSeller(product));
+    dispatch(addBestSellerToList(product));
+    navigate("bestseller");
+  };
 
   return (
     <div
@@ -44,7 +58,9 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
         {isHovered && (
           <div className={styles.addToCardWrapper}>
-            <button className={styles.addToCart}>Добавить в корзину</button>
+            <button className={styles.addToCart} onClick={handleAddToCart}>
+              Добавить в корзину
+            </button>
             <div
               className={styles.gift}
               onMouseEnter={() => setIsHoveredGift(true)}
