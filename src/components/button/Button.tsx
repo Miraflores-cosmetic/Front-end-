@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Button.module.scss";
 
-type Status = "success" | "error" | "default";
+type Status = "success" | "error";
 
 interface StatusButtonProps {
   text: string;
@@ -24,7 +24,7 @@ export const Button: React.FC<StatusButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
     >
-      {text}
+      <p> {text}</p>
     </button>
   );
 };
