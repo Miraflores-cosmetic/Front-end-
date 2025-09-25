@@ -104,6 +104,9 @@ $transition-fast: 0.2s ease;
       width: calc(100% - 34px);
       font-size: $font-base;
       color: $color-text;
+      @media (max-width: 450px) {
+        font-size: 14px;
+      }
       span {
         color: $color-primary;
         &:hover {
