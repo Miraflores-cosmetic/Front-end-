@@ -1,14 +1,15 @@
-import Home from "./pages/Home/Home";
+import Home from "@/pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import "react-modern-drawer/dist/index.css";
-import Catalog from "./pages/Catalog/Catalog";
+import Catalog from "@/pages/Catalog/Catalog";
 
 import DrawerWrapper from "./components/drawers/DrawerWrapper";
-import SignIn from "./pages/SignIn/SignIn";
-import SignUp from "./pages/SignUp/SignUp";
-import ForgotPassword from "./pages/ForgotPassword/ForgotPassword";
-import EmailConfirmation from "./pages/  EmailConfirmation/EmailConfirmation";
-import ResetPassword from "./pages/ResetPassword/ResetPassword";
+import SignIn from "@/pages/SignIn/SignIn";
+import SignUp from "@/pages/SignUp/SignUp";
+import ForgotPassword from "@/pages/ForgotPassword/ForgotPassword";
+import EmailConfirmation from "@/pages/EmailConfirmation/EmailConfirmation";
+import ResetPassword from "@/pages/ResetPassword/ResetPassword";
+import BestSeller from "@/pages/BestSeller/BestSeller";
 
 const App: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const App: React.FC = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
 
         <Route path="/catalog/" element={<Catalog />} />
-        <Route path="/bestseller/" element={<div>bastreller page</div>} />
+        <Route path="/bestseller" element={<BestSeller />} />
       </Routes>
 
       <DrawerWrapper />
