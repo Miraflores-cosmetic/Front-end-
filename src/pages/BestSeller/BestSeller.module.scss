@@ -17,6 +17,12 @@
       img {
         width: 100%;
         height: 100%;
+        @media (max-width: 1024px) {
+          height: 80%;
+        }
+        @media (max-width: 900px) {
+          height: 60%;
+        }
       }
     }
     .infoPart {
@@ -25,6 +31,16 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 185px;
+      @media (max-width: 756px) {
+        width: 100%;
+      }
+      @media (max-width: 1024px) {
+        gap: 100px;
+      }
+
+      @media (max-width: 768px) {
+        gap: 50px;
+      }
 
       .infoWrapper {
         display: flex;

@@ -18,6 +18,7 @@ import BestSellerEtaps, {
   BestSellerEtap,
 } from "@/components/bestseller-card/bestseller-etaps/BestsellerEtaps";
 import Bestsellers from "@/components/bestsellers/Bestsellers";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 const BestSeller: React.FC = () => {
   const { bestSeller } = useSelector(
@@ -158,18 +159,24 @@ const BestSeller: React.FC = () => {
       hoverImage: girlwithsmile,
     },
   ];
+  const isMobile = useScreenMatch(756);
 
   return (
     <article className={styles.bestSellerContainer}>
       <Header />
       <main>
         <section className={styles.bestSellerInfo}>
-          <article className={styles.imagePart}>
-            <img src={bestSeller?.hoverImage} alt="bestSeller image" />
-          </article>
+          {!isMobile && (
+            <article className={styles.imagePart}>
+              <img src={bestSeller?.hoverImage} alt="bestSeller image" />
+            </article>
+          )}
           <article className={styles.infoPart}>
             <div className={styles.infoWrapper}>
               <p className={styles.title}>Цветочный мист с экстрактами розы</p>
+              {isMobile && (
+                <img src={bestSeller?.hoverImage} alt="bestSeller image" />
+              )}{" "}
               <StarRating rating={4} text={"20 отзывов"} />
               <p className={styles.desc}>
                 Мист для влажной, глянцевой кожи. Легкий, быстро впитывающийся

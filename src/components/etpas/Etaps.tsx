@@ -5,7 +5,7 @@ export interface Etap {
   id: string | number;
   title: string;
   name: string;
-  icon: string; // путь к изображению (например import check from '.../check.svg')
+  icon: string;
 }
 
 interface EtapsProps {
