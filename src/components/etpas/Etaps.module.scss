@@ -1,0 +1,27 @@
+.etapsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  .etaps {
+    display: flex;
+    justify-content: space-between;
+    .etap {
+      display: flex;
+      align-items: start;
+      gap: 8px;
+      .check {
+      }
+      .etapTextWrapper {
+        .etapTitle {
+          font-weight: 600;
+          font-size: 16px;
+        }
+        .etapName {
+          color: #6e6d67;
+          font-family: 300;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

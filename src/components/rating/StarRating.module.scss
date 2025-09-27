@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
+}
+
+.full {
+  opacity: 1;
+}
+
+.half {
+  opacity: 0.6;
+}

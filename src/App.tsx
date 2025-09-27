@@ -1,8 +1,7 @@
-import Home from "@/pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import "react-modern-drawer/dist/index.css";
+import Home from "@/pages/Home/Home";
 import Catalog from "@/pages/Catalog/Catalog";
-
 import DrawerWrapper from "./components/drawers/DrawerWrapper";
 import SignIn from "@/pages/SignIn/SignIn";
 import SignUp from "@/pages/SignUp/SignUp";
@@ -16,6 +15,7 @@ const App: React.FC = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />

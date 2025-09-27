@@ -8,6 +8,38 @@
 
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
+
+  .bestSellerInfo {
+    display: flex;
+    gap: 32px;
+    .imagePart {
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    .infoPart {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .infoWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        .title {
+          font-weight: 300;
+          font-size: 48px;
+          text-align: start;
+        }
+        .desc {
+          color: #6e6d67;
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 450px) {
