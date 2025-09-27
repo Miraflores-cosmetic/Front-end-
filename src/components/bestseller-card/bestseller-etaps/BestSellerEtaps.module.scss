@@ -31,15 +31,23 @@
           font-family: "trial";
           font-weight: 300;
           color: #6e6d67cc;
+          @media (max-width: 956px) {
+            font-size: 24px;
+          }
+          @media (max-width: 570px) {
+            font-size: 20px;
+          }
           @media (max-width: 450px) {
             font-size: 15px;
-            // width: 88px;
           }
         }
         .etapName {
           color: #6e6d67cc;
           font-family: 300;
           font-size: 16px;
+          @media (max-width: 956px) {
+            font-size: 14px;
+          }
           @media (max-width: 450px) {
             font-size: 13px;
           }
@@ -66,15 +74,23 @@
           font-family: "trial";
           font-weight: 300;
           color: black;
+          @media (max-width: 956px) {
+            font-size: 24px;
+          }
+          @media (max-width: 570px) {
+            font-size: 20px;
+          }
           @media (max-width: 450px) {
             font-size: 16px;
-            // width: 88px;
           }
         }
         .etapName {
           color: black;
           font-family: 300;
           font-size: 16px;
+          @media (max-width: 956px) {
+            font-size: 14px;
+          }
           @media (max-width: 450px) {
             font-size: 13px;
           }
