@@ -25,7 +25,9 @@ const BestSellerEtaps: React.FC<EtapsProps> = ({ items }) => {
               <p className={styles.etapTitle}>{item.title}</p>
               <p className={styles.etapName}>{item.name}</p>
             </div>
-            <img src={line} alt="line icon" className={styles.check} />
+            {ind !== items.length - 1 && (
+              <img src={line} alt="line icon" className={styles.check} />
+            )}{" "}
           </div>
         ))}
       </div>

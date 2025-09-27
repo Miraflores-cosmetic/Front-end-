@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./BestSellerTabs.module.scss";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 type Option = {
   id: string;
@@ -17,24 +18,29 @@ interface ProductTabsProps {
 const BestSellerTabs: React.FC<ProductTabsProps> = ({ options }) => {
   const [activeId, setActiveId] = useState(options[0].id);
   const activeOption = options.find((o) => o.id === activeId)!;
+  const isMobile = useScreenMatch(450);
 
   const ActiveContent = activeOption.Content;
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.tabs}>
-        {options.map((opt) => (
-          <button
-            key={opt.id}
-            className={`${styles.tab} ${
-              opt.id === activeId ? styles.active : ""
-            }`}
-            onClick={() => setActiveId(opt.id)}
-          >
-            {opt.label}
-          </button>
-        ))}
-      </div>
+      {isMobile ? (
+        <p className={`${styles.tabMobile}`}>Описание</p>
+      ) : (
+        <div className={styles.tabs}>
+          {options.map((opt) => (
+            <button
+              key={opt.id}
+              className={`${styles.tab} ${
+                opt.id === activeId ? styles.active : ""
+              }`}
+              onClick={() => setActiveId(opt.id)}
+            >
+              {opt.label}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className={styles.info}>
         <ActiveContent />

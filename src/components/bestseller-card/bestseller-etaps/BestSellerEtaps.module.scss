@@ -2,15 +2,27 @@
   display: flex;
   flex-direction: column;
   margin-top: 110px;
+  @media (max-width: 450px) {
+    margin-top: 84px;
+  }
   .etaps {
     display: flex;
     gap: 24px;
+    @media (max-width: 450px) {
+      gap: 8px;
+    }
+
     .etap {
       display: flex;
       align-items: center;
       gap: 24px;
       cursor: pointer;
-
+      @media (max-width: 450px) {
+        gap: 12px;
+      }
+      @media (max-width: 400px) {
+        gap: 6px;
+      }
       .etapTextWrapper {
         .etapTitle {
           font-size: 16px;
@@ -19,11 +31,18 @@
           font-family: "trial";
           font-weight: 300;
           color: #6e6d67cc;
+          @media (max-width: 450px) {
+            font-size: 15px;
+            // width: 88px;
+          }
         }
         .etapName {
           color: #6e6d67cc;
           font-family: 300;
           font-size: 16px;
+          @media (max-width: 450px) {
+            font-size: 13px;
+          }
         }
       }
     }
@@ -32,6 +51,12 @@
       align-items: center;
       gap: 24px;
       cursor: pointer;
+      @media (max-width: 450px) {
+        gap: 12px;
+      }
+      @media (max-width: 400px) {
+        gap: 6px;
+      }
 
       .etapTextWrapper {
         .etapTitle {
@@ -41,11 +66,18 @@
           font-family: "trial";
           font-weight: 300;
           color: black;
+          @media (max-width: 450px) {
+            font-size: 16px;
+            // width: 88px;
+          }
         }
         .etapName {
           color: black;
           font-family: 300;
           font-size: 16px;
+          @media (max-width: 450px) {
+            font-size: 13px;
+          }
         }
       }
     }

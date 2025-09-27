@@ -8,14 +8,6 @@ import etap4 from "@/assets/images/etap4.webp";
 import face from "@/assets/images/face.webp";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 
-interface CatalogItem {
-  id: number;
-  title: string;
-  image: string;
-}
-interface CatalogProps {
-  items: CatalogItem[];
-}
 const CatalogList: React.FC = () => {
   const isMobile = useScreenMatch(768);
 
