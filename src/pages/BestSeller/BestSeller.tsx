@@ -9,6 +9,7 @@ import StarRating from "@/components/rating/StarRating";
 import SizeTabs from "@/components/size-tabs/SizeTabs";
 import check from "@/assets/icons/tick-circle.svg";
 import Etaps, { Etap } from "@/components/etpas/Etaps";
+import AddToCartButton from "@/components/add-tobasket-button/AddToBasket";
 
 const BestSeller: React.FC = () => {
   const { bestSeller } = useSelector((state: RootState) => state.bestSeller);
@@ -50,8 +51,10 @@ const BestSeller: React.FC = () => {
               </p>
               <SizeTabs options={productOptions} />
             </div>
-            <Etaps items={etapsData} />
-            <button>dsdsds</button>
+            <div className={styles.bottomWrapper}>
+              <Etaps items={etapsData} />
+              <AddToCartButton />
+            </div>
           </article>
         </section>
         <section className={styles.bestSellerTabs}></section>
