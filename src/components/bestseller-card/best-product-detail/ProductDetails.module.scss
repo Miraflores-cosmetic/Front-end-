@@ -1,0 +1,45 @@
+.wrapper {
+  font-family: Arial, sans-serif;
+  color: #000;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: end;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.label {
+  flex-shrink: 0;
+  color: #6e6d67;
+  font-size: 16px;
+}
+
+.value {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: black;
+}
+
+/* «точки» между label и value */
+.dots {
+  flex: 1;
+  border-bottom: 1px dotted #6e6d67;
+  margin: 0 6px;
+}

@@ -1,0 +1,62 @@
+.wrapper {
+  width: 100%;
+  margin: 48px 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #6e6d67b3;
+}
+
+.tab {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #6e6d67b3;
+  padding-bottom: 15px;
+  cursor: pointer;
+  position: relative;
+
+  &.active {
+    color: black;
+    font-weight: 500;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: black;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+
+.oldPrice {
+  font-size: 20px;
+  color: #6e6d67b3;
+  text-decoration: line-through;
+}
+
+.discount {
+  background-color: #297230;
+  color: white;
+  padding: 2px 6px;
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -10,6 +10,8 @@ import SizeTabs from "@/components/size-tabs/SizeTabs";
 import check from "@/assets/icons/tick-circle.svg";
 import Etaps, { Etap } from "@/components/etpas/Etaps";
 import AddToCartButton from "@/components/add-tobasket-button/AddToBasket";
+import BestSellerTabs from "@/components/bestseller-card/bestseller-tabs/BestSellerTabs";
+import Description from "@/components/bestseller-card/bestseller-product-desription/Description";
 
 const BestSeller: React.FC = () => {
   const { bestSeller } = useSelector((state: RootState) => state.bestSeller);
@@ -32,6 +34,48 @@ const BestSeller: React.FC = () => {
     { id: 2, title: "Подходит для", name: "Всех типов кожи", icon: check },
     { id: 3, title: "Подходит для", name: "Всех типов кожи", icon: check },
   ];
+
+  const bestsellerTabsOptions = [
+    {
+      id: "opt1",
+      label: "Описание",
+      price: 1000,
+      discount: 10,
+      Content: () => <Description />,
+    },
+    {
+      id: "opt2",
+      label: "Действие и эффект",
+      price: 2000,
+      oldPrice: 2500,
+      Content: () => <div>Content2</div>,
+    },
+    {
+      id: "opt3",
+      label: "Состав",
+      price: 3000,
+      Content: () => <div>Content3</div>,
+    },
+    {
+      id: "opt4",
+      label: "Способ применения",
+      price: 3000,
+      Content: () => <div>Content3</div>,
+    },
+    {
+      id: "opt5",
+      label: "Важно знать!",
+      price: 3000,
+      Content: () => <div>Content3</div>,
+    },
+    {
+      id: "opt6",
+      label: "Комментарий Miraflores",
+      price: 3000,
+      Content: () => <div>Content3</div>,
+    },
+  ];
+
   return (
     <article className={styles.bestSellerContainer}>
       <Header />
@@ -57,7 +101,9 @@ const BestSeller: React.FC = () => {
             </div>
           </article>
         </section>
-        <section className={styles.bestSellerTabs}></section>
+        <section className={styles.bestSellerTabs}>
+          <BestSellerTabs options={bestsellerTabsOptions} />{" "}
+        </section>
         <section className={styles.bestSellerEtaps}></section>
       </main>
       <Footer footerImage={footerImage} />
