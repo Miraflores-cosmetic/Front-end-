@@ -6,9 +6,13 @@ import { ProductBasteller } from "@/types/types";
 
 interface BestsellersProps {
   products: ProductBasteller[];
+  isTitleHidden?: boolean;
 }
 
-export default function Bestsellers({ products }: BestsellersProps) {
+export default function Bestsellers({
+  products,
+  isTitleHidden,
+}: BestsellersProps) {
   const [activeIndex, setActiveIndex] = React.useState(0);
   const settings = {
     dots: true,
@@ -138,7 +142,7 @@ export default function Bestsellers({ products }: BestsellersProps) {
 
   return (
     <section className={styles.bestsellers}>
-      <h2 className={styles.title}>Бестселлеры</h2>
+      {!isTitleHidden && <h2 className={styles.title}>Бестселлеры</h2>}
       <Slider {...settings}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

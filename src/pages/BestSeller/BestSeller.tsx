@@ -3,6 +3,8 @@ import styles from "./BestSeller.module.scss";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import footerImage from "@/assets/images/footerImage.webp";
+import krem from "@/assets/images/krem.webp";
+import girlwithsmile from "@/assets/images/girlsmile.webp";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
 import StarRating from "@/components/rating/StarRating";
@@ -12,6 +14,10 @@ import Etaps, { Etap } from "@/components/etpas/Etaps";
 import AddToCartButton from "@/components/add-tobasket-button/AddToBasket";
 import BestSellerTabs from "@/components/bestseller-card/bestseller-tabs/BestSellerTabs";
 import Description from "@/components/bestseller-card/bestseller-product-desription/Description";
+import BestSellerEtaps, {
+  BestSellerEtap,
+} from "@/components/bestseller-card/bestseller-etaps/BestsellerEtaps";
+import Bestsellers from "@/components/bestsellers/Bestsellers";
 
 const BestSeller: React.FC = () => {
   const { bestSeller } = useSelector((state: RootState) => state.bestSeller);
@@ -33,6 +39,12 @@ const BestSeller: React.FC = () => {
     { id: 1, title: "Этап 1", name: "Очищение", icon: check },
     { id: 2, title: "Подходит для", name: "Всех типов кожи", icon: check },
     { id: 3, title: "Подходит для", name: "Всех типов кожи", icon: check },
+  ];
+
+  const bestSellerEtaps: BestSellerEtap[] = [
+    { id: 1, title: "Этап 1", name: "Очищение" },
+    { id: 2, title: "Этап 2", name: "Тонизация" },
+    { id: 3, title: "Этап 3", name: "Питание и увлажнение" },
   ];
 
   const bestsellerTabsOptions = [
@@ -76,6 +88,75 @@ const BestSeller: React.FC = () => {
     },
   ];
 
+  const products = [
+    {
+      id: 1,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 2,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 3,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 4,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 5,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 6,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 7,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+  ];
+
   return (
     <article className={styles.bestSellerContainer}>
       <Header />
@@ -104,7 +185,12 @@ const BestSeller: React.FC = () => {
         <section className={styles.bestSellerTabs}>
           <BestSellerTabs options={bestsellerTabsOptions} />{" "}
         </section>
-        <section className={styles.bestSellerEtaps}></section>
+        <section className={styles.bestSellerEtaps}>
+          <BestSellerEtaps items={bestSellerEtaps} />
+        </section>
+        <section>
+          <Bestsellers products={products} isTitleHidden />
+        </section>
       </main>
       <Footer footerImage={footerImage} />
     </article>

@@ -30,7 +30,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const handleAddToCart = () => {
     dispatch(setBestSeller(product));
     dispatch(addBestSellerToList(product));
-    navigate("bestseller");
+    navigate("/bestseller");
   };
 
   return (
