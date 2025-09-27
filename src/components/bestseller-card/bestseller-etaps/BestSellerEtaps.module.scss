@@ -7,6 +7,7 @@
   }
   .etaps {
     display: flex;
+    align-items: start;
     gap: 24px;
     @media (max-width: 450px) {
       gap: 8px;

@@ -50,6 +50,9 @@
           font-weight: 300;
           font-size: 48px;
           text-align: start;
+          @media (max-width: 450px) {
+            font-size: 24px;
+          }
         }
         .desc {
           color: #6e6d67;
