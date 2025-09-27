@@ -25,7 +25,7 @@ const initialState: BestSellerState = {
 };
 
 const bestSellerSlice = createSlice({
-  name: "bestSeller",
+  name: "bestSellerSlice",
   initialState,
   reducers: {
     // заменяет текущее значение одиночного продукта

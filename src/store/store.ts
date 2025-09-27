@@ -5,7 +5,7 @@ import bestSellerSlice from "./slices/bestSellerSlice";
 export const store = configureStore({
   reducer: {
     drawer: drawerReducer,
-    bestSeller: bestSellerSlice,
+    bestSellerSlice: bestSellerSlice,
   },
 });
 

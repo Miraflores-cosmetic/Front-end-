@@ -3,14 +3,14 @@ import styles from "./HeaderRight.module.scss";
 import { Link } from "react-router-dom";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import { useDispatch, useSelector } from "react-redux";
-import { closeDrawer, openDrawer } from "@/store/slices/drawerSlice";
+import { openDrawer } from "@/store/slices/drawerSlice";
 import { RootState } from "@/store/store";
 
 const HeaderRight: React.FC = () => {
   const isMobile = useScreenMatch(850);
   const dispatch = useDispatch();
   const count = useSelector(
-    (state: RootState) => state.bestSeller.bestSellers.length
+    (state: RootState) => state.bestSellerSlice.bestSellers.length
   );
 
   const handleNavigatetoAccount = () => {};

@@ -20,7 +20,9 @@ import BestSellerEtaps, {
 import Bestsellers from "@/components/bestsellers/Bestsellers";
 
 const BestSeller: React.FC = () => {
-  const { bestSeller } = useSelector((state: RootState) => state.bestSeller);
+  const { bestSeller } = useSelector(
+    (state: RootState) => state.bestSellerSlice
+  );
   console.log(bestSeller, "bestSeller");
 
   const productOptions = [
