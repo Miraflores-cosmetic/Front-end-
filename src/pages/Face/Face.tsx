@@ -22,6 +22,7 @@ const FacePage: React.FC = () => {
       discount: 22,
       image: krem,
       hoverImage: girlwithsmile,
+      type: "sun",
     },
     {
       id: 2,
@@ -32,6 +33,7 @@ const FacePage: React.FC = () => {
       discount: 22,
       image: krem,
       hoverImage: girlwithsmile,
+      type: "moon",
     },
     {
       id: 3,
@@ -42,6 +44,7 @@ const FacePage: React.FC = () => {
       discount: 23,
       image: krem,
       hoverImage: girlwithsmile,
+      type: "sun",
     },
     {
       id: 4,
@@ -51,6 +54,7 @@ const FacePage: React.FC = () => {
       label: "Новинка",
       image: krem,
       hoverImage: girlwithsmile,
+      type: "moon",
     },
     {
       id: 5,
@@ -60,6 +64,17 @@ const FacePage: React.FC = () => {
       label: "Новинка",
       image: krem,
       hoverImage: girlwithsmile,
+      type: "sun",
+    },
+    {
+      id: 6,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+      type: "sun",
     },
   ];
   return (
