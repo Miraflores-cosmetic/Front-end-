@@ -6,6 +6,7 @@ import footerImage from "@/assets/images/footerImage.webp";
 import TabBar from "@/components/tab-bar/TabBar";
 
 import krem from "@/assets/images/krem.webp";
+import kosmetika from "@/assets/images/kosmetika.png";
 
 import girlwithsmile from "@/assets/images/girlsmile.webp";
 import { FaceCard } from "./face-card/FaceCard";
@@ -31,7 +32,7 @@ const FacePage: React.FC = () => {
       price: 3590,
       oldPrice: 4600,
       discount: 22,
-      image: krem,
+      image: kosmetika,
       hoverImage: girlwithsmile,
       type: "moon",
     },
@@ -52,7 +53,7 @@ const FacePage: React.FC = () => {
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
       label: "Новинка",
-      image: krem,
+      image: kosmetika,
       hoverImage: girlwithsmile,
       type: "moon",
     },
