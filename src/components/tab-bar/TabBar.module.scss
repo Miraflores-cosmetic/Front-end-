@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  background: #f6f5ef;
+  display: inline-flex;
+  height: 39px;
+}
+
+.tab {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: #e6e6e6;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.active {
+  background: #297230;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}

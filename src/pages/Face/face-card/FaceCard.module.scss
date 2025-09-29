@@ -1,0 +1,160 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  background-repeat: no-repeat;
+
+  .imageWrapper {
+    position: relative;
+
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat !important;
+    border-radius: 8px;
+    background: #f6f5ef;
+    .imageContens {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.discount {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #2e7d32;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.label {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #888;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.sizeWrapper {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.sizeBtn {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 13px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #fff;
+  }
+}
+
+.addToCardWrapper {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  .addToCart {
+    flex: 1;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #333;
+    }
+  }
+
+  .gift {
+    width: 36px;
+    height: 36px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      background: #333;
+    }
+  }
+}
+
+.info {
+  padding: 16px 12px;
+
+  .txtWrapper {
+    margin-bottom: 12px;
+
+    .name {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 4px;
+      color: #222;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      line-height: 1.4;
+    }
+  }
+
+  .priceWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .oldPrice {
+      font-size: 14px;
+      color: #aaa;
+      text-decoration: line-through;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+}

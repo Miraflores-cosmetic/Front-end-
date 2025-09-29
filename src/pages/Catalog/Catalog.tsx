@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./Catalog.module.scss";
 
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/store/store";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
@@ -16,13 +14,6 @@ import Bestsellers from "@/components/bestsellers/Bestsellers";
 import CatalogList from "@/components/catalog-list/CatalogList";
 
 const Catalog: React.FC = () => {
-  const activeDrawer = useSelector(
-    (state: RootState) => state.drawer.activeDrawer
-  );
-  const dispatch = useDispatch();
-
-  const isOpenBasket = activeDrawer === "basket" ? true : false;
-  // const isOpenMenu = activeDrawer === "menu" ? true : false;
   const isMobile = useScreenMatch(768);
   const products = [
     {
