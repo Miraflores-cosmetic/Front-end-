@@ -45,6 +45,13 @@ const steps = [
 export default function StepsBlock() {
   return (
     <section className={styles.stepsContainer}>
+      <div className={styles.headerWrrapper}>
+        <p className={styles.title}>каждый шаг усиливает предыдущий</p>
+        <p className={styles.desc}>
+          Агрессивное умывание всего за минуту может нарушить защитный барьер и
+          сделать кожу уязвимой
+        </p>
+      </div>
       <div className={styles.stepsWrapper}>
         {steps.map((product, id) => (
           <Step

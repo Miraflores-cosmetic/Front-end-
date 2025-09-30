@@ -1,6 +1,11 @@
 .awardsContainer {
   width: 100%;
-  padding-top: 50px;
+  padding-top: 240px;
+  margin-bottom: 150px;
+  @media (max-width: 450px) {
+    padding-top: 100px;
+    margin-bottom: 40px;
+  }
 
   .titleWrapper {
     width: 100%;

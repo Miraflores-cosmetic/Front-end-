@@ -15,9 +15,12 @@
 
 .setsContainer {
   width: 100%;
-  padding-top: 50px;
+  padding-top: 251px;
   height: 655px;
   @include flex-center(column);
+  @media (max-width: 450px) {
+    padding-top: 100px;
+  }
 
   .title {
     font-family: "trial";
@@ -28,7 +31,7 @@
     margin-bottom: 49px;
     @media (max-width: 450px) {
       font-size: 24px;
-      margin-bottom: 24px;
+      margin-bottom: 46px;
     }
   }
 
@@ -46,6 +49,9 @@
       .leftTitle {
         font-size: 16px;
         color: #6e6d67;
+        @media (max-width: 450px) {
+          font-size: 14px;
+        }
       }
 
       .moreWrapper {

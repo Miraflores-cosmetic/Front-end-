@@ -1,16 +1,30 @@
 .stepsContainer {
   padding-top: 160px;
-  .title {
-    font-family: "trial";
-    font-weight: 300;
-    font-size: 64px;
-    text-transform: uppercase;
-  }
-  .desc {
-    font-family: "avenir";
-    font-weight: 400;
-    font-size: 16px;
-    color: #6e6d67;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  .headerWrrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .title {
+      font-family: "trial";
+      font-weight: 300;
+      font-size: 64px;
+      text-transform: uppercase;
+      @media (max-width: 450px) {
+        font-size: 24px;
+      }
+    }
+    .desc {
+      font-family: "avenir";
+      font-weight: 400;
+      font-size: 16px;
+      color: #6e6d67;
+      @media (max-width: 450px) {
+        font-size: 14px;
+      }
+    }
   }
 }
 
@@ -71,8 +85,8 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .stepsContainer {
-    padding-top: 32px;
+    padding-top: 100px;
   }
 }

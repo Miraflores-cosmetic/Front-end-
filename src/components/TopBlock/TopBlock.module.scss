@@ -8,7 +8,11 @@
 
 .topBlockContainer {
   display: flex;
+  margin-bottom: 160px;
   width: 100%;
+  @media (max-width: 450px) {
+    margin-bottom: 60px;
+  }
 }
 
 .left {

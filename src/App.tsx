@@ -8,8 +8,8 @@ import SignUp from "@/pages/SignUp/SignUp";
 import ForgotPassword from "@/pages/ForgotPassword/ForgotPassword";
 import EmailConfirmation from "@/pages/EmailConfirmation/EmailConfirmation";
 import ResetPassword from "@/pages/ResetPassword/ResetPassword";
-import BestSeller from "@/pages/BestSeller/BestSeller";
-import FacePage from "./pages/Face/Face";
+// import BestSeller from "@/pages/BestSeller/BestSeller";
+// import FacePage from "./pages/Face/Face";
 
 const App: React.FC = () => {
   return (
@@ -24,8 +24,8 @@ const App: React.FC = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
 
         <Route path="/catalog/" element={<Catalog />} />
-        <Route path="/bestseller" element={<BestSeller />} />
-        <Route path="/face" element={<FacePage />} />
+        {/* <Route path="/bestseller" element={<BestSeller />} /> */}
+        {/* <Route path="/face" element={<FacePage />} /> */}
       </Routes>
 
       <DrawerWrapper />
