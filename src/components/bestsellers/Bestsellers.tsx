@@ -19,7 +19,7 @@ export default function Bestsellers({
     arrows: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3.5,
+    slidesToShow: 3.1,
     slidesToScroll: 1,
 
     afterChange: (current: number) => {
@@ -35,20 +35,6 @@ export default function Bestsellers({
     ),
 
     responsive: [
-      {
-        breakpoint: 1750,
-        settings: {
-          slidesToShow: 3.3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1600,
-        settings: {
-          slidesToShow: 3.2,
-          slidesToScroll: 1,
-        },
-      },
       {
         breakpoint: 1500,
         settings: {
