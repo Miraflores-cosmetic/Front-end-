@@ -7,6 +7,9 @@
 
     .slick-slide {
       padding-right: 24px;
+      @media (max-width: 450px) {
+        padding-right: 12px;
+      }
     }
 
     .slick-slide:first-child {
@@ -32,12 +35,13 @@
     justify-content: space-between;
     position: relative;
     height: 432px;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     transition: background-image 0.5s ease-in-out;
     background-color: #f6f5ef;
-    @media (max-width: 1440px) {
-      width: 432px;
+    @media (max-width: 450px) {
+      height: 316px;
     }
     .addToCardWrapper {
       width: 100%;
@@ -193,27 +197,6 @@
   }
 }
 
-@media (max-width: 1440px) {
-  @include image-size(410px, 410px);
-}
-@media (max-width: 1370px) {
-  @include image-size(390px, 390px);
-}
-@media (max-width: 1320px) {
-  @include image-size(370px, 370px);
-}
-@media (max-width: 1250px) {
-  @include image-size(350px, 350px);
-}
-@media (max-width: 1200px) {
-  @include image-size(310px, 310px, 250px, 250px);
-}
-@media (max-width: 1050px) {
-  @include image-size(290px, 290px, 230px, 230px);
-}
-@media (max-width: 768px) {
-  @include image-size(432px, 432px);
-}
 @media (max-width: 610px) {
   .bestsellers {
     .info {
@@ -222,9 +205,6 @@
     }
   }
 }
-@media (max-width: 565px) {
-  @include image-size(316px, 316px);
-}
 
 @media (max-width: 470px) {
   .bestsellers {
@@ -232,19 +212,6 @@
       font-size: 24px;
     }
   }
-}
-
-@media (max-width: 400px) {
-  @include image-size(300px, 300px);
-}
-@media (max-width: 375px) {
-  @include image-size(280px, 280px, 210px, 210px);
-}
-@media (max-width: 355px) {
-  @include image-size(255px, 255px, 200px, 200px);
-}
-@media (max-width: 325px) {
-  @include image-size(245px, 245px);
 }
 
 :global(.slick-dots li) {
