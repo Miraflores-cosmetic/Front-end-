@@ -53,3 +53,51 @@
     }
   }
 }
+
+.imageSlider {
+  :global {
+    .slick-slide {
+      padding: 0 10px; // базовый gap
+      box-sizing: border-box;
+    }
+
+    // убираем левый паддинг у первого слайда
+    .slick-slide:first-child {
+      padding-left: 0;
+    }
+
+    // убираем правый паддинг у последнего слайда
+    .slick-slide:last-child {
+      padding-right: 0;
+    }
+
+    // у списка тогда НЕ нужен отрицательный margin
+    .slick-list {
+      margin: 0;
+    }
+  }
+  .imagesWrapper {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    .slideImage {
+      width: 100%;
+      display: block;
+      height: 320px;
+      object-fit: cover;
+    }
+    .discountWrapper {
+      display: flex;
+      justify-content: space-between;
+      .name {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .discount {
+        font-size: 16px;
+        font-weight: 500;
+        color: #297230;
+      }
+    }
+  }
+}
