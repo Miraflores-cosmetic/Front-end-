@@ -19,7 +19,7 @@ const HeaderLeft: React.FC = () => {
           <Link to="#" className={styles.link}>
             Наборы
           </Link>
-          <Link to="#">Лицо</Link>
+          <Link to="/face">Лицо</Link>
           <Link to="#">Волосы</Link>
           <Link to="#">Эфирные масла</Link>
         </nav>
