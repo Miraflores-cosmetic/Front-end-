@@ -18,7 +18,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
-    padding: 40px 0;
+    padding-top: 56px;
+    padding-bottom: 240px;
 
     @media (max-width: 1150px) {
       gap: 32px 20px;
@@ -28,18 +29,18 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @media (max-width: 768px) {
-      padding: 30px 15px;
-    }
-
     @media (max-width: 700px) {
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      padding: 20px 0px;
     }
 
     @media (max-width: 450px) {
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      padding-bottom: 60px;
     }
+  }
+
+  .categoryWrapper {
+    padding-bottom: 240px;
   }
   .title {
     font-family: "trial";
@@ -48,8 +49,8 @@
     margin-bottom: 64px;
 
     @media (max-width: 450px) {
-      font-size: 32px;
-      margin-bottom: 32px;
+      font-size: 24px;
+      margin-bottom: 16px;
     }
   }
 }
@@ -57,7 +58,7 @@
 .imageSlider {
   :global {
     .slick-slide {
-      padding: 0 10px; // базовый gap
+      padding: 0 10px;
       box-sizing: border-box;
     }
 
@@ -94,7 +95,7 @@
         font-weight: 600;
       }
       .discount {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
         color: #297230;
       }

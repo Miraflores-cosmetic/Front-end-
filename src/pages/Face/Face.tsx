@@ -143,7 +143,7 @@ const FacePage: React.FC = () => {
         ))}
       </section>
       {!isMobile && (
-        <section>
+        <section className={styles.categoryWrapper}>
           <p className={styles.title}>КАТЕГОРИИ</p>
           <article>
             <Slider {...settings} className={styles.imageSlider}>

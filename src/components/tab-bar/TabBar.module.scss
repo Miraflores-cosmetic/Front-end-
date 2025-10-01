@@ -13,7 +13,9 @@
   font-size: 14px;
   font-weight: 500;
   transition: background 0.2s, color 0.2s;
-
+  @media (max-width: 450px) {
+    font-size: 13px;
+  }
   &:hover {
     background: #e6e6e6;
     font-size: 14px;
@@ -26,4 +28,7 @@
   color: white;
   font-size: 14px;
   font-weight: 500;
+  @media (max-width: 450px) {
+    font-size: 13px;
+  }
 }
