@@ -25,7 +25,12 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   };
 
   return (
-    <div className={`${styles.card} ${reverse ? styles.reverse : ""}`}>
+    <div
+      className={`${styles.card} ${reverse ? styles.reverse : ""}`}
+      onClick={() => {
+        if (isMobile) handleChooseArticle();
+      }}
+    >
       <div className={`${styles.topWrapper} ${reverse ? styles.reverse : ""}`}>
         <div className={styles.imageWrapper}>
           <img src={article.image} alt={article.title} />

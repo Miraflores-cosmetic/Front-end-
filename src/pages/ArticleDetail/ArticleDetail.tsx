@@ -13,7 +13,7 @@ import { RootState } from "@/store/store";
 // import facebook from "@/assets/icons/facebook.svg";
 // import insta from "@/assets/icons/insta.svg";
 // import art1 from "@/assets/images/art1.webp";
-// import art2 from "@/assets/images/art2.webp";
+import art2 from "@/assets/images/art2.webp";
 // import art3 from "@/assets/images/art3.webp";
 // import { useDispatch } from "react-redux";
 // import { clearArticle } from "@/store/slices/articleSlice";
