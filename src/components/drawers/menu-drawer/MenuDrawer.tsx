@@ -10,7 +10,14 @@ import MenuRightPart from "./menu-right-part/MenuRightPart";
 const MenuDrawer: React.FC = () => {
   const isMobile = useScreenMatch(450);
 
-  const menuData = {
+  interface MenuSection {
+    title: string;
+    link?: string;
+    withColor?: boolean;
+    items: { label: string; href: string }[];
+  }
+
+  const menuData: Record<string, MenuSection> = {
     navigation: {
       title: "Каталог",
       link: "catalog",
@@ -28,10 +35,10 @@ const MenuDrawer: React.FC = () => {
     },
     about: {
       title: "О Компании",
-      link: "company",
+      link: "about",
       withColor: true,
       items: [
-        { label: "Полезные статьи", href: "/contacts" },
+        { label: "Полезные статьи", href: "/articles" },
         { label: "Программа благодарности", href: "/contacts" },
         { label: "R&D исследование растений", href: "/contacts" },
       ],
@@ -70,6 +77,7 @@ const MenuDrawer: React.FC = () => {
             key={key}
             title={section.title}
             items={section.items}
+            link={section.link ?? ""}
             withColor={(section as any).withColor}
           />
         ))}

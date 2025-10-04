@@ -1,0 +1,77 @@
+@use "@/style/variables.scss" as *;
+
+.articlesDetails {
+  padding: 0 32px;
+  height: 100vh;
+  background-color: $white;
+  overflow-x: hidden;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  /* Скрываем скроллбар */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+
+  @media (max-width: 450px) {
+    padding: 0 12px;
+  }
+
+  .titleContainer {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 64px;
+    .goBackWrapper {
+      display: flex;
+      gap: 5px;
+      .back {
+        width: 19px;
+        height: 22px;
+      }
+      .goBackText {
+        font-size: 14px;
+      }
+    }
+
+    .title {
+      max-width: 768px;
+      font-family: "trial";
+      font-weight: 300;
+      font-size: 48px;
+      margin-top: 16px;
+      text-transform: uppercase;
+      @media (max-width: 450px) {
+        font-size: 24px;
+      }
+    }
+    .userWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  .imageWrapper {
+    max-width: 1020px;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .descContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .titleTxt {
+      font-size: 32px;
+      font-weight: 300;
+    }
+    .descTxt {
+      font-size: 16px;
+    }
+  }
+}

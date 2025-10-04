@@ -10,6 +10,8 @@ import EmailConfirmation from "@/pages/EmailConfirmation/EmailConfirmation";
 import ResetPassword from "@/pages/ResetPassword/ResetPassword";
 import BestSeller from "@/pages/BestSeller/BestSeller";
 import FacePage from "./pages/Face/Face";
+import Articles from "./pages/Articles/Articles";
+import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
 
 const App: React.FC = () => {
   return (
@@ -26,6 +28,8 @@ const App: React.FC = () => {
         <Route path="/catalog/" element={<Catalog />} />
         <Route path="/bestseller" element={<BestSeller />} />
         <Route path="/face" element={<FacePage />} />
+        <Route path="about/articles" element={<Articles />} />
+        <Route path="about/articles/:id" element={<ArticleDetail />} />
       </Routes>
 
       <DrawerWrapper />
