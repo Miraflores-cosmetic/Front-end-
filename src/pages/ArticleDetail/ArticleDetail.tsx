@@ -6,22 +6,83 @@ import footerImage from "@/assets/images/footerImage.webp";
 import userImage from "@/assets/images/userImage.png";
 import back from "@/assets/icons/go-back.svg";
 import { useSelector } from "react-redux";
+import krem from "@/assets/images/krem.webp";
+import girlwithsmile from "@/assets/images/girlsmile.webp";
 import { RootState } from "@/store/store";
-
-// import linkedin from "@/assets/icons/linkedin.svg";
-// import iqs from "@/assets/icons/iqs.svg";
-// import facebook from "@/assets/icons/facebook.svg";
-// import insta from "@/assets/icons/insta.svg";
-// import art1 from "@/assets/images/art1.webp";
-import art2 from "@/assets/images/art2.webp";
-// import art3 from "@/assets/images/art3.webp";
-// import { useDispatch } from "react-redux";
-// import { clearArticle } from "@/store/slices/articleSlice";
+import Bestsellers from "@/components/bestsellers/Bestsellers";
 
 const ArticleDetail: React.FC = () => {
   const article = useSelector((state: RootState) => state.articleSlice.article);
 
   console.log(article, "article");
+  const products = [
+    {
+      id: 1,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 2,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 3,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 4,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 5,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 6,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 7,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      label: "Новинка",
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+  ];
 
   return (
     <article className={styles.articlesDetails}>
@@ -40,7 +101,6 @@ const ArticleDetail: React.FC = () => {
           </div>
         </div>
       </section>
-
       <section className={styles.imageWrapper}>
         <img
           className={styles.userImage}
@@ -52,6 +112,7 @@ const ArticleDetail: React.FC = () => {
         <p className={styles.titleTxt}>{article?.title}</p>
         <p className={styles.descTxt}>{article?.description}</p>
       </section>
+      <Bestsellers products={products} />
       <Footer footerImage={footerImage} />
     </article>
   );
