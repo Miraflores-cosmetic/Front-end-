@@ -12,24 +12,24 @@ import BestSeller from "@/pages/BestSeller/BestSeller";
 import FacePage from "./pages/Face/Face";
 import Articles from "./pages/Articles/Articles";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
+import Order from "./pages/Order/Order";
 
 const App: React.FC = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/email-confirmation" element={<EmailConfirmation />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-
         <Route path="/catalog/" element={<Catalog />} />
         <Route path="/bestseller" element={<BestSeller />} />
         <Route path="/face" element={<FacePage />} />
         <Route path="about/articles" element={<Articles />} />
         <Route path="about/articles/:id" element={<ArticleDetail />} />
+        <Route path="/order" element={<Order />} />
       </Routes>
 
       <DrawerWrapper />
