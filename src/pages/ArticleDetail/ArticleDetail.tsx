@@ -112,8 +112,10 @@ const ArticleDetail: React.FC = () => {
         <p className={styles.titleTxt}>{article?.title}</p>
         <p className={styles.descTxt}>{article?.description}</p>
       </section>
-      <Bestsellers products={products} />
-      <Footer footerImage={footerImage} />
+      <section className={styles.bottomPart}>
+        <Bestsellers products={products} />
+        <Footer footerImage={footerImage} />
+      </section>
     </article>
   );
 };
