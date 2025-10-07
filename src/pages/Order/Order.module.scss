@@ -78,6 +78,110 @@
     padding: 64px;
     border-left: 1px solid #6e6d6799;
   }
+  .listWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    .Miraflores_logo {
+      width: 178px;
+      height: 36px;
+    }
+    .orderCart {
+      display: flex;
+      gap: 20px;
+      .cartImageWrapper {
+        background-color: #f6f5ef;
+        width: 100%;
+        max-width: 180px;
+        height: 180px;
+        display: flex;
+
+        .kremImage {
+          width: 133px;
+          height: 133px;
+          margin: auto;
+        }
+      }
+      .infoWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .top {
+          display: flex;
+          justify-content: space-between;
+          .texts {
+            display: flex;
+            flex-direction: column;
+
+            gap: 4px;
+            .name {
+              font-size: 16px;
+              font-weight: 600;
+            }
+            .size {
+              font-size: 14px;
+              color: #6e6d67;
+            }
+          }
+          .dsicount {
+            background-color: #297230;
+            width: 54px;
+            height: 43px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+        .bottom {
+          display: flex;
+          justify-content: space-between;
+          .count {
+            font-size: 16px;
+          }
+          .surprise {
+            background-color: #ff4766;
+            width: 92px;
+            height: 43px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+          }
+          .price {
+            display: flex;
+            gap: 10px;
+
+            .priceOld {
+              position: relative;
+              font-size: 20px;
+              font-weight: 600;
+              color: #a3a3a3;
+              &::after {
+                position: absolute;
+                content: "";
+                left: -5%;
+                top: 50%;
+                width: 110%;
+                height: 2px;
+                background: #ff0808;
+                transform: rotate(-10deg);
+              }
+            }
+            .priceNew {
+              font-size: 20px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 450px) {
