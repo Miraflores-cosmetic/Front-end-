@@ -27,6 +27,50 @@
     .phoneWrapper {
       margin-top: 40px;
     }
+    .checkWrapper {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .paymentWrapper {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      gap: 24px;
+      .payments {
+        display: flex;
+        gap: 8px;
+      }
+      .paymentTitle {
+        font-family: "trial";
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+    }
+    .orderButtonWrapper {
+      margin-top: 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      .orderButton {
+        width: 100%;
+      }
+      .agreement {
+        text-align: center;
+        font-size: 14px;
+        color: #6e6d67;
+        span {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
   }
   .right {
     width: 50%;
