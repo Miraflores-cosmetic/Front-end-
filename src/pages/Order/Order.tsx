@@ -3,12 +3,10 @@ import styles from "./Order.module.scss";
 import Input from "@/components/text-field/input/Input";
 import goBack from "@/assets/icons/go-back.svg";
 import Karta from "@/assets/icons/Karta.svg";
-import userImage from "@/assets/images/userImage.png";
 import SberPay from "@/assets/icons/SberPay.svg";
 import SBP from "@/assets/icons/SBP.svg";
 import Miraflores_logo from "@/assets/icons/Miraflores_logo.svg";
-import promocode from "@/assets/icons/promocode.svg";
-import minus from "@/assets/icons/minus.svg";
+
 import krem from "@/assets/images/krem.webp";
 import CustomCheckbox from "@/components/custom-checkBox/CustomCheckbox";
 import CustomButton from "@/components/custom-button/CustomButton";
@@ -17,6 +15,9 @@ import CardList from "./CardList";
 import PaymentsList from "./PaymentsList";
 import { CardItem } from "./types";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+import InfoContent from "./Info";
+import SumDiscount from "./SumDiscount";
+import Sertificate from "./Sertificate";
 
 const Order: React.FC = () => {
   const [name, setName] = useState("Фёдор Ники́форович Плевако́");
@@ -46,6 +47,30 @@ const Order: React.FC = () => {
     },
     {
       id: 2,
+      image: krem,
+      alt: "krem",
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      discount: "-23%",
+      count: "1 шт.",
+      priceOld: "4800₽",
+      priceNew: "3590₽",
+      isGift: false,
+    },
+    {
+      id: 3,
+      image: krem,
+      alt: "krem",
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      discount: "-23%",
+      count: "1 шт.",
+      priceOld: "4800₽",
+      priceNew: "3590₽",
+      isGift: false,
+    },
+    {
+      id: 4,
       image: krem,
       alt: "tonic",
       name: "Тоник для лица с розой",
@@ -116,22 +141,7 @@ const Order: React.FC = () => {
             />
             <CardList cartData={cartData} />
           </article>
-          <section className={styles.sertificatWrapper}>
-            <div className={styles.promoWrapper}>
-              <div className={styles.promoWrapperLeft}>
-                <img
-                  src={promocode}
-                  alt={"promocode"}
-                  className={styles.promocode}
-                />
-                <p className={styles.promoTxt}>
-                  Добавить промокод или сертификат
-                </p>
-              </div>
-              <img src={minus} alt={"minus"} className={styles.minus} />
-            </div>
-            <p className={styles.SALE}>SALE2025</p>
-          </section>
+          <Sertificate />
           <section className={styles.discountPromo}>
             <p>
               Скидка по промо-кодам НЕ РАСПРОСТРАНЯЕТСЯ на товары уже со
@@ -139,47 +149,8 @@ const Order: React.FC = () => {
               продукты.
             </p>
           </section>
-          <section className={styles.sectionSumDiscount}>
-            <div className={styles.sumWrapper}>
-              <p className={styles.sum}>Сумма • {3} товара </p>
-              <div className={styles.price}>
-                <p className={styles.priceNew}>7 180₽ </p>
-                <p className={styles.priceOld}>8 980₽</p>
-              </div>
-            </div>
-            <div className={styles.discountWrapper}>
-              <p className={styles.name}>Скидка</p>
-              <p className={styles.value}>-800₽ </p>
-            </div>
-            <div className={styles.promocodeWrapper}>
-              <p className={styles.name}>Промокод</p>
-              <p className={styles.value}>-1 000₽ </p>
-            </div>
-          </section>
-          <section className={styles.infoWrapper}>
-            <div className={styles.userWrapper}>
-              <img
-                className={styles.userImage}
-                src={userImage}
-                alt="user image"
-              />
-              <div className={styles.userInfo}>
-                <p className={styles.userName}>Дмитрий Патрацкий</p>
-                <p className={styles.userRole}>CEO</p>
-              </div>
-            </div>
-            <div className={styles.textsWrapper}>
-              <p className={styles.text}>
-                Многие наши товары изготавливаются непосредственно после заказа,
-                поэтому срок от приёма заказа до его отправки такого заказа
-                составляет <span>3-5 рабочих дня</span> после 100% оплаты.
-              </p>
-              <p className={styles.text}>
-                После обработки заказа нашими операторами, информация о заказе
-                будет отправлена на e-mail, указанный при оформлении заказа
-              </p>
-            </div>
-          </section>
+          <SumDiscount />
+          <InfoContent />
         </section>
       )}
     </main>

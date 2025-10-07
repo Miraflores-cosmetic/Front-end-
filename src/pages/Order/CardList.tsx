@@ -27,7 +27,7 @@ const CardList: React.FC<OrderCartListProps> = ({ cartData }) => {
             <img src={item.image} alt={item.alt} className={styles.kremImage} />
           </figure>
 
-          <div className={styles.infoWrapper}>
+          <div className={styles.cardInfoWrapper}>
             <div className={styles.top}>
               <div className={styles.texts}>
                 <p className={styles.name}>{item.name}</p>
