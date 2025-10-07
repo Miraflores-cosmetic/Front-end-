@@ -3,6 +3,7 @@ import styles from "./Order.module.scss";
 import Input from "@/components/text-field/input/Input";
 import goBack from "@/assets/icons/go-back.svg";
 import Karta from "@/assets/icons/Karta.svg";
+import userImage from "@/assets/images/userImage.png";
 import SberPay from "@/assets/icons/SberPay.svg";
 import SBP from "@/assets/icons/SBP.svg";
 import Miraflores_logo from "@/assets/icons/Miraflores_logo.svg";
@@ -155,7 +156,30 @@ const Order: React.FC = () => {
               <p className={styles.value}>-1 000₽ </p>
             </div>
           </section>
-          <section className={styles.infoWrapper}></section>
+          <section className={styles.infoWrapper}>
+            <div className={styles.userWrapper}>
+              <img
+                className={styles.userImage}
+                src={userImage}
+                alt="user image"
+              />
+              <div className={styles.userInfo}>
+                <p className={styles.userName}>Дмитрий Патрацкий</p>
+                <p className={styles.userRole}>CEO</p>
+              </div>
+            </div>
+            <div className={styles.textsWrapper}>
+              <p className={styles.text}>
+                Многие наши товары изготавливаются непосредственно после заказа,
+                поэтому срок от приёма заказа до его отправки такого заказа
+                составляет <span>3-5 рабочих дня</span> после 100% оплаты.
+              </p>
+              <p className={styles.text}>
+                После обработки заказа нашими операторами, информация о заказе
+                будет отправлена на e-mail, указанный при оформлении заказа
+              </p>
+            </div>
+          </section>
         </section>
       )}
     </main>
