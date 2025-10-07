@@ -3,8 +3,8 @@ import styles from "./Input.module.scss";
 
 interface CustomInputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
-  value?: string; // allow value from props
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void; // handle change
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input: React.FC<CustomInputProps> = ({

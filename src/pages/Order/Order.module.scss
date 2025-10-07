@@ -13,7 +13,13 @@
     position: relative;
     width: 50%;
     height: 100vh;
-    padding: 100px 64px 146px 64px;
+    padding: 100px 32px 146px 32px;
+    @media (max-width: 1024px) {
+      padding: 100px 24px 146px 24px;
+    }
+    @media (max-width: 956px) {
+      width: 100%;
+    }
     .goBack {
       position: absolute;
       top: 38px;
@@ -76,8 +82,11 @@
   .right {
     width: 50%;
     height: 100vh;
-    padding: 64px;
+    padding: 32px;
     border-left: 1px solid #6e6d6799;
+    @media (max-width: 1024px) {
+      padding: 24px;
+    }
   }
   .listWrapper {
     display: flex;
@@ -111,6 +120,7 @@
         .top {
           display: flex;
           justify-content: space-between;
+          gap: 8px;
           .texts {
             display: flex;
             flex-direction: column;
@@ -125,9 +135,9 @@
               color: #6e6d67;
             }
           }
-          .dsicount {
+          .discount {
             background-color: #297230;
-            width: 54px;
+            min-width: 54px;
             height: 43px;
             display: flex;
             justify-content: center;
@@ -138,6 +148,7 @@
           }
         }
         .bottom {
+          gap: 8px;
           display: flex;
           justify-content: space-between;
           .count {
