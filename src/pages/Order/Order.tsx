@@ -9,6 +9,7 @@ import Miraflores_logo from "@/assets/icons/Miraflores_logo.svg";
 import krem from "@/assets/images/krem.webp";
 import CustomCheckbox from "@/components/custom-checkBox/CustomCheckbox";
 import CustomButton from "@/components/custom-button/CustomButton";
+import Delivery from "@/components/delivery/Delivery";
 
 interface CartItem {
   id: number;
@@ -63,7 +64,7 @@ const Order: React.FC = () => {
     <main className={styles.orderContainer}>
       <section className={styles.left}>
         <img src={goBack} alt="goBack" className={styles.goBack} />
-        <div className={styles.inputWrapper}>
+        <section className={styles.inputWrapper}>
           <Input
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -76,7 +77,10 @@ const Order: React.FC = () => {
             type="email"
             placeholder="Email"
           />
-        </div>
+        </section>
+        <section>
+          <Delivery />
+        </section>
         <section className={styles.phoneWrapper}>
           <Input
             value={phone}
