@@ -6,6 +6,8 @@ import Karta from "@/assets/icons/Karta.svg";
 import SberPay from "@/assets/icons/SberPay.svg";
 import SBP from "@/assets/icons/SBP.svg";
 import Miraflores_logo from "@/assets/icons/Miraflores_logo.svg";
+import promocode from "@/assets/icons/promocode.svg";
+import minus from "@/assets/icons/minus.svg";
 import krem from "@/assets/images/krem.webp";
 import CustomCheckbox from "@/components/custom-checkBox/CustomCheckbox";
 import CustomButton from "@/components/custom-button/CustomButton";
@@ -113,6 +115,47 @@ const Order: React.FC = () => {
             />
             <CardList cartData={cartData} />
           </article>
+          <section className={styles.sertificatWrapper}>
+            <div className={styles.promoWrapper}>
+              <div className={styles.promoWrapperLeft}>
+                <img
+                  src={promocode}
+                  alt={"promocode"}
+                  className={styles.promocode}
+                />
+                <p className={styles.promoTxt}>
+                  Добавить промокод или сертификат
+                </p>
+              </div>
+              <img src={minus} alt={"minus"} className={styles.minus} />
+            </div>
+            <p className={styles.SALE}>SALE2025</p>
+          </section>
+          <section className={styles.discountPromo}>
+            <p>
+              Скидка по промо-кодам НЕ РАСПРОСТРАНЯЕТСЯ на товары уже со
+              скидками, наборы, товары не нашего производства и электронные
+              продукты.
+            </p>
+          </section>
+          <section className={styles.sectionSumDiscount}>
+            <div className={styles.sumWrapper}>
+              <p className={styles.sum}>Сумма • {3} товара </p>
+              <div className={styles.price}>
+                <p className={styles.priceNew}>7 180₽ </p>
+                <p className={styles.priceOld}>8 980₽</p>
+              </div>
+            </div>
+            <div className={styles.discountWrapper}>
+              <p className={styles.name}>Скидка</p>
+              <p className={styles.value}>-800₽ </p>
+            </div>
+            <div className={styles.promocodeWrapper}>
+              <p className={styles.name}>Промокод</p>
+              <p className={styles.value}>-1 000₽ </p>
+            </div>
+          </section>
+          <section className={styles.infoWrapper}></section>
         </section>
       )}
     </main>
