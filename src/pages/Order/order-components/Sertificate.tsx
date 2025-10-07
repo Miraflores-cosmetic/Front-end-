@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Order.module.scss";
+import styles from "../Order.module.scss";
 import promocode from "@/assets/icons/promocode.svg";
 import minus from "@/assets/icons/minus.svg";
 
