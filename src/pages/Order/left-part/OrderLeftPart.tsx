@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./OrderLeftPart.module.scss";
+import styles from "../Order.module.scss";
 import Input from "@/components/text-field/input/Input";
 import goBack from "@/assets/icons/go-back.svg";
 import Karta from "@/assets/icons/Karta.svg";
@@ -10,12 +10,14 @@ import CustomCheckbox from "@/components/custom-checkBox/CustomCheckbox";
 import CustomButton from "@/components/custom-button/CustomButton";
 import Delivery from "@/components/delivery/Delivery";
 import PaymentsList from "../order-components/PaymentsList";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 const OrderLeftPart: React.FC = () => {
   const [name, setName] = useState("Фёдор Ники́форович Плевако́");
   const [emal, setEmail] = useState("f.plevako@gmail.com");
   const [phone, setPhone] = useState("+7(913) 910 30-70");
   const [checked, setChecked] = useState(true);
+  const isMobile = useScreenMatch(500);
 
   const paymentImages = [
     { src: SBP, alt: "goSBPBack" },
@@ -51,10 +53,12 @@ const OrderLeftPart: React.FC = () => {
           placeholder="Phone"
         />
       </section>
-      <section className={styles.checkWrapper}>
-        <CustomCheckbox checked={checked} onChange={setChecked} />
-        <label>Пишите мне о распродажах, скидках и новых поступлениях</label>
-      </section>
+      {!isMobile && (
+        <section className={styles.checkWrapper}>
+          <CustomCheckbox checked={checked} onChange={setChecked} />
+          <label>Пишите мне о распродажах, скидках и новых поступлениях</label>
+        </section>
+      )}
       <section className={styles.paymentWrapper}>
         <p className={styles.paymentTitle}>Оплата</p>{" "}
         <article className={styles.payments}>

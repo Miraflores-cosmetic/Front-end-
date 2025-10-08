@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./OrderRightPart.module.scss";
+import styles from "../Order.module.scss";
 
 import Miraflores_logo from "@/assets/icons/Miraflores_logo.svg";
 

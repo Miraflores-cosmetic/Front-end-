@@ -9,6 +9,9 @@
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 24px;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
 }
 
 .list {
@@ -40,10 +43,16 @@
     .type {
       font-size: 15px;
       font-weight: 500;
+      @media (max-width: 500px) {
+        font-size: 14px;
+      }
     }
     .address {
       color: #6e6d67;
       font-size: 14px;
+      @media (max-width: 500px) {
+        font-size: 13px;
+      }
     }
     .comment {
       color: #6e6d67;
@@ -63,6 +72,7 @@
 }
 
 .addBtn {
+  width: 100%;
   margin-top: 16px;
   display: flex;
   justify-content: center;
@@ -75,6 +85,9 @@
   font-weight: 500;
   cursor: pointer;
   transition: 0.2s;
+  @media (max-width: 500px) {
+    font-size: 13px;
+  }
 }
 
 .addBtn:hover {
