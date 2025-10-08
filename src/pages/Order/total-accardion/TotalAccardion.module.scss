@@ -169,25 +169,126 @@
       }
     }
   }
+  .addPromo {
+    margin-top: 24px;
+    height: 50px;
+    width: 100%;
+    border: 1px solid #00000014;
+    padding: 16px 12px;
 
-  .summary {
-    margin-top: 10px;
-    p {
+    display: flex;
+    justify-content: space-between;
+    .promoWrapper {
       display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      margin: 4px 0;
-    }
-    span {
-      font-weight: 500;
+      gap: 8px;
+      .promoTxt {
+        font-size: 13px;
+        font-weight: 500;
+      }
     }
   }
-
-  .footer {
-    margin-top: 16px;
-    font-size: 13px;
-    color: #555;
-    line-height: 1.4;
+  .sectionSumDiscount {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    .sumWrapper {
+      display: flex;
+      justify-content: space-between;
+      .sum {
+        display: flex;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .price {
+        display: flex;
+        gap: 10px;
+        .priceOld {
+          position: relative;
+          font-size: 14px;
+          font-weight: 600;
+          color: #a3a3a3;
+          &::after {
+            content: "";
+            position: absolute;
+            left: -5%;
+            top: 50%;
+            width: 110%;
+            height: 2px;
+            background: #a3a3a3;
+          }
+        }
+        .priceNew {
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+    .discountWrapper {
+      display: flex;
+      justify-content: space-between;
+      .name {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .value {
+        color: #ff4766;
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+    .promocodeWrapper {
+      display: flex;
+      justify-content: space-between;
+      .name {
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .value {
+        color: #ff4766;
+        font-size: 13px;
+        font-weight: 500;
+      }
+    }
+  }
+  .infoWrapper {
+    padding: 20px 0;
+    border-top: 1px solid #00000014;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .userWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .userInfo {
+        .userName {
+          font-size: 13px;
+          font-weight: 500;
+        }
+        .userRole {
+          font-size: 12px;
+          color: #6e6d67;
+          font-weight: 400;
+        }
+      }
+    }
+    .textsWrapper {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .text {
+        font-weight: 400;
+        font-size: 13px;
+        span {
+          color: #297230;
+        }
+      }
+    }
   }
 }
 

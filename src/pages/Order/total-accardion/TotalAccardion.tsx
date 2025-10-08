@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "./TotalAccardion.module.scss";
 import { TotalAccordionProps } from "../types";
+import promoImage from "@/assets/icons/promocode.svg";
+import addImage from "@/assets/icons/add.svg";
+import userImage from "@/assets/images/userImage.png";
 
 const TotalAccordion: React.FC<TotalAccordionProps> = ({
   total,
@@ -61,28 +64,67 @@ const TotalAccordion: React.FC<TotalAccordionProps> = ({
               </div>
             ))}
           </section>
-          <section className={styles.addPromo}></section>
+          <section className={styles.addPromo}>
+            <div className={styles.promoWrapper}>
+              <img src={promoImage} alt={"promo"} className={styles.promo} />
+              <p className={styles.promoTxt}>
+                Добавить промокод или сертификат
+              </p>
+            </div>
+            <img src={addImage} alt={"addImage"} className={styles.addImage} />
+          </section>
 
-          <section className={styles.summary}>
+          {/* <section className={styles.summary}>
             <p>
               Скидка: <span>-{discount}₽</span>
             </p>
             <p>
               Промокод: <span>-{promo}₽</span>
             </p>
+          </section> */}
+
+          <section className={styles.sectionSumDiscount}>
+            <div className={styles.sumWrapper}>
+              <p className={styles.sum}>Сумма • {3} товара </p>
+              <div className={styles.price}>
+                <p className={styles.priceNew}>7 180₽ </p>
+                <p className={styles.priceOld}>8 980₽</p>
+              </div>
+            </div>
+            <div className={styles.discountWrapper}>
+              <p className={styles.name}>Скидка</p>
+              <p className={styles.value}>-800₽ </p>
+            </div>
+            <div className={styles.promocodeWrapper}>
+              <p className={styles.name}>Промокод</p>
+              <p className={styles.value}>-1 000₽ </p>
+            </div>
           </section>
 
-          <div className={styles.footer}>
-            <p>
-              Многие наши товары изготавливаются непосредственно после заказа,
-              поэтому срок от прибытия заказа до его отправки может составлять
-              3–5 рабочих дней после 100% оплаты.
-            </p>
-            <p>
-              После обработки заказа нашими операторами информация о заказе
-              будет отправлена на e-mail, указанный при оформлении.
-            </p>
-          </div>
+          <section className={styles.infoWrapper}>
+            <div className={styles.userWrapper}>
+              <img
+                className={styles.userImage}
+                src={userImage}
+                alt="user image"
+              />
+              <div className={styles.userInfo}>
+                <p className={styles.userName}>Дмитрий Патрацкий</p>
+                <p className={styles.userRole}>CEO</p>
+              </div>
+            </div>
+            <div className={styles.textsWrapper}>
+              <p className={styles.text}>
+                Многие наши товары изготавливаются непосредственно после заказа,
+                поэтому срок от приёма заказа до его отправки такого заказа
+                составляет <span>3-5 рабочих дня</span> после 100% оплаты.
+              </p>
+              <p className={styles.text}>
+                После обработки заказа нашими операторами, информация о заказе
+                будет отправлена на e-mail, указанный при оформлении заказа
+              </p>
+            </div>
+          </section>
         </article>
       )}
     </section>
