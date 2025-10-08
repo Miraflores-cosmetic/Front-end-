@@ -1,0 +1,12 @@
+Django==5.2.6
+djangorestframework==3.16.1
+django-cors-headers==4.9.0
+python-decouple==3.8
+django-extensions==4.1
+Pillow==11.3.0
+django-allauth==0.63.6
+djangorestframework-simplejwt==5.3.0
+django-mptt==0.16.0
+celery==5.4.0
+redis==5.2.0
+requests==2.32.3

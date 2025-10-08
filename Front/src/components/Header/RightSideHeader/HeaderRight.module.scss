@@ -1,0 +1,55 @@
+@use "@/style/variables.scss" as *;
+
+.navRight {
+  display: flex;
+  gap: 32px;
+}
+
+.navRight a {
+  text-decoration: none;
+  color: $black;
+  font-size: 14px;
+}
+
+.basket {
+  display: flex;
+  align-items: center;
+}
+
+.basketMobile {
+  display: flex;
+  align-items: center;
+}
+
+.basketMobile a {
+  display: flex;
+  text-decoration: none;
+  color: $black;
+  font-size: 14px;
+}
+
+.cartCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $green-297;
+  color: white;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  font-size: 11px;
+  margin-left: 2px;
+}
+
+@media (max-width: 1024px) {
+  .navRight {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 932px) {
+  .navRight {
+    font-size: 14px;
+    gap: 8px;
+  }
+}

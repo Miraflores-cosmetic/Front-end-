@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 15px;
+  color: #6e6d67;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #6e6d6799;
+  font-size: 166x;
+  outline: none;
+  background: transparent;
+}
+
+.link {
+  cursor: pointer;
+  font-size: 15px;
+  color: #6e6d67;
+  text-decoration: none;
+}

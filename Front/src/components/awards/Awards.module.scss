@@ -1,0 +1,133 @@
+.awardsContainer {
+  width: 100%;
+  padding-top: 50px;
+
+  .titleWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+
+    justify-content: space-between;
+    align-items: start;
+    gap: 16px;
+    .title {
+      font-family: "trial";
+      font-weight: 300;
+      font-size: 64px;
+      text-align: start;
+      @media (max-width: 450px) {
+        font-size: 24px;
+      }
+    }
+    .desc {
+      color: #297230;
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 800px) {
+      flex-direction: column;
+      gap: 37px;
+    }
+    .leftWrapper {
+      .textWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .txt {
+          max-width: 345px;
+          font-size: 16px;
+          color: #6e6d67;
+          width: 345px;
+          @media (max-width: 1200px) {
+            max-width: 300px;
+          }
+          @media (max-width: 1000px) {
+            width: 250px;
+          }
+        }
+        .medal {
+          width: 345px;
+          @media (max-width: 1200px) {
+            width: 300px;
+          }
+
+          @media (max-width: 1000px) {
+            width: 250px;
+          }
+        }
+      }
+    }
+    .centerWrapper {
+      display: flex;
+      align-items: center;
+      img {
+        width: 329px;
+        @media (max-width: 1335px) {
+          width: 270px;
+        }
+        @media (max-width: 1200px) {
+          width: 250px;
+        }
+        @media (max-width: 1100px) {
+          width: 220px;
+        }
+      }
+    }
+    .rightWrapper {
+      .bottomImageWrapper {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        .awardImageMobile {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 196px;
+          height: 196px;
+          object-fit: cover;
+          z-index: 2;
+        }
+        .leaf {
+          position: absolute;
+          top: 180px;
+          right: 0;
+          width: 196px;
+          height: 196px;
+          object-fit: cover;
+        }
+      }
+      display: flex;
+      align-items: end;
+      img {
+        width: 612px;
+        height: 100%;
+        object-fit: cover;
+        @media (max-width: 1335px) {
+          width: 520px;
+        }
+        @media (max-width: 1200px) {
+          width: 500px;
+        }
+        @media (max-width: 1100px) {
+          width: 450px;
+        }
+        @media (max-width: 1024px) {
+          width: 420px;
+          object-fit: none;
+        }
+        @media (max-width: 1000px) {
+          width: 380px;
+        }
+        @media (max-width: 910px) {
+          width: 300px;
+        }
+      }
+    }
+  }
+}

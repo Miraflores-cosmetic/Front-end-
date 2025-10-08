@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ api_info.name }}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .version {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .status {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .endpoints {
+            margin-top: 30px;
+        }
+        .endpoint {
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .endpoint-name {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .endpoint-url {
+            color: #7f8c8d;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .admin-link {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .admin-link:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ api_info.name }}</h1>
+        <div class="version">Версия {{ api_info.version }}</div>
+        <div class="status">{{ api_info.status|upper }}</div>
+        
+        <p>{{ api_info.description }}</p>
+        
+        <div class="endpoints">
+            <h3>Доступные endpoints:</h3>
+            {% for name, url in api_info.endpoints.items %}
+            <div class="endpoint">
+                <div class="endpoint-name">{{ name|title }}</div>
+                <div class="endpoint-url">{{ url }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <a href="/admin/" class="admin-link">Админ панель Django</a>
+    </div>
+</body>
+</html>

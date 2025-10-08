@@ -1,0 +1,24 @@
+@use "@/style/variables.scss" as *;
+
+.navLeft {
+  display: flex;
+  gap: 32px;
+}
+.navLeft a {
+  text-decoration: none;
+  color: $black;
+  font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .navLeft {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 932px) {
+  .navLeft {
+    font-size: 14px;
+    gap: 8px;
+  }
+}

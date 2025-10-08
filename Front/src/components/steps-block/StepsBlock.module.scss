@@ -1,0 +1,78 @@
+.stepsContainer {
+  padding-top: 160px;
+  .title {
+    font-family: "trial";
+    font-weight: 300;
+    font-size: 64px;
+    text-transform: uppercase;
+  }
+  .desc {
+    font-family: "avenir";
+    font-weight: 400;
+    font-size: 16px;
+    color: #6e6d67;
+  }
+}
+
+.stepsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.stepsWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.descWrapper {
+  margin-bottom: 56px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 930px) {
+  .stepsContainer {
+    padding-top: 380px;
+  }
+}
+
+@media (max-width: 820px) {
+  .stepsContainer {
+    .title {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 1010px) {
+  .stepsContainer {
+    .stepsWrapper {
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .stepsContainer {
+    padding-top: 48px;
+  }
+}
+
+@media (max-width: 500px) {
+  .stepsContainer {
+    padding-top: 32px;
+  }
+}

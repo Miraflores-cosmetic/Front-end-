@@ -1,0 +1,127 @@
+.footer {
+  height: 500px;
+  padding-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 100px;
+  @media (max-width: 1290px) {
+    gap: 50px;
+  }
+  @media (max-width: 1100px) {
+    gap: 25px;
+  }
+
+  .footerMobile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .mobileContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      .mobileLeft {
+        .bimoTxtMobile {
+          position: absolute;
+          bottom: 20px;
+          @media (max-width: 656px) {
+            bottom: 175px;
+            font-family: "bimbo";
+            font-size: 20px;
+            font-weight: 400;
+            color: #9747ff;
+            transform: rotate(-10.45deg);
+          }
+          @media (max-width: 360px) {
+            font-size: 16px;
+          }
+        }
+        .lineToMobile {
+          position: absolute;
+          bottom: 30px;
+          left: 30px;
+        }
+      }
+      .mobileRight {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .footerBottomMobile {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      p {
+        color: #6e6d67;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .footerLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    @media (max-width: 1290px) {
+      width: 420px;
+    }
+    @media (max-width: 1100px) {
+      width: 400px;
+    }
+    @media (max-width: 1040px) {
+      width: 380px;
+    }
+  }
+  .footerRightWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .footerRight {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      gap: 10px;
+    }
+    .footerBottom {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      .fotterBottmotxt {
+        font-size: 14px;
+        color: #6e6d67;
+      }
+      .bimoTxt {
+        font-family: "bimbo";
+        font-weight: 400;
+        position: absolute;
+        color: #9747ff;
+        transform: rotate(-10.45deg);
+        bottom: 160px;
+        left: -30px;
+        font-size: 20px;
+        @media (max-width: 1024px) {
+          left: -30px;
+          bottom: 150px;
+        }
+      }
+      .lineTo {
+        height: 110px;
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+      }
+      @media (max-width: 1024px) {
+        left: 25px;
+      }
+    }
+  }
+}
