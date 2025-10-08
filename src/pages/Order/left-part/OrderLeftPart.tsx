@@ -5,12 +5,15 @@ import goBack from "@/assets/icons/go-back.svg";
 import Karta from "@/assets/icons/Karta.svg";
 import SberPay from "@/assets/icons/SberPay.svg";
 import SBP from "@/assets/icons/SBP.svg";
+import Miraflores_logo from "@/assets/icons/Miraflores_logo.svg";
+import krem from "@/assets/images/krem.webp";
 
 import CustomCheckbox from "@/components/custom-checkBox/CustomCheckbox";
 import CustomButton from "@/components/custom-button/CustomButton";
 import Delivery from "@/components/delivery/Delivery";
 import PaymentsList from "../order-components/PaymentsList";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+import TotalAccordion from "../total-accardion/TotalAccardion";
 
 const OrderLeftPart: React.FC = () => {
   const [name, setName] = useState("Фёдор Ники́форович Плевако́");
@@ -25,9 +28,65 @@ const OrderLeftPart: React.FC = () => {
     { src: SberPay, alt: "SberPay" },
   ];
 
+  const products = [
+    {
+      id: 1,
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      price: 3590,
+      oldPrice: 4800,
+      discount: "-23%",
+      image: krem,
+    },
+    {
+      id: 2,
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      price: 3590,
+      oldPrice: 4800,
+      discount: "-23%",
+      image: krem,
+    },
+    {
+      id: 3,
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      price: 0,
+      image: krem,
+      isGift: true,
+    },
+  ];
+
   return (
     <section className={styles.left}>
-      <img src={goBack} alt="goBack" className={styles.goBack} />
+      {!isMobile && <img src={goBack} alt="goBack" className={styles.goBack} />}
+      {isMobile && (
+        <section className={styles.mobileHeaderContainer}>
+          <div className={styles.mobileHeader}>
+            <img src={goBack} alt="goBack" className={styles.goBackMobile} />
+            <div className={styles.logoWrapper}>
+              <img
+                src={Miraflores_logo}
+                alt="Miraflores_logo"
+                className={styles.Miraflores_logo}
+              />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isMobile && (
+        <section>
+          {" "}
+          <TotalAccordion
+            total={13590}
+            totalOld={24800}
+            products={products}
+            discount={800}
+            promo={1000}
+          />
+        </section>
+      )}
       <section className={styles.inputWrapper}>
         <Input
           value={name}
