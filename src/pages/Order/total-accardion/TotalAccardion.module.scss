@@ -1,51 +1,5 @@
-// ================= Mixins =================
-
-// Flex mixin
-@mixin flex($justify: flex-start, $align: stretch, $direction: row, $gap: 0) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-  flex-direction: $direction;
-  gap: $gap;
-}
-
-// Font mixin
-@mixin font($size: 14px, $weight: 400, $color: #000) {
-  font-size: $size;
-  font-weight: $weight;
-  color: $color;
-}
-
-// Crossed-out price mixin
-@mixin price-old($color: #a3a3a3, $line-color: #ff0808, $font-size: 13px) {
-  position: relative;
-  font-size: $font-size;
-  font-weight: 600;
-  color: $color;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: -5%;
-    top: 50%;
-    width: 110%;
-    height: 2px;
-    background: $line-color;
-    transform: rotate(-10deg);
-  }
-}
-
-// Arrow mixin
-@mixin arrow($size: 6px, $color: #000, $rotate: 45deg) {
-  width: $size;
-  height: $size;
-  border-right: 1px solid $color;
-  border-bottom: 1px solid $color;
-  transform: rotate($rotate);
-  transition: transform 0.3s;
-}
-
-// ================= Styles =================
+@use "@/style/variables.scss" as *;
+@use "@/style/mixins.scss" as mixins;
 
 .accordion {
   margin: 20px 0;
@@ -56,204 +10,206 @@
     background: none;
     border: none;
     cursor: pointer;
-    @include flex(space-between, center);
+    @include mixins.flex(space-between, center);
 
     .headerLeft {
-      @include flex(center, center, row, 10px);
+      @include mixins.flex(center, center, row, 10px);
 
       .title {
-        @include font(13px, 500);
+        @include mixins.font(13px, 500);
       }
 
       .arrow {
-        @include arrow();
-      }
+        @include mixins.arrow();
 
-      .open {
-        transform: rotate(-135deg);
+        &.open {
+          transform: rotate(-135deg);
+        }
       }
     }
 
     .price {
-      @include flex(flex-start, center, row, 10px);
+      @include mixins.flex(flex-start, center, row, 10px);
       position: relative;
 
       .priceOld {
-        @include price-old();
+        @include mixins.price-old();
       }
 
       .priceNew {
-        @include font(13px, 600);
+        @include mixins.font(13px, 600);
       }
 
       .count {
         position: absolute;
         top: -12px;
         right: 0;
-        @include font(12px, 400, #a3a3a3);
+        @include mixins.font(12px, 400, #a3a3a3);
       }
     }
   }
-}
 
-.content {
-  padding-top: 12px;
-  animation: fadeIn 0.3s ease;
+  .content {
+    padding-top: 12px;
+    animation: fadeIn 0.3s ease;
 
-  .productList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    @include flex(flex-start, stretch, column, 16px);
+    .productList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      @include mixins.flex(flex-start, stretch, column, 16px);
 
-    .productItem {
-      @include flex(flex-start, center, row, 10px);
+      .productItem {
+        @include mixins.flex(flex-start, center, row, 10px);
 
-      .imageWrapper {
-        width: 88px;
-        height: 88px;
-        @include flex(center, center);
-        background-color: #f6f5ef;
+        .imageWrapper {
+          width: 88px;
+          height: 88px;
+          @include mixins.flex(center, center);
+          background-color: #f6f5ef;
 
-        .image {
-          width: 66px;
-          height: 66px;
-          object-fit: contain;
-        }
-      }
-
-      .productInfo {
-        height: 88px;
-        @include flex(space-between, stretch, column);
-
-        .nameSize {
-          @include flex(flex-start, stretch, column, 2px);
-
-          .name {
-            @include font(13px, 600);
-          }
-
-          .size {
-            @include font(12px, 400, #6e6d67);
+          .image {
+            width: 66px;
+            height: 66px;
+            object-fit: contain;
           }
         }
 
-        .priceBlock {
-          @include flex(flex-start, center, row, 6px);
+        .productInfo {
+          height: 88px;
+          @include mixins.flex(space-between, stretch, column);
 
-          .price {
-            @include flex(flex-start, center, row, 10px);
-            position: relative;
+          .nameSize {
+            @include mixins.flex(flex-start, stretch, column, 2px);
 
-            .priceOld {
-              @include price-old();
+            .name {
+              @include mixins.font(13px, 600);
             }
 
-            .priceNew {
-              @include font(13px, 600);
-            }
-
-            .count {
-              position: absolute;
-              top: -12px;
-              right: 0;
-              @include font(12px, 400, #a3a3a3);
+            .size {
+              @include mixins.font(12px, 400, #6e6d67);
             }
           }
 
-          .discount {
-            @include font(13px, 400, #297230);
+          .priceBlock {
+            @include mixins.flex(flex-start, center, row, 6px);
+
+            .price {
+              @include mixins.flex(flex-start, center, row, 10px);
+              position: relative;
+
+              .priceOld {
+                @include mixins.price-old();
+              }
+
+              .priceNew {
+                @include mixins.font(13px, 600);
+              }
+
+              .count {
+                position: absolute;
+                top: -12px;
+                right: 0;
+                @include mixins.font(12px, 400, #a3a3a3);
+              }
+            }
+
+            .discount {
+              @include mixins.font(13px, 400, #297230);
+            }
+
+            .gift {
+              @include mixins.font(13px, 500, #ff0808);
+            }
+          }
+        }
+      }
+    }
+
+    .addPromo {
+      margin-top: 24px;
+      height: 50px;
+      width: 100%;
+      border: 1px solid #00000014;
+      padding: 16px 12px;
+      @include mixins.flex(space-between, center);
+
+      .promoWrapper {
+        @include mixins.flex(flex-start, center, row, 8px);
+
+        .promoTxt {
+          @include mixins.font(13px, 500);
+        }
+      }
+    }
+
+    .sectionSumDiscount {
+      @include mixins.flex(flex-start, stretch, column, 10px);
+      margin: 24px 0;
+
+      .sumWrapper {
+        @include mixins.flex(space-between, center);
+
+        .sum {
+          @include mixins.flex(flex-start, center, row, 10px);
+          @include mixins.font(14px, 600);
+        }
+
+        .price {
+          @include mixins.flex(flex-start, center, row, 10px);
+
+          .priceOld {
+            @include mixins.price-old(#a3a3a3, #a3a3a3, 14px);
           }
 
-          .gift {
-            @include font(13px, 500, #ff0808);
+          .priceNew {
+            @include mixins.font(14px, 600);
           }
         }
       }
-    }
-  }
 
-  .addPromo {
-    margin-top: 24px;
-    height: 50px;
-    width: 100%;
-    border: 1px solid #00000014;
-    padding: 16px 12px;
-    @include flex(space-between, center);
+      .discountWrapper,
+      .promocodeWrapper {
+        @include mixins.flex(space-between, center);
 
-    .promoWrapper {
-      @include flex(flex-start, center, row, 8px);
-
-      .promoTxt {
-        @include font(13px, 500);
-      }
-    }
-  }
-
-  .sectionSumDiscount {
-    @include flex(flex-start, stretch, column, 10px);
-    margin: 24px 0;
-
-    .sumWrapper {
-      @include flex(space-between, center);
-
-      .sum {
-        @include flex(flex-start, center, row, 10px);
-        @include font(14px, 600);
-      }
-
-      .price {
-        @include flex(flex-start, center, row, 10px);
-
-        .priceOld {
-          @include price-old(#a3a3a3, #a3a3a3, 14px);
+        .name {
+          @include mixins.font(13px, 500);
         }
 
-        .priceNew {
-          @include font(14px, 600);
+        .value {
+          @include mixins.font(13px, 500, #ff4766);
         }
       }
     }
 
-    .discountWrapper,
-    .promocodeWrapper {
-      @include flex(space-between, center);
-      .name {
-        @include font(13px, 500);
-      }
-      .value {
-        @include font(13px, 500, #ff4766);
-      }
-    }
-  }
+    .infoWrapper {
+      padding: 20px 0;
+      border-top: 1px solid #00000014;
+      @include mixins.flex(flex-start, flex-start, column);
 
-  .infoWrapper {
-    padding: 20px 0;
-    border-top: 1px solid #00000014;
-    @include flex(flex-start, flex-start, column);
+      .userWrapper {
+        @include mixins.flex(center, center, row, 10px);
 
-    .userWrapper {
-      @include flex(center, center, row, 10px);
-
-      .userInfo {
-        .userName {
-          @include font(13px, 500);
-        }
-        .userRole {
-          @include font(12px, 400, #6e6d67);
+        .userInfo {
+          .userName {
+            @include mixins.font(13px, 500);
+          }
+          .userRole {
+            @include mixins.font(12px, 400, #6e6d67);
+          }
         }
       }
-    }
 
-    .textsWrapper {
-      margin-top: 12px;
-      @include flex(flex-start, flex-start, column, 12px);
+      .textsWrapper {
+        margin-top: 12px;
+        @include mixins.flex(flex-start, flex-start, column, 12px);
 
-      .text {
-        @include font(13px, 400);
+        .text {
+          @include mixins.font(13px, 400);
 
-        span {
-          color: #297230;
+          span {
+            color: #297230;
+          }
         }
       }
     }

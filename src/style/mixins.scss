@@ -64,3 +64,13 @@
     transform: rotate(-10deg);
   }
 }
+
+// Arrow for accordion or dropdown
+@mixin arrow($size: 6px, $color: #000, $rotate: 45deg, $transition: 0.3s) {
+  width: $size;
+  height: $size;
+  border-right: 1px solid $color;
+  border-bottom: 1px solid $color;
+  transform: rotate($rotate);
+  transition: transform $transition;
+}
