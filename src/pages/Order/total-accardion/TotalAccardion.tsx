@@ -9,8 +9,6 @@ const TotalAccordion: React.FC<TotalAccordionProps> = ({
   total,
   totalOld,
   products,
-  discount,
-  promo,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
