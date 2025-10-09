@@ -1,0 +1,259 @@
+@use "@/style/variables.scss" as *;
+
+.right {
+  width: 50%;
+  height: 100vh;
+  padding: 32px;
+  border-left: 1px solid #6e6d6799;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  @media (max-width: 1024px) {
+    padding: 24px;
+  }
+  .listWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .Miraflores_logo {
+      width: 178px;
+      height: 36px;
+    }
+    .orderCart {
+      display: flex;
+      gap: 20px;
+      .cartImageWrapper {
+        background-color: #f6f5ef;
+        width: 100%;
+        max-width: 180px;
+        height: 180px;
+        display: flex;
+
+        .kremImage {
+          width: 133px;
+          height: 133px;
+          margin: auto;
+        }
+      }
+      .cardInfoWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .top {
+          display: flex;
+          justify-content: space-between;
+          gap: 8px;
+          .texts {
+            display: flex;
+            flex-direction: column;
+
+            gap: 4px;
+            .name {
+              font-size: 16px;
+              font-weight: 600;
+            }
+            .size {
+              font-size: 14px;
+              color: #6e6d67;
+            }
+          }
+          .discount {
+            background-color: #297230;
+            min-width: 54px;
+            height: 43px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+        .bottom {
+          gap: 8px;
+          display: flex;
+          justify-content: space-between;
+          .count {
+            font-size: 16px;
+          }
+          .surprise {
+            background-color: #ff4766;
+            width: 92px;
+            height: 43px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+          }
+          .price {
+            display: flex;
+            gap: 10px;
+
+            .priceOld {
+              position: relative;
+              font-size: 20px;
+              font-weight: 600;
+              color: #a3a3a3;
+              &::after {
+                position: absolute;
+                content: "";
+                left: -5%;
+                top: 50%;
+                width: 110%;
+                height: 2px;
+                background: #ff0808;
+                transform: rotate(-10deg);
+              }
+            }
+            .priceNew {
+              font-size: 20px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sertificatWrapper {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    .promoWrapper {
+      display: flex;
+      justify-content: space-between;
+      .promoWrapperLeft {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        .promoTxt {
+          font-size: 15px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .SALE {
+      font-size: 15px;
+    }
+  }
+  .discountPromo {
+    margin-top: 12px;
+    padding: 10px 0;
+    border-top: 1px solid #6e6d67;
+    p {
+      color: #6e6d67;
+    }
+  }
+  .sectionSumDiscount {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 32px;
+    .sumWrapper {
+      display: flex;
+      justify-content: space-between;
+      .sum {
+        display: flex;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .price {
+        display: flex;
+        gap: 10px;
+        .priceOld {
+          position: relative;
+          font-size: 20px;
+          font-weight: 600;
+          color: #a3a3a3;
+          &::after {
+            content: "";
+            position: absolute;
+            left: -5%;
+            top: 50%;
+            width: 110%;
+            height: 2px;
+            background: #a3a3a3;
+          }
+        }
+        .priceNew {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+    .discountWrapper {
+      display: flex;
+      justify-content: space-between;
+      .name {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .value {
+        color: #ff4766;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+    .promocodeWrapper {
+      display: flex;
+      justify-content: space-between;
+      .name {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .value {
+        color: #ff4766;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+  .infoWrapper {
+    padding: 20px 0;
+    border-top: 1px solid #6e6d67;
+    border-bottom: 1px solid #6e6d67;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    .userWrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .userInfo {
+        .userName {
+          font-size: 15px;
+          font-weight: 500;
+          @media (max-width: 450px) {
+            font-size: 13px;
+          }
+        }
+        .userRole {
+          font-size: 14px;
+          color: #6e6d67;
+          @media (max-width: 450px) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .textsWrapper {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .text {
+        span {
+          color: #297230;
+        }
+      }
+    }
+  }
+}

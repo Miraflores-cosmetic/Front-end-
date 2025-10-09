@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../Order.module.scss";
+import styles from "./OrderLeftPart.module.scss";
 import Input from "@/components/text-field/input/Input";
 import goBack from "@/assets/icons/go-back.svg";
 import Karta from "@/assets/icons/Karta.svg";

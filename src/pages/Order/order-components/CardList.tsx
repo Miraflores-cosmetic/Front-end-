@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../Order.module.scss";
+import styles from "../right-part/OrderRightPart.module.scss";
 
 export interface CartItem {
   id: number;
