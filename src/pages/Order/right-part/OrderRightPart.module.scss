@@ -201,7 +201,7 @@
       @include mixins.flex(flex-start, flex-start, column, 12px);
 
       .text {
-        @include mixins.font(13px, 400);
+        @include mixins.font(14px, 400);
 
         span {
           color: #297230;
