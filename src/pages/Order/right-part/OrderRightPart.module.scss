@@ -1,43 +1,5 @@
 @use "@/style/variables.scss" as *;
-
-// ================= Mixins =================
-
-// Flex mixin
-@mixin flex($justify: flex-start, $align: stretch, $direction: row, $gap: 0) {
-  display: flex;
-  justify-content: $justify;
-  align-items: $align;
-  flex-direction: $direction;
-  gap: $gap;
-}
-
-// Font mixin
-@mixin font($size: 14px, $weight: 400, $color: #000) {
-  font-size: $size;
-  font-weight: $weight;
-  color: $color;
-}
-
-// Crossed-out price mixin
-@mixin price-old($color: #a3a3a3, $line-color: #ff0808, $font-size: 20px) {
-  position: relative;
-  font-size: $font-size;
-  font-weight: 600;
-  color: $color;
-
-  &::after {
-    content: "";
-    position: absolute;
-    left: -5%;
-    top: 50%;
-    width: 110%;
-    height: 2px;
-    background: $line-color;
-    transform: rotate(-10deg);
-  }
-}
-
-// ================= Styles =================
+@use "@/style/mixins.scss" as mixins;
 
 .right {
   width: 50%;
@@ -46,16 +8,14 @@
   border-left: 1px solid #6e6d6799;
   overflow-y: auto;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  @include mixins.hide-scrollbar;
 
-  @media (max-width: 1024px) {
+  @include mixins.respond(laptop) {
     padding: 24px;
   }
 
   .listWrapper {
-    @include flex(flex-start, stretch, column, 16px);
+    @include mixins.flex(flex-start, stretch, column, 16px);
 
     .Miraflores_logo {
       width: 178px;
@@ -63,10 +23,10 @@
     }
 
     .orderCart {
-      @include flex(flex-start, stretch, row, 20px);
+      @include mixins.flex(flex-start, stretch, row, 20px);
 
       .cartImageWrapper {
-        @include flex(center, center);
+        @include mixins.flex(center, center);
         background-color: #f6f5ef;
         width: 100%;
         max-width: 180px;
@@ -79,56 +39,56 @@
       }
 
       .cardInfoWrapper {
-        @include flex(space-between, stretch, column);
+        @include mixins.flex(space-between, stretch, column);
         width: 100%;
 
         .top {
-          @include flex(space-between, flex-start, row, 8px);
+          @include mixins.flex(space-between, flex-start, row, 8px);
 
           .texts {
-            @include flex(flex-start, stretch, column, 4px);
+            @include mixins.flex(flex-start, stretch, column, 4px);
 
             .name {
-              @include font(16px, 600);
+              @include mixins.font(16px, 600);
             }
             .size {
-              @include font(14px, 400, #6e6d67);
+              @include mixins.font(14px, 400, #6e6d67);
             }
           }
 
           .discount {
-            @include flex(center, center);
+            @include mixins.flex(center, center);
             background-color: #297230;
             min-width: 54px;
             height: 43px;
-            @include font(14px, 500, #fff);
+            @include mixins.font(14px, 500, #fff);
           }
         }
 
         .bottom {
-          @include flex(space-between, center, row, 8px);
+          @include mixins.flex(space-between, center, row, 8px);
 
           .count {
-            @include font(16px, 400);
+            @include mixins.font(16px, 400);
           }
 
           .surprise {
-            @include flex(center, center);
+            @include mixins.flex(center, center);
             background-color: #ff4766;
             width: 92px;
             height: 43px;
-            @include font(14px, 500, #fff);
+            @include mixins.font(14px, 500, #fff);
           }
 
           .price {
-            @include flex(flex-start, center, row, 10px);
+            @include mixins.flex(flex-start, center, row, 10px);
 
             .priceOld {
-              @include price-old();
+              @include mixins.price-old();
             }
 
             .priceNew {
-              @include font(20px, 600);
+              @include mixins.font(20px, 600);
             }
           }
         }
@@ -138,24 +98,24 @@
 
   .sertificatWrapper {
     margin-top: 32px;
-    @include flex(space-between, flex-start, column, 10px);
+    @include mixins.flex(space-between, flex-start, column, 10px);
 
     .promoWrapper {
       width: 100%;
-      @include flex(space-between, flex-start);
+      @include mixins.flex(space-between, flex-start);
 
       .promoWrapperLeft {
-        @include flex(flex-start, center, row, 8px);
+        @include mixins.flex(flex-start, center, row, 8px);
         width: 100%;
 
         .promoTxt {
-          @include font(15px, 500);
+          @include mixins.font(15px, 500);
         }
       }
     }
 
     .SALE {
-      @include font(15px, 400);
+      @include mixins.font(15px, 400);
     }
   }
 
@@ -170,40 +130,40 @@
   }
 
   .sectionSumDiscount {
-    @include flex(flex-start, stretch, column, 10px);
+    @include mixins.flex(flex-start, stretch, column, 10px);
     margin-bottom: 32px;
 
     .sumWrapper {
-      @include flex(space-between, center);
+      @include mixins.flex(space-between, center);
 
       .sum {
-        @include flex(flex-start, center, row, 10px);
-        @include font(20px, 600);
+        @include mixins.flex(flex-start, center, row, 10px);
+        @include mixins.font(20px, 600);
       }
 
       .price {
-        @include flex(flex-start, center, row, 10px);
+        @include mixins.flex(flex-start, center, row, 10px);
 
         .priceOld {
-          @include price-old(#a3a3a3, #a3a3a3, 20px);
+          @include mixins.price-old(#a3a3a3, #a3a3a3, 20px);
         }
 
         .priceNew {
-          @include font(20px, 600);
+          @include mixins.font(20px, 600);
         }
       }
     }
 
     .discountWrapper,
     .promocodeWrapper {
-      @include flex(space-between, center);
+      @include mixins.flex(space-between, center);
 
       .name {
-        @include font(15px, 500);
+        @include mixins.font(15px, 500);
       }
 
       .value {
-        @include font(15px, 500, #ff4766);
+        @include mixins.font(15px, 500, #ff4766);
       }
     }
   }
@@ -212,24 +172,24 @@
     padding: 20px 0;
     border-top: 1px solid #6e6d67;
     border-bottom: 1px solid #6e6d67;
-    @include flex(flex-start, flex-start, column);
+    @include mixins.flex(flex-start, flex-start, column);
 
     .userWrapper {
-      @include flex(center, center, row, 10px);
+      @include mixins.flex(center, center, row, 10px);
 
       .userInfo {
         .userName {
-          @include font(15px, 500);
+          @include mixins.font(15px, 500);
 
-          @media (max-width: 450px) {
+          @include mixins.respond(mobile) {
             font-size: 13px;
           }
         }
 
         .userRole {
-          @include font(14px, 400, #6e6d67);
+          @include mixins.font(14px, 400, #6e6d67);
 
-          @media (max-width: 450px) {
+          @include mixins.respond(mobile) {
             font-size: 12px;
           }
         }
@@ -238,10 +198,10 @@
 
     .textsWrapper {
       margin-top: 12px;
-      @include flex(flex-start, flex-start, column, 12px);
+      @include mixins.flex(flex-start, flex-start, column, 12px);
 
       .text {
-        @include font(13px, 400);
+        @include mixins.font(13px, 400);
 
         span {
           color: #297230;

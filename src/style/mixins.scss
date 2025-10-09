@@ -1,3 +1,5 @@
+// ================= Mixins =================
+
 // Центрирование flex
 @mixin flex($justify: flex-start, $align: stretch, $direction: row, $gap: 0) {
   display: flex;
@@ -42,4 +44,23 @@
   font-size: $size;
   font-weight: $weight;
   color: $color;
+}
+
+// Перечеркнутая старая цена
+@mixin price-old($color: #a3a3a3, $line-color: #ff0808, $font-size: 20px) {
+  position: relative;
+  font-size: $font-size;
+  font-weight: 600;
+  color: $color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    top: 50%;
+    width: 110%;
+    height: 2px;
+    background: $line-color;
+    transform: rotate(-10deg);
+  }
 }
