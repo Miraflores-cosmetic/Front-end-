@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Delivery.module.scss";
+import styles from "./DeliveryProfile.module.scss";
 import CustomCheckbox from "../custom-checkBox/CustomCheckbox";
 
 interface Address {
@@ -14,7 +14,7 @@ interface DeliveryProps {
   showTitle?: boolean; // 🔹 возможность скрывать/показывать заголовок
 }
 
-const Delivery: React.FC<DeliveryProps> = ({ showTitle = true }) => {
+const DeliveryProfile: React.FC<DeliveryProps> = ({ showTitle = true }) => {
   const [addresses, setAddresses] = useState<Address[]>([
     {
       id: 1,
@@ -87,4 +87,4 @@ const Delivery: React.FC<DeliveryProps> = ({ showTitle = true }) => {
   );
 };
 
-export default Delivery;
+export default DeliveryProfile;

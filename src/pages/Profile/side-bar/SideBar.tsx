@@ -23,26 +23,28 @@ const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   return (
     <aside className={styles.sidebar}>
-      <h1 className={styles.userName}>{userName}</h1>
+      <div className={styles.nameMenuWrapper}>
+        <h1 className={styles.userName}>{userName}</h1>
 
-      <nav className={styles.menu}>
-        {menuItems.map((item) => (
-          <button
-            key={item.id}
-            className={`${styles.menuItem} ${
-              activeTab === item.id ? styles.active : ""
-            }`}
-            onClick={() => setActiveTab(item.id)}
-          >
-            {item.label}
-            <div
-              className={
-                activeTab === item.id ? styles.activeDot : styles.notActiveDot
-              }
-            />
-          </button>
-        ))}
-      </nav>
+        <nav className={styles.menu}>
+          {menuItems.map((item) => (
+            <button
+              key={item.id}
+              className={`${styles.menuItem} ${
+                activeTab === item.id ? styles.active : ""
+              }`}
+              onClick={() => setActiveTab(item.id)}
+            >
+              {item.label}
+              <div
+                className={
+                  activeTab === item.id ? styles.activeDot : styles.notActiveDot
+                }
+              />
+            </button>
+          ))}
+        </nav>
+      </div>
 
       <div className={styles.support}>
         <p>Нужна помощь?</p>
