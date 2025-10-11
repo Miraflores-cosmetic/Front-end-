@@ -1,0 +1,81 @@
+.sidebar {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.userName {
+  font-family: "trial";
+  font-size: 48px;
+  font-weight: 300;
+  margin-bottom: 46px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 400px;
+}
+
+.menuItem {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6e6d67;
+  cursor: pointer;
+  transition: 0.2s;
+  border-top: 1px solid #6e6d6799;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    opacity: 1;
+    color: black;
+  }
+}
+
+.activeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  background-color: #6e6d67;
+}
+
+.notActiveDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+.active {
+  opacity: 1;
+  font-weight: 500;
+  position: relative;
+  color:black &::after {
+    content: "•";
+    position: absolute;
+    right: -10px;
+    color: #000;
+  }
+}
+
+.support {
+  font-size: 12px;
+  color: #777;
+  margin-top: auto;
+
+  a {
+    display: block;
+    margin-top: 4px;
+    text-decoration: underline;
+    color: #000;
+  }
+}
