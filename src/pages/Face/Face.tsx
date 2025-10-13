@@ -6,7 +6,7 @@ import footerImage from "@/assets/images/footerImage.webp";
 import TabBar from "@/components/tab-bar/TabBar";
 
 import krem from "@/assets/images/krem.webp";
-import kosmetika from "@/assets/images/kosmetika.png";
+import kosmetika from "@/assets/images/kosmetika.webp";
 
 import girlwithsmile from "@/assets/images/girlsmile.webp";
 import etap1 from "@/assets/images/etap1.webp";

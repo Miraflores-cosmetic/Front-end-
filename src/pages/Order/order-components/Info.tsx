@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../right-part/OrderRightPart.module.scss";
-import userImage from "@/assets/images/userImage.png";
+import userImage from "@/assets/images/userImage.webp";
 
 const InfoContent = () => {
   return (

@@ -3,7 +3,7 @@ import styles from "./ArticleDetail.module.scss";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import footerImage from "@/assets/images/footerImage.webp";
-import userImage from "@/assets/images/userImage.png";
+import userImage from "@/assets/images/userImage.webp";
 import back from "@/assets/icons/go-back.svg";
 import { useSelector } from "react-redux";
 import krem from "@/assets/images/krem.webp";

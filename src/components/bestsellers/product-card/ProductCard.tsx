@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../Bestsellers.module.scss";
 import gift from "@/assets/icons/gift.svg";
-import whiteGift from "@/assets/icons/whiteGift.png";
+import whiteGift from "@/assets/icons/whiteGift.webp";
 import { useDispatch } from "react-redux";
 import {
   addBestSellerToList,

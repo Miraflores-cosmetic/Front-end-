@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./TopBlock.module.scss";
 
-import flower from "@/assets/images/flower.png";
-import flowerSmall from "@/assets/images/flowerSmall.png";
+import flower from "@/assets/images/flower.webp";
+import flowerSmall from "@/assets/images/flowerSmall.webp";
 import lineTo from "@/assets/icons/lineTo.svg";
 import info from "@/assets/icons/info.svg";
 

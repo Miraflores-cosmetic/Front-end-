@@ -3,7 +3,7 @@ import styles from "./TotalAccardion.module.scss";
 import { TotalAccordionProps } from "../types";
 import promoImage from "@/assets/icons/promocode.svg";
 import addImage from "@/assets/icons/add.svg";
-import userImage from "@/assets/images/userImage.png";
+import userImage from "@/assets/images/userImage.webp";
 
 const TotalAccordion: React.FC<TotalAccordionProps> = ({
   total,
