@@ -12,8 +12,6 @@ import BestSeller from "@/pages/BestSeller/BestSeller";
 import FacePage from "./pages/Face/Face";
 import Articles from "./pages/Articles/Articles";
 import ArticleDetail from "./pages/ArticleDetail/ArticleDetail";
-import Order from "./pages/Order/Order";
-import ProfilePage from "./pages/Profile/Profile";
 
 const App: React.FC = () => {
   return (
@@ -30,8 +28,6 @@ const App: React.FC = () => {
         <Route path="/face" element={<FacePage />} />
         <Route path="about/articles" element={<Articles />} />
         <Route path="about/articles/:id" element={<ArticleDetail />} />
-        <Route path="/order" element={<Order />} />
-        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
 
       <DrawerWrapper />
