@@ -1,8 +1,11 @@
 import React from "react";
 import styles from "./InfoContent.module.scss";
 import DeliveryProfile from "@/components/delivary-profile/DeliveryProfile";
+import { openDrawer } from "@/store/slices/drawerSlice";
+import { useDispatch } from "react-redux";
 
 const InfoContent: React.FC = () => {
+  const dispatch = useDispatch();
   // 🔹 Данные о пользователе
   const userInfo = [
     [
@@ -18,6 +21,10 @@ const InfoContent: React.FC = () => {
       { name: "Получать поздравления?", value: "Да" },
     ],
   ];
+
+  const handleChange = () => {
+    dispatch(openDrawer("about"));
+  };
 
   return (
     <main className={styles.infoContent}>
@@ -41,7 +48,7 @@ const InfoContent: React.FC = () => {
           </article>
         ))}
 
-        <div className={styles.changeBtn}>
+        <div className={styles.changeBtn} onClick={handleChange}>
           <p>Изменить</p>
         </div>
       </section>

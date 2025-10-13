@@ -1,0 +1,20 @@
+.drawer {
+  height: 100%;
+  width: 450px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 664px) {
+    width: 100%;
+  }
+
+  .contentWrapper {
+    width: 100%;
+    height: calc(100% - 127px);
+  }
+}
+
+.open {
+  transform: translateX(0);
+}

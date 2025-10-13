@@ -9,6 +9,7 @@ import MenuDrawer from "./menu-drawer/MenuDrawer";
 import { closeDrawer } from "@/store/slices/drawerSlice";
 import { RootState } from "@/store/store";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+import AboutDrawer from "./about-drawer/AboutDrawer";
 
 const DrawerWrapper: React.FC = () => {
   const activeDrawer = useSelector(
@@ -18,6 +19,7 @@ const DrawerWrapper: React.FC = () => {
 
   const isOpenBasket = activeDrawer === "basket" ? true : false;
   const isOpenMenu = activeDrawer === "menu" ? true : false;
+  const isOpenAbout = activeDrawer === "about" ? true : false;
   const isMobileBasket = useScreenMatch(664);
 
   return (
@@ -39,6 +41,16 @@ const DrawerWrapper: React.FC = () => {
         direction="right"
       >
         <MenuDrawer />
+      </Drawer>
+      <Drawer
+        className={`${styles.drawerContainer} ${styles.center}`}
+        open={isOpenAbout}
+        onClose={() => dispatch(closeDrawer())}
+        size={450}
+        duration={0}
+        direction="right"
+      >
+        <AboutDrawer />
       </Drawer>
     </>
   );

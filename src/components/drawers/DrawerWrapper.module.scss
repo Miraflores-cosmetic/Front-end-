@@ -1,7 +1,15 @@
 .drawerContainer {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  display: flex;
+  justify-content: center;
   @media (max-width: 450px) {
     overflow-y: auto;
   }
+}
+
+.center {
+  position: fixed !important;
+  top: 0 !important;
+  left: calc(50% - 225px) !important;
 }
