@@ -10,11 +10,7 @@ interface Address {
   comment?: string;
 }
 
-interface DeliveryProps {
-  showTitle?: boolean; // 🔹 возможность скрывать/показывать заголовок
-}
-
-const DeliveryProfile: React.FC<DeliveryProps> = ({ showTitle = true }) => {
+const DeliveryProfile = () => {
   const [addresses, setAddresses] = useState<Address[]>([
     {
       id: 1,
@@ -52,11 +48,16 @@ const DeliveryProfile: React.FC<DeliveryProps> = ({ showTitle = true }) => {
   };
 
   return (
-    <div className={styles.delivery}>
-      {showTitle && <h2 className={styles.title}>Доставка</h2>}{" "}
+    <div className={styles.deliveryProfile}>
+      <article className={styles.headerWrapper}>
+        <h2 className={styles.title}>Адреса доставки</h2>
+        <p className={styles.addAddress} onClick={handleAddAddress}>
+          + новый адрес
+        </p>
+      </article>
       {/* 👈 условный рендер */}
       <ul className={styles.list}>
-        {addresses.map((address) => (
+        {addresses.map((address, index) => (
           <li key={address.id} className={styles.item}>
             <label className={styles.label}>
               <CustomCheckbox
@@ -65,14 +66,20 @@ const DeliveryProfile: React.FC<DeliveryProps> = ({ showTitle = true }) => {
                 borderRadius={50}
               />
               <div className={styles.info}>
-                <p className={styles.type}>{address.type}</p>
-                <p className={styles.address}>
-                  {address.city}, {address.street}
-                </p>
-                {address.comment && (
-                  <p className={styles.comment}>
-                    Комментарий : <span>{address.comment}</span>
+                <div>
+                  <p className={styles.type}>{address.type}</p>
+                  <p className={styles.address}>
+                    {address.city}, {address.street}
                   </p>
+                  {address.comment && (
+                    <p className={styles.comment}>
+                      Комментарий : <span>{address.comment}</span>
+                    </p>
+                  )}
+                </div>
+
+                {selectedId === address.id && index === 0 && (
+                  <p className={styles.defaultAddress}>адрес по умолчанию</p>
                 )}
               </div>
             </label>
@@ -80,9 +87,6 @@ const DeliveryProfile: React.FC<DeliveryProps> = ({ showTitle = true }) => {
           </li>
         ))}
       </ul>
-      <button onClick={handleAddAddress} className={styles.addBtn}>
-        + Новый адрес
-      </button>
     </div>
   );
 };

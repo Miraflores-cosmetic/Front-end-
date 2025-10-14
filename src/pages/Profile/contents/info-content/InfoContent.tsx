@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./InfoContent.module.scss";
 import DeliveryProfile from "@/components/delivary-profile/DeliveryProfile";
 import { openDrawer } from "@/store/slices/drawerSlice";
+import telegram from "@/assets/icons/telegram.svg";
 import { useDispatch } from "react-redux";
 
 const InfoContent: React.FC = () => {
@@ -54,12 +55,18 @@ const InfoContent: React.FC = () => {
       </section>
 
       <section className={styles.infoAddressWrapper}>
-        <article className={styles.address}>
-          <p className={styles.addressTitle}>Адреса доставки</p>
-        </article>
         <section>
-          <DeliveryProfile showTitle={false} />
+          <DeliveryProfile />
         </section>
+      </section>
+      <section className={styles.infoBotWrapper}>
+        <section className={styles.telegramBot}>
+          <img src={telegram} alt={telegram} className={styles.telegramIcon} />
+          <p className={styles.telegramBotText}>Наш бот в Телеграме</p>
+        </section>
+        <p className={styles.telegramBotTextSuccess}>
+          Вы успешно авторизованы!
+        </p>
       </section>
     </main>
   );

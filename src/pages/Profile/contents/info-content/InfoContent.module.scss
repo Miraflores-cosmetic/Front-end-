@@ -68,4 +68,28 @@
       }
     }
   }
+  .infoBotWrapper {
+    padding-top: 40px;
+    border-top: 1px solid #6e6d6799;
+    .telegramBot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .telegramIcon {
+        width: 20px;
+        height: 20px;
+      }
+      .telegramBotText {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+    .telegramBotTextSuccess {
+      color: #297230;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 24px;
+    }
+  }
 }
