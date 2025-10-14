@@ -32,6 +32,10 @@ const TotalAccordion: React.FC<TotalAccordionProps> = ({
             {products.map((item) => (
               <div key={item.id} className={styles.productItem}>
                 <div className={styles.imageWrapper}>
+                  <div className={styles.countWrapper}>
+                    {" "}
+                    <p className={styles.count}>{1}</p>
+                  </div>{" "}
                   <img
                     src={item.image}
                     alt={item.name}
