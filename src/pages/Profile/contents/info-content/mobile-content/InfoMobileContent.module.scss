@@ -1,0 +1,58 @@
+.infoMobileContent {
+  margin-top: 24px;
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  border-top: 1px solid #6e6d6799;
+  .title {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .infoWrapper {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .category {
+        color: #6e6d67;
+        font-size: 14px;
+      }
+
+      .value {
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+    .infoPass {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .dotsWrapper {
+        display: flex;
+        gap: 4px;
+        .dot {
+          width: 6px;
+          height: 6px;
+          background-color: #6b6b6b; // серый цвет точек
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          border-radius: 6px;
+        }
+      }
+    }
+    .change {
+      color: #6e6d67;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+  }
+}

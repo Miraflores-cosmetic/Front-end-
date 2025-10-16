@@ -12,6 +12,9 @@
       font-size: 16px;
       font-weight: 500;
       text-transform: uppercase;
+      @media (max-width: 450px) {
+        font-size: 14px;
+      }
     }
     .addAddress {
       color: #6e6d67;

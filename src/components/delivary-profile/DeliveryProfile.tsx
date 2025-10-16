@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./DeliveryProfile.module.scss";
 import CustomCheckbox from "../custom-checkBox/CustomCheckbox";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 interface Address {
   id: number;
@@ -32,6 +33,7 @@ const DeliveryProfile = () => {
       comment: "Осторожно, злая собака!",
     },
   ]);
+  const isMobile = useScreenMatch(768);
 
   const [selectedId, setSelectedId] = useState<number>(1);
 
@@ -51,9 +53,11 @@ const DeliveryProfile = () => {
     <div className={styles.deliveryProfile}>
       <article className={styles.headerWrapper}>
         <h2 className={styles.title}>Адреса доставки</h2>
-        <p className={styles.addAddress} onClick={handleAddAddress}>
-          + новый адрес
-        </p>
+        {!isMobile && (
+          <p className={styles.addAddress} onClick={handleAddAddress}>
+            + новый адрес
+          </p>
+        )}
       </article>
       {/* 👈 условный рендер */}
       <ul className={styles.list}>
@@ -78,7 +82,7 @@ const DeliveryProfile = () => {
                   )}
                 </div>
 
-                {selectedId === address.id && index === 0 && (
+                {selectedId === address.id && index === 0 && !isMobile && (
                   <p className={styles.defaultAddress}>адрес по умолчанию</p>
                 )}
               </div>
@@ -87,6 +91,11 @@ const DeliveryProfile = () => {
           </li>
         ))}
       </ul>
+      {isMobile && (
+        <button onClick={handleAddAddress} className={styles.addBtn}>
+          + Новый адрес
+        </button>
+      )}
     </div>
   );
 };

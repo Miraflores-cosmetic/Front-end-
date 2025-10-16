@@ -30,6 +30,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     if (isMobile) {
       // при мобилке: открываем/закрываем аккордеон
       setOpenAccordion((prev) => (prev === id ? null : id));
+      setActiveTab(id);
     } else {
       // при десктопе: просто активируем вкладку
       setActiveTab(id);

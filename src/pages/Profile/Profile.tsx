@@ -8,6 +8,7 @@ import OrdersContent from "./contents/orders-content/OrdersContent";
 import FavoritesContent from "./contents/favorites-content/FavoritesContent";
 import BonusContent from "./contents/bonuses-content/BonusContent";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+import InfoMobileContent from "./contents/info-content/mobile-content/InfoMobileContent";
 
 const ProfilePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabId>("info");
@@ -17,7 +18,7 @@ const ProfilePage: React.FC = () => {
     {
       id: "info" as TabId,
       label: "Общая информация",
-      content: <div>Контент избранного</div>,
+      content: <InfoMobileContent />,
     },
     {
       id: "orders" as TabId,
