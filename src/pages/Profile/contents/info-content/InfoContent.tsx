@@ -94,7 +94,7 @@ const InfoContent: React.FC = () => {
   };
 
   return (
-    <main className={styles.infoContent}>
+    <article className={styles.infoContent}>
       <section className={styles.infoTitleWrapper}>
         <p className={styles.infoTitle}>Здравствуйте, Федор</p>
       </section>
@@ -112,12 +112,13 @@ const InfoContent: React.FC = () => {
                 <p className={styles.value}>{item.value}</p>
               </div>
             ))}
+            {groupIndex === 0 && (
+              <div className={styles.changeBtn} onClick={handleChange}>
+                <p>Изменить</p>
+              </div>
+            )}
           </article>
         ))}
-
-        <div className={styles.changeBtn} onClick={handleChange}>
-          <p>Изменить</p>
-        </div>
       </section>
       <section className={styles.infoAddressWrapper}>
         <section>
@@ -136,7 +137,7 @@ const InfoContent: React.FC = () => {
       <section className={styles.infoSliderWrapper}>
         <Bestsellers products={products} />
       </section>
-    </main>
+    </article>
   );
 };
 

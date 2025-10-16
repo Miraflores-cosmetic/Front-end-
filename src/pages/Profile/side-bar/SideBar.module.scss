@@ -1,5 +1,5 @@
 .sidebar {
-  min-width: 400px;
+  width: calc(30% - 70px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,7 +16,6 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    width: 400px;
   }
 
   .menuItem {

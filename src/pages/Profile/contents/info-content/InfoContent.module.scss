@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 40px;
   .infoTitleWrapper {
-    margin-top: 12px;
     .infoTitle {
       font-family: "trial";
       font-size: 36px;
@@ -27,7 +26,7 @@
     }
     .aboutWrapper {
       display: flex;
-      gap: 160px;
+      gap: 118px;
 
       .name {
         color: #6e6d67;
@@ -40,13 +39,15 @@
       }
       .wrapper {
         min-width: 33%;
+        width: 300px;
       }
     }
     .changeBtn {
       cursor: pointer;
       position: absolute;
-      right: 0;
-      top: 40px;
+      right: 0px;
+      top: 85px;
+
       p {
         font-size: 16px;
         font-weight: 500;

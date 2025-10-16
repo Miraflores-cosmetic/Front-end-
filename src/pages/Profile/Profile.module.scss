@@ -1,6 +1,7 @@
 @use "@/style/variables.scss" as *;
 
 .profileContainer {
+  width: 100%;
   padding: 0 32px;
   height: 100vh;
   background-color: $white;
@@ -12,10 +13,11 @@
 
   .contentWrapper {
     margin-top: 100px;
+    width: 100%;
     .profile {
       display: flex;
       min-height: 100vh;
-      gap: 145px;
+      gap: 140px;
     }
   }
 }
