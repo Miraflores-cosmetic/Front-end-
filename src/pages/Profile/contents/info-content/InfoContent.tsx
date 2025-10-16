@@ -135,7 +135,8 @@ const InfoContent: React.FC = () => {
         </p>
       </section>
       <section className={styles.infoSliderWrapper}>
-        <Bestsellers products={products} />
+        <p className={styles.title}>КОЕ-ЧТО НОВОЕ ДЛЯ ВАС</p>
+        <Bestsellers products={products} isTitleHidden slidesToShow={2} />
       </section>
     </article>
   );

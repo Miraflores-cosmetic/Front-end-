@@ -7,9 +7,11 @@ import InfoContent from "./contents/info-content/InfoContent";
 import OrdersContent from "./contents/orders-content/OrdersContent";
 import FavoritesContent from "./contents/favorites-content/FavoritesContent";
 import BonusContent from "./contents/bonuses-content/BonusContent";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 const ProfilePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabId>("info");
+  const isMobile = useScreenMatch(756);
 
   const menuItems = [
     { id: "info" as TabId, label: "Общая информация" },
@@ -43,7 +45,12 @@ const ProfilePage: React.FC = () => {
             setActiveTab={setActiveTab}
           />
           {/* ПРАВАЯ ЧАСТЬ */}
-          <ProfileContent activeTab={activeTab} renderContent={renderContent} />
+          {!isMobile && (
+            <ProfileContent
+              activeTab={activeTab}
+              renderContent={renderContent}
+            />
+          )}
         </div>
       </section>
     </main>

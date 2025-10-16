@@ -1,8 +1,11 @@
 .sidebar {
-  width: calc(30% - 70px);
+  width: calc(30% - 50px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: 756px) {
+    width: 100%;
+  }
 }
 .nameMenuWrapper {
   .userName {
