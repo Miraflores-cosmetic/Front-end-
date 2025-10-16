@@ -14,12 +14,33 @@ const ProfilePage: React.FC = () => {
   const isMobile = useScreenMatch(756);
 
   const menuItems = [
-    { id: "info" as TabId, label: "Общая информация" },
-    { id: "orders" as TabId, label: "Заказы" },
-    { id: "favorites" as TabId, label: "Избранное" },
-    { id: "bonus" as TabId, label: "Бонусный счёт" },
-    { id: "logout" as TabId, label: "Выйти" },
+    {
+      id: "info" as TabId,
+      label: "Общая информация",
+      content: <div>Контент избранного</div>,
+    },
+    {
+      id: "orders" as TabId,
+      label: "Заказы",
+      content: <div>Контент избранного22</div>,
+    },
+    {
+      id: "favorites" as TabId,
+      label: "Избранное",
+      content: <div>Контент избранного33</div>,
+    },
+    {
+      id: "bonus" as TabId,
+      label: "Бонусный счёт",
+      content: <div>Контент избранного44</div>,
+    },
+    {
+      id: "logout" as TabId,
+      label: "Выйти",
+      content: <div>Контент избранного55</div>,
+    },
   ];
+
   const renderContent = () => {
     switch (activeTab) {
       case "info":
