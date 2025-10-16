@@ -4,6 +4,9 @@ import DeliveryProfile from "@/components/delivary-profile/DeliveryProfile";
 import { openDrawer } from "@/store/slices/drawerSlice";
 import telegram from "@/assets/icons/telegram.svg";
 import { useDispatch } from "react-redux";
+import Bestsellers from "@/components/bestsellers/Bestsellers";
+import krem from "@/assets/images/krem.webp";
+import girlwithsmile from "@/assets/images/girlsmile.webp";
 
 const InfoContent: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,6 +24,69 @@ const InfoContent: React.FC = () => {
       { name: "Дата рождения", value: "23 декабря" },
       { name: "Получать поздравления?", value: "Да" },
     ],
+  ];
+
+  const products = [
+    {
+      id: 1,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 2,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 3,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 4,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 5,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 6,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
   ];
 
   const handleChange = () => {
@@ -53,7 +119,6 @@ const InfoContent: React.FC = () => {
           <p>Изменить</p>
         </div>
       </section>
-
       <section className={styles.infoAddressWrapper}>
         <section>
           <DeliveryProfile />
@@ -67,6 +132,9 @@ const InfoContent: React.FC = () => {
         <p className={styles.telegramBotTextSuccess}>
           Вы успешно авторизованы!
         </p>
+      </section>
+      <section className={styles.infoSliderWrapper}>
+        <Bestsellers products={products} />
       </section>
     </main>
   );

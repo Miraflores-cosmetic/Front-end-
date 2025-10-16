@@ -7,19 +7,22 @@ import { ProductBasteller } from "@/types/types";
 interface BestsellersProps {
   products: ProductBasteller[];
   isTitleHidden?: boolean;
+  slidesToShow?: number; // ✅ new prop
 }
 
 export default function Bestsellers({
   products,
   isTitleHidden,
+  slidesToShow = 3.1, // ✅ default value
 }: BestsellersProps) {
   const [activeIndex, setActiveIndex] = React.useState(0);
+
   const settings = {
     dots: true,
     arrows: true,
     infinite: false,
     speed: 500,
-    slidesToShow: 3.1,
+    slidesToShow, // ✅ dynamic value
     slidesToScroll: 1,
 
     afterChange: (current: number) => {

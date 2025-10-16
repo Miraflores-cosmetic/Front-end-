@@ -43,11 +43,11 @@ const DrawerWrapper: React.FC = () => {
         <MenuDrawer />
       </Drawer>
       <Drawer
-        className={`${styles.drawerContainer} ${styles.center}`}
+        className={styles.drawerContainer}
         open={isOpenAbout}
         onClose={() => dispatch(closeDrawer())}
         size={450}
-        duration={0}
+        duration={400}
         direction="right"
       >
         <AboutDrawer />

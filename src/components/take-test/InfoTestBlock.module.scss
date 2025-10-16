@@ -5,6 +5,10 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding-right: 32px;
+  @media (max-width: 450px) {
+    padding-right: 12px;
+  }
   .textWrapper {
     position: relative;
     display: flex;

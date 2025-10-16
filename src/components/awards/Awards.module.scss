@@ -2,8 +2,11 @@
   width: 100%;
   padding-top: 240px;
   margin-bottom: 150px;
+  padding-right: 32px;
+
   @media (max-width: 450px) {
     padding-top: 100px;
+    padding-right: 12px;
     margin-bottom: 40px;
   }
 

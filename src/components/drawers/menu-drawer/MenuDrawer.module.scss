@@ -1,4 +1,5 @@
 .menuContainer {
+  width: 100%;
   display: flex;
   @media (max-width: 450px) {
     flex-direction: column;

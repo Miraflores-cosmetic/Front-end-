@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
   gap: 56px;
+  padding-right: 32px;
+  @media (max-width: 450px) {
+    padding-right: 12px;
+  }
   .headerWrrapper {
     display: flex;
     flex-direction: column;

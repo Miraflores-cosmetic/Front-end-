@@ -5,16 +5,21 @@ import logoMobile from "@/assets/icons/MirafloresMobile.svg";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import HeaderLeft from "./LeftSideHeader/HeaderLeftPart";
 import HeaderRight from "./RightSideHeader/HeaderRightPart";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { getHeaderStyle } from "@/helpers/helpers";
 const Header: React.FC = () => {
   const isMobile = useScreenMatch(450);
   const navigate = useNavigate();
   const handleToHome = () => {
     navigate("/");
   };
-
+  const location = useLocation();
+  console.log(location.pathname, "patname");
   return (
-    <header className={styles.header}>
+    <header
+      className={styles.header}
+      style={getHeaderStyle(location.pathname, isMobile)}
+    >
       <HeaderLeft />
 
       {isMobile ? (
