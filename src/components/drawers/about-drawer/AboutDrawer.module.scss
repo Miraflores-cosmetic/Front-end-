@@ -1,17 +1,32 @@
 .drawer {
   height: 100%;
   width: 450px;
-
+  padding: 20px 24px 24px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width: 664px) {
-    width: 100%;
-  }
 
   .contentWrapper {
-    width: 100%;
-    height: calc(100% - 127px);
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    .headerWrapper {
+      display: flex;
+      justify-content: space-between;
+      .aboutUs {
+        font-weight: 300;
+        font-size: 24px;
+      }
+      .close {
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+    .infoWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
   }
 }
 

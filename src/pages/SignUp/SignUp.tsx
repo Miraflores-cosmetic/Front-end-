@@ -13,7 +13,7 @@ const SignUp: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNavigatetoHome = () => navigate("/");
-  const handleRequest = () => {};
+  const handleRequest = () => navigate("/profile");
   const handleSignIn = () => navigate("/sign-in");
 
   return (
