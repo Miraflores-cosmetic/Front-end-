@@ -1,4 +1,4 @@
-import { AllOrdersStats } from "../OrdersContent";
+import { AllOrdersStats } from "@/pages/Profile/types";
 import styles from "../OrdersContent.module.scss";
 import OrderItem from "./OrderItem";
 

@@ -14,7 +14,7 @@ const ProfilePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabId>("info");
   const isMobile = useScreenMatch(756);
 
-  const menuItems = [
+  const menuMobileItems = [
     {
       id: "info" as TabId,
       label: "Общая информация",
@@ -62,7 +62,7 @@ const ProfilePage: React.FC = () => {
           {/* ЛЕВАЯ КОЛОНКА */}
           <Sidebar
             userName="ФЕДОР П."
-            menuItems={menuItems}
+            menuItems={menuMobileItems}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />

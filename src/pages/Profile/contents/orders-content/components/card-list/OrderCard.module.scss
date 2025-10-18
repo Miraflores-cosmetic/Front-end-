@@ -50,6 +50,10 @@
       .count {
         @include mixins.font(16px, 400);
       }
+      .price {
+        font-size: 16px;
+        font-weight: 600;
+      }
 
       .surprise {
         @include mixins.flex(center, center);

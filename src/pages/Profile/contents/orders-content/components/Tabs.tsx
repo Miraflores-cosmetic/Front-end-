@@ -1,4 +1,4 @@
-import { TabType } from "../OrdersContent";
+import { TabType } from "@/pages/Profile/types";
 import styles from "../OrdersContent.module.scss";
 
 interface TabsProps {

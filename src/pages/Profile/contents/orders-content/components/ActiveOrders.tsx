@@ -1,4 +1,4 @@
-import { ActiveOrder } from "../OrdersContent";
+import { ActiveOrder } from "@/pages/Profile/types";
 import styles from "../OrdersContent.module.scss";
 import OrderItem from "./OrderItem";
 

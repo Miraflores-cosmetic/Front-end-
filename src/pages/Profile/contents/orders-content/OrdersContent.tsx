@@ -5,35 +5,23 @@ import { ActiveOrders } from "./components/ActiveOrders";
 import { Tabs } from "./components/Tabs";
 import CardList from "./components/card-list/CardList";
 import krem from "@/assets/images/krem.webp";
-import { CardItem } from "@/pages/Order/types";
-
-export interface ActiveOrder {
-  id: string;
-  date: string;
-  amount: string;
-  status: string;
-}
-
-export interface AllOrdersStats {
-  totalOrders: number;
-  totalAmount: string;
-}
-
-export type TabType = "active" | "all";
+import {
+  ActiveOrder,
+  AllOrdersStats,
+  ProfileCardItem,
+  TabType,
+} from "../../types";
 
 const OrdersContent: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>("active");
-  const cartData: CardItem[] = [
+  const cartData: ProfileCardItem[] = [
     {
       id: 1,
       image: krem,
       alt: "krem",
       name: "Цветочный мист с экстрактами розы",
       size: "50 мл",
-      discount: "-23%",
       count: "1 шт.",
-      priceOld: "4800₽",
-      priceNew: "3590₽",
       isGift: false,
     },
     {
@@ -42,10 +30,7 @@ const OrdersContent: React.FC = () => {
       alt: "krem",
       name: "Цветочный мист с экстрактами розы",
       size: "50 мл",
-      discount: "-23%",
       count: "1 шт.",
-      priceOld: "4800₽",
-      priceNew: "3590₽",
       isGift: false,
     },
     {
@@ -54,11 +39,8 @@ const OrdersContent: React.FC = () => {
       alt: "krem",
       name: "Цветочный мист с экстрактами розы",
       size: "50 мл",
-      discount: "-23%",
       count: "1 шт.",
-      priceOld: "4800₽",
-      priceNew: "3590₽",
-      isGift: false,
+      isGift: true,
     },
     {
       id: 4,
@@ -66,7 +48,6 @@ const OrdersContent: React.FC = () => {
       alt: "tonic",
       name: "Тоник для лица с розой",
       size: "100 мл",
-      discount: "",
       count: "1 шт.",
       isGift: true,
     },

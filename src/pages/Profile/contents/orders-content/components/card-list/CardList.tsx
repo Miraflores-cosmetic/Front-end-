@@ -7,10 +7,7 @@ export interface CartItem {
   alt: string;
   name: string;
   size: string;
-  discount?: string;
   count: string;
-  priceOld?: string;
-  priceNew?: string;
   isGift?: boolean;
 }
 
@@ -33,26 +30,15 @@ const CardList: React.FC<OrderCartListProps> = ({ cartData }) => {
                 <p className={styles.name}>{item.name}</p>
                 <p className={styles.size}>{item.size}</p>
               </div>
-
-              {item.discount && (
-                <div className={styles.discount}>{item.discount}</div>
-              )}
             </div>
 
             <div className={styles.bottom}>
-              {
-                <p className={styles.count}>
-                  {item.discount ? item.count : null}
-                </p>
-              }
+              <p className={styles.count}>{item.count}</p>
 
               {item.isGift ? (
                 <div className={styles.surprise}>Подарок</div>
               ) : (
-                <div className={styles.price}>
-                  <p className={styles.priceOld}>{item.priceOld}</p>
-                  <p className={styles.priceNew}>{item.priceNew}</p>
-                </div>
+                <div className={styles.price}>9050₽</div>
               )}
             </div>
           </div>
