@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styles from "./SideBar.module.scss";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+import krem from "@/assets/images/krem.webp";
+import girlwithsmile from "@/assets/images/girlsmile.webp";
+import Bestsellers from "@/components/bestsellers/Bestsellers";
 
 export type TabId = "info" | "orders" | "favorites" | "bonus" | "logout";
 
@@ -37,6 +40,69 @@ const Sidebar: React.FC<SidebarProps> = ({
     }
   };
 
+  const products = [
+    {
+      id: 1,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 2,
+      title: "Энзимный мусс для умывания",
+      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 22,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 3,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 4,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 5,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+    {
+      id: 6,
+      title: "Цветочный мист",
+      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      price: 3590,
+      oldPrice: 4600,
+      discount: 23,
+      image: krem,
+      hoverImage: girlwithsmile,
+    },
+  ];
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.nameMenuWrapper}>
@@ -69,11 +135,14 @@ const Sidebar: React.FC<SidebarProps> = ({
           ))}
         </nav>
       </div>
+      {isMobile && <Bestsellers products={products} />}
 
-      <div className={styles.support}>
-        <p>Нужна помощь?</p>
-        <a href="#">Свяжитесь с нами</a>
-      </div>
+      {!isMobile && (
+        <div className={styles.support}>
+          <p>Нужна помощь?</p>
+          <a href="#">Свяжитесь с нами</a>
+        </div>
+      )}
     </aside>
   );
 };
