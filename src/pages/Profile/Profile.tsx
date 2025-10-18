@@ -23,7 +23,7 @@ const ProfilePage: React.FC = () => {
     {
       id: "orders" as TabId,
       label: "Заказы",
-      content: <div>Контент избранного22</div>,
+      content: <OrdersContent />,
     },
     {
       id: "favorites" as TabId,
