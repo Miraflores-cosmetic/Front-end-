@@ -47,6 +47,9 @@
   cursor: pointer;
   text-decoration: underline;
   margin-bottom: 12px;
+  @media (max-width: 450px) {
+    font-size: 14px;
+  }
 }
 
 .passwordDisplay {

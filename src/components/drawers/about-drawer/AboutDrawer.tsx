@@ -90,7 +90,7 @@ const AboutDrawer: React.FC = () => {
         </article>
       </div>
       <div className={styles.buttonWrapper}>
-        <button className={styles.orderButtonLeft} onClick={handleOrder}>
+        <button className={styles.orderButton} onClick={handleOrder}>
           Сохранить
         </button>
       </div>
