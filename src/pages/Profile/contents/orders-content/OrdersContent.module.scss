@@ -1,0 +1,21 @@
+.ordersContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  .ordersTitleWrapper {
+    .ordersTitle {
+      font-family: "trial";
+      font-size: 36px;
+      font-weight: 300;
+    }
+    margin-bottom: 11px;
+  }
+  .ordersWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 40px;
+    border-top: 1px solid #6e6d6799;
+  }
+}
