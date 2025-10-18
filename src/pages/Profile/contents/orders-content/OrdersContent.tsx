@@ -3,6 +3,9 @@ import styles from "./OrdersContent.module.scss";
 import { AllOrders } from "./components/AllOrders";
 import { ActiveOrders } from "./components/ActiveOrders";
 import { Tabs } from "./components/Tabs";
+import CardList from "./components/card-list/CardList";
+import krem from "@/assets/images/krem.webp";
+import { CardItem } from "@/pages/Order/types";
 
 export interface ActiveOrder {
   id: string;
@@ -20,6 +23,54 @@ export type TabType = "active" | "all";
 
 const OrdersContent: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>("active");
+  const cartData: CardItem[] = [
+    {
+      id: 1,
+      image: krem,
+      alt: "krem",
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      discount: "-23%",
+      count: "1 шт.",
+      priceOld: "4800₽",
+      priceNew: "3590₽",
+      isGift: false,
+    },
+    {
+      id: 2,
+      image: krem,
+      alt: "krem",
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      discount: "-23%",
+      count: "1 шт.",
+      priceOld: "4800₽",
+      priceNew: "3590₽",
+      isGift: false,
+    },
+    {
+      id: 3,
+      image: krem,
+      alt: "krem",
+      name: "Цветочный мист с экстрактами розы",
+      size: "50 мл",
+      discount: "-23%",
+      count: "1 шт.",
+      priceOld: "4800₽",
+      priceNew: "3590₽",
+      isGift: false,
+    },
+    {
+      id: 4,
+      image: krem,
+      alt: "tonic",
+      name: "Тоник для лица с розой",
+      size: "100 мл",
+      discount: "",
+      count: "1 шт.",
+      isGift: true,
+    },
+  ];
 
   const activeOrder: ActiveOrder = {
     id: "№5698LB",
@@ -50,6 +101,17 @@ const OrdersContent: React.FC = () => {
           )}
         </div>
       </section>
+      <article className={styles.listContainer}>
+        {activeTab === "active" ? (
+          <p className={styles.activeText}>2 товара</p>
+        ) : (
+          <div className={styles.allText}>
+            <p>Заказ №5698LB </p>
+            <p>20 декабря 2025</p>
+          </div>
+        )}{" "}
+        <CardList cartData={cartData} />
+      </article>
     </article>
   );
 };

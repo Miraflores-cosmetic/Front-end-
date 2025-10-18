@@ -64,4 +64,23 @@
       }
     }
   }
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .activeText {
+      color: #6e6d67;
+      font-size: 14px;
+      font-weight: 400px;
+    }
+    .allText {
+      display: flex;
+      justify-content: space-between;
+      p {
+        color: #6e6d67;
+        font-size: 14px;
+        font-weight: 400px;
+      }
+    }
+  }
 }
