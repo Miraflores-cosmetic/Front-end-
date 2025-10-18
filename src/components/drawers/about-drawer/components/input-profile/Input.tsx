@@ -10,6 +10,7 @@ interface CustomInputProps {
   buttonText?: string;
   onButtonClick?: () => void;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  width?: string | number; // 🔹 Add dynamic width prop
 }
 
 export const Input: React.FC<CustomInputProps> = ({
@@ -21,11 +22,16 @@ export const Input: React.FC<CustomInputProps> = ({
   buttonText,
   onButtonClick,
   onChange,
+  width, // 🔹 Receive width prop
 }) => {
   return (
-    <div className={styles.wrapper}>
+    <div
+      className={styles.wrapper}
+      style={{ width }} // 🔹 Apply dynamic width
+    >
       {imageSrc && <img src={imageSrc} alt="icon" className={styles.icon} />}
       {label && <label className={styles.label}>{label}</label>}
+
       <div className={styles.inputRow}>
         {type === "password" ? (
           <div className={styles.passwordDisplay}>

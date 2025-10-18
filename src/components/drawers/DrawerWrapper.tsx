@@ -21,6 +21,7 @@ const DrawerWrapper: React.FC = () => {
   const isOpenMenu = activeDrawer === "menu" ? true : false;
   const isOpenAbout = activeDrawer === "about" ? true : false;
   const isMobileBasket = useScreenMatch(664);
+  const isMobile = useScreenMatch(450);
 
   return (
     <>
@@ -46,7 +47,7 @@ const DrawerWrapper: React.FC = () => {
         className={styles.drawerContainer}
         open={isOpenAbout}
         onClose={() => dispatch(closeDrawer())}
-        size={450}
+        size={isMobile ? "100%" : 450}
         duration={400}
         direction="right"
       >

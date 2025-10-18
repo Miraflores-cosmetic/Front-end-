@@ -6,6 +6,7 @@ import { closeDrawer } from "@/store/slices/drawerSlice";
 import { Input } from "./components/input-profile/Input";
 import CustomCheckbox from "@/components/custom-checkBox/CustomCheckbox";
 import warning from "@/assets/icons/warning.svg";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 const AboutDrawer: React.FC = () => {
   const [name, setName] = useState("Фёдор Ники́форович Плевако́ ");
@@ -15,6 +16,7 @@ const AboutDrawer: React.FC = () => {
   const [city, setCity] = useState("");
   const [password, setPassword] = useState("**********");
   const [checked, setChecked] = useState(true);
+  const isMobile = useScreenMatch(450);
 
   const dispatch = useDispatch();
 
@@ -64,12 +66,16 @@ const AboutDrawer: React.FC = () => {
                 label=""
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
+                width="50%"
               />
               <Input
                 label=""
-                placeholder="Год рождения (опционально)"
+                placeholder={`Год рождения${
+                  isMobile ? " (необяз.)" : " (необязательно)"
+                }`}
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
+                width="50%"
               />
             </article>
             <article className={styles.checkboxWrapper}>
@@ -83,7 +89,11 @@ const AboutDrawer: React.FC = () => {
           <p>Небольшое описание поздравлений</p>
         </article>
       </div>
-      <div className={styles.buttonContainer}></div>
+      <div className={styles.buttonWrapper}>
+        <button className={styles.orderButtonLeft} onClick={handleOrder}>
+          Сохранить
+        </button>
+      </div>
     </div>
   );
 };
