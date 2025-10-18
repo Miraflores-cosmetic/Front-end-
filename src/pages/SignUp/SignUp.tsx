@@ -13,7 +13,7 @@ const SignUp: React.FC = () => {
   const navigate = useNavigate();
 
   const handleNavigatetoHome = () => navigate("/");
-  // const handleRequest = () => navigate("/profile");
+  const handleRequest = () => navigate("/profile");
   const handleSignIn = () => navigate("/sign-in");
 
   return (
@@ -61,7 +61,7 @@ const SignUp: React.FC = () => {
         </div>
         <Button
           text="Далее"
-          // onClick={handleRequest}
+          onClick={handleRequest}
         />
       </div>
     </section>
