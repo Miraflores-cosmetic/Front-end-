@@ -27,13 +27,21 @@ export const Input: React.FC<CustomInputProps> = ({
       {imageSrc && <img src={imageSrc} alt="icon" className={styles.icon} />}
       {label && <label className={styles.label}>{label}</label>}
       <div className={styles.inputRow}>
-        <input
-          type={type}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          className={styles.input}
-        />
+        {type === "password" ? (
+          <div className={styles.passwordDisplay}>
+            {value.split("").map((_, i) => (
+              <span key={i} className={styles.dot}></span>
+            ))}
+          </div>
+        ) : (
+          <input
+            type={type}
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            className={styles.input}
+          />
+        )}
 
         {buttonText && (
           <button className={styles.button} onClick={onButtonClick}>

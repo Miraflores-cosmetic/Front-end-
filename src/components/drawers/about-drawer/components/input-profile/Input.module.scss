@@ -45,3 +45,20 @@
   text-decoration: underline;
   margin-bottom: 12px;
 }
+
+.passwordDisplay {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 4px;
+  height: 24px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #6e6d67;
+  border-radius: 50%;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
