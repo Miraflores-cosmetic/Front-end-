@@ -5,10 +5,10 @@ import Sidebar, { TabId } from "./side-bar/SideBar";
 import ProfileContent from "./content-wrapper/ProfileContent";
 import InfoContent from "./contents/info-content/InfoContent";
 import OrdersContent from "./contents/orders-content/OrdersContent";
-import FavoritesContent from "./contents/favorites-content/FavoritesContent";
 import BonusContent from "./contents/bonuses-content/BonusContent";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import InfoMobileContent from "./contents/info-content/mobile-content/InfoMobileContent";
+import FavoritesContent from "./contents/favorites-content/FavoritesContent";
 
 const ProfilePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabId>("info");
@@ -34,7 +34,9 @@ const ProfilePage: React.FC = () => {
     {
       id: "favorites" as TabId,
       label: "Избранное",
-      content: <div>Контент избранного33</div>,
+      content: (
+        <FavoritesContent setOpenAccordion={() => setOpenAccordion(null)} />
+      ),
     },
     {
       id: "bonus" as TabId,
@@ -55,7 +57,9 @@ const ProfilePage: React.FC = () => {
       case "orders":
         return <OrdersContent />;
       case "favorites":
-        return <FavoritesContent />;
+        return (
+          <FavoritesContent setOpenAccordion={() => setOpenAccordion(null)} />
+        );
       case "bonus":
         return <BonusContent />;
     }

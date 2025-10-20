@@ -58,7 +58,7 @@ const DrawerWrapper: React.FC = () => {
         className={styles.drawerContainer}
         open={isAddComment}
         onClose={() => dispatch(closeDrawer())}
-        size={isMobile ? "100%" : 450}
+        size={isMobile ? "100%" : 552}
         duration={400}
         direction="right"
       >
