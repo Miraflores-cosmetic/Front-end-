@@ -56,7 +56,6 @@ const OrdersContent: React.FC = () => {
   );
 };
 
-/* ------------------------------ Subcomponents ------------------------------ */
 
 interface TabsProps {
   activeTab: TabType;

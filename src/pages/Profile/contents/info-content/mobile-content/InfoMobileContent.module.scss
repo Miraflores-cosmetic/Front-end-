@@ -56,4 +56,37 @@
       text-decoration: underline;
     }
   }
+
+  .telegramContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    .telegramwrapper {
+      display: flex;
+      gap: 24px;
+      .top {
+        display: flex;
+        gap: 10px;
+        p {
+          font-size: 14px;
+          font-weight: 500;
+        }
+      }
+      .ArrowToRight {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .desc {
+      color: #6e6d67;
+      font-size: 13px;
+    }
+  }
+  .closeBtn {
+    cursor: pointer;
+    color: #6e6d67;
+    font-size: 13px;
+    font-weight: 500;
+  }
 }

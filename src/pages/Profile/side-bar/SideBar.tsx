@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./SideBar.module.scss";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import krem from "@/assets/images/krem.webp";
@@ -7,17 +7,19 @@ import Bestsellers from "@/components/bestsellers/Bestsellers";
 
 export type TabId = "info" | "orders" | "favorites" | "bonus" | "logout";
 
-interface MenuItem {
+export interface MenuItem {
   id: TabId;
   label: string;
   content?: React.ReactNode; // контент, который откроется в аккордеоне на мобилке
 }
 
-interface SidebarProps {
+export interface SidebarProps {
   userName: string;
   menuItems: MenuItem[];
   activeTab: TabId;
   setActiveTab: (tab: TabId) => void;
+  openAccordion: TabId | null; // 🔹 new prop
+  setOpenAccordion: React.Dispatch<React.SetStateAction<TabId | null>>; // ✅ correct typing
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -25,9 +27,10 @@ const Sidebar: React.FC<SidebarProps> = ({
   menuItems,
   activeTab,
   setActiveTab,
+  openAccordion,
+  setOpenAccordion,
 }) => {
   const isMobile = useScreenMatch(756);
-  const [openAccordion, setOpenAccordion] = useState<TabId | null>(null);
 
   const handleClick = (id: TabId) => {
     if (isMobile) {

@@ -12,18 +12,24 @@ import InfoMobileContent from "./contents/info-content/mobile-content/InfoMobile
 
 const ProfilePage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabId>("info");
+  const [openAccordion, setOpenAccordion] = useState<TabId | null>(null);
+
   const isMobile = useScreenMatch(756);
 
   const menuMobileItems = [
     {
       id: "info" as TabId,
       label: "Общая информация",
-      content: <InfoMobileContent />,
+      content: (
+        <InfoMobileContent setOpenAccordion={() => setOpenAccordion(null)} />
+      ),
     },
     {
       id: "orders" as TabId,
       label: "Заказы",
-      content: <OrdersContent />,
+      content: (
+        <OrdersContent setOpenAccordion={() => setOpenAccordion(null)} />
+      ),
     },
     {
       id: "favorites" as TabId,
@@ -65,6 +71,8 @@ const ProfilePage: React.FC = () => {
             menuItems={menuMobileItems}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
+            openAccordion={openAccordion}
+            setOpenAccordion={setOpenAccordion}
           />
           {/* ПРАВАЯ ЧАСТЬ */}
           {!isMobile && (

@@ -11,9 +11,17 @@ import {
   ProfileCardItem,
   TabType,
 } from "../../types";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
+import { TabId } from "../../side-bar/SideBar";
 
-const OrdersContent: React.FC = () => {
+interface OrdersContentProps {
+  setOpenAccordion?: React.Dispatch<React.SetStateAction<TabId | null>>; // ✅ add prop
+}
+
+const OrdersContent: React.FC<OrdersContentProps> = ({ setOpenAccordion }) => {
   const [activeTab, setActiveTab] = useState<TabType>("active");
+  const isMobile = useScreenMatch(450);
+
   const cartData: ProfileCardItem[] = [
     {
       id: 1,
@@ -65,10 +73,18 @@ const OrdersContent: React.FC = () => {
     totalAmount: "156.590₽",
   };
 
+  const handleCloseAccordion = () => {
+    if (setOpenAccordion) {
+      setOpenAccordion(null);
+    }
+  };
+
   return (
     <article className={styles.ourOrdersContent}>
       <header className={styles.ordersTitleWrapper}>
-        <p className={styles.ordersTitle}>Ваши заказы</p>
+        <p className={styles.ordersTitle}>
+          {isMobile ? "Заказы" : "Ваши заказы"}
+        </p>
       </header>
 
       <section className={styles.tabsContainer}>
@@ -82,6 +98,7 @@ const OrdersContent: React.FC = () => {
           )}
         </div>
       </section>
+
       <article className={styles.listContainer}>
         {activeTab === "active" ? (
           <p className={styles.activeText}>2 товара</p>
@@ -90,9 +107,14 @@ const OrdersContent: React.FC = () => {
             <p>Заказ №5698LB </p>
             <p>20 декабря 2025</p>
           </div>
-        )}{" "}
+        )}
         <CardList cartData={cartData} />
       </article>
+
+      {/* ✅ Close button */}
+      <p className={styles.closeBtn} onClick={handleCloseAccordion}>
+        Закрыть
+      </p>
     </article>
   );
 };

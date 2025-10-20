@@ -7,6 +7,13 @@
       font-family: "trial";
       font-size: 36px;
       font-weight: 300;
+      @media (max-width: 450px) {
+        font-family: "avanir";
+
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 24px;
+      }
     }
     margin-bottom: 11px;
   }
@@ -24,6 +31,7 @@
         display: flex;
         gap: 68px;
         margin-bottom: 24px;
+
         .tab {
           background: none;
           width: 157px;
@@ -37,6 +45,9 @@
           &.active {
             color: black;
           }
+          @media (max-width: 450px) {
+            font-size: 14px;
+          }
         }
       }
 
@@ -44,6 +55,11 @@
         display: flex;
         flex-wrap: wrap;
         gap: 68px;
+        @media (max-width: 450px) {
+          gap: 16px;
+          flex-wrap: nowrap;
+          flex-direction: column;
+        }
         .order {
           width: 157px;
           display: flex;
@@ -53,12 +69,18 @@
             font-size: 14px;
             color: #6e6d67;
             margin-bottom: 6px;
+            @media (max-width: 450px) {
+              font-size: 13px;
+            }
           }
 
           .value {
             font-size: 15px;
             font-weight: 500;
             color: black;
+            @media (max-width: 450px) {
+              padding: 0 14px 0 0;
+            }
           }
         }
       }
@@ -68,6 +90,9 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    @media (max-width: 450px) {
+      gap: 16px;
+    }
     .activeText {
       color: #6e6d67;
       font-size: 14px;
@@ -82,5 +107,11 @@
         font-weight: 400px;
       }
     }
+  }
+  .closeBtn {
+    cursor: pointer;
+    color: #6e6d67;
+    font-size: 13px;
+    font-weight: 500;
   }
 }

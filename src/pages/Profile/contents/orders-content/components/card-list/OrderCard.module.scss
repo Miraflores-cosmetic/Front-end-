@@ -10,10 +10,18 @@
     width: 100%;
     max-width: 180px;
     height: 180px;
+    @media (max-width: 450px) {
+      width: 88px;
+      height: 88px;
+    }
 
     .kremImage {
       width: 133px;
       height: 133px;
+      @media (max-width: 450px) {
+        min-width: 66px;
+        height: 66px;
+      }
     }
   }
 
@@ -29,9 +37,15 @@
 
         .name {
           @include mixins.font(16px, 600);
+          @media (max-width: 450px) {
+            @include mixins.font(13px, 600);
+          }
         }
         .size {
           @include mixins.font(14px, 400, #6e6d67);
+          @media (max-width: 450px) {
+            @include mixins.font(1412pxpx, 400, #6e6d67);
+          }
         }
       }
 
@@ -48,11 +62,17 @@
       @include mixins.flex(space-between, center, row, 8px);
 
       .count {
-        @include mixins.font(16px, 400);
+        @include mixins.font(16px, 600);
+        @media (max-width: 450px) {
+          @include mixins.font(13px, 600);
+        }
       }
       .price {
         font-size: 16px;
         font-weight: 600;
+        @media (max-width: 450px) {
+          font-size: 13px;
+        }
       }
 
       .surprise {
