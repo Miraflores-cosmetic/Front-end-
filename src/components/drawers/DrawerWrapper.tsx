@@ -20,6 +20,7 @@ const DrawerWrapper: React.FC = () => {
   const isOpenBasket = activeDrawer === "basket" ? true : false;
   const isOpenMenu = activeDrawer === "menu" ? true : false;
   const isOpenAbout = activeDrawer === "about" ? true : false;
+  const isAddComment = activeDrawer === "add-comment" ? true : false;
   const isMobileBasket = useScreenMatch(664);
   const isMobile = useScreenMatch(450);
 
@@ -52,6 +53,16 @@ const DrawerWrapper: React.FC = () => {
         direction="right"
       >
         <AboutDrawer />
+      </Drawer>
+      <Drawer
+        className={styles.drawerContainer}
+        open={isAddComment}
+        onClose={() => dispatch(closeDrawer())}
+        size={isMobile ? "100%" : 450}
+        duration={400}
+        direction="right"
+      >
+        <div>Add coment</div>
       </Drawer>
     </>
   );

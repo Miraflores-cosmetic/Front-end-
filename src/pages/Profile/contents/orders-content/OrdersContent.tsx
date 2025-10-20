@@ -13,6 +13,8 @@ import {
 } from "../../types";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import { TabId } from "../../side-bar/SideBar";
+import { useDispatch } from "react-redux";
+import { openDrawer } from "@/store/slices/drawerSlice";
 
 interface OrdersContentProps {
   setOpenAccordion?: React.Dispatch<React.SetStateAction<TabId | null>>; // ✅ add prop
@@ -21,6 +23,11 @@ interface OrdersContentProps {
 const OrdersContent: React.FC<OrdersContentProps> = ({ setOpenAccordion }) => {
   const [activeTab, setActiveTab] = useState<TabType>("active");
   const isMobile = useScreenMatch(450);
+  const dispatch = useDispatch();
+
+  const handleAddComment = () => {
+    dispatch(openDrawer("add-comment"));
+  };
 
   const cartData: ProfileCardItem[] = [
     {
@@ -110,11 +117,16 @@ const OrdersContent: React.FC<OrdersContentProps> = ({ setOpenAccordion }) => {
         )}
         <CardList cartData={cartData} />
       </article>
+      <div className={styles.addWrapper} onClick={handleAddComment}>
+        <button className={styles.addComment}>Оставить отзыв</button>
+      </div>
 
       {/* ✅ Close button */}
-      <p className={styles.closeBtn} onClick={handleCloseAccordion}>
-        Закрыть
-      </p>
+      {isMobile && (
+        <p className={styles.closeBtn} onClick={handleCloseAccordion}>
+          Закрыть
+        </p>
+      )}
     </article>
   );
 };

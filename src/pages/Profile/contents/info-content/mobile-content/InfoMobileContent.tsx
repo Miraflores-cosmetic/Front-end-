@@ -6,6 +6,7 @@ import telegram from "@/assets/icons/telegram.svg";
 import ArrowToRight from "@/assets/icons/ArrowToRight.svg";
 import { useDispatch } from "react-redux";
 import { TabId } from "@/pages/Profile/side-bar/SideBar";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 interface InfoMobileContentProps {
   setOpenAccordion: React.Dispatch<React.SetStateAction<TabId | null>>; // ✅ type matches Sidebar
@@ -15,6 +16,7 @@ const InfoMobileContent: React.FC<InfoMobileContentProps> = ({
   setOpenAccordion,
 }) => {
   const dispatch = useDispatch();
+  const isMobile = useScreenMatch(450);
 
   const handleChange = () => {
     dispatch(openDrawer("about"));
@@ -81,9 +83,11 @@ const InfoMobileContent: React.FC<InfoMobileContentProps> = ({
           Чтобы получать уведомления о доставке и специальные предложения
         </p>
       </article>
-      <p className={styles.closeBtn} onClick={handleCloseAccordion}>
-        Закрыть
-      </p>
+      {isMobile && (
+        <p className={styles.closeBtn} onClick={handleCloseAccordion}>
+          Закрыть
+        </p>
+      )}
     </article>
   );
 };
