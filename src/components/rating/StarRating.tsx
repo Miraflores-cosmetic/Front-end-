@@ -5,7 +5,7 @@ import styles from "./StarRating.module.scss";
 interface StarRatingProps {
   rating: number;
   max?: number;
-  text: string;
+  text?: string;
 }
 
 const StarRating: React.FC<StarRatingProps> = ({ rating, max = 5, text }) => {
@@ -28,7 +28,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating, max = 5, text }) => {
           );
         })}
       </div>
-      <p>{text}</p>
+      {text && <p>{text}</p>}
     </div>
   );
 };

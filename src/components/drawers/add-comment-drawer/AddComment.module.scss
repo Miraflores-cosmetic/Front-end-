@@ -1,0 +1,81 @@
+.drawer {
+  height: 100%;
+  width: 552px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  justify-content: space-between;
+  padding: 20px 24px;
+  .contentWrapper {
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+      .title {
+        font-family: "trial";
+        font-size: 24px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+      .closeTxt {
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+    }
+    .listWrapper {
+      .commentCart {
+        .imgNameWrapper {
+          display: flex;
+          align-items: start;
+          gap: 16px;
+          .imageWrapper {
+            display: flex;
+            width: 78px;
+            height: 78px;
+            background-color: #f6f5ef;
+            .image {
+              margin: auto;
+              width: 58px;
+              height: 58px;
+            }
+          }
+
+          .nameWrapper {
+            .title {
+              font-size: 16px;
+              font-weight: 600;
+            }
+            .size {
+              font-size: 14px;
+              font-weight: 400;
+              color: #6e6d67;
+            }
+          }
+        }
+        .rateWrapper {
+          margin-top: 24px;
+          display: flex;
+          gap: 4px;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .inputWrapper {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+  @media (max-width: 552px) {
+    width: 100%;
+  }
+}
+
+.open {
+  transform: translateX(0);
+}

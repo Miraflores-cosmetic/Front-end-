@@ -10,6 +10,7 @@ import { closeDrawer } from "@/store/slices/drawerSlice";
 import { RootState } from "@/store/store";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import AboutDrawer from "./about-drawer/AboutDrawer";
+import AddCommentDrawer from "./add-comment-drawer/AddComment";
 
 const DrawerWrapper: React.FC = () => {
   const activeDrawer = useSelector(
@@ -62,7 +63,7 @@ const DrawerWrapper: React.FC = () => {
         duration={400}
         direction="right"
       >
-        <div>Add coment</div>
+        <AddCommentDrawer />
       </Drawer>
     </>
   );
