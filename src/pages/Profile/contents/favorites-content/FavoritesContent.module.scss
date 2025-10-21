@@ -9,6 +9,9 @@
     font-family: "trial";
     font-size: 36px;
     font-weight: 300;
+    @media (max-width: 450px) {
+      font-size: 24px;
+    }
   }
   .container {
     border-top: 1px solid #6e6d6799;
@@ -33,6 +36,10 @@
         background-repeat: no-repeat;
         transition: background-image 0.5s ease-in-out;
         background-color: #f6f5ef;
+        @media (max-width: 450px) {
+          min-width: 280px;
+          height: 280px;
+        }
         .addToCardWrapper {
           position: absolute;
           bottom: 10px;
