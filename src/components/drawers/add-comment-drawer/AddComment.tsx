@@ -1,16 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./AddComment.module.scss";
-import krem from "@/assets/images/krem.webp";
 
 import { useDispatch } from "react-redux";
 import { closeDrawer } from "@/store/slices/drawerSlice";
-import star from "@/assets/icons/star.svg";
-import emptyStar from "@/assets/icons/emptyStar.svg";
-import { TextField } from "@/components/text-field/TextField";
+
+import CommentCart from "./CommentCart";
 
 const AddCommentDrawer: React.FC = () => {
-  const [comment, setComment] = useState("");
-
   const dispatch = useDispatch();
 
   return (
@@ -26,39 +22,13 @@ const AddCommentDrawer: React.FC = () => {
           </p>
         </div>
         <div className={styles.listWrapper}>
-          <article className={styles.commentCart}>
-            <div className={styles.imgNameWrapper}>
-              <div className={styles.imageWrapper}>
-                <img src={krem} alt="krem" className={styles.image} />
-              </div>
-              <div className={styles.nameWrapper}>
-                <p className={styles.title}>
-                  Цветочный мист с экстрактами розы
-                </p>
-                <p className={styles.size}>50 мл</p>
-              </div>
-            </div>
-            <div className={styles.rateWrapper}>
-              {Array(5)
-                .fill(null)
-                .map((_, i) => (
-                  <img
-                    key={i}
-                    src={i < 4 ? star : emptyStar}
-                    alt={`rate ${i + 1}`}
-                  />
-                ))}
-            </div>
-            <div className={styles.inputWrapper}>
-              {" "}
-              <TextField
-                placeholder="Как вам товар?"
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-              />
-            </div>
-          </article>
+          <CommentCart />
+          <CommentCart />
+          <CommentCart />
         </div>
+      </div>
+      <div className={styles.addWrapper} onClick={() => {}}>
+        <button className={styles.addComment}>Оставить отзыв</button>
       </div>
     </div>
   );
