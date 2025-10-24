@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "./InfoContent.module.scss";
 import DeliveryProfile from "@/components/delivary-profile/DeliveryProfile";
-import { openDrawer } from "@/store/slices/drawerSlice";
+// import { openDrawer } from "@/store/slices/drawerSlice";
 import telegram from "@/assets/icons/telegram.svg";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import Bestsellers from "@/components/bestsellers/Bestsellers";
 import krem from "@/assets/images/krem.webp";
 import girlwithsmile from "@/assets/images/girlsmile.webp";
 
 const InfoContent: React.FC = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // 🔹 Данные о пользователе
   const userInfo = [
     [
@@ -90,7 +90,7 @@ const InfoContent: React.FC = () => {
   ];
 
   const handleChange = () => {
-    dispatch(openDrawer("about"));
+    // dispatch(openDrawer("about"));
   };
 
   return (

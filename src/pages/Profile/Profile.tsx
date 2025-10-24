@@ -33,7 +33,7 @@ const ProfilePage: React.FC = () => {
     },
     {
       id: "favorites" as TabId,
-      label: "Избранное",
+      label: "Избранноеr",
       content: (
         <FavoritesContent setOpenAccordion={() => setOpenAccordion(null)} />
       ),

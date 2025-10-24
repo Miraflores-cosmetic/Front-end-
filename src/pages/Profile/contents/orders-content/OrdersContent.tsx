@@ -13,8 +13,8 @@ import {
 } from "../../types";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import { TabId } from "../../side-bar/SideBar";
-import { useDispatch } from "react-redux";
-import { openDrawer } from "@/store/slices/drawerSlice";
+// import { useDispatch } from "react-redux";
+// import { openDrawer } from "@/store/slices/drawerSlice";
 
 interface OrdersContentProps {
   setOpenAccordion?: React.Dispatch<React.SetStateAction<TabId | null>>; // ✅ add prop
@@ -23,10 +23,10 @@ interface OrdersContentProps {
 const OrdersContent: React.FC<OrdersContentProps> = ({ setOpenAccordion }) => {
   const [activeTab, setActiveTab] = useState<TabType>("active");
   const isMobile = useScreenMatch(450);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleAddComment = () => {
-    dispatch(openDrawer("add-comment"));
+    // dispatch(openDrawer("add-comment"));
   };
 
   const cartData: ProfileCardItem[] = [
