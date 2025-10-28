@@ -39,6 +39,14 @@ const TopBlock: React.FC = () => {
               <TextWrapper
                 title={isTablet ? mobileTexts.title : desktopTexts.title}
                 items={isTablet ? mobileTexts.items : desktopTexts.items}
+                titleStyle={{
+                  textTransform: "uppercase",
+                  fontSize: isMobile ? "14px" : "16px",
+                }}
+                textStyle={{
+                  textTransform: "uppercase",
+                  fontSize: isMobile ? "14px" : "16px",
+                }}
               />
             </div>
 
