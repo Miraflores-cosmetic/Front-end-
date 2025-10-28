@@ -3,19 +3,28 @@ import Slider from "react-slick";
 import styles from "./Bestsellers.module.scss";
 import { ProductCard } from "./product-card/ProductCard";
 import { ProductBasteller } from "@/types/types";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
+import { useWindowWidth } from "@/hooks/useWindowWidth";
 
 interface BestsellersProps {
   products: ProductBasteller[];
+  isTitleHidden?: boolean;
+  slidesToShow?: number; // ✅ new prop
 }
 
-export default function Bestsellers({ products }: BestsellersProps) {
+export default function Bestsellers({
+  products,
+  isTitleHidden,
+  slidesToShow = 3.1, // ✅ default value
+}: BestsellersProps) {
   const [activeIndex, setActiveIndex] = React.useState(0);
+
   const settings = {
     dots: true,
-    arrows: true,
+    arrows: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 3.5,
+    slidesToShow, // ✅ dynamic value
     slidesToScroll: 1,
 
     afterChange: (current: number) => {
@@ -31,20 +40,6 @@ export default function Bestsellers({ products }: BestsellersProps) {
     ),
 
     responsive: [
-      {
-        breakpoint: 1750,
-        settings: {
-          slidesToShow: 3.3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1600,
-        settings: {
-          slidesToShow: 3.2,
-          slidesToScroll: 1,
-        },
-      },
       {
         breakpoint: 1500,
         settings: {
@@ -135,10 +130,19 @@ export default function Bestsellers({ products }: BestsellersProps) {
       },
     ],
   };
+  const width = useWindowWidth();
+
+  console.log(width);
+
+  const isOversize = useScreenMatch(1536);
+  const x = isOversize ? undefined : (width - 1536) / 2 - 16;
 
   return (
-    <section className={styles.bestsellers}>
-      <h2 className={styles.title}>Бестселлеры</h2>
+    <section
+      className={styles.bestsellers}
+      style={isOversize ? undefined : { marginLeft: x }}
+    >
+      {!isTitleHidden && <h2 className={styles.title}>Бестселлеры</h2>}
       <Slider {...settings}>
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />

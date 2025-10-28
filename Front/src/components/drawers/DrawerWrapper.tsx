@@ -9,6 +9,8 @@ import MenuDrawer from "./menu-drawer/MenuDrawer";
 import { closeDrawer } from "@/store/slices/drawerSlice";
 import { RootState } from "@/store/store";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+import AboutDrawer from "./about-drawer/AboutDrawer";
+import AddCommentDrawer from "./add-comment-drawer/AddComment";
 
 const DrawerWrapper: React.FC = () => {
   const activeDrawer = useSelector(
@@ -18,11 +20,15 @@ const DrawerWrapper: React.FC = () => {
 
   const isOpenBasket = activeDrawer === "basket" ? true : false;
   const isOpenMenu = activeDrawer === "menu" ? true : false;
+  const isOpenAbout = activeDrawer === "about" ? true : false;
+  const isAddComment = activeDrawer === "add-comment" ? true : false;
   const isMobileBasket = useScreenMatch(664);
+  const isMobile = useScreenMatch(450);
 
   return (
     <>
       <Drawer
+        className="basket-drawer"
         open={isOpenBasket}
         onClose={() => dispatch(closeDrawer())}
         size={isMobileBasket ? "100%" : 664}
@@ -31,7 +37,7 @@ const DrawerWrapper: React.FC = () => {
         <BasketDrawer />
       </Drawer>
       <Drawer
-        className={styles.drawerContainer}
+        className={`${styles.drawerContainer} menu-drawer`}
         open={isOpenMenu}
         onClose={() => dispatch(closeDrawer())}
         size={"100%"}
@@ -39,6 +45,26 @@ const DrawerWrapper: React.FC = () => {
         direction="right"
       >
         <MenuDrawer />
+      </Drawer>
+      <Drawer
+        className={styles.drawerContainer}
+        open={isOpenAbout}
+        onClose={() => dispatch(closeDrawer())}
+        size={isMobile ? "100%" : 450}
+        duration={400}
+        direction="right"
+      >
+        <AboutDrawer />
+      </Drawer>
+      <Drawer
+        className={styles.drawerContainer}
+        open={isAddComment}
+        onClose={() => dispatch(closeDrawer())}
+        size={isMobile ? "100%" : 552}
+        duration={400}
+        direction="right"
+      >
+        <AddCommentDrawer />
       </Drawer>
     </>
   );

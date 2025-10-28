@@ -9,6 +9,14 @@
 .topBlockContainer {
   display: flex;
   width: 100%;
+  padding-right: 32px;
+  max-width: 1536px;
+  margin: 0 auto;
+  margin-bottom: 160px;
+  @media (max-width: 450px) {
+    margin-bottom: 60px;
+    padding-right: 12px;
+  }
 }
 
 .left {
@@ -24,6 +32,7 @@
 .right img {
   width: 100%;
   height: 861px;
+  object-fit: fill;
 }
 
 .imageWrapper {
@@ -32,15 +41,18 @@
 
 .textWrapper {
   margin-right: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .textWrapperTitle {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .textWrappertxt {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   color: #0000004d;
 }
@@ -48,8 +60,22 @@
 .content {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: end;
+  .contentText {
+    margin-left: 220px;
+    @media (max-width: 1200px) {
+      margin-left: 160px;
+    }
+    @media (max-width: 1000px) {
+      margin-left: 150px;
+    }
+    @media (max-width: 450px) {
+      margin-left: 65px;
+    }
+    @media (max-width: 350px) {
+      margin-left: 60px;
+    }
+  }
 }
 
 .lineTo {
@@ -125,5 +151,11 @@
   }
   .content {
     width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .lineTo {
+    left: 135px;
   }
 }

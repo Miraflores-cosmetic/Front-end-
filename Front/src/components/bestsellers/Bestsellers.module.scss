@@ -1,12 +1,32 @@
 .bestsellers {
   padding: 40px 0;
+  :global {
+    .slick-list {
+      margin: 0;
+    }
 
+    .slick-slide {
+      padding-right: 24px;
+      max-width: 432px;
+      @media (max-width: 450px) {
+        padding-right: 12px;
+      }
+    }
+
+    .slick-slide:first-child {
+      padding-left: 0;
+    }
+
+    .slick-slide:last-child {
+      padding-right: 0;
+    }
+  }
   .title {
     font-family: "trial";
     font-size: 64px;
     font-weight: 600;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-transform: uppercase;
   }
 
@@ -15,12 +35,16 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    width: 432px;
     height: 432px;
+    max-width: 432px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     transition: background-image 0.5s ease-in-out;
     background-color: #f6f5ef;
+    @media (max-width: 450px) {
+      height: 316px;
+    }
     .addToCardWrapper {
       width: 100%;
       display: flex;
@@ -32,9 +56,12 @@
         border: none;
         width: 90%;
         background-color: white;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 16px;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        text-transform: uppercase;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
 
         &:hover {
           background-color: #000;
@@ -73,7 +100,8 @@
       top: 0;
       height: 43px;
       font-size: 14px;
-      color: #fff;
+      font-weight: 400;
+      color: white;
     }
 
     .discount {
@@ -96,7 +124,7 @@
   }
 
   .info {
-    margin-top: 12px;
+    margin-top: 18px;
     display: flex;
     max-width: 432px;
 
@@ -104,6 +132,7 @@
       font-size: 16px;
       font-weight: 500;
       margin-bottom: 6px;
+      text-transform: uppercase;
     }
 
     .txtWrapper {
@@ -112,7 +141,8 @@
 
     .desc {
       font-size: 14px;
-      color: #666;
+      font-weight: 300;
+      color: #6e6d67;
       margin-bottom: 10px;
     }
   }
@@ -126,6 +156,9 @@
     color: white;
     width: 57px;
     height: 43px;
+    font-size: 14px;
+    font-family: "avanir";
+    font-weight: 400;
     border: none;
   }
 
@@ -144,14 +177,26 @@
     align-items: baseline;
 
     .oldPrice {
-      text-decoration: line-through;
-      color: #999;
+      position: relative;
+      color: #6e6d67;
+      font-size: 16px;
+      font-weight: 600;
+      &::after {
+        content: "";
+        position: absolute;
+        left: -5%;
+        top: 50%;
+        width: 110%;
+        height: 1px;
+        background: #ff0808;
+        transform: rotate(-10deg);
+      }
     }
 
     .price {
-      font-size: 18px;
-      font-weight: bold;
-      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      color: black;
     }
   }
 }
@@ -175,58 +220,28 @@
   }
 }
 
-@media (max-width: 1440px) {
-  @include image-size(410px, 410px);
-}
-@media (max-width: 1370px) {
-  @include image-size(390px, 390px);
-}
-@media (max-width: 1320px) {
-  @include image-size(370px, 370px);
-}
-@media (max-width: 1250px) {
-  @include image-size(350px, 350px);
-}
-@media (max-width: 1200px) {
-  @include image-size(310px, 310px, 250px, 250px);
-}
-@media (max-width: 1050px) {
-  @include image-size(290px, 290px, 230px, 230px);
-}
-@media (max-width: 768px) {
-  @include image-size(432px, 432px);
-}
 @media (max-width: 610px) {
   .bestsellers {
     .info {
       flex-direction: column;
       align-items: flex-start;
+      margin-top: 12px;
     }
   }
-}
-@media (max-width: 565px) {
-  @include image-size(316px, 316px);
 }
 
 @media (max-width: 470px) {
   .bestsellers {
     .title {
       font-size: 24px;
+      margin-bottom: 16px;
     }
   }
 }
 
-@media (max-width: 400px) {
-  @include image-size(300px, 300px);
-}
-@media (max-width: 375px) {
-  @include image-size(280px, 280px, 210px, 210px);
-}
-@media (max-width: 355px) {
-  @include image-size(255px, 255px, 200px, 200px);
-}
-@media (max-width: 325px) {
-  @include image-size(245px, 245px);
+
+:global(.slick-dots) {
+  bottom: -40px !important;
 }
 
 :global(.slick-dots li) {

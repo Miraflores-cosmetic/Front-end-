@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./MenuRightPart.module.scss";
-import kosmetika from "@/assets/images/kosmetika.png";
-import centerImageMenu from "@/assets/images/centerImageMenu.png";
+import kosmetika from "@/assets/images/kosmetika.webp";
+import centerImageMenu from "@/assets/images/centerImageMenu.webp";
 import sun from "@/assets/icons/sun.svg";
 import lineTo from "@/assets/icons/linToMenu.svg";
 

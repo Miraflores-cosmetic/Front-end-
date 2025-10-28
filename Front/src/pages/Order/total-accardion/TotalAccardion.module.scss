@@ -1,0 +1,246 @@
+@use "@/style/variables.scss" as *;
+@use "@/style/mixins.scss" as mixins;
+
+.accordion {
+  margin: 20px 0;
+  font-family: "Inter", sans-serif;
+
+  .header {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    @include mixins.flex(space-between, center);
+
+    .headerLeft {
+      @include mixins.flex(center, center, row, 10px);
+
+      .title {
+        @include mixins.font(13px, 500);
+      }
+
+      .arrow {
+        @include mixins.arrow();
+
+        &.open {
+          transform: rotate(-135deg);
+        }
+      }
+    }
+
+    .price {
+      @include mixins.flex(flex-start, center, row, 10px);
+      position: relative;
+
+      .priceOld {
+        @include mixins.price-old();
+      }
+
+      .priceNew {
+        @include mixins.font(13px, 600);
+      }
+
+      .count {
+        position: absolute;
+        top: -12px;
+        right: 0;
+        @include mixins.font(12px, 400, #a3a3a3);
+      }
+    }
+  }
+
+  .content {
+    padding-top: 12px;
+    animation: fadeIn 0.3s ease;
+
+    .productList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      @include mixins.flex(flex-start, stretch, column, 16px);
+
+      .productItem {
+        @include mixins.flex(flex-start, center, row, 10px);
+
+        .imageWrapper {
+          position: relative;
+          width: 88px;
+          height: 88px;
+          @include mixins.flex(center, center);
+          background-color: #f6f5ef;
+
+          .image {
+            width: 66px;
+            height: 66px;
+            object-fit: contain;
+          }
+          .countWrapper {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background-color: #6e6d67;
+            border-radius: 50px;
+            display: flex;
+
+            .count {
+              font-size: 10px;
+              color: white;
+              font-weight: 500;
+              margin: auto;
+            }
+          }
+        }
+
+        .productInfo {
+          height: 88px;
+          @include mixins.flex(space-between, stretch, column);
+
+          .nameSize {
+            @include mixins.flex(flex-start, stretch, column, 2px);
+
+            .name {
+              @include mixins.font(13px, 600);
+            }
+
+            .size {
+              @include mixins.font(12px, 400, #6e6d67);
+            }
+          }
+
+          .priceBlock {
+            @include mixins.flex(flex-start, center, row, 6px);
+
+            .price {
+              @include mixins.flex(flex-start, center, row, 10px);
+              position: relative;
+
+              .priceOld {
+                @include mixins.price-old();
+              }
+
+              .priceNew {
+                @include mixins.font(13px, 600);
+              }
+
+              .count {
+                position: absolute;
+                top: -12px;
+                right: 0;
+                @include mixins.font(12px, 400, #a3a3a3);
+              }
+            }
+
+            .discount {
+              @include mixins.font(13px, 400, #297230);
+            }
+
+            .gift {
+              @include mixins.font(13px, 500, #ff0808);
+            }
+          }
+        }
+      }
+    }
+
+    .addPromo {
+      margin-top: 24px;
+      height: 50px;
+      width: 100%;
+      border: 1px solid #00000014;
+      padding: 16px 12px;
+      @include mixins.flex(space-between, center);
+
+      .promoWrapper {
+        @include mixins.flex(flex-start, center, row, 8px);
+
+        .promoTxt {
+          @include mixins.font(13px, 500);
+        }
+      }
+    }
+
+    .sectionSumDiscount {
+      @include mixins.flex(flex-start, stretch, column, 10px);
+      margin: 24px 0;
+
+      .sumWrapper {
+        @include mixins.flex(space-between, center);
+
+        .sum {
+          @include mixins.flex(flex-start, center, row, 10px);
+          @include mixins.font(14px, 600);
+        }
+
+        .price {
+          @include mixins.flex(flex-start, center, row, 10px);
+
+          .priceOld {
+            @include mixins.price-old(#a3a3a3, #a3a3a3, 14px);
+          }
+
+          .priceNew {
+            @include mixins.font(14px, 600);
+          }
+        }
+      }
+
+      .discountWrapper,
+      .promocodeWrapper {
+        @include mixins.flex(space-between, center);
+
+        .name {
+          @include mixins.font(13px, 500);
+        }
+
+        .value {
+          @include mixins.font(13px, 500, #ff4766);
+        }
+      }
+    }
+
+    .infoWrapper {
+      padding: 20px 0;
+      border-top: 1px solid #00000014;
+      @include mixins.flex(flex-start, flex-start, column);
+
+      .userWrapper {
+        @include mixins.flex(center, center, row, 10px);
+
+        .userInfo {
+          .userName {
+            @include mixins.font(13px, 500);
+          }
+          .userRole {
+            @include mixins.font(12px, 400, #6e6d67);
+          }
+        }
+      }
+
+      .textsWrapper {
+        margin-top: 12px;
+        @include mixins.flex(flex-start, flex-start, column, 12px);
+
+        .text {
+          @include mixins.font(13px, 400);
+
+          span {
+            color: #297230;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

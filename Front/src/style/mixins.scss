@@ -1,0 +1,76 @@
+// ================= Mixins =================
+
+// Центрирование flex
+@mixin flex($justify: flex-start, $align: stretch, $direction: row, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+// Центрирование по центру
+@mixin flex-center($direction: row, $gap: 0) {
+  @include flex(center, center, $direction, $gap);
+}
+
+// Адаптив
+@mixin respond($breakpoint) {
+  @if $breakpoint == laptop {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 450px) {
+      @content;
+    }
+  }
+}
+
+// Скрыть скролл
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+}
+
+// Шрифт
+@mixin font($size, $weight: 400, $color: inherit) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+// Перечеркнутая старая цена
+@mixin price-old($color: #a3a3a3, $line-color: #ff0808, $font-size: 20px) {
+  position: relative;
+  font-size: $font-size;
+  font-weight: 600;
+  color: $color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -5%;
+    top: 50%;
+    width: 110%;
+    height: 2px;
+    background: $line-color;
+    transform: rotate(-10deg);
+  }
+}
+
+// Arrow for accordion or dropdown
+@mixin arrow($size: 6px, $color: #000, $rotate: 45deg, $transition: 0.3s) {
+  width: $size;
+  height: $size;
+  border-right: 1px solid $color;
+  border-bottom: 1px solid $color;
+  transform: rotate($rotate);
+  transition: transform $transition;
+}

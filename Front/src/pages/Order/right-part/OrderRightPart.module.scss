@@ -1,0 +1,212 @@
+@use "@/style/variables.scss" as *;
+@use "@/style/mixins.scss" as mixins;
+
+.right {
+  width: 50%;
+  height: 100vh;
+  padding: 32px;
+  border-left: 1px solid #6e6d6799;
+  overflow-y: auto;
+
+  @include mixins.hide-scrollbar;
+
+  @include mixins.respond(laptop) {
+    padding: 24px;
+  }
+
+  .listWrapper {
+    @include mixins.flex(flex-start, stretch, column, 16px);
+
+    .Miraflores_logo {
+      width: 178px;
+      height: 36px;
+    }
+
+    .orderCart {
+      @include mixins.flex(flex-start, stretch, row, 20px);
+
+      .cartImageWrapper {
+        @include mixins.flex(center, center);
+        background-color: #f6f5ef;
+        width: 100%;
+        max-width: 180px;
+        height: 180px;
+
+        .kremImage {
+          width: 133px;
+          height: 133px;
+        }
+      }
+
+      .cardInfoWrapper {
+        @include mixins.flex(space-between, stretch, column);
+        width: 100%;
+
+        .top {
+          @include mixins.flex(space-between, flex-start, row, 8px);
+
+          .texts {
+            @include mixins.flex(flex-start, stretch, column, 4px);
+
+            .name {
+              @include mixins.font(16px, 600);
+            }
+            .size {
+              @include mixins.font(14px, 400, #6e6d67);
+            }
+          }
+
+          .discount {
+            @include mixins.flex(center, center);
+            background-color: #297230;
+            min-width: 54px;
+            height: 43px;
+            @include mixins.font(14px, 500, #fff);
+          }
+        }
+
+        .bottom {
+          @include mixins.flex(space-between, center, row, 8px);
+
+          .count {
+            @include mixins.font(16px, 400);
+          }
+
+          .surprise {
+            @include mixins.flex(center, center);
+            background-color: #ff4766;
+            width: 92px;
+            height: 43px;
+            @include mixins.font(14px, 500, #fff);
+          }
+
+          .price {
+            @include mixins.flex(flex-start, center, row, 10px);
+
+            .priceOld {
+              @include mixins.price-old();
+            }
+
+            .priceNew {
+              @include mixins.font(20px, 600);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sertificatWrapper {
+    margin-top: 32px;
+    @include mixins.flex(space-between, flex-start, column, 10px);
+
+    .promoWrapper {
+      width: 100%;
+      @include mixins.flex(space-between, flex-start);
+
+      .promoWrapperLeft {
+        @include mixins.flex(flex-start, center, row, 8px);
+        width: 100%;
+
+        .promoTxt {
+          @include mixins.font(15px, 500);
+        }
+      }
+    }
+
+    .SALE {
+      @include mixins.font(15px, 400);
+    }
+  }
+
+  .discountPromo {
+    margin-top: 12px;
+    padding: 10px 0;
+    border-top: 1px solid #6e6d67;
+
+    p {
+      color: #6e6d67;
+    }
+  }
+
+  .sectionSumDiscount {
+    @include mixins.flex(flex-start, stretch, column, 10px);
+    margin-bottom: 32px;
+
+    .sumWrapper {
+      @include mixins.flex(space-between, center);
+
+      .sum {
+        @include mixins.flex(flex-start, center, row, 10px);
+        @include mixins.font(20px, 600);
+      }
+
+      .price {
+        @include mixins.flex(flex-start, center, row, 10px);
+
+        .priceOld {
+          @include mixins.price-old(#a3a3a3, #a3a3a3, 20px);
+        }
+
+        .priceNew {
+          @include mixins.font(20px, 600);
+        }
+      }
+    }
+
+    .discountWrapper,
+    .promocodeWrapper {
+      @include mixins.flex(space-between, center);
+
+      .name {
+        @include mixins.font(15px, 500);
+      }
+
+      .value {
+        @include mixins.font(15px, 500, #ff4766);
+      }
+    }
+  }
+
+  .infoWrapper {
+    padding: 20px 0;
+    border-top: 1px solid #6e6d67;
+    border-bottom: 1px solid #6e6d67;
+    @include mixins.flex(flex-start, flex-start, column);
+
+    .userWrapper {
+      @include mixins.flex(center, center, row, 10px);
+
+      .userInfo {
+        .userName {
+          @include mixins.font(15px, 500);
+
+          @include mixins.respond(mobile) {
+            font-size: 13px;
+          }
+        }
+
+        .userRole {
+          @include mixins.font(14px, 400, #6e6d67);
+
+          @include mixins.respond(mobile) {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .textsWrapper {
+      margin-top: 12px;
+      @include mixins.flex(flex-start, flex-start, column, 12px);
+
+      .text {
+        @include mixins.font(14px, 400);
+
+        span {
+          color: #297230;
+        }
+      }
+    }
+  }
+}

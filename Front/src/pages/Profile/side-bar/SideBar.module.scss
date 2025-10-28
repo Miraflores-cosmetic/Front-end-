@@ -1,0 +1,95 @@
+.sidebar {
+  width: calc(30% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 756px) {
+    width: 100%;
+  }
+}
+.nameMenuWrapper {
+  .userName {
+    font-family: "trial";
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 46px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .menuItem {
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6e6d67;
+    cursor: pointer;
+    transition: 0.2s;
+    border-top: 1px solid #6e6d6799;
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:hover {
+      opacity: 1;
+      color: black;
+    }
+  }
+
+  .activeDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid gray;
+    background-color: #6e6d67;
+  }
+
+  .notActiveDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid gray;
+  }
+
+  .active {
+    opacity: 1;
+    font-weight: 500;
+    position: relative;
+    color:black &::after {
+      content: "•";
+      position: absolute;
+      right: -10px;
+      color: #000;
+    }
+  }
+}
+
+.support {
+  font-size: 14px;
+  color: #6e6d6799;
+
+  a {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 8px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    color: #6e6d67;
+  }
+}
+
+.closeAccordionBtn {
+  color: #6e6d67;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  padding-top: 24px;
+  border-top: 1px solid #6e6d6799;
+}

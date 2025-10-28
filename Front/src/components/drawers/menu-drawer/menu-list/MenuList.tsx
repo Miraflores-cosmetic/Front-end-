@@ -6,6 +6,7 @@ import mobileImage from "@/assets/images/mobileImage.webp";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { closeDrawer } from "@/store/slices/drawerSlice";
+import { Link } from "react-router-dom";
 
 type MenuItem = {
   label: string;
@@ -14,18 +15,28 @@ type MenuItem = {
 
 type MenuListProps = {
   title: string;
+  link: string;
   items: MenuItem[];
   withColor?: boolean;
 };
 
-const MenuList: React.FC<MenuListProps> = ({ title, items, withColor }) => {
+const MenuList: React.FC<MenuListProps> = ({
+  title,
+  items,
+  withColor,
+  link,
+}) => {
   const isMobile = useScreenMatch(450);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handletoCatalog = () => {
+  const handleCloseDrawer = () => {
     dispatch(closeDrawer());
-    navigate("catalog");
+  };
+
+  const handletoCatalog = () => {
+    handleCloseDrawer();
+    navigate(link);
   };
 
   return (
@@ -59,7 +70,9 @@ const MenuList: React.FC<MenuListProps> = ({ title, items, withColor }) => {
       <ul className={styles.menuList}>
         {items.map((item, index) => (
           <li key={index} className={styles.menuItem}>
-            <a href={item.href}>{item.label}</a>
+            <Link to={`${link}${item.href}`} onClick={handleCloseDrawer}>
+              {item.label}
+            </Link>
           </li>
         ))}
       </ul>

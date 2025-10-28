@@ -1,6 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type DrawerType = "basket" | "menu" | "profile" | null;
+type DrawerType =
+  | "basket"
+  | "menu"
+  | "profile"
+  | "about"
+  | "add-comment"
+  | null;
 
 interface DrawerState {
   activeDrawer: DrawerType;

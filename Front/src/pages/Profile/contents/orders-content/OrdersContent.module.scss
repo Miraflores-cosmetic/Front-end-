@@ -1,0 +1,167 @@
+.ourOrdersContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  @media (max-width: 450px) {
+    margin-top: 24px;
+    gap: 24px;
+  }
+  .ordersTitleWrapper {
+    margin-bottom: 11px;
+    .ordersTitle {
+      font-family: "trial";
+      font-size: 36px;
+      font-weight: 300;
+      @media (max-width: 450px) {
+        font-family: "avanir";
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 24px;
+        border-top: 1px solid #6e6d6799;
+      }
+    }
+
+    @media (max-width: 450px) {
+      margin-bottom: 0px;
+    }
+  }
+  .tabsContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 0;
+    border-top: 1px solid #6e6d6799;
+    border-bottom: 1px solid #6e6d6799;
+    @media (max-width: 450px) {
+      border-top: none;
+      padding: 0;
+      margin-top: 24px;
+    }
+
+    .ordersContainer {
+      .tabs {
+        display: flex;
+        gap: 68px;
+        margin-bottom: 24px;
+        @media (max-width: 1340px) {
+          gap: 50px;
+        }
+        @media (max-width: 1250px) {
+          gap: 40px;
+        }
+
+        .tab {
+          background: none;
+          width: 157px;
+          border: none;
+          font-weight: 500;
+          font-size: 16px;
+          color: #6e6d67;
+          cursor: pointer;
+          transition: color 0.3s;
+          text-align: start;
+          &.active {
+            color: black;
+            @media (max-width: 450px) {
+              padding-bottom: 24px;
+            }
+          }
+          @media (max-width: 450px) {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .orderRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 68px;
+        @media (max-width: 1340px) {
+          gap: 50px;
+        }
+        @media (max-width: 1250px) {
+          gap: 40px;
+        }
+
+        @media (max-width: 450px) {
+          gap: 16px;
+          flex-wrap: nowrap;
+          flex-direction: column;
+        }
+        .order {
+          width: 157px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          .label {
+            font-size: 14px;
+            color: #6e6d67;
+            margin-bottom: 6px;
+            @media (max-width: 450px) {
+              font-size: 13px;
+            }
+          }
+
+          .value {
+            font-size: 15px;
+            font-weight: 500;
+            color: black;
+            @media (max-width: 450px) {
+              padding: 0 14px 0 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @media (max-width: 450px) {
+      gap: 16px;
+    }
+    .activeText {
+      color: #6e6d67;
+      font-size: 14px;
+      font-weight: 400px;
+    }
+    .allText {
+      display: flex;
+      justify-content: space-between;
+      p {
+        color: #6e6d67;
+        font-size: 14px;
+        font-weight: 400px;
+      }
+    }
+  }
+  .addWrapper {
+    display: flex;
+    justify-content: end;
+    .addComment {
+      cursor: pointer;
+      width: 200px;
+      height: 40px;
+      border-radius: 50px;
+      background-color: black;
+      color: white;
+      border: none;
+      font-size: 15px;
+      font-weight: 500;
+      &:hover {
+        background-color: white;
+        border: 1px solid black;
+        color: black;
+      }
+    }
+  }
+
+  .closeBtn {
+    cursor: pointer;
+    color: #6e6d67;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}

@@ -1,7 +1,23 @@
 .drawerContainer {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  display: flex;
+  justify-content: center;
   @media (max-width: 450px) {
     overflow-y: auto;
   }
+}
+
+:global(.menu-drawer) {
+  z-index: 1001 !important;
+}
+
+:global(.basket-drawer) {
+  z-index: 1001 !important;
+}
+
+.center {
+  position: fixed !important;
+  top: 0 !important;
+  left: calc(50% - 225px) !important;
 }

@@ -6,9 +6,11 @@ import blackBasketTrash from "@/assets/icons/blackBasketTrash.svg";
 import BasketCard from "./basket-card/BascetCard";
 import { useDispatch } from "react-redux";
 import { closeDrawer } from "@/store/slices/drawerSlice";
+import { useNavigate } from "react-router-dom";
 
 const BasketDrawer: React.FC = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const items = [
     {
@@ -39,6 +41,11 @@ const BasketDrawer: React.FC = () => {
       toPrice: "3780₽",
     },
   ];
+
+  const handleOrder = () => {
+    dispatch(closeDrawer());
+    navigate("/order");
+  };
   return (
     <div className={`${styles.drawer}`}>
       <div className={styles.contentWrapper}>
@@ -73,7 +80,9 @@ const BasketDrawer: React.FC = () => {
           </div>
         </div>
         <div className={styles.btnWrapper}>
-          <button className={styles.orderButtonLeft}>Оформить заказ</button>
+          <button className={styles.orderButtonLeft} onClick={handleOrder}>
+            Оформить заказ
+          </button>
           <img src={blackBasketTrash} alt={`blackBasketTrash`} />
         </div>
       </div>

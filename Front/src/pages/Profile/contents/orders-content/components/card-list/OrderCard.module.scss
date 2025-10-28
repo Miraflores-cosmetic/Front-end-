@@ -1,0 +1,99 @@
+@use "@/style/variables.scss" as *;
+@use "@/style/mixins.scss" as mixins;
+
+.orderCart {
+  @include mixins.flex(flex-start, stretch, row, 20px);
+
+  .cartImageWrapper {
+    @include mixins.flex(center, center);
+    background-color: #f6f5ef;
+    width: 100%;
+    max-width: 180px;
+    height: 180px;
+    @media (max-width: 450px) {
+      width: 88px;
+      height: 88px;
+    }
+
+    .kremImage {
+      width: 133px;
+      height: 133px;
+      @media (max-width: 450px) {
+        min-width: 66px;
+        height: 66px;
+      }
+    }
+  }
+
+  .cardInfoWrapper {
+    @include mixins.flex(space-between, stretch, column);
+    width: 100%;
+
+    .top {
+      @include mixins.flex(space-between, flex-start, row, 8px);
+
+      .texts {
+        @include mixins.flex(flex-start, stretch, column, 4px);
+
+        .name {
+          @include mixins.font(16px, 600);
+          @media (max-width: 450px) {
+            @include mixins.font(13px, 600);
+          }
+        }
+        .size {
+          @include mixins.font(14px, 400, #6e6d67);
+          @media (max-width: 450px) {
+            @include mixins.font(1412pxpx, 400, #6e6d67);
+          }
+        }
+      }
+
+      .discount {
+        @include mixins.flex(center, center);
+        background-color: #297230;
+        min-width: 54px;
+        height: 43px;
+        @include mixins.font(14px, 500, #fff);
+      }
+    }
+
+    .bottom {
+      @include mixins.flex(space-between, center, row, 8px);
+
+      .count {
+        @include mixins.font(16px, 600);
+        @media (max-width: 450px) {
+          @include mixins.font(13px, 600);
+        }
+      }
+      .price {
+        font-size: 16px;
+        font-weight: 600;
+        @media (max-width: 450px) {
+          font-size: 13px;
+        }
+      }
+
+      .surprise {
+        @include mixins.flex(center, center);
+        background-color: #ff4766;
+        width: 92px;
+        height: 43px;
+        @include mixins.font(14px, 500, #fff);
+      }
+
+      .price {
+        @include mixins.flex(flex-start, center, row, 10px);
+
+        .priceOld {
+          @include mixins.price-old();
+        }
+
+        .priceNew {
+          @include mixins.font(20px, 600);
+        }
+      }
+    }
+  }
+}

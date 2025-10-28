@@ -1,16 +1,61 @@
 .stepsContainer {
-  padding-top: 160px;
-  .title {
-    font-family: "trial";
-    font-weight: 300;
-    font-size: 64px;
-    text-transform: uppercase;
+  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding-right: 32px;
+  max-width: 1536px;
+  margin: auto;
+  transition: all 0.3s ease;
+  @media (max-width: 450px) {
+    padding-right: 12px;
   }
-  .desc {
-    font-family: "avenir";
-    font-weight: 400;
-    font-size: 16px;
-    color: #6e6d67;
+  .stepsWrapper {
+    display: flex;
+    gap: 18px;
+    .stepWrapper {
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+      .active {
+        transform: scale(1.15);
+        z-index: 2;
+      }
+
+      .inactive {
+        transform: scale(0.9);
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .headerWrrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    .title {
+      font-family: "trial";
+      font-weight: 300;
+      font-size: 64px;
+      text-transform: uppercase;
+      @media (max-width: 450px) {
+        font-size: 24px;
+      }
+    }
+    .descriptionWrapper {
+      display: flex;
+      flex-direction: column;
+      .desc {
+        font-family: "avanir", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #6e6d67;
+        @media (max-width: 450px) {
+          font-size: 14px;
+        }
+      }
+    }
   }
 }
 
@@ -71,8 +116,8 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .stepsContainer {
-    padding-top: 32px;
+    padding-top: 100px;
   }
 }

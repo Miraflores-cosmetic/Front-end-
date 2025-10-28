@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./SignUp.module.scss";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import logo from "@/assets/icons/Miraflores_logo.svg";
 import google from "@/assets/icons/google.svg";
 import telegram from "@/assets/icons/telegram.svg";
@@ -11,12 +10,10 @@ import { Button } from "@/components/button/Button";
 
 const SignUp: React.FC = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleNavigatetoHome = () => navigate("/");
-  const handleRequest = () => {};
+  const handleRequest = () => navigate("/profile");
   const handleSignIn = () => navigate("/sign-in");
 
   return (
@@ -62,7 +59,10 @@ const SignUp: React.FC = () => {
             <span>Политикой конфиденциальности</span>
           </p>
         </div>
-        <Button text="Далее" onClick={handleRequest} />
+        <Button
+          text="Далее"
+          onClick={handleRequest}
+        />
       </div>
     </section>
   );

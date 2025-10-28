@@ -5,6 +5,7 @@ import lineTo from "@/assets/icons/lineTofooter.svg";
 import lineToMobile from "@/assets/icons/lineToMobile.svg";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import FooterMenu from "./footer-menu/FooterMenu";
+import { getHeaderStyle } from "@/helpers/helpers";
 
 interface FooterProps {
   /** URL or imported image for the left side background */
@@ -49,9 +50,13 @@ const socialLinks = ["Телеграмм канал", "Pinterest", "© Miraflore
 const Footer: React.FC<FooterProps> = ({ footerImage }) => {
   const isTablet = useScreenMatch(1024);
   const isMobile = useScreenMatch(657);
+  const isSmallMobile = useScreenMatch(450);
 
   return (
-    <footer className={styles.footer}>
+    <footer
+      className={styles.footer}
+      style={getHeaderStyle(location.pathname, isSmallMobile)}
+    >
       {!isTablet && (
         <div className={styles.footerLeft}>
           <img src={footerImage} alt="footer" />

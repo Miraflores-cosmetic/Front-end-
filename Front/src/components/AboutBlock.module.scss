@@ -1,5 +1,13 @@
 .about {
-  padding-top: 60px;
+  padding-top: 200px;
+  padding-right: 32px;
+  max-width: 1536px;
+  margin: 0 auto;
+
+  @media (max-width: 450px) {
+    padding-top: 60px;
+    padding-right: 12px;
+  }
 
   .container {
     display: grid;
@@ -21,7 +29,7 @@
     font-size: 64px;
     font-weight: 300;
     line-height: 1.2;
-    margin-bottom: 20px;
+    margin-bottom: 56px;
   }
 
   .textWrapper {
@@ -34,6 +42,7 @@
 
   .text {
     font-size: 16px;
+    font-weight: 400;
     line-height: 1.5;
     color: #6e6d67;
   }
@@ -127,7 +136,7 @@
   align-items: center;
   gap: 15px;
   p {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
   }
 }

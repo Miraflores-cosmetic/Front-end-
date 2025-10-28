@@ -1,0 +1,104 @@
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  .infoTitleWrapper {
+    .infoTitle {
+      font-family: "trial";
+      font-size: 36px;
+      font-weight: 300;
+    }
+    margin-bottom: 11px;
+  }
+  .infoAboutWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 40px;
+    border-top: 1px solid #6e6d6799;
+    .about {
+      .aboutTitle {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+    .aboutWrapper {
+      display: flex;
+      gap: 118px;
+
+      .name {
+        color: #6e6d67;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .value {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .wrapper {
+        min-width: 33%;
+        width: 300px;
+      }
+    }
+    .changeBtn {
+      cursor: pointer;
+      position: absolute;
+      right: 0px;
+      top: 85px;
+
+      p {
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: underline;
+        text-transform: uppercase;
+        color: #6e6d67;
+      }
+    }
+  }
+  .infoAddressWrapper {
+    padding-top: 40px;
+    border-top: 1px solid #6e6d6799;
+    .address {
+      margin-bottom: 24px;
+      .addressTitle {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .infoBotWrapper {
+    padding-top: 40px;
+    border-top: 1px solid #6e6d6799;
+    .telegramBot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .telegramIcon {
+        width: 20px;
+        height: 20px;
+      }
+      .telegramBotText {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+    .telegramBotTextSuccess {
+      color: #297230;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 24px;
+    }
+  }
+  .infoSliderWrapper {
+    display: flex;
+    flex-direction: column;
+    .title {
+      font-size: 32px;
+      font-weight: 500;
+    }
+  }
+}

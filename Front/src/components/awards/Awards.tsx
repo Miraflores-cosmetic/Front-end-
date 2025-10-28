@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Awards.module.scss";
 
-import awardImage from "@/assets/images/awardImage.png";
-import leaf from "@/assets/images/leaf.png";
+import awardImage from "@/assets/images/awardImage.webp";
+import leaf from "@/assets/images/leaf.webp";
 import romashkaBig from "@/assets/icons/romashkaBig.svg";
-import medal from "@/assets/icons/medal.png";
+import medal from "@/assets/icons/medal.webp";
 
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 

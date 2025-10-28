@@ -8,18 +8,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   font-size: 15px;
   color: #6e6d67;
+  @media (max-width: 450px) {
+    font-size: 14px;
+  }
 }
 
 .input {
   width: 100%;
   border: none;
   border-bottom: 1px solid #6e6d6799;
-  font-size: 166x;
+  font-size: 16px;
   outline: none;
   background: transparent;
+  padding-bottom: 8px;
 }
 
 .link {
@@ -27,4 +30,7 @@
   font-size: 15px;
   color: #6e6d67;
   text-decoration: none;
+  @media (max-width: 450px) {
+    font-size: 14px;
+  }
 }

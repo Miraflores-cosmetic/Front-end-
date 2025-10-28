@@ -15,8 +15,11 @@ import footerImage from "@/assets/images/footerImage.webp";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 const Home: React.FC = () => {
+  const isMobile = useScreenMatch(450);
+
   const products = [
     {
       id: 1,
@@ -29,7 +32,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 1,
+      id: 2,
       title: "Энзимный мусс для умывания",
       description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
       price: 3590,
@@ -39,7 +42,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 2,
+      id: 3,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -49,7 +52,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 4,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -58,7 +61,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 5,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -67,7 +70,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 6,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -76,7 +79,7 @@ const Home: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 7,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -87,19 +90,26 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <main className={styles.homeContainer}>
+    <>
+      {!isMobile && (
+        <p className={styles.preHeaderTxt}>
+          Черная пятница здесь: 15% на весь ассортимент
+        </p>
+      )}
       <Header />
-      <TopBlock />
-      <Bestsellers products={products} />
-      <AboutBlock />
-      <StepsBlock />
-      <InfoTest />
-      <Sets />
-      <Reviews />
-      <GratitudeProgram />
-      <Awards />
-      <Footer footerImage={footerImage} />
-    </main>
+      <main className={styles.homeContainer}>
+        <TopBlock />
+        <Bestsellers products={products} />
+        <AboutBlock />
+        <StepsBlock />
+        <InfoTest />
+        <Sets />
+        <Reviews />
+        <GratitudeProgram />
+        <Awards />
+        <Footer footerImage={footerImage} />
+      </main>
+    </>
   );
 };
 

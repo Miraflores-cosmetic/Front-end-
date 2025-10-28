@@ -1,0 +1,23 @@
+.main {
+  width: calc(70% - 50px);
+}
+
+.greeting {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+/* ===== БОТ ===== */
+.botSection {
+  border-top: 1px solid #ddd;
+  padding-top: 24px;
+
+  strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .success {
+    color: green;
+    font-size: 14px;
+  }
+}

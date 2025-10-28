@@ -1,0 +1,119 @@
+@use "@/style/variables.scss" as *;
+.left {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  padding: 100px $spacing-xl 146px $spacing-xl;
+
+  @media (max-width: 1024px) {
+    padding: 100px $spacing-lg 146px $spacing-lg;
+  }
+  @media (max-width: 956px) {
+    width: 100%;
+  }
+  @media (max-width: 500px) {
+    padding: 20px 0px;
+  }
+
+  .mobileHeaderContainer {
+    margin-bottom: 14px;
+
+    .mobileHeader {
+      display: flex;
+
+      .logoWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .Miraflores_logo {
+          width: 118px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .goBack {
+    position: absolute;
+    top: 38px;
+    left: 0;
+  }
+
+  .inputWrapper {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 40px;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  .phoneWrapper {
+    margin-top: 40px;
+  }
+
+  .checkWrapper {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .paymentWrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+
+    .payments {
+      display: flex;
+      gap: 8px;
+
+      .paymentImage {
+        @media (max-width: 450px) {
+          max-width: 110px;
+        }
+      }
+    }
+
+    .paymentTitle {
+      font-family: "trial";
+      font-size: 24px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  }
+
+  .orderButtonWrapper {
+    margin-top: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    .orderButton {
+      width: 100%;
+    }
+
+    .agreement {
+      text-align: center;
+      font-size: 14px;
+      color: $gray-6e;
+
+      @media (max-width: 500px) {
+        font-size: 13px;
+      }
+
+      span {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}

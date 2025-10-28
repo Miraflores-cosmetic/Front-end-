@@ -1,0 +1,118 @@
+.deliveryProfile {
+  width: 100%;
+  margin: 0 auto;
+
+  .headerWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      @media (max-width: 450px) {
+        font-size: 14px;
+      }
+    }
+    .addAddress {
+      color: #6e6d67;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.label {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+
+  .info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    .type {
+      font-size: 15px;
+      font-weight: 500;
+      @media (max-width: 500px) {
+        font-size: 14px;
+      }
+    }
+    .address {
+      color: #6e6d67;
+      font-size: 14px;
+      @media (max-width: 500px) {
+        font-size: 13px;
+      }
+    }
+    .comment {
+      color: #6e6d67;
+      font-size: 14px;
+      span {
+        color: black;
+      }
+    }
+    .defaultAddress {
+      margin-right: 24px;
+      color: #6e6d67;
+      font-size: 14px;
+    }
+  }
+}
+.more {
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: black;
+}
+
+.addBtn {
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 30px;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+  @media (max-width: 500px) {
+    font-size: 13px;
+  }
+}
+
+.addBtn:hover {
+  background: black;
+  color: white;
+}

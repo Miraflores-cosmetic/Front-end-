@@ -4,29 +4,27 @@
   border: none;
   border-radius: 9999px;
   font-size: 15px;
+  font-family: "avanir";
   font-weight: 500;
   color: #fff;
   cursor: pointer;
-  transition: background 0.2s ease;
+  &:hover {
+    p {
+      transform: scale(1.1);
+      transition: transform 0.5s ease;
+    }
+  }
 
   &.success {
-    background: #297230; // зелёный
+    background: #297230;
     &:hover {
-      background: #256628;
+      background: #3e9642;
     }
   }
 
   &.error {
-    background: #c62828; // красный
     &:hover {
       background: #b71c1c;
-    }
-  }
-
-  &.default {
-    background: #555; // серый
-    &:hover {
-      background: #444;
     }
   }
 
