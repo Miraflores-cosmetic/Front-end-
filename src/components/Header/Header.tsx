@@ -20,19 +20,26 @@ const Header: React.FC = () => {
       className={styles.header}
       style={getHeaderStyle(location.pathname, isMobile)}
     >
-      <HeaderLeft />
-
-      {isMobile ? (
-        <div className={styles.logoMobile} onClick={handleToHome}>
-          <img src={logoMobile} alt="Miraflores" />
-        </div>
-      ) : (
-        <div className={styles.logo} onClick={handleToHome}>
-          <img src={logo} alt="Miraflores" />
+      {!isMobile && (
+        <div className={styles.preHeaderContent}>
+          Черная пятница здесь: 15% на весь ассортимент
         </div>
       )}
+      <div className={styles.headerContent}>
+        <HeaderLeft />
 
-      <HeaderRight />
+        {isMobile ? (
+          <div className={styles.logoMobile} onClick={handleToHome}>
+            <img src={logoMobile} alt="Miraflores" />
+          </div>
+        ) : (
+          <div className={styles.logo} onClick={handleToHome}>
+            <img src={logo} alt="Miraflores" />
+          </div>
+        )}
+
+        <HeaderRight />
+      </div>
     </header>
   );
 };

@@ -54,8 +54,22 @@
 .content {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: end;
+  .contentText {
+    margin-left: 220px;
+    @media (max-width: 1200px) {
+      margin-left: 160px;
+    }
+    @media (max-width: 1000px) {
+      margin-left: 150px;
+    }
+    @media (max-width: 450px) {
+      margin-left: 65px;
+    }
+    @media (max-width: 350px) {
+      margin-left: 60px;
+    }
+  }
 }
 
 .lineTo {
@@ -131,5 +145,11 @@
   }
   .content {
     width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .lineTo {
+    left: 135px;
   }
 }

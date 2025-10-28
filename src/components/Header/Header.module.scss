@@ -2,8 +2,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
   margin-bottom: 16px;
+  flex-direction: column;
+  .preHeaderContent {
+    width: 100%;
+    background-color: black;
+    color: #fffcf2;
+    height: 27px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .headerContent {
+    width: 100%;
+    padding: 18px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 450px) {
+      padding: 14px 0;
+    }
+  }
 }
 
 .logo img {
