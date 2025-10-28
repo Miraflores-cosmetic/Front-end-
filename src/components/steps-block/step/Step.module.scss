@@ -20,6 +20,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      img {
+        width: 280px;
+      }
     }
   }
 
@@ -29,12 +32,15 @@
     margin-top: 20px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
   }
 
   &:hover {
     .stepImage {
       height: 450px;
+      width: 480px;
     }
 
     .textContent {

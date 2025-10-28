@@ -18,7 +18,6 @@ const FavoriteCard: React.FC<FavoriteCardProps> = ({
   title,
   description,
   price,
-  oldPrice,
   image,
   hoverImage,
 }) => {
@@ -55,7 +54,6 @@ const FavoriteCard: React.FC<FavoriteCardProps> = ({
           <p className={styles.desc}>{description}</p>
         </div>
         <div className={styles.priceWrapper}>
-          {/* {oldPrice && <span className={styles.oldPrice}>{oldPrice}₽</span>} */}
           <span className={styles.price}>{price}₽</span>
         </div>
       </div>
