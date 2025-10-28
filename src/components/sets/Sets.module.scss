@@ -62,8 +62,12 @@
 
       .moreWrapper {
         @include flex-center(row, flex-start);
+        text-transform: uppercase;
         gap: 10px;
         width: 100%;
+        img {
+          cursor: pointer;
+        }
       }
 
       .rightWrapper {
