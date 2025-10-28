@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./MenuRightPart.module.scss";
 import kosmetika from "@/assets/images/kosmetika.webp";
 import centerImageMenu from "@/assets/images/centerImageMenu.webp";
-import sun from "@/assets/icons/sun.svg";
 import lineTo from "@/assets/icons/linToMenu.svg";
 
 import { useDispatch } from "react-redux";
@@ -19,7 +18,6 @@ const MenuRightPart: React.FC = () => {
       <div className={styles.rightWraeer}>
         <div className={styles.imgWrapper}>
           <img src={kosmetika} alt="kosmetika" className={styles.kosmetika} />
-          <img src={sun} alt="sun" className={styles.sun} />
           <p className={styles.discount}>23%</p>
           <div className={styles.size}>
             <p className={styles.size50}>50 мл</p>

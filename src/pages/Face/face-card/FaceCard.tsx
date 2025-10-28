@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./FaceCard.module.scss";
 import gift from "@/assets/icons/gift.svg";
-import sun from "@/assets/icons/sun.svg";
 import moon from "@/assets/icons/moon.svg";
 import whiteGift from "@/assets/icons/whiteGift.webp";
 import { useDispatch } from "react-redux";
@@ -54,7 +53,7 @@ export const FaceCard: React.FC<{ product: Product }> = ({ product }) => {
           )}
         </div>
         <div className={styles.type}>
-          <img src={product.type === "sun" ? sun : moon} alt="" />
+          {product.type === "moon" && <img src={moon} alt="" />}
         </div>
 
         {isHovered && (

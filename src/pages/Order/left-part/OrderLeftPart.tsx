@@ -14,6 +14,7 @@ import Delivery from "@/components/delivery/Delivery";
 import PaymentsList from "../order-components/PaymentsList";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 import TotalAccordion from "../total-accardion/TotalAccardion";
+import { useNavigate } from "react-router-dom";
 
 const OrderLeftPart: React.FC = () => {
   const [name, setName] = useState("Фёдор Ники́форович Плевако́");
@@ -57,9 +58,18 @@ const OrderLeftPart: React.FC = () => {
     },
   ];
 
+  const navigate = useNavigate();
+
   return (
     <section className={styles.left}>
-      {!isMobile && <img src={goBack} alt="goBack" className={styles.goBack} />}
+      {!isMobile && (
+        <img
+          src={goBack}
+          alt="goBack"
+          className={styles.goBack}
+          onClick={() => navigate("/")}
+        />
+      )}
       {isMobile && (
         <section className={styles.mobileHeaderContainer}>
           <div className={styles.mobileHeader}>

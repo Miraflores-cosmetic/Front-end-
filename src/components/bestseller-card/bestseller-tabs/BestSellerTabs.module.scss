@@ -14,13 +14,15 @@
   display: flex;
   gap: 24px;
   margin-bottom: 8px;
-  border-bottom: 1px solid #6e6d67b3;
+  border-bottom: 1px solid #00000014;
 }
 
 .tab {
+  font-family: "avanir";
   background: none;
   border: none;
   font-size: 16px;
+  font-weight: 500;
   color: #6e6d67b3;
   padding-bottom: 15px;
   cursor: pointer;
@@ -34,7 +36,6 @@
 
   &.active {
     color: black;
-    font-weight: 500;
 
     &::after {
       content: "";
