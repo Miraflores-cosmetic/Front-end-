@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import styles from "./Bestsellers.module.scss";
 import { ProductCard } from "./product-card/ProductCard";
 import { ProductBasteller } from "@/types/types";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
+import { useWindowWidth } from "@/hooks/useWindowWidth";
 
 interface BestsellersProps {
   products: ProductBasteller[];
@@ -19,7 +21,7 @@ export default function Bestsellers({
 
   const settings = {
     dots: true,
-    arrows: true,
+    arrows: false,
     infinite: false,
     speed: 500,
     slidesToShow, // ✅ dynamic value
@@ -128,9 +130,18 @@ export default function Bestsellers({
       },
     ],
   };
+  const width = useWindowWidth();
+
+  console.log(width);
+
+  const isOversize = useScreenMatch(1536);
+  const x = isOversize ? undefined : (width - 1536) / 2 - 16;
 
   return (
-    <section className={styles.bestsellers}>
+    <section
+      className={styles.bestsellers}
+      style={isOversize ? undefined : { marginLeft: x }}
+    >
       {!isTitleHidden && <h2 className={styles.title}>Бестселлеры</h2>}
       <Slider {...settings}>
         {products.map((product) => (

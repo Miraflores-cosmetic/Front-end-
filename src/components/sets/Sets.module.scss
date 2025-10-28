@@ -3,6 +3,8 @@
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
+  max-width: 1536px;
+  margin: auto;
 }
 
 @mixin circle($size, $bg: #f6f5ef) {

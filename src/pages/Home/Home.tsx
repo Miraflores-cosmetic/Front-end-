@@ -15,8 +15,11 @@ import footerImage from "@/assets/images/footerImage.webp";
 
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 const Home: React.FC = () => {
+  const isMobile = useScreenMatch(450);
+
   const products = [
     {
       id: 1,
@@ -87,19 +90,26 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <main className={styles.homeContainer}>
-      <Header />
-      <TopBlock />
-      <Bestsellers products={products} />
-      <AboutBlock />
-      <StepsBlock />
-      <InfoTest />
-      <Sets />
-      <Reviews />
-      <GratitudeProgram />
-      <Awards />
-      <Footer footerImage={footerImage} />
-    </main>
+    <div className={styles.preHeaderContent}>
+      {!isMobile && (
+        <p className={styles.preHeaderTxt}>
+          Черная пятница здесь: 15% на весь ассортимент
+        </p>
+      )}
+      <main className={styles.homeContainer}>
+        <Header />
+        <TopBlock />
+        <Bestsellers products={products} />
+        <AboutBlock />
+        <StepsBlock />
+        <InfoTest />
+        <Sets />
+        <Reviews />
+        <GratitudeProgram />
+        <Awards />
+        <Footer footerImage={footerImage} />
+      </main>
+    </div>
   );
 };
 

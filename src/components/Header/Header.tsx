@@ -16,31 +16,28 @@ const Header: React.FC = () => {
   const location = useLocation();
   console.log(location.pathname, "patname");
   return (
-    <header
-      className={styles.header}
-      style={getHeaderStyle(location.pathname, isMobile)}
-    >
-      {!isMobile && (
-        <div className={styles.preHeaderContent}>
-          Черная пятница здесь: 15% на весь ассортимент
+    <div>
+      <header
+        className={styles.header}
+        style={getHeaderStyle(location.pathname, isMobile)}
+      >
+        <div className={styles.headerContent}>
+          <HeaderLeft />
+
+          {isMobile ? (
+            <div className={styles.logoMobile} onClick={handleToHome}>
+              <img src={logoMobile} alt="Miraflores" />
+            </div>
+          ) : (
+            <div className={styles.logo} onClick={handleToHome}>
+              <img src={logo} alt="Miraflores" />
+            </div>
+          )}
+
+          <HeaderRight />
         </div>
-      )}
-      <div className={styles.headerContent}>
-        <HeaderLeft />
-
-        {isMobile ? (
-          <div className={styles.logoMobile} onClick={handleToHome}>
-            <img src={logoMobile} alt="Miraflores" />
-          </div>
-        ) : (
-          <div className={styles.logo} onClick={handleToHome}>
-            <img src={logo} alt="Miraflores" />
-          </div>
-        )}
-
-        <HeaderRight />
-      </div>
-    </header>
+      </header>
+    </div>
   );
 };
 

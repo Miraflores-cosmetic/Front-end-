@@ -1,5 +1,18 @@
 @use "@/style/variables.scss" as *;
 
+.preHeaderContent {
+  .preHeaderTxt {
+    width: 100%;
+    background-color: black;
+    color: #fffcf2;
+    height: 27px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .homeContainer {
   padding: 0 0 0 32px;
   height: 100vh;
