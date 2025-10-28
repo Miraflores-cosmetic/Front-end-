@@ -58,7 +58,9 @@
         background-color: white;
         font-weight: 600;
         font-size: 16px;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
 
         &:hover {
           background-color: #000;
@@ -97,7 +99,8 @@
       top: 0;
       height: 43px;
       font-size: 14px;
-      color: #fff;
+      font-weight: 500;
+      color: white;
     }
 
     .discount {
@@ -150,6 +153,7 @@
     color: white;
     width: 57px;
     height: 43px;
+    font-size: 14px;
     border: none;
   }
 
@@ -168,14 +172,26 @@
     align-items: baseline;
 
     .oldPrice {
-      text-decoration: line-through;
-      color: #999;
+      position: relative;
+      color: #6e6d67;
+      font-size: 16px;
+      font-weight: 600;
+      &::after {
+        content: "";
+        position: absolute;
+        left: -5%;
+        top: 50%;
+        width: 110%;
+        height: 2px;
+        background: #ff0808;
+        transform: rotate(-10deg);
+      }
     }
 
     .price {
-      font-size: 18px;
-      font-weight: bold;
-      color: #000;
+      font-size: 16px;
+      font-weight: 600;
+      color: black;
     }
   }
 }

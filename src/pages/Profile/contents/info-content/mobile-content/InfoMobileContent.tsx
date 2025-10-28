@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./InfoMobileContent.module.scss";
 import DeliveryProfile from "@/components/delivary-profile/DeliveryProfile";
-import { openDrawer } from "@/store/slices/drawerSlice";
+// import { openDrawer } from "@/store/slices/drawerSlice";
 import telegram from "@/assets/icons/telegram.svg";
 import ArrowToRight from "@/assets/icons/ArrowToRight.svg";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { TabId } from "@/pages/Profile/side-bar/SideBar";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 
@@ -15,11 +15,11 @@ interface InfoMobileContentProps {
 const InfoMobileContent: React.FC<InfoMobileContentProps> = ({
   setOpenAccordion,
 }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const isMobile = useScreenMatch(450);
 
   const handleChange = () => {
-    dispatch(openDrawer("about"));
+    // dispatch(openDrawer("about"));
   };
 
   const handleCloseAccordion = () => {
