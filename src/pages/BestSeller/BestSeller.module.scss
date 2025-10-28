@@ -8,7 +8,8 @@
 
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
-
+  max-width: 1536px;
+  margin: 0 auto;
   .bestSellerInfo {
     display: flex;
     gap: 32px;
