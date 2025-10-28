@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import styles from "./StepsBlock.module.scss";
 import shablon1 from "@/assets/images/shablon1.webp";
 import shablon2 from "@/assets/images/shablon2.webp";
@@ -43,25 +43,46 @@ const steps = [
 ];
 
 export default function StepsBlock() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
     <section className={styles.stepsContainer}>
       <div className={styles.headerWrrapper}>
         <p className={styles.title}>каждый шаг усиливает предыдущий</p>
-        <p className={styles.desc}>
-          Агрессивное умывание всего за минуту может нарушить защитный барьер и
-          сделать кожу уязвимой
-        </p>
+        <div className={styles.descriptionWrapper}>
+          <p className={styles.desc}>
+            Знали ли вы, что даже самое эффективное средство не сработает, если
+            кожа неправильно очищена.
+          </p>
+          <p className={styles.desc}>
+            Агрессивное умывание всего за минуту может нарушить защитный барьер
+            и сделать кожу уязвимой
+          </p>
+        </div>
       </div>
       <div className={styles.stepsWrapper}>
-        {steps.map((product, id) => (
-          <Step
-            etap={id + 1}
-            key={product.id}
-            image={product.image}
-            hoverImage={product.hoverImage}
-            title={product.title}
-            description={product.description}
-          />
+        {steps.map((product, index) => (
+          <div
+            key={index}
+            className={`${styles.stepWrapper} ${
+              activeIndex === index
+                ? styles.active
+                : activeIndex !== null
+                  ? styles.inactive
+                  : ""
+            }`}
+            onMouseEnter={() => setActiveIndex(index)}
+            onMouseLeave={() => setActiveIndex(null)}
+          >
+            <Step
+              etap={index + 1}
+              key={product.id}
+              image={product.image}
+              hoverImage={product.hoverImage}
+              title={product.title}
+              description={product.description}
+            />
+          </div>
         ))}
       </div>
     </section>

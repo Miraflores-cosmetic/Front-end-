@@ -17,7 +17,6 @@ const Step: React.FC<StepProps> = ({
   etap,
 }) => {
   const [isHovered, setIsHover] = useState(false);
-
   return (
     <div
       className={styles.step}
@@ -31,14 +30,14 @@ const Step: React.FC<StepProps> = ({
         </div>
       ) : (
         <div className={styles.stepWrapper}>
-          <p>Этап{etap}</p>
+          <p className={styles.stepEtap}>Этап{etap}</p>
           <img src={image} alt={title} className={styles.stepImage} />
         </div>
       )}
       {isHovered && (
         <div className={styles.textContent}>
-          <h3>{title}</h3>
-          <p>{description}</p>
+          <h3 className={styles.textTitle}>{title}</h3>
+          <p className={styles.textDesc}>{description}</p>
         </div>
       )}
     </div>
