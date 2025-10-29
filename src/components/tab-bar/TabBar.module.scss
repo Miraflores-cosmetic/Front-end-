@@ -3,6 +3,11 @@
   background: #f6f5ef;
   display: inline-flex;
   height: 39px;
+  // max-width: 1536px;
+  // margin: 0 auto;
+  // @media (max-width: 1536px) {
+  //   padding: 0 32px;
+  // }
 }
 
 .tab {
@@ -12,7 +17,9 @@
   padding: 10px 12px;
   font-size: 14px;
   font-weight: 500;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   @media (max-width: 450px) {
     font-size: 13px;
   }

@@ -132,11 +132,16 @@ const FacePage: React.FC = () => {
   return (
     <article className={styles.faceContainer}>
       <Header />
-      <p className={styles.title}>Лицо</p>
-      <TabBar
-        tabs={["КРЕМ", "МАСЛО", "ТОНИК-ЭССЕНЦИЯ"]}
-        onChange={(tab) => console.log("Выбран:", tab)}
-      />
+      <div className={styles.headerWrapper}>
+        {" "}
+        <p className={styles.title}>Лицо</p>
+      </div>
+      <section className={styles.tabBarWrapper}>
+        <TabBar
+          tabs={["КРЕМ", "МАСЛО", "ТОНИК-ЭССЕНЦИЯ"]}
+          onChange={(tab) => console.log("Выбран:", tab)}
+        />
+      </section>
       <section className={styles.wrapper}>
         {products.map((product) => (
           <FaceCard key={product.id} product={product} />
