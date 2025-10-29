@@ -86,9 +86,7 @@ const Catalog: React.FC = () => {
 
   return (
     <main className={styles.catalogContainer}>
-      <div className={styles.headerWrapper}>
-        <Header />
-      </div>
+      <Header />
       <div className={styles.titleWrapper}>
         <p className={styles.title}>Каталог</p>
       </div>

@@ -99,7 +99,10 @@ const Home: React.FC = () => {
       <main className={styles.homeContainer}>
         <Header />
         <TopBlock />
-        <Bestsellers products={products} />
+        <div className={styles.bestSellersContainer}>
+          {" "}
+          <Bestsellers products={products} />
+        </div>
         <AboutBlock />
         <StepsBlock />
         <InfoTest />

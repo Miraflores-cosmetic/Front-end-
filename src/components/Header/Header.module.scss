@@ -5,23 +5,29 @@
   align-items: center;
   margin-bottom: 16px;
   flex-direction: column;
-  max-width: 1536px;
-  margin: 0 auto;
+
   padding-right: 0 !important;
+  position: sticky;
+  background-color: white;
+  z-index: 90;
+
+  top: 0;
 
   // &.scrolled {
   //   border-bottom: 0.5px solid rgba(0, 0, 0, 0.3019607843);
   // }
-  .headerContent {
-    width: 100%;
 
+  .headerContent {
+    max-width: 1536px;
+    margin: 0 auto;
+    width: 100%;
     padding: 18px 0;
-    @media (max-width: 1536px) {
-      padding: 14px 32px !important;
-    }
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 1536px) {
+      padding: 14px 32px !important;
+    }
     @media (max-width: 450px) {
       padding: 14px 12px !important;
     }
