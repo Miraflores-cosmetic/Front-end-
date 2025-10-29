@@ -14,11 +14,11 @@
 }
 
 .homeContainer {
-  height: 100vh;
+  // height: 100vh;
   background-color: $white;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */

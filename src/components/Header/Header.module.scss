@@ -10,12 +10,11 @@
   position: sticky;
   background-color: white;
   z-index: 90;
-
   top: 0;
 
-  // &.scrolled {
-  //   border-bottom: 0.5px solid rgba(0, 0, 0, 0.3019607843);
-  // }
+  &.scrolled {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3019607843);
+  }
 
   .headerContent {
     max-width: 1536px;
