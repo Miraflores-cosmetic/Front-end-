@@ -1,11 +1,12 @@
 .awardsContainer {
   width: 100%;
-  padding-top: 240px;
+  padding-top: 200px;
   max-width: 1536px;
   margin: 0 auto;
   margin-bottom: 150px;
   @media (max-width: 1536px) {
     padding: 0 32px;
+    padding-top: 200px;
   }
   @media (max-width: 450px) {
     padding: 0 12px;
