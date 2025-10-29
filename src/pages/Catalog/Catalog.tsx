@@ -86,8 +86,12 @@ const Catalog: React.FC = () => {
 
   return (
     <main className={styles.catalogContainer}>
-      <Header />
-      <p className={styles.title}>Каталог</p>
+      <div className={styles.headerWrapper}>
+        <Header />
+      </div>
+      <div className={styles.titleWrapper}>
+        <p className={styles.title}>Каталог</p>
+      </div>
       {isMobile && (
         <div className={styles.elipseWrapper}>
           <img src={Ellipse} alt="Ellipse" className={styles.elipsImage} />
@@ -95,10 +99,16 @@ const Catalog: React.FC = () => {
           <p className={styles.name}>Наборы</p>
         </div>
       )}
-
-      <CatalogList />
-      <Bestsellers products={products} />
-      <Footer footerImage={footerImageCatalog} />
+      <div className={styles.catalogsWrapper}>
+        <CatalogList />
+      </div>
+      <div className={styles.bestsellerWrapper}>
+        <Bestsellers products={products} />
+      </div>
+      <div className={styles.footerWrapper}>
+        {" "}
+        <Footer footerImage={footerImageCatalog} />
+      </div>{" "}
     </main>
   );
 };
