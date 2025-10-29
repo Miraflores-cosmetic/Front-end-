@@ -135,7 +135,7 @@ export default function Bestsellers({
   console.log(width);
 
   const isOversize = useScreenMatch(1536);
-  const x = isOversize ? undefined : (width - 1536) / 2 - 16;
+  const x = isOversize ? undefined : (width - 1536) / 2;
 
   return (
     <section
