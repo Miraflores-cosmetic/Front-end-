@@ -7,8 +7,10 @@ import HeaderLeft from "./LeftSideHeader/HeaderLeftPart";
 import HeaderRight from "./RightSideHeader/HeaderRightPart";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getHeaderStyle } from "@/helpers/helpers";
+import { useScroll } from "@/hooks/useScroll";
 const Header: React.FC = () => {
   const isMobile = useScreenMatch(450);
+  const isScrolled = useScroll();
   const navigate = useNavigate();
   const handleToHome = () => {
     navigate("/");
@@ -16,28 +18,26 @@ const Header: React.FC = () => {
   const location = useLocation();
   console.log(location.pathname, "patname");
   return (
-    <div>
-      <header
-        className={styles.header}
-        style={getHeaderStyle(location.pathname, isMobile)}
-      >
-        <div className={styles.headerContent}>
-          <HeaderLeft />
+    <header
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
+      style={getHeaderStyle(location.pathname, isMobile)}
+    >
+      <div className={styles.headerContent}>
+        <HeaderLeft />
 
-          {isMobile ? (
-            <div className={styles.logoMobile} onClick={handleToHome}>
-              <img src={logoMobile} alt="Miraflores" />
-            </div>
-          ) : (
-            <div className={styles.logo} onClick={handleToHome}>
-              <img src={logo} alt="Miraflores" />
-            </div>
-          )}
+        {isMobile ? (
+          <div className={styles.logoMobile} onClick={handleToHome}>
+            <img src={logoMobile} alt="Miraflores" />
+          </div>
+        ) : (
+          <div className={styles.logo} onClick={handleToHome}>
+            <img src={logo} alt="Miraflores" />
+          </div>
+        )}
 
-          <HeaderRight />
-        </div>
-      </header>
-    </div>
+        <HeaderRight />
+      </div>
+    </header>
   );
 };
 

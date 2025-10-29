@@ -1,20 +1,20 @@
 @use "@/style/variables.scss" as *;
 
 .catalogContainer {
-  height: 100vh;
+  min-height: 100vh;
   background-color: $white;
-  overflow-x: hidden;
   padding-bottom: 32px;
 
   scrollbar-width: none;
   -ms-overflow-style: none;
 
   .headerWrapper {
-    max-width: 1536px;
+    // position: sticky;
+    // top: 0;
+    // z-index: 1000;
+    background-color: $white;
     margin: 0 auto;
-    @media (max-width: 1536px) {
-      padding: 0 32px;
-    }
+
     @media (max-width: 450px) {
       padding: 0;
     }
@@ -56,11 +56,11 @@
     max-width: 1536px;
     margin: 0 auto;
     margin-top: 140px;
-    @media (max-width: 1536px) {
-      padding: 0 32px;
-    }
+
     @media (max-width: 450px) {
-      padding: 0;
+      footer {
+        padding: 0 !important;
+      }
     }
   }
 

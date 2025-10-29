@@ -14,17 +14,19 @@
 }
 
 .homeContainer {
-  padding: 0 0 0 32px;
   height: 100vh;
   background-color: $white;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
-}
-
-@media (max-width: 450px) {
-  .homeContainer {
-    padding: 0 0 0 12px;
+  .headeWrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: $white;
+    margin: 0 auto;
   }
 }
