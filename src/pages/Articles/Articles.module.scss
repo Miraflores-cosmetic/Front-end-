@@ -1,21 +1,21 @@
 @use "@/style/variables.scss" as *;
 
 .articlesContainer {
-  height: 100vh;
+  // height: 100vh;
   background-color: $white;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   /* Скрываем скроллбар */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
-  max-width: 1536px;
-  margin: 0 auto;
 
   .titleContainer {
     display: flex;
     flex-direction: column;
     gap: 24px;
     margin-bottom: 64px;
+    max-width: 1536px;
+    margin: 0 auto;
     @media (max-width: 1536px) {
       padding: 0 32px;
     }
@@ -57,6 +57,8 @@
     }
   }
   .articlesWrapper {
+    max-width: 1536px;
+    margin: 0 auto;
     margin-bottom: 140px;
     margin-top: 100px;
     @media (max-width: 1536px) {
