@@ -4,10 +4,10 @@ import shablon1 from "@/assets/images/shablon1.webp";
 import shablon2 from "@/assets/images/shablon2.webp";
 import shablon3 from "@/assets/images/shablon3.webp";
 import shablon4 from "@/assets/images/shablon4.webp";
-import etap1 from "@/assets/images/etap1.webp";
-import etap2 from "@/assets/images/etap2.webp";
-import etap3 from "@/assets/images/etap3.webp";
-import etap4 from "@/assets/images/etap4.webp";
+// import etap1 from "@/assets/images/etap1.webp";
+// import etap2 from "@/assets/images/etap2.webp";
+// import etap3 from "@/assets/images/etap3.webp";
+// import etap4 from "@/assets/images/etap4.webp";
 import Step from "./step/Step";
 
 const steps = [
@@ -17,33 +17,33 @@ const steps = [
     description:
       "Самое важное выбирать хороший составы для очищения. Наши продукты мягко удаляют загрязнения, не вызывая чувства стянутости.",
     image: shablon1,
-    hoverImage: etap1,
+    hoverImage: shablon1,
   },
   {
     id: 2,
     title: "Энзимный мусс для умывания",
     description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
     image: shablon2,
-    hoverImage: etap2,
+    hoverImage: shablon2,
   },
   {
     id: 3,
     title: "Цветочный мист",
     description: "Мист для мягкой и сияющей кожи с экстрактом розы",
     image: shablon3,
-    hoverImage: etap3,
+    hoverImage: shablon3,
   },
   {
     id: 4,
     title: "Цветочный мист",
     description: "Мист для мягкой и сияющей кожи с экстрактом розы",
     image: shablon4,
-    hoverImage: etap4,
+    hoverImage: shablon4,
   },
 ];
 
 export default function StepsBlock() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number>(0); // Start with first image as big
 
   return (
     <section className={styles.stepsContainer}>
@@ -60,19 +60,17 @@ export default function StepsBlock() {
           </p>
         </div>
       </div>
-      <div className={styles.stepsWrapper}>
+      <div
+        className={styles.stepsWrapper}
+        onMouseLeave={() => setActiveIndex(0)}
+      >
         {steps.map((product, index) => (
           <div
             key={index}
             className={`${styles.stepWrapper} ${
-              activeIndex === index
-                ? styles.active
-                : activeIndex !== null
-                  ? styles.inactive
-                  : ""
+              activeIndex === index ? styles.active : styles.inactive
             }`}
             onMouseEnter={() => setActiveIndex(index)}
-            onMouseLeave={() => setActiveIndex(null)}
           >
             <Step
               etap={index + 1}
@@ -81,6 +79,7 @@ export default function StepsBlock() {
               hoverImage={product.hoverImage}
               title={product.title}
               description={product.description}
+              isActive={activeIndex === index}
             />
           </div>
         ))}

@@ -1,77 +1,20 @@
 .step {
   position: relative;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: all 0.3s ease;
-  max-height: 280px;
-  &:hover {
-    max-height: 600px;
-    width: 480px;
-  }
+  width: 100%;
+  height: 280px;
 
-  .stepWrapper {
-    position: relative;
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-    .stepEtap {
-      font-size: 14px;
-      font-weight: 500;
-    }
+  &.active {
+    height: 594px;
+
     .stepImage {
-      transition: all 0.3s ease;
-    }
-    .active {
-      transform: scale(1.15);
-      z-index: 2;
-    }
-
-    .inactive {
-      transform: scale(0.9);
-      opacity: 0.7;
-    }
-
-    p {
-      position: absolute;
-      background-color: green;
-      width: 64px;
-      height: 32px;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      img {
-        width: 280px;
-      }
-    }
-  }
-
-  .textContent {
-    width: 480px;
-    margin-top: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.5s ease,
-      transform 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    .textTitle {
-      font-size: 16px;
-      font-weight: 600;
-    }
-    .textDesc {
-      font-size: 15px;
-      font-weight: 500;
-    }
-  }
-
-  &:hover {
-    .stepImage {
-      height: 450px;
+      height: 480px;
       width: 480px;
+
+      width: 100%;
+      object-fit: cover;
     }
 
     .textContent {
@@ -79,67 +22,132 @@
       transform: translateY(0);
     }
   }
-}
 
-@media (max-width: 1800px) {
-  .step {
-    width: 320px;
+  &.inactive {
+    height: 280px;
+
+    .stepImage {
+      height: 280px;
+      width: 280px;
+      object-fit: cover;
+    }
   }
+
+  .stepWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+
+    .stepEtap {
+      position: absolute;
+      height: 43px;
+      width: 64px;
+      top: 0;
+      left: 0;
+      background-color: #297230;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 3;
+    }
+
+    .stepImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease;
+    }
+  }
+
   .textContent {
-    width: 360px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    color: #333;
+    padding-top: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .textTitle {
+      font-size: 16px;
+      font-weight: 600;
+      color: black;
+    }
+
+    .textDesc {
+      font-size: 15px;
+      font-weight: 400;
+      color: black;
+    }
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1200px) {
   .step {
-    width: 300px;
-  }
-  .textContent {
-    width: 300px;
+    &.active {
+      height: 500px;
+
+      .stepImage {
+        height: 400px;
+      }
+    }
+
+    &.inactive {
+      height: 180px;
+
+      .stepImage {
+        height: 160px;
+      }
+    }
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 900px) {
   .step {
-    width: 280px;
-  }
-  .textContent {
-    width: 280px;
+    &.active {
+      height: 400px;
+
+      .stepImage {
+        height: 320px;
+      }
+    }
+
+    &.inactive {
+      height: 160px;
+
+      .stepImage {
+        height: 140px;
+      }
+    }
   }
 }
 
-@media (max-width: 1256px) {
+@media (max-width: 600px) {
   .step {
-    width: 260px;
-  }
-  .textContent {
-    width: 260px;
-  }
-}
+    &.active {
+      height: 350px;
 
-@media (max-width: 1150px) {
-  .step {
-    width: 240px;
-  }
-  .textContent {
-    width: 240px;
-  }
-}
+      .stepImage {
+        height: 280px;
+      }
+    }
 
-@media (max-width: 1070px) {
-  .step {
-    width: 230px;
-  }
-  .textContent {
-    width: 230px;
-  }
-}
+    &.inactive {
+      height: 140px;
 
-@media (max-width: 1010px) {
-  .step {
-    min-width: 220px;
-    .textContent {
-      width: 220px;
+      .stepImage {
+        height: 120px;
+      }
     }
   }
 }

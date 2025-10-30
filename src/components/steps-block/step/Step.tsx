@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Step.module.scss";
 
 interface StepProps {
@@ -7,6 +7,7 @@ interface StepProps {
   title: string;
   description: string;
   etap: number;
+  isActive: boolean;
 }
 
 const Step: React.FC<StepProps> = ({
@@ -15,26 +16,21 @@ const Step: React.FC<StepProps> = ({
   title,
   description,
   etap,
+  isActive,
 }) => {
-  const [isHovered, setIsHover] = useState(false);
   return (
     <div
-      className={styles.step}
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
+      className={`${styles.step} ${isActive ? styles.active : styles.inactive}`}
     >
-      {isHovered ? (
-        <div className={styles.stepWrapper}>
-          <p>Этап{etap}</p>
-          <img src={hoverImage} alt={title} className={styles.stepImage} />
-        </div>
-      ) : (
-        <div className={styles.stepWrapper}>
-          <p className={styles.stepEtap}>Этап{etap}</p>
-          <img src={image} alt={title} className={styles.stepImage} />
-        </div>
-      )}
-      {isHovered && (
+      <div className={styles.stepWrapper}>
+        <p className={styles.stepEtap}>Этап{etap}</p>
+        <img
+          src={isActive ? hoverImage : image}
+          alt={title}
+          className={styles.stepImage}
+        />
+      </div>
+      {isActive && (
         <div className={styles.textContent}>
           <h3 className={styles.textTitle}>{title}</h3>
           <p className={styles.textDesc}>{description}</p>
