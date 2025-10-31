@@ -68,7 +68,7 @@
       color: white;
       width: 79px;
       background-color: gray;
-      z-index: 999;
+      z-index: 80;
     }
 
     .type {
@@ -99,7 +99,9 @@
         background-color: white;
         font-weight: 600;
         font-size: 16px;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
 
         &:hover {
           background-color: #000;
