@@ -1,9 +1,15 @@
 .etapsWrapper {
   display: flex;
   flex-direction: column;
+  max-width: 1536px;
+  margin: 0 auto;
   margin-top: 200px;
+  @media (max-width: 1536px) {
+    margin-left: 32px;
+  }
   @media (max-width: 450px) {
     margin-top: 68px;
+    margin-left: 12px;
   }
   .etaps {
     display: flex;

@@ -1,18 +1,24 @@
 @use "@/style/variables.scss" as *;
 
 .bestSellerContainer {
-  padding: 0 32px;
-  height: 100vh;
+  min-height: 100vh;
   background-color: $white;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
-  max-width: 1536px;
-  margin: 0 auto;
+
   .bestSellerInfo {
     display: flex;
     gap: 32px;
+    max-width: 1536px;
+    margin: 0 auto;
+    @media (max-width: 1536px) {
+      padding: 0 32px;
+    }
+    @media (max-width: 450px) {
+      padding: 0 12px;
+    }
     .imagePart {
       width: 50%;
       img {
@@ -68,10 +74,14 @@
       }
     }
   }
-}
-
-@media (max-width: 450px) {
-  .bestSellerContainer {
-    padding: 0 12px;
+  .bestsellerWrapper {
+    margin-bottom: 140px;
+    @media (max-width: 1556px) {
+      margin-left: 32px;
+    }
+    @media (max-width: 450px) {
+      margin-left: 12px;
+      margin-bottom: 40px;
+    }
   }
 }

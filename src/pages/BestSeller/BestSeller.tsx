@@ -193,7 +193,9 @@ const BestSeller: React.FC = () => {
         </section>
         <BestSellerTabs options={bestsellerTabsOptions} />{" "}
         <BestSellerEtaps items={bestSellerEtaps} />
-        <Bestsellers products={products} isTitleHidden />
+        <div className={styles.bestsellerWrapper}>
+          <Bestsellers products={products} isTitleHidden />
+        </div>
       </main>
       <Footer footerImage={footerImage} />
     </article>
