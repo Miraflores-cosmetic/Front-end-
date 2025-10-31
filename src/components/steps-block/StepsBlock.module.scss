@@ -1,6 +1,6 @@
 .stepsContainer {
   width: 100%;
-  padding-top: 160px;
+  padding-top: 200px;
   display: flex;
   flex-direction: column;
   gap: 56px;
@@ -9,11 +9,14 @@
   transition: all 0.3s ease;
   @media (max-width: 1536px) {
     padding: 0 32px;
-    padding-top: 160px;
+    padding-top: 168px;
   }
+
   @media (max-width: 450px) {
     padding: 0 12px;
+    padding-top: 100px;
   }
+
   .stepsWrapper {
     display: flex;
     gap: 18px;
@@ -91,12 +94,6 @@
   flex-direction: column;
 }
 
-@media (max-width: 930px) {
-  .stepsContainer {
-    padding-top: 380px;
-  }
-}
-
 @media (max-width: 820px) {
   .stepsContainer {
     .title {
@@ -109,7 +106,6 @@
   .stepsContainer {
     .stepsWrapper {
       gap: 10px;
-      flex-direction: column;
 
       .stepWrapper {
         &.active {
@@ -121,17 +117,5 @@
         }
       }
     }
-  }
-}
-
-@media (max-width: 900px) {
-  .stepsContainer {
-    padding-top: 48px;
-  }
-}
-
-@media (max-width: 450px) {
-  .stepsContainer {
-    padding-top: 100px;
   }
 }
