@@ -1,11 +1,7 @@
 @use "@/style/variables.scss" as *;
 
 .faceContainer {
-  // height: 100vh;
   background-color: $white;
-  // overflow-x: hidden;
-
-  /* Скрываем скроллбар */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 
@@ -34,13 +30,13 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
     padding-top: 56px;
-    padding-bottom: 240px;
+    padding-bottom: 200px;
     max-width: 1536px;
     margin: 0 auto;
     @media (max-width: 1536px) {
       padding: 0 32px;
       padding-top: 56px;
-      padding-bottom: 240px;
+      padding-bottom: 200px;
     }
 
     @media (max-width: 1150px) {
@@ -58,7 +54,7 @@
     @media (max-width: 450px) {
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       padding: 40px 12px;
-      padding-bottom: 60px;
+      padding-bottom: 40px;
     }
   }
 
