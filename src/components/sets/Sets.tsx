@@ -1,22 +1,34 @@
 import React from "react";
 import styles from "./Sets.module.scss";
 import arrowToRight from "@/assets/icons/ArrowToRight.svg";
-import etap4 from "@/assets/images/etap4.webp";
 import krem from "@/assets/images/krem.webp";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
+import etap4 from "@/assets/images/etap4.webp";
+import girlsmile from "@/assets/images/girlsmile.webp";
+import { ProductCard } from "../bestsellers/product-card/ProductCard";
 
-interface SetData {
+interface Product {
+  id: number;
   title: string;
-  price: string;
   description: string;
+  price: number;
+  oldPrice?: number;
+  discount?: number;
+  label?: string;
   image: string;
+  hoverImage: string;
 }
 
-const setData: SetData = {
+const productData: Product = {
+  id: 1,
   title: "Набор большой и важный",
-  price: "30590₽",
   description: "Мист для влажной, глянцевой кожи с экстрактом розы",
+  price: 30590,
+  oldPrice: 35990,
+  discount: 15,
+  label: "Новинка",
   image: etap4,
+  hoverImage: girlsmile,
 };
 
 const LeftBlock: React.FC<{ isMobile: boolean }> = ({ isMobile }) => (
@@ -41,20 +53,13 @@ const LeftBlock: React.FC<{ isMobile: boolean }> = ({ isMobile }) => (
   </div>
 );
 
-const CenterBlock: React.FC<{ data: SetData; isMobile: boolean }> = ({
-  data,
+const CenterBlock: React.FC<{ product: Product; isMobile: boolean }> = ({
+  product,
   isMobile,
 }) =>
   isMobile ? null : (
-    <div className={styles.center}>
-      <img src={data.image} alt={data.title} />
-      <div className={styles.centerWrapper}>
-        <div className={styles.centerTitleWrapper}>
-          <p className={styles.centerTitle}>{data.title}</p>
-          <p className={styles.centerTitle}>{data.price}</p>
-        </div>
-        <p className={styles.centerDesc}>{data.description}</p>
-      </div>
+    <div className={styles.setsCart}>
+      <ProductCard product={product} />
     </div>
   );
 
@@ -75,7 +80,7 @@ export const Sets: React.FC = () => {
       <h2 className={styles.title}>Наборы</h2>
       <div className={styles.setsWrapper}>
         <LeftBlock isMobile={isMobile} />
-        <CenterBlock data={setData} isMobile={isMobile} />
+        <CenterBlock product={productData} isMobile={isMobile} />
         <RightBlock isMobile={isMobile} />
       </div>
     </section>
