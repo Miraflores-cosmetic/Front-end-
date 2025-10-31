@@ -8,12 +8,11 @@
 
   &.active {
     height: 594px;
+    width: 480px;
 
     .stepImage {
       height: 480px;
       width: 480px;
-
-      width: 100%;
       object-fit: cover;
     }
 
@@ -25,6 +24,7 @@
 
   &.inactive {
     height: 280px;
+    width: 280px;
 
     .stepImage {
       height: 280px;
@@ -92,61 +92,24 @@
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .step {
     &.active {
-      height: 500px;
+      height: 415px;
+      width: 316px;
 
       .stepImage {
-        height: 400px;
+        height: 316px;
+        width: 316px;
       }
     }
 
     &.inactive {
-      height: 180px;
-
+      height: 380px;
+      width: 220px;
       .stepImage {
-        height: 160px;
-      }
-    }
-  }
-}
-
-@media (max-width: 900px) {
-  .step {
-    &.active {
-      height: 400px;
-
-      .stepImage {
-        height: 320px;
-      }
-    }
-
-    &.inactive {
-      height: 160px;
-
-      .stepImage {
-        height: 140px;
-      }
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .step {
-    &.active {
-      height: 350px;
-
-      .stepImage {
-        height: 280px;
-      }
-    }
-
-    &.inactive {
-      height: 140px;
-
-      .stepImage {
-        height: 120px;
+        height: 220px;
+        width: 220px;
       }
     }
   }

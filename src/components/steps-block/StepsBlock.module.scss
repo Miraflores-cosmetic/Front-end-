@@ -24,15 +24,15 @@
     .stepWrapper {
       transition: all 0.3s ease;
 
-      &.active {
-        flex: 2;
-        z-index: 2;
-      }
+      // &.active {
+      //   flex: 2;
+      //   z-index: 2;
+      // }
 
-      &.inactive {
-        flex: 1;
-        opacity: 0.8;
-      }
+      // &.inactive {
+      //   flex: 1;
+      //   opacity: 0.8;
+      // }
     }
   }
 
