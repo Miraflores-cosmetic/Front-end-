@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./OrderRightPart.module.scss";
 
 import Miraflores_logo from "@/assets/icons/Miraflores_logo.svg";
-
 import krem from "@/assets/images/krem.webp";
 
 import { useScreenMatch } from "@/hooks/useScreenMatch";
@@ -14,6 +13,11 @@ import { CardItem } from "../types";
 
 const OrderRightPart: React.FC = () => {
   const isTablet = useScreenMatch(956);
+  const [isPromoOpen, setIsPromoOpen] = useState(true); // 👈 состояние для аккордеона
+
+  const handleTogglePromo = () => {
+    setIsPromoOpen((prev) => !prev);
+  };
 
   const cartData: CardItem[] = [
     {
@@ -63,6 +67,7 @@ const OrderRightPart: React.FC = () => {
       isGift: true,
     },
   ];
+
   return (
     <>
       {!isTablet && (
@@ -75,16 +80,24 @@ const OrderRightPart: React.FC = () => {
             />
             <CardList cartData={cartData} />
           </article>
-          <Sertificate />
-          <section className={styles.discountPromo}>
-            <p>
-              Скидка по промо-кодам НЕ РАСПРОСТРАНЯЕТСЯ на товары уже со
-              скидками, наборы, товары не нашего производства и электронные
-              продукты.
-            </p>
-          </section>
-          <SumDiscount />
-          <InfoContent />
+
+          {/* Передаём колбэк для клика */}
+          <Sertificate isOpen={isPromoOpen} onToggle={handleTogglePromo} />
+
+          {/* Аккордеонная часть */}
+          {isPromoOpen && (
+            <>
+              <section className={styles.discountPromo}>
+                <p>
+                  Скидка по промо-кодам НЕ РАСПРОСТРАНЯЕТСЯ на товары уже со
+                  скидками, наборы, товары не нашего производства и электронные
+                  продукты.
+                </p>
+              </section>
+              <SumDiscount />
+              <InfoContent />
+            </>
+          )}
         </section>
       )}
     </>

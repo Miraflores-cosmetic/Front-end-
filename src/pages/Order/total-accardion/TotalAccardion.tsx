@@ -76,15 +76,6 @@ const TotalAccordion: React.FC<TotalAccordionProps> = ({
             <img src={addImage} alt={"addImage"} className={styles.addImage} />
           </section>
 
-          {/* <section className={styles.summary}>
-            <p>
-              Скидка: <span>-{discount}₽</span>
-            </p>
-            <p>
-              Промокод: <span>-{promo}₽</span>
-            </p>
-          </section> */}
-
           <section className={styles.sectionSumDiscount}>
             <div className={styles.sumWrapper}>
               <p className={styles.sum}>Сумма • {3} товара </p>
