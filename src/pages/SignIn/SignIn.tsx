@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./SignIn.module.scss";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import logo from "@/assets/icons/Miraflores_logo.svg";
 import google from "@/assets/icons/google.svg";
 import telegram from "@/assets/icons/telegram.svg";
@@ -12,7 +11,6 @@ import { Button } from "@/components/button/Button";
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleNavigatetoHome = () => navigate("/");

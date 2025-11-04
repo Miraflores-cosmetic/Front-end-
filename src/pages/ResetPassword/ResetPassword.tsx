@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styles from "./ResetPassword.module.scss";
 import { useNavigate } from "react-router-dom";
-// import { useDispatch } from "react-redux";
 import logo from "@/assets/icons/Miraflores_logo.svg";
 
 import { TextField } from "@/components/text-field/TextField";
@@ -10,7 +9,6 @@ import { Button } from "@/components/button/Button";
 const ResetPassword: React.FC = () => {
   const [newPassword, setNewPassword] = useState("");
   const [repetedPassword, setRepetedPassword] = useState("");
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleNavigatetoHome = () => navigate("/");
