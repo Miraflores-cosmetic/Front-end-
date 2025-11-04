@@ -1,12 +1,10 @@
 import React from "react";
 import styles from "./TextField.module.scss";
 
-interface TextFieldProps {
+interface TextFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'> {
   label?: string;
-  type?: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   rightLinkText?: string;
   onRightLinkClick?: () => void;
 }
@@ -19,6 +17,7 @@ export const TextField: React.FC<TextFieldProps> = ({
   placeholder,
   rightLinkText,
   onRightLinkClick,
+  ...rest
 }) => (
   <div className={styles.wrapper}>
     <div className={styles.labelRow}>
@@ -35,6 +34,7 @@ export const TextField: React.FC<TextFieldProps> = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      {...rest}
     />
   </div>
 );
