@@ -4,10 +4,6 @@ import shablon1 from "@/assets/images/shablon1.webp";
 import shablon2 from "@/assets/images/shablon2.webp";
 import shablon3 from "@/assets/images/shablon3.webp";
 import shablon4 from "@/assets/images/shablon4.webp";
-// import etap1 from "@/assets/images/etap1.webp";
-// import etap2 from "@/assets/images/etap2.webp";
-// import etap3 from "@/assets/images/etap3.webp";
-// import etap4 from "@/assets/images/etap4.webp";
 import Step from "./step/Step";
 
 const steps = [
