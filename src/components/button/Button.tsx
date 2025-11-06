@@ -8,6 +8,7 @@ interface StatusButtonProps {
   status?: Status;
   onClick?: () => void;
   disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }
 
 export const Button: React.FC<StatusButtonProps> = ({
@@ -15,11 +16,12 @@ export const Button: React.FC<StatusButtonProps> = ({
   status = "success",
   onClick,
   disabled = false,
+  type = "button",
 }) => {
   const className = `${styles.button} ${styles[status]}`;
   return (
     <button
-      type="button"
+      type={type}
       className={className}
       onClick={onClick}
       disabled={disabled}
