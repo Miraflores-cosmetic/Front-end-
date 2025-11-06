@@ -54,7 +54,6 @@ const Delivery: React.FC<DeliveryProps> = ({ showTitle = true }) => {
   return (
     <div className={styles.delivery}>
       {showTitle && <h2 className={styles.title}>Доставка</h2>}{" "}
-      {/* 👈 условный рендер */}
       <ul className={styles.list}>
         {addresses.map((address) => (
           <li key={address.id} className={styles.item}>

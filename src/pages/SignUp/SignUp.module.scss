@@ -1,4 +1,3 @@
-// ---------- Переменные ----------
 $color-primary: #3d83f6;
 $color-text: #6e6d67;
 $color-border: #6e6d6799;
@@ -7,13 +6,11 @@ $color-border-hover: #91918d99;
 $font-base: 15px;
 $transition-fast: 0.2s ease;
 
-// ---------- Общие миксины ----------
 @mixin link-hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-// ---------- Компонент ----------
 .signUpContainer {
   width: 100%;
   height: 100vh;

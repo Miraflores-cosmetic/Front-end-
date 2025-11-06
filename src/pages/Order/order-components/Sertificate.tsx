@@ -18,7 +18,6 @@ const Sertificate: React.FC<SertificateProps> = ({ isOpen, onToggle }) => {
           <p className={styles.promoTxt}>Добавить промокод или сертификат</p>
         </div>
 
-        {/* Меняем иконку при открытии/закрытии */}
         <img
           src={isOpen ? minus : plus}
           alt={isOpen ? "minus" : "plus"}
@@ -28,7 +27,6 @@ const Sertificate: React.FC<SertificateProps> = ({ isOpen, onToggle }) => {
         />
       </div>
 
-      {/* Показываем SALE только когда открыт */}
       {isOpen && <p className={styles.SALE}>SALE2025</p>}
     </section>
   );

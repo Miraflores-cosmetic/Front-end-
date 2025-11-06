@@ -10,7 +10,7 @@ export type TabId = "info" | "orders" | "favorites" | "bonus" | "logout";
 export interface MenuItem {
   id: TabId;
   label: string;
-  content?: React.ReactNode; // контент, который откроется в аккордеоне на мобилке
+  content?: React.ReactNode;
 }
 
 export interface SidebarProps {
@@ -18,8 +18,8 @@ export interface SidebarProps {
   menuItems: MenuItem[];
   activeTab: TabId;
   setActiveTab: (tab: TabId) => void;
-  openAccordion: TabId | null; // 🔹 new prop
-  setOpenAccordion: React.Dispatch<React.SetStateAction<TabId | null>>; // ✅ correct typing
+  openAccordion: TabId | null;
+  setOpenAccordion: React.Dispatch<React.SetStateAction<TabId | null>>;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -34,11 +34,9 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const handleClick = (id: TabId) => {
     if (isMobile) {
-      // при мобилке: открываем/закрываем аккордеон
       setOpenAccordion((prev) => (prev === id ? null : id));
       setActiveTab(id);
     } else {
-      // при десктопе: просто активируем вкладку
       setActiveTab(id);
     }
   };
@@ -130,7 +128,6 @@ const Sidebar: React.FC<SidebarProps> = ({
                 />
               </li>
 
-              {/* Мобильный аккордеон */}
               {isMobile && openAccordion === item.id && item.content && (
                 <div className={styles.accordionContent}>{item.content}</div>
               )}

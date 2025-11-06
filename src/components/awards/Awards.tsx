@@ -22,7 +22,6 @@ export const Awards: React.FC = () => {
 
   return (
     <section className={styles.awardsContainer}>
-      {/* Заголовок */}
       <div className={styles.titleWrapper}>
         <p className={styles.title}>
           Награды за натуральность, эффективность и заботу о коже
@@ -30,9 +29,7 @@ export const Awards: React.FC = () => {
         <p className={styles.desc}>15 лет доверия и признания</p>
       </div>
 
-      {/* Контент */}
       <div className={styles.content}>
-        {/* Левая колонка */}
         <div className={styles.leftWrapper}>
           <div className={styles.textWrapper}>
             {AWARD_TEXTS.map((text, index) => (
@@ -48,14 +45,12 @@ export const Awards: React.FC = () => {
           </div>
         </div>
 
-        {/* Центр (только для desktop) */}
         {!isMobile && (
           <div className={styles.centerWrapper}>
             <img src={romashkaBig} alt="Ромашка" />
           </div>
         )}
 
-        {/* Правая колонка */}
         <div className={styles.rightWrapper}>
           {isMobile ? (
             <div className={styles.bottomImageWrapper}>

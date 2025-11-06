@@ -59,7 +59,6 @@ const DeliveryProfile = () => {
           </p>
         )}
       </article>
-      {/* 👈 условный рендер */}
       <ul className={styles.list}>
         {addresses.map((address, index) => (
           <li key={address.id} className={styles.item}>

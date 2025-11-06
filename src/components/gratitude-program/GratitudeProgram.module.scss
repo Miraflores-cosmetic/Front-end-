@@ -85,8 +85,6 @@
         gap: 12px;
       }
       .imageBlock {
-        //    width: 450px;
-        // height: 450px;
         width: 355px;
         height: 355px;
         border-radius: 50%;
@@ -94,16 +92,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        // @media (max-width: 1900px) {
-        //   width: 400px;
-        //   height: 400px;
-        // }
-
-        // @media (max-width: 1720px) {
-        //   width: 370px;
-        //   height: 370px;
-        // }
 
         @media (max-width: 1590px) {
           width: 350px;

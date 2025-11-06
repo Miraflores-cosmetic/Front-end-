@@ -1,16 +1,13 @@
-// ---------- Переменные ----------
 $color-primary: #3d83f6;
 $color-text: #6e6d67;
 $font-base: 15px;
 $transition-fast: 0.2s ease;
 
-// ---------- Миксины ----------
 @mixin link-hover {
   cursor: pointer;
   text-decoration: underline;
 }
 
-// ---------- Компонент ----------
 .signInContainer {
   width: 100%;
   height: 100vh;

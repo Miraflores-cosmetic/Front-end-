@@ -81,10 +81,8 @@ const OrderRightPart: React.FC = () => {
             <CardList cartData={cartData} />
           </article>
 
-          {/* Передаём колбэк для клика */}
           <Sertificate isOpen={isPromoOpen} onToggle={handleTogglePromo} />
 
-          {/* Аккордеонная часть */}
           {isPromoOpen && (
             <>
               <section className={styles.discountPromo}>

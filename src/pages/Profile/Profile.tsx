@@ -69,7 +69,6 @@ const ProfilePage: React.FC = () => {
       <Header />
       <section className={styles.contentWrapper}>
         <div className={styles.profile}>
-          {/* ЛЕВАЯ КОЛОНКА */}
           <Sidebar
             userName="ФЕДОР П."
             menuItems={menuMobileItems}
@@ -78,7 +77,6 @@ const ProfilePage: React.FC = () => {
             openAccordion={openAccordion}
             setOpenAccordion={setOpenAccordion}
           />
-          {/* ПРАВАЯ ЧАСТЬ */}
           {!isMobile && (
             <ProfileContent
               activeTab={activeTab}

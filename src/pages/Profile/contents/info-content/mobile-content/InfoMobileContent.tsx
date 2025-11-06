@@ -9,7 +9,7 @@ import { TabId } from "@/pages/Profile/side-bar/SideBar";
 import { useScreenMatch } from "@/hooks/useScreenMatch";
 
 interface InfoMobileContentProps {
-  setOpenAccordion: React.Dispatch<React.SetStateAction<TabId | null>>; // ✅ type matches Sidebar
+  setOpenAccordion: React.Dispatch<React.SetStateAction<TabId | null>>;
 }
 
 const InfoMobileContent: React.FC<InfoMobileContentProps> = ({
@@ -66,7 +66,6 @@ const InfoMobileContent: React.FC<InfoMobileContentProps> = ({
       </article>
 
       <DeliveryProfile />
-      {/* ✅ Close button */}
       <article className={styles.telegramContainer}>
         <div className={styles.telegramwrapper}>
           <div className={styles.top}>

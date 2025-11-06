@@ -64,12 +64,10 @@ const AboutBlock: React.FC = () => {
           </div>
         </div>
 
-        {/* Center */}
         <div className={styles.center}>
           <AboutImage src={AvoutCenter} alt="CenterFoto" />
         </div>
 
-        {/* Right Column */}
         <div className={styles.right}>
           <div className={styles.smallImageWrapper}>
             {!isMobile && !isTablet && (

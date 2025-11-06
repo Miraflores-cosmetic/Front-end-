@@ -91,17 +91,14 @@
       box-sizing: border-box;
     }
 
-    // убираем левый паддинг у первого слайда
     .slick-slide:first-child {
       padding-left: 0;
     }
 
-    // убираем правый паддинг у последнего слайда
     .slick-slide:last-child {
       padding-right: 0;
     }
 
-    // у списка тогда НЕ нужен отрицательный margin
     .slick-list {
       margin: 0;
     }

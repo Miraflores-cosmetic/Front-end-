@@ -121,7 +121,6 @@ const OrdersContent: React.FC<OrdersContentProps> = ({ setOpenAccordion }) => {
         <button className={styles.addComment}>Оставить отзыв</button>
       </div>
 
-      {/* ✅ Close button */}
       {isMobile && (
         <p className={styles.closeBtn} onClick={handleCloseAccordion}>
           Закрыть
