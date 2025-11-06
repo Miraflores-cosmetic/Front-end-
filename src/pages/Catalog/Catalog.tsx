@@ -56,7 +56,7 @@ const Catalog: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 4,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -65,7 +65,7 @@ const Catalog: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 5,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
@@ -74,7 +74,7 @@ const Catalog: React.FC = () => {
       hoverImage: girlwithsmile,
     },
     {
-      id: 3,
+      id: 6,
       title: "Цветочный мист",
       description: "Мист для мягкой и сияющей кожи с экстрактом розы",
       price: 3590,
