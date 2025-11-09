@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "../right-part/OrderRightPart.module.scss";
+import React from 'react';
+import styles from '../right-part/OrderRightPart.module.scss';
 
 export interface CartItem {
   id: number;
@@ -21,7 +21,7 @@ interface OrderCartListProps {
 const CardList: React.FC<OrderCartListProps> = ({ cartData }) => {
   return (
     <>
-      {cartData.map((item) => (
+      {cartData.map(item => (
         <div className={styles.orderCart} key={item.id}>
           <figure className={styles.cartImageWrapper}>
             <img src={item.image} alt={item.alt} className={styles.kremImage} />
@@ -34,17 +34,11 @@ const CardList: React.FC<OrderCartListProps> = ({ cartData }) => {
                 <p className={styles.size}>{item.size}</p>
               </div>
 
-              {item.discount && (
-                <div className={styles.discount}>{item.discount}</div>
-              )}
+              {item.discount && <div className={styles.discount}>{item.discount}</div>}
             </div>
 
             <div className={styles.bottom}>
-              {
-                <p className={styles.count}>
-                  {item.discount ? item.count : null}
-                </p>
-              }
+              {<p className={styles.count}>{item.discount ? item.count : null}</p>}
 
               {item.isGift ? (
                 <div className={styles.surprise}>Подарок</div>

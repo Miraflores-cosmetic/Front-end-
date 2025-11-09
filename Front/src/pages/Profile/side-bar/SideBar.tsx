@@ -1,11 +1,11 @@
-import React from "react";
-import styles from "./SideBar.module.scss";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
-import krem from "@/assets/images/krem.webp";
-import girlwithsmile from "@/assets/images/girlsmile.webp";
-import Bestsellers from "@/components/bestsellers/Bestsellers";
+import React from 'react';
+import styles from './SideBar.module.scss';
+import { useScreenMatch } from '@/hooks/useScreenMatch';
+import krem from '@/assets/images/krem.webp';
+import girlwithsmile from '@/assets/images/girlsmile.webp';
+import Bestsellers from '@/components/bestsellers/Bestsellers';
 
-export type TabId = "info" | "orders" | "favorites" | "bonus" | "logout";
+export type TabId = 'info' | 'orders' | 'favorites' | 'bonus' | 'logout';
 
 export interface MenuItem {
   id: TabId;
@@ -28,14 +28,14 @@ const Sidebar: React.FC<SidebarProps> = ({
   activeTab,
   setActiveTab,
   openAccordion,
-  setOpenAccordion,
+  setOpenAccordion
 }) => {
   const isMobile = useScreenMatch(756);
 
   const handleClick = (id: TabId) => {
     if (isMobile) {
       // при мобилке: открываем/закрываем аккордеон
-      setOpenAccordion((prev) => (prev === id ? null : id));
+      setOpenAccordion(prev => (prev === id ? null : id));
       setActiveTab(id);
     } else {
       // при десктопе: просто активируем вкладку
@@ -46,64 +46,64 @@ const Sidebar: React.FC<SidebarProps> = ({
   const products = [
     {
       id: 1,
-      title: "Энзимный мусс для умывания",
-      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      title: 'Энзимный мусс для умывания',
+      description: 'Энзимы риса + фруктовые энзимы и фруктовые кислоты',
       price: 3590,
       oldPrice: 4600,
       discount: 22,
       image: krem,
-      hoverImage: girlwithsmile,
+      hoverImage: girlwithsmile
     },
     {
       id: 2,
-      title: "Энзимный мусс для умывания",
-      description: "Энзимы риса + фруктовые энзимы и фруктовые кислоты",
+      title: 'Энзимный мусс для умывания',
+      description: 'Энзимы риса + фруктовые энзимы и фруктовые кислоты',
       price: 3590,
       oldPrice: 4600,
       discount: 22,
       image: krem,
-      hoverImage: girlwithsmile,
+      hoverImage: girlwithsmile
     },
     {
       id: 3,
-      title: "Цветочный мист",
-      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      title: 'Цветочный мист',
+      description: 'Мист для мягкой и сияющей кожи с экстрактом розы',
       price: 3590,
       oldPrice: 4600,
       discount: 23,
       image: krem,
-      hoverImage: girlwithsmile,
+      hoverImage: girlwithsmile
     },
     {
       id: 4,
-      title: "Цветочный мист",
-      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      title: 'Цветочный мист',
+      description: 'Мист для мягкой и сияющей кожи с экстрактом розы',
       price: 3590,
       oldPrice: 4600,
       discount: 23,
       image: krem,
-      hoverImage: girlwithsmile,
+      hoverImage: girlwithsmile
     },
     {
       id: 5,
-      title: "Цветочный мист",
-      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      title: 'Цветочный мист',
+      description: 'Мист для мягкой и сияющей кожи с экстрактом розы',
       price: 3590,
       oldPrice: 4600,
       discount: 23,
       image: krem,
-      hoverImage: girlwithsmile,
+      hoverImage: girlwithsmile
     },
     {
       id: 6,
-      title: "Цветочный мист",
-      description: "Мист для мягкой и сияющей кожи с экстрактом розы",
+      title: 'Цветочный мист',
+      description: 'Мист для мягкой и сияющей кожи с экстрактом розы',
       price: 3590,
       oldPrice: 4600,
       discount: 23,
       image: krem,
-      hoverImage: girlwithsmile,
-    },
+      hoverImage: girlwithsmile
+    }
   ];
 
   return (
@@ -112,22 +112,14 @@ const Sidebar: React.FC<SidebarProps> = ({
         <h1 className={styles.userName}>{userName}</h1>
 
         <nav className={styles.menu}>
-          {menuItems.map((item) => (
+          {menuItems.map(item => (
             <div key={item.id} className={styles.menuItemWrapper}>
               <li
-                className={`${styles.menuItem} ${
-                  activeTab === item.id ? styles.active : ""
-                }`}
+                className={`${styles.menuItem} ${activeTab === item.id ? styles.active : ''}`}
                 onClick={() => handleClick(item.id)}
               >
                 {item.label}
-                <div
-                  className={
-                    activeTab === item.id
-                      ? styles.activeDot
-                      : styles.notActiveDot
-                  }
-                />
+                <div className={activeTab === item.id ? styles.activeDot : styles.notActiveDot} />
               </li>
 
               {/* Мобильный аккордеон */}
@@ -143,7 +135,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       {!isMobile && (
         <div className={styles.support}>
           <p>Нужна помощь?</p>
-          <a href="#">Свяжитесь с нами</a>
+          <a href='#'>Свяжитесь с нами</a>
         </div>
       )}
     </aside>

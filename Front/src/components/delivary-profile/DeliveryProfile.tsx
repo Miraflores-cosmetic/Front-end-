@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styles from "./DeliveryProfile.module.scss";
-import CustomCheckbox from "../custom-checkBox/CustomCheckbox";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
+import React, { useState } from 'react';
+import styles from './DeliveryProfile.module.scss';
+import CustomCheckbox from '../custom-checkBox/CustomCheckbox';
+import { useScreenMatch } from '@/hooks/useScreenMatch';
 
 interface Address {
   id: number;
@@ -15,23 +15,23 @@ const DeliveryProfile = () => {
   const [addresses, setAddresses] = useState<Address[]>([
     {
       id: 1,
-      type: "Пункт СДЭК",
-      city: "г. Суздаль",
-      street: "ул. Ленина, 138/2",
+      type: 'Пункт СДЭК',
+      city: 'г. Суздаль',
+      street: 'ул. Ленина, 138/2'
     },
     {
       id: 2,
-      type: "Пункт Почта России",
-      city: "г. Москва",
-      street: "ул. Тверская, 162 к. 5",
+      type: 'Пункт Почта России',
+      city: 'г. Москва',
+      street: 'ул. Тверская, 162 к. 5'
     },
     {
       id: 3,
-      type: "Курьером по адресу",
-      city: "г. Суздаль",
-      street: "ул. Тверская, 10 кв. 15",
-      comment: "Осторожно, злая собака!",
-    },
+      type: 'Курьером по адресу',
+      city: 'г. Суздаль',
+      street: 'ул. Тверская, 10 кв. 15',
+      comment: 'Осторожно, злая собака!'
+    }
   ]);
   const isMobile = useScreenMatch(768);
 
@@ -42,8 +42,8 @@ const DeliveryProfile = () => {
     const newAddress: Address = {
       id: newId,
       type: `Новый адрес ${newId}`,
-      city: "г. Новый город",
-      street: "ул. Новая, 1",
+      city: 'г. Новый город',
+      street: 'ул. Новая, 1'
     };
     setAddresses([...addresses, newAddress]);
     setSelectedId(newId);

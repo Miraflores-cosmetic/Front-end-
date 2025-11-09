@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./GratitudeProgram.module.scss";
-import krem from "@/assets/images/krem.webp";
-import gratitudeLine from "@/assets/icons/gratitudeLine.svg";
+import React from 'react';
+import styles from './GratitudeProgram.module.scss';
+import krem from '@/assets/images/krem.webp';
+import gratitudeLine from '@/assets/icons/gratitudeLine.svg';
 
-const gratitudeAmounts = ["от 5000₽", "от 10.000₽", "от 15.000₽", "от 20.000₽"];
+const gratitudeAmounts = ['от 5000₽', 'от 10.000₽', 'от 15.000₽', 'от 20.000₽'];
 const gratitudeImages = [krem, krem, krem, krem];
 
 export const GratitudeProgram: React.FC = () => {
@@ -13,12 +13,12 @@ export const GratitudeProgram: React.FC = () => {
         <p className={styles.title}>Программа благодарности</p>
         <div className={styles.descWrapper}>
           <p className={styles.desc}>
-            Знали ли вы, что даже самое эффективное средство не сработает, если
-            кожа неправильно очищена.
+            Знали ли вы, что даже самое эффективное средство не сработает, если кожа неправильно
+            очищена.
           </p>
           <p className={styles.desc}>
-            Агрессивное умывание всего за минуту может нарушить защитный барьер
-            и сделать кожу уязвимой
+            Агрессивное умывание всего за минуту может нарушить защитный барьер и сделать кожу
+            уязвимой
           </p>
         </div>
       </div>
@@ -32,21 +32,13 @@ export const GratitudeProgram: React.FC = () => {
               </p>
             ))}
           </div>
-          <img
-            src={gratitudeLine}
-            alt="gratitude line"
-            className={styles.gratitudeLine}
-          />
+          <img src={gratitudeLine} alt='gratitude line' className={styles.gratitudeLine} />
         </div>
 
         <div className={styles.gratitudeImages}>
           {gratitudeImages.map((imageSrc, index) => (
             <div key={index} className={styles.imageBlock}>
-              <img
-                src={imageSrc}
-                alt={`product ${index + 1}`}
-                className={styles.kremImage}
-              />
+              <img src={imageSrc} alt={`product ${index + 1}`} className={styles.kremImage} />
             </div>
           ))}
         </div>

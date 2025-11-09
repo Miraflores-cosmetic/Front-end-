@@ -1,21 +1,21 @@
-import React from "react";
-import Slider from "react-slick";
-import styles from "./Bestsellers.module.scss";
-import { ProductCard } from "./product-card/ProductCard";
-import { ProductBasteller } from "@/types/types";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
-import { useWindowWidth } from "@/hooks/useWindowWidth";
+import React from 'react';
+import Slider from 'react-slick';
+import styles from './Bestsellers.module.scss';
+import { ProductCard } from './product-card/ProductCard';
+import { ProductBasteller } from '@/types/types';
+import { useScreenMatch } from '@/hooks/useScreenMatch';
+import { useWindowWidth } from '@/hooks/useWindowWidth';
 
 interface BestsellersProps {
   products: ProductBasteller[];
   isTitleHidden?: boolean;
-  slidesToShow?: number; // ✅ new prop
+  slidesToShow?: number;
 }
 
 export default function Bestsellers({
   products,
   isTitleHidden,
-  slidesToShow = 3.1, // ✅ default value
+  slidesToShow = 3.3
 }: BestsellersProps) {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
@@ -23,8 +23,9 @@ export default function Bestsellers({
     dots: true,
     arrows: false,
     infinite: false,
+    draggable: true,
     speed: 500,
-    slidesToShow, // ✅ dynamic value
+    slidesToShow,
     slidesToScroll: 1,
 
     afterChange: (current: number) => {
@@ -32,11 +33,7 @@ export default function Bestsellers({
       setActiveIndex(num);
     },
     customPaging: (i: number) => (
-      <div
-        className={`${styles.customDot} ${
-          i === activeIndex ? styles.activeDot : ""
-        }`}
-      ></div>
+      <div className={`${styles.customDot} ${i === activeIndex ? styles.activeDot : ''}`}></div>
     ),
 
     responsive: [
@@ -44,8 +41,8 @@ export default function Bestsellers({
         breakpoint: 1500,
         settings: {
           slidesToShow: 3.1,
-          slidesToScroll: 1,
-        },
+          slidesToScroll: 1
+        }
       },
       {
         breakpoint: 1000,
@@ -53,15 +50,15 @@ export default function Bestsellers({
           slidesToShow: 2.3,
           slidesToScroll: 1,
           arrows: false,
-          centerMode: false,
-        },
+          centerMode: false
+        }
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1.3,
-          slidesToScroll: 1,
-        },
+          slidesToScroll: 1
+        }
       },
       {
         breakpoint: 650,
@@ -69,8 +66,8 @@ export default function Bestsellers({
           slidesToShow: 1.2,
           slidesToScroll: 1,
           arrows: false,
-          centerMode: false,
-        },
+          centerMode: false
+        }
       },
       {
         breakpoint: 610,
@@ -78,8 +75,8 @@ export default function Bestsellers({
           slidesToShow: 1.1,
 
           slidesToScroll: 1,
-          dots: false,
-        },
+          dots: false
+        }
       },
 
       {
@@ -88,8 +85,8 @@ export default function Bestsellers({
           slidesToShow: 1.3,
 
           slidesToScroll: 1,
-          dots: false,
-        },
+          dots: false
+        }
       },
       {
         breakpoint: 500,
@@ -97,8 +94,8 @@ export default function Bestsellers({
           slidesToShow: 1.2,
 
           slidesToScroll: 1,
-          dots: false,
-        },
+          dots: false
+        }
       },
       {
         breakpoint: 470,
@@ -106,8 +103,8 @@ export default function Bestsellers({
           slidesToShow: 1.1,
 
           slidesToScroll: 1,
-          dots: false,
-        },
+          dots: false
+        }
       },
 
       {
@@ -116,8 +113,8 @@ export default function Bestsellers({
           slidesToShow: 1.2,
 
           slidesToScroll: 1,
-          dots: false,
-        },
+          dots: false
+        }
       },
       {
         breakpoint: 430,
@@ -125,10 +122,10 @@ export default function Bestsellers({
           slidesToShow: 1.1,
 
           slidesToScroll: 1,
-          dots: false,
-        },
-      },
-    ],
+          dots: false
+        }
+      }
+    ]
   };
   const width = useWindowWidth();
 
@@ -138,13 +135,10 @@ export default function Bestsellers({
   const x = isOversize ? undefined : (width - 1536) / 2 - 16;
 
   return (
-    <section
-      className={styles.bestsellers}
-      style={isOversize ? undefined : { marginLeft: x }}
-    >
+    <section className={styles.bestsellers} style={isOversize ? undefined : { marginLeft: x }}>
       {!isTitleHidden && <h2 className={styles.title}>Бестселлеры</h2>}
-      <Slider {...settings}>
-        {products.map((product) => (
+      <Slider {...settings} className={styles.slider}>
+        {products.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </Slider>

@@ -25,7 +25,7 @@
   }
 
   .title {
-    font-family: "trial";
+    font-family: 'Oceanic', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-size: 64px;
     font-weight: 300;
     line-height: 1.2;
@@ -43,7 +43,7 @@
   .text {
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.4;
     color: #6e6d67;
   }
 
@@ -82,7 +82,7 @@
       cursor: pointer;
 
       &:after {
-        content: "○";
+        content: '○';
         font-size: 16px;
       }
     }
@@ -135,9 +135,12 @@
   justify-content: end;
   align-items: center;
   gap: 15px;
-  p {
+  a {
     font-weight: 500;
     font-size: 16px;
+    &:hover {
+      color: #297230;
+    }
   }
 }
 

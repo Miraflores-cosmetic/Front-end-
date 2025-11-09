@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./FooterMenu.module.scss";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
+import React from 'react';
+import styles from './FooterMenu.module.scss';
+import { useScreenMatch } from '@/hooks/useScreenMatch';
 
 type MenuItem = {
   label: string;

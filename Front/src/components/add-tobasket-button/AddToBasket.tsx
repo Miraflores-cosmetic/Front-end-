@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import styles from "./AddToBasket.module.scss";
-import blackBasketTrash from "@/assets/icons/blackBasketTrash.svg";
-import whiteBasketTrash from "@/assets/icons/whiteBasketTrash.svg";
-import add from "@/assets/icons/add.svg";
-import minus from "@/assets/icons/minus.svg";
+import React, { useState } from 'react';
+import styles from './AddToBasket.module.scss';
+import blackBasketTrash from '@/assets/icons/blackBasketTrash.svg';
+import whiteBasketTrash from '@/assets/icons/whiteBasketTrash.svg';
+import add from '@/assets/icons/add.svg';
+import minus from '@/assets/icons/minus.svg';
 
 interface AddToCartButtonProps {
   defaultText?: string;
@@ -13,24 +13,23 @@ interface AddToCartButtonProps {
 }
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({
-  defaultText = "Добавить в корзину",
-  hoverText = "Оформить Заказ",
-  activeText = "Добавлено",
+  defaultText = 'Добавить в корзину',
+  hoverText = 'Оформить Заказ',
+  activeText = 'Добавлено'
 }) => {
   const [count, setCount] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [iconHovered, setIconHovered] = useState(false); // <— for the icon
 
   const handleAdd = () => {
-    setCount((prev) => prev + 1);
+    setCount(prev => prev + 1);
   };
 
   const handleRemove = () => {
-    setCount((prev) => Math.max(prev - 1, 0));
+    setCount(prev => Math.max(prev - 1, 0));
   };
 
-  const buttonText =
-    count === 0 ? (isHovered ? hoverText : defaultText) : activeText;
+  const buttonText = count === 0 ? (isHovered ? hoverText : defaultText) : activeText;
 
   return (
     <div className={styles.wrapper}>
@@ -40,16 +39,16 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
           className={styles.mainBtn}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          type="button"
+          type='button'
         >
           {buttonText}
         </button>
       ) : (
         <div className={styles.mainWrapper}>
-          <img src={add} alt="basket icon" onClick={handleAdd} />
+          <img src={add} alt='basket icon' onClick={handleAdd} />
 
           <span className={styles.count}>{count}</span>
-          <img src={minus} alt="basket icon" onClick={handleRemove} />
+          <img src={minus} alt='basket icon' onClick={handleRemove} />
         </div>
       )}
 
@@ -58,10 +57,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
         onMouseEnter={() => setIconHovered(true)}
         onMouseLeave={() => setIconHovered(false)}
       >
-        <img
-          src={iconHovered ? whiteBasketTrash : blackBasketTrash}
-          alt="basket icon"
-        />
+        <img src={iconHovered ? whiteBasketTrash : blackBasketTrash} alt='basket icon' />
       </div>
     </div>
   );

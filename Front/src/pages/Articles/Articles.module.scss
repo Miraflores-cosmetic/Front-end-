@@ -1,4 +1,4 @@
-@use "@/style/variables.scss" as *;
+@use '@/style/variables.scss' as *;
 
 .articlesContainer {
   padding: 0 32px;
@@ -25,7 +25,7 @@
       margin-bottom: 16px;
     }
     .title {
-      font-family: "trial";
+      font-family: 'Oceanic', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
       font-weight: 300;
       font-size: 64px;
       text-transform: uppercase;

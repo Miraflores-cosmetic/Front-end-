@@ -1,13 +1,13 @@
 import ProductDetails, {
-  DetailItem,
-} from "@/components/bestseller-card/best-product-detail/ProductDetails";
-import styles from "./Description.module.scss";
+  DetailItem
+} from '@/components/bestseller-card/best-product-detail/ProductDetails';
+import styles from './Description.module.scss';
 const Description: React.FC = () => {
   const details: DetailItem[] = [
-    { label: "тип продукта", value: "мист" },
-    { label: "этап", value: "увлажнение" },
-    { label: "группа ароматов", value: "фруктовые" },
-    { label: "тип продукта", value: "мист" },
+    { label: 'тип продукта', value: 'мист' },
+    { label: 'этап', value: 'увлажнение' },
+    { label: 'группа ароматов', value: 'фруктовые' },
+    { label: 'тип продукта', value: 'мист' }
   ];
   return (
     <div className={styles.descContainer}>

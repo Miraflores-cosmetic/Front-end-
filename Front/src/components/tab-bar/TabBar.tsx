@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styles from "./TabBar.module.scss";
+import React, { useState } from 'react';
+import styles from './TabBar.module.scss';
 
 interface TabBarProps {
   tabs: string[];
@@ -16,10 +16,10 @@ const TabBar: React.FC<TabBarProps> = ({ tabs, onChange }) => {
 
   return (
     <div className={styles.wrapper}>
-      {tabs.map((tab) => (
+      {tabs.map(tab => (
         <button
           key={tab}
-          className={`${styles.tab} ${active === tab ? styles.active : ""}`}
+          className={`${styles.tab} ${active === tab ? styles.active : ''}`}
           onClick={() => handleClick(tab)}
         >
           {tab}

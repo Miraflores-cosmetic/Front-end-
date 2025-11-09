@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styles from "./SizeTabs.module.scss";
+import React, { useState } from 'react';
+import styles from './SizeTabs.module.scss';
 
 type Option = {
   id: string;
@@ -15,17 +15,15 @@ interface ProductTabsProps {
 
 const SizeTabs: React.FC<ProductTabsProps> = ({ options }) => {
   const [activeId, setActiveId] = useState(options[0].id);
-  const activeOption = options.find((o) => o.id === activeId)!;
+  const activeOption = options.find(o => o.id === activeId)!;
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.tabs}>
-        {options.map((opt) => (
+        {options.map(opt => (
           <button
             key={opt.id}
-            className={`${styles.tab} ${
-              opt.id === activeId ? styles.active : ""
-            }`}
+            className={`${styles.tab} ${opt.id === activeId ? styles.active : ''}`}
             onClick={() => setActiveId(opt.id)}
           >
             {opt.label}
@@ -35,9 +33,7 @@ const SizeTabs: React.FC<ProductTabsProps> = ({ options }) => {
 
       <div className={styles.info}>
         <span className={styles.price}>{activeOption.price}₽</span>
-        {activeOption.oldPrice && (
-          <span className={styles.oldPrice}>{activeOption.oldPrice}₽</span>
-        )}
+        {activeOption.oldPrice && <span className={styles.oldPrice}>{activeOption.oldPrice}₽</span>}
         {activeOption.discount && (
           <span className={styles.discount}>-{activeOption.discount}%</span>
         )}

@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./TopBlock.module.scss";
+import React from 'react';
+import styles from './TopBlock.module.scss';
 
 interface TextWrapperProps {
   title: string;
@@ -8,12 +8,7 @@ interface TextWrapperProps {
   textStyle?: React.CSSProperties;
 }
 
-const TextWrapper: React.FC<TextWrapperProps> = ({
-  title,
-  items,
-  titleStyle,
-  textStyle,
-}) => (
+const TextWrapper: React.FC<TextWrapperProps> = ({ title, items, titleStyle, textStyle }) => (
   <div className={styles.textWrapper}>
     <p className={styles.textWrapperTitle} style={titleStyle}>
       {title}

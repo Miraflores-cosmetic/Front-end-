@@ -1,32 +1,26 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type DrawerType =
-  | "basket"
-  | "menu"
-  | "profile"
-  | "about"
-  | "add-comment"
-  | null;
+type DrawerType = 'basket' | 'menu' | 'profile' | 'about' | 'add-comment' | null;
 
 interface DrawerState {
   activeDrawer: DrawerType;
 }
 
 const initialState: DrawerState = {
-  activeDrawer: null,
+  activeDrawer: null
 };
 
 const drawerSlice = createSlice({
-  name: "drawer",
+  name: 'drawer',
   initialState,
   reducers: {
     openDrawer: (state, action: PayloadAction<DrawerType>) => {
       state.activeDrawer = action.payload;
     },
-    closeDrawer: (state) => {
+    closeDrawer: state => {
       state.activeDrawer = null;
-    },
-  },
+    }
+  }
 });
 
 export const { openDrawer, closeDrawer } = drawerSlice.actions;

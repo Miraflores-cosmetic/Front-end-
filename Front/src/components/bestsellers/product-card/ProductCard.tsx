@@ -1,13 +1,10 @@
-import React, { useState } from "react";
-import styles from "../Bestsellers.module.scss";
-import gift from "@/assets/icons/gift.svg";
-import whiteGift from "@/assets/icons/whiteGift.webp";
-import { useDispatch } from "react-redux";
-import {
-  addBestSellerToList,
-  setBestSeller,
-} from "@/store/slices/bestSellerSlice";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import styles from '../Bestsellers.module.scss';
+import gift from '@/assets/icons/gift.svg';
+import whiteGift from '@/assets/icons/whiteGift.webp';
+import { useDispatch } from 'react-redux';
+import { addBestSellerToList, setBestSeller } from '@/store/slices/bestSellerSlice';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -30,30 +27,20 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const handleAddToCart = () => {
     dispatch(setBestSeller(product));
     dispatch(addBestSellerToList(product));
-    navigate("/bestseller");
+    navigate('/bestseller');
   };
 
   return (
-    <div
-      className={styles.card}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className={styles.card} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <div
         className={styles.imageWrapper}
         style={{
-          backgroundImage: `url(${
-            isHovered ? product.hoverImage : product.image
-          })`,
+          backgroundImage: `url(${isHovered ? product.hoverImage : product.image})`
         }}
       >
         <div>
-          {product.discount && (
-            <span className={styles.discount}>-{product.discount}%</span>
-          )}
-          {product.label && (
-            <span className={styles.label}>{product.label}</span>
-          )}
+          {product.discount && <span className={styles.discount}>-{product.discount}%</span>}
+          {product.label && <span className={styles.label}>{product.label}</span>}
         </div>
 
         {isHovered && (
@@ -66,7 +53,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
               onMouseEnter={() => setIsHoveredGift(true)}
               onMouseLeave={() => setIsHoveredGift(false)}
             >
-              <img src={isHoveredGift ? whiteGift : gift} alt="gift" />
+              <img src={isHoveredGift ? whiteGift : gift} alt='gift' />
             </div>
           </div>
         )}
@@ -80,13 +67,14 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
 
       <div className={styles.info}>
         <div className={styles.txtWrapper}>
-          <h3 className={styles.name}>{product.title}</h3>
+          <Link to='#' className={styles.name}>
+            {product.title}
+          </Link>
+
           <p className={styles.desc}>{product.description}</p>
         </div>
         <div className={styles.priceWrapper}>
-          {product.oldPrice && (
-            <span className={styles.oldPrice}>{product.oldPrice}₽</span>
-          )}
+          {product.oldPrice && <span className={styles.oldPrice}>{product.oldPrice}₽</span>}
           <span className={styles.price}>{product.price}₽</span>
         </div>
       </div>

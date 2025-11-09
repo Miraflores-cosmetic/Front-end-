@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./Review.module.scss";
-import star from "@/assets/icons/star.svg";
+import React from 'react';
+import styles from './Review.module.scss';
+import star from '@/assets/icons/star.svg';
 
 interface ReviewProps {
   images: string[];
@@ -11,14 +11,7 @@ interface ReviewProps {
   date: string;
 }
 
-export const Review: React.FC<ReviewProps> = ({
-  images,
-  title,
-  subtitle,
-  text,
-  rating,
-  date,
-}) => {
+export const Review: React.FC<ReviewProps> = ({ images, title, subtitle, text, rating, date }) => {
   return (
     <div className={styles.review}>
       <div className={styles.images}>

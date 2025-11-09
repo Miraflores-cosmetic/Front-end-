@@ -7,7 +7,7 @@
     display: flex;
     gap: 24px;
     .menuTitle {
-      font-family: "trial";
+      font-family: 'Oceanic', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
       font-weight: 300;
       font-size: 36px;
       text-transform: uppercase;
@@ -36,7 +36,7 @@
     }
     .mobileWrapperTxt {
       position: absolute;
-      font-family: "bimbo";
+      font-family: 'bimbo';
       font-weight: 400;
       font-size: 20px;
       transform: rotate(-11.16deg);
@@ -76,7 +76,7 @@
     gap: 16px;
 
     .menuItem {
-      font-family: "onest";
+      font-family: 'Onest', 'Avenir Next', sans-serif;
       font-weight: 300;
       text-transform: uppercase;
 

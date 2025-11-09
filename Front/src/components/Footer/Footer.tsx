@@ -1,11 +1,11 @@
-import React from "react";
-import styles from "./Footer.module.scss";
-import footerLogo from "@/assets/icons/footerLogo.svg";
-import lineTo from "@/assets/icons/lineTofooter.svg";
-import lineToMobile from "@/assets/icons/lineToMobile.svg";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
-import FooterMenu from "./footer-menu/FooterMenu";
-import { getHeaderStyle } from "@/helpers/helpers";
+import React from 'react';
+import styles from './Footer.module.scss';
+import footerLogo from '@/assets/icons/footerLogo.svg';
+import lineTo from '@/assets/icons/lineTofooter.svg';
+import lineToMobile from '@/assets/icons/lineToMobile.svg';
+import { useScreenMatch } from '@/hooks/useScreenMatch';
+import FooterMenu from './footer-menu/FooterMenu';
+import { getHeaderStyle } from '@/helpers/helpers';
 
 interface FooterProps {
   /** URL or imported image for the left side background */
@@ -14,38 +14,38 @@ interface FooterProps {
 
 const menuData = {
   navigation: {
-    title: "навигация",
+    title: 'навигация',
     items: [
-      { label: "Каталог", href: "/" },
-      { label: "Наша история", href: "/about" },
-      { label: "Полезные статьи", href: "/contacts" },
-      { label: "Программа благодарности", href: "/contacts" },
-      { label: "Подарочные сертификаты", href: "/contacts" },
-    ],
+      { label: 'Каталог', href: '/' },
+      { label: 'Наша история', href: '/about' },
+      { label: 'Полезные статьи', href: '/contacts' },
+      { label: 'Программа благодарности', href: '/contacts' },
+      { label: 'Подарочные сертификаты', href: '/contacts' }
+    ]
   },
   info: {
-    title: "Информация",
+    title: 'Информация',
     items: [
-      { label: "Условия пользования", href: "/" },
-      { label: "Политика конфеденциальности ", href: "/about" },
-      { label: "Оплата и доставка", href: "/contacts" },
-      { label: "FAQ", href: "/contacts" },
-      { label: "Контакты", href: "/contacts" },
-      { label: "Реквизиты", href: "/contacts" },
-    ],
+      { label: 'Условия пользования', href: '/' },
+      { label: 'Политика конфеденциальности ', href: '/about' },
+      { label: 'Оплата и доставка', href: '/contacts' },
+      { label: 'FAQ', href: '/contacts' },
+      { label: 'Контакты', href: '/contacts' },
+      { label: 'Реквизиты', href: '/contacts' }
+    ]
   },
   support: {
-    title: "Поддержка",
+    title: 'Поддержка',
     items: [
-      { label: "Статус заказа", href: "/" },
-      { label: "info@miraflores.ru", href: "/about" },
-      { label: "+7 (800) 890 78 99", href: "/contacts" },
-      { label: "Телеграм →", href: "/contacts" },
-    ],
-  },
+      { label: 'Статус заказа', href: '/' },
+      { label: 'info@miraflores.ru', href: '/about' },
+      { label: '+7 (800) 890 78 99', href: '/contacts' },
+      { label: 'Телеграм →', href: '/contacts' }
+    ]
+  }
 };
 
-const socialLinks = ["Телеграмм канал", "Pinterest", "© Miraflores 2025"];
+const socialLinks = ['Телеграмм канал', 'Pinterest', '© Miraflores 2025'];
 
 const Footer: React.FC<FooterProps> = ({ footerImage }) => {
   const isTablet = useScreenMatch(1024);
@@ -53,14 +53,11 @@ const Footer: React.FC<FooterProps> = ({ footerImage }) => {
   const isSmallMobile = useScreenMatch(450);
 
   return (
-    <footer
-      className={styles.footer}
-      style={getHeaderStyle(location.pathname, isSmallMobile)}
-    >
+    <footer className={styles.footer} style={getHeaderStyle(location.pathname, isSmallMobile)}>
       {!isTablet && (
         <div className={styles.footerLeft}>
-          <img src={footerImage} alt="footer" />
-          <img src={footerLogo} alt="logo" />
+          <img src={footerImage} alt='footer' />
+          <img src={footerLogo} alt='logo' />
         </div>
       )}
 
@@ -73,13 +70,13 @@ const Footer: React.FC<FooterProps> = ({ footerImage }) => {
           </div>
 
           <div className={styles.footerBottom}>
-            {socialLinks.map((text) => (
+            {socialLinks.map(text => (
               <p key={text} className={styles.fotterBottmotxt}>
                 {text}
               </p>
             ))}
             <p className={styles.bimoTxt}>тут промокоды</p>
-            <img src={lineTo} className={styles.lineTo} alt="line" />
+            <img src={lineTo} className={styles.lineTo} alt='line' />
           </div>
         </div>
       ) : (
@@ -88,11 +85,7 @@ const Footer: React.FC<FooterProps> = ({ footerImage }) => {
             <div className={styles.mobileLeft}>
               <FooterMenu {...menuData.navigation} />
               <p className={styles.bimoTxtMobile}>тут промокоды</p>
-              <img
-                src={lineToMobile}
-                className={styles.lineToMobile}
-                alt="line"
-              />
+              <img src={lineToMobile} className={styles.lineToMobile} alt='line' />
             </div>
 
             <div className={styles.mobileRight}>
@@ -102,7 +95,7 @@ const Footer: React.FC<FooterProps> = ({ footerImage }) => {
           </div>
 
           <div className={styles.footerBottomMobile}>
-            {socialLinks.map((text) => (
+            {socialLinks.map(text => (
               <p key={text} className={styles.fotterBottmotxt}>
                 {text}
               </p>

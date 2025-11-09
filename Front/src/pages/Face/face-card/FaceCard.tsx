@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-import styles from "./FaceCard.module.scss";
-import gift from "@/assets/icons/gift.svg";
-import sun from "@/assets/icons/sun.svg";
-import moon from "@/assets/icons/moon.svg";
-import whiteGift from "@/assets/icons/whiteGift.webp";
-import { useDispatch } from "react-redux";
-import {
-  addBestSellerToList,
-  setBestSeller,
-} from "@/store/slices/bestSellerSlice";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import styles from './FaceCard.module.scss';
+import gift from '@/assets/icons/gift.svg';
+import sun from '@/assets/icons/sun.svg';
+import moon from '@/assets/icons/moon.svg';
+import whiteGift from '@/assets/icons/whiteGift.webp';
+import { useDispatch } from 'react-redux';
+import { addBestSellerToList, setBestSeller } from '@/store/slices/bestSellerSlice';
+import { useNavigate } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -33,7 +30,7 @@ export const FaceCard: React.FC<{ product: Product }> = ({ product }) => {
   const handleAddToCart = () => {
     dispatch(setBestSeller(product));
     dispatch(addBestSellerToList(product));
-    navigate("/bestseller");
+    navigate('/bestseller');
   };
 
   return (
@@ -44,7 +41,7 @@ export const FaceCard: React.FC<{ product: Product }> = ({ product }) => {
     >
       <div className={styles.wrapperImage}>
         <figure className={styles.imageContens}>
-          <img src={isHovered ? product.hoverImage : product.image} alt="" />
+          <img src={isHovered ? product.hoverImage : product.image} alt='' />
         </figure>
         <div>
           {product.discount ? (
@@ -54,7 +51,7 @@ export const FaceCard: React.FC<{ product: Product }> = ({ product }) => {
           )}
         </div>
         <div className={styles.type}>
-          <img src={product.type === "sun" ? sun : moon} alt="" />
+          <img src={product.type === 'sun' ? sun : moon} alt='' />
         </div>
 
         {isHovered && (
@@ -67,7 +64,7 @@ export const FaceCard: React.FC<{ product: Product }> = ({ product }) => {
               onMouseEnter={() => setIsHoveredGift(true)}
               onMouseLeave={() => setIsHoveredGift(false)}
             >
-              <img src={isHoveredGift ? whiteGift : gift} alt="gift" />
+              <img src={isHoveredGift ? whiteGift : gift} alt='gift' />
             </div>
           </div>
         )}
@@ -84,9 +81,7 @@ export const FaceCard: React.FC<{ product: Product }> = ({ product }) => {
           <p className={styles.desc}>{product.description}</p>
         </div>
         <div className={styles.priceWrapper}>
-          {product.oldPrice && (
-            <span className={styles.oldPrice}>{product.oldPrice}₽</span>
-          )}
+          {product.oldPrice && <span className={styles.oldPrice}>{product.oldPrice}₽</span>}
           <span className={styles.price}>{product.price}₽</span>
         </div>
       </div>

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import styles from "./FavoritesContent.module.scss";
-import gift from "@/assets/icons/gift.svg";
-import whiteGift from "@/assets/icons/whiteGift.webp";
+import React, { useState } from 'react';
+import styles from './FavoritesContent.module.scss';
+import gift from '@/assets/icons/gift.svg';
+import whiteGift from '@/assets/icons/whiteGift.webp';
 
 interface FavoriteCardProps {
   id: number;
@@ -19,7 +19,7 @@ const FavoriteCard: React.FC<FavoriteCardProps> = ({
   description,
   price,
   image,
-  hoverImage,
+  hoverImage
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isHoveredGift, setIsHoveredGift] = useState(false);
@@ -31,7 +31,7 @@ const FavoriteCard: React.FC<FavoriteCardProps> = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         style={{
-          backgroundImage: `url(${isHovered ? hoverImage : image})`,
+          backgroundImage: `url(${isHovered ? hoverImage : image})`
         }}
       >
         {isHovered && (
@@ -42,7 +42,7 @@ const FavoriteCard: React.FC<FavoriteCardProps> = ({
               onMouseEnter={() => setIsHoveredGift(true)}
               onMouseLeave={() => setIsHoveredGift(false)}
             >
-              <img src={isHoveredGift ? whiteGift : gift} alt="gift" />
+              <img src={isHoveredGift ? whiteGift : gift} alt='gift' />
             </div>
           </div>
         )}

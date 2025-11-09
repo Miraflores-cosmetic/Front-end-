@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./BasketCard.module.scss";
+import React from 'react';
+import styles from './BasketCard.module.scss';
 
-import trash from "@/assets/icons/trash.svg";
-import add from "@/assets/icons/add.svg";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
+import trash from '@/assets/icons/trash.svg';
+import add from '@/assets/icons/add.svg';
+import { useScreenMatch } from '@/hooks/useScreenMatch';
 
 interface BasketCardProps {
   image: string;
@@ -26,7 +26,7 @@ const BasketCard: React.FC<BasketCardProps> = ({
   fromPrice,
   toPrice,
   onAdd,
-  onRemove,
+  onRemove
 }) => {
   const isMobile = useScreenMatch(664);
 
@@ -41,28 +41,33 @@ const BasketCard: React.FC<BasketCardProps> = ({
             <div>
               <p className={styles.productName}>{name}</p>
               <p className={styles.productSize}>{size}</p>
+              {isMobile && (
+                <div className={styles.mobileBottomWrapper}>
+                  <div className={styles.addProduct}>
+                    <div className={styles.addProductInner}>
+                      <img
+                        src={trash}
+                        alt='trash'
+                        className={styles.trashImage}
+                        onClick={onRemove}
+                      />
+                      <p className={styles.trashCount}>{count}</p>
+                      <img src={add} alt='add' className={styles.addImage} onClick={onAdd} />
+                    </div>
+                  </div>
+                  <div className={styles.fromToMobile}>
+                    <p className={styles.fromMobile}>{fromPrice}</p>
+                    <p className={styles.toMobile}>{toPrice}</p>
+                  </div>
+                </div>
+              )}
             </div>
-            {isMobile && (
-              <div className={styles.fromToMobile}>
-                <p className={styles.fromMobile}>{fromPrice}</p>
-                <p className={styles.toMobile}>{toPrice}</p>
-              </div>
-            )}
           </div>
+
           <div className={styles.bottomInfo}>
-            <img
-              src={trash}
-              alt="trash"
-              className={styles.trashImage}
-              onClick={onRemove}
-            />
+            <img src={trash} alt='trash' className={styles.trashImage} onClick={onRemove} />
             <p className={styles.trashCount}>{count}</p>
-            <img
-              src={add}
-              alt="add"
-              className={styles.addImage}
-              onClick={onAdd}
-            />
+            <img src={add} alt='add' className={styles.addImage} onClick={onAdd} />
           </div>
         </div>
         <div className={styles.baskePrice}>
@@ -73,23 +78,6 @@ const BasketCard: React.FC<BasketCardProps> = ({
           </div>
         </div>
       </div>
-      {isMobile && (
-        <div className={styles.addProduct}>
-          <img
-            src={trash}
-            alt="trash"
-            className={styles.trashImage}
-            onClick={onRemove}
-          />
-          <p className={styles.trashCount}>{count}</p>
-          <img
-            src={add}
-            alt="add"
-            className={styles.addImage}
-            onClick={onAdd}
-          />
-        </div>
-      )}
     </div>
   );
 };

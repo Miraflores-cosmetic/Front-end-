@@ -99,7 +99,9 @@
         background-color: white;
         font-weight: 500;
         font-size: 16px;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition:
+          background-color 0.3s ease,
+          color 0.3s ease;
 
         &:hover {
           background-color: #000;
@@ -135,7 +137,6 @@
         width: 57px;
         height: 43px;
         font-size: 14px;
-        font-family: "avanir";
         font-weight: 400;
         border: none;
       }

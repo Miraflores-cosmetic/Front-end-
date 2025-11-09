@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "../right-part/OrderRightPart.module.scss";
+import React from 'react';
+import styles from '../right-part/OrderRightPart.module.scss';
 
 const SumDiscount = () => {
   return (

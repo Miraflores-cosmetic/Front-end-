@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./TextField.module.scss";
+import React from 'react';
+import styles from './TextField.module.scss';
 
 interface TextFieldProps {
   label?: string;
@@ -13,12 +13,12 @@ interface TextFieldProps {
 
 export const TextField: React.FC<TextFieldProps> = ({
   label,
-  type = "text",
+  type = 'text',
   value,
   onChange,
   placeholder,
   rightLinkText,
-  onRightLinkClick,
+  onRightLinkClick
 }) => (
   <div className={styles.wrapper}>
     <div className={styles.labelRow}>

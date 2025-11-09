@@ -1,9 +1,9 @@
-import React from "react";
-import styles from "./Sets.module.scss";
-import arrowToRight from "@/assets/icons/ArrowToRight.svg";
-import etap4 from "@/assets/images/etap4.webp";
-import krem from "@/assets/images/krem.webp";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
+import React from 'react';
+import styles from './Sets.module.scss';
+import arrowToRight from '@/assets/icons/ArrowToRight.svg';
+import etap4 from '@/assets/images/etap4.webp';
+import krem from '@/assets/images/krem.webp';
+import { useScreenMatch } from '@/hooks/useScreenMatch';
 
 interface SetData {
   title: string;
@@ -13,38 +13,34 @@ interface SetData {
 }
 
 const setData: SetData = {
-  title: "Набор большой и важный",
-  price: "30590₽",
-  description: "Мист для влажной, глянцевой кожи с экстрактом розы",
-  image: etap4,
+  title: 'Набор большой и важный',
+  price: '30590₽',
+  description: 'Мист для влажной, глянцевой кожи с экстрактом розы',
+  image: etap4
 };
 
 const LeftBlock: React.FC<{ isMobile: boolean }> = ({ isMobile }) => (
   <div className={styles.left}>
     <p className={styles.leftTitle}>
-      С 2007 года мы разрабатываем и производим безопасные и эффективные
-      средства ухода. У нас полностью своё производство, включая выпуск
-      собственных растительных ингредиентов: меристемных экстрактов, мацератов и
-      гидролатов.
+      С 2007 года мы разрабатываем и производим безопасные и эффективные средства ухода. У нас
+      полностью своё производство, включая выпуск собственных растительных ингредиентов: меристемных
+      экстрактов, мацератов и гидролатов.
     </p>
 
     {isMobile && (
       <div className={styles.rightWrapper}>
-        <img src={krem} alt="Крем" />
+        <img src={krem} alt='Крем' />
       </div>
     )}
 
     <div className={styles.moreWrapper}>
       <p>Больше наборов</p>
-      <img src={arrowToRight} alt="Показать больше наборов" />
+      <img src={arrowToRight} alt='Показать больше наборов' />
     </div>
   </div>
 );
 
-const CenterBlock: React.FC<{ data: SetData; isMobile: boolean }> = ({
-  data,
-  isMobile,
-}) =>
+const CenterBlock: React.FC<{ data: SetData; isMobile: boolean }> = ({ data, isMobile }) =>
   isMobile ? null : (
     <div className={styles.center}>
       <img src={data.image} alt={data.title} />
@@ -62,7 +58,7 @@ const RightBlock: React.FC<{ isMobile: boolean }> = ({ isMobile }) =>
   isMobile ? null : (
     <div className={styles.right}>
       <div className={styles.rightWrapper}>
-        <img src={krem} alt="Крем" />
+        <img src={krem} alt='Крем' />
       </div>
     </div>
   );

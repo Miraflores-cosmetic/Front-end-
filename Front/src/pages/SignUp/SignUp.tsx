@@ -1,31 +1,26 @@
-import React, { useState } from "react";
-import styles from "./SignUp.module.scss";
-import { useNavigate } from "react-router-dom";
-import logo from "@/assets/icons/Miraflores_logo.svg";
-import google from "@/assets/icons/google.svg";
-import telegram from "@/assets/icons/telegram.svg";
-import { SocialButton } from "@/components/social-button/SocialButton";
-import { TextField } from "@/components/text-field/TextField";
-import { Button } from "@/components/button/Button";
+import React, { useState } from 'react';
+import styles from './SignUp.module.scss';
+import { useNavigate } from 'react-router-dom';
+import logo from '@/assets/icons/Miraflores_logo.svg';
+import google from '@/assets/icons/google.svg';
+import telegram from '@/assets/icons/telegram.svg';
+import { SocialButton } from '@/components/social-button/SocialButton';
+import { TextField } from '@/components/text-field/TextField';
+import { Button } from '@/components/button/Button';
 
 const SignUp: React.FC = () => {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const navigate = useNavigate();
 
-  const handleNavigatetoHome = () => navigate("/");
-  const handleRequest = () => navigate("/profile");
-  const handleSignIn = () => navigate("/sign-in");
+  const handleNavigatetoHome = () => navigate('/');
+  const handleRequest = () => navigate('/profile');
+  const handleSignIn = () => navigate('/sign-in');
 
   return (
     <section className={styles.signUpContainer}>
       <div className={styles.signUpWrapper}>
         <div className={styles.imageWrapper}>
-          <img
-            src={logo}
-            alt="logo"
-            className={styles.logo}
-            onClick={handleNavigatetoHome}
-          />
+          <img src={logo} alt='logo' className={styles.logo} onClick={handleNavigatetoHome} />
         </div>
         <h2 className={styles.title}>Регистрация </h2>
         <p className={styles.login}>
@@ -34,35 +29,27 @@ const SignUp: React.FC = () => {
         <div className={styles.socialButtonsWrapper}>
           <SocialButton
             icon={google}
-            text="Продолжить с Google"
-            onClick={() => console.log("Google click")}
+            text='Продолжить с Google'
+            onClick={() => console.log('Google click')}
           />
           <SocialButton
             icon={telegram}
-            text="Продолжить с Telegram"
-            onClick={() => console.log("Telegram click")}
+            text='Продолжить с Telegram'
+            onClick={() => console.log('Telegram click')}
           />
         </div>
         <div className={styles.textFieldWrapper}>
-          <TextField
-            label="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <TextField label='Email' value={email} onChange={e => setEmail(e.target.value)} />
         </div>
         <div className={styles.agrrementWrapper}>
-          <input type="checkbox" className={styles.checkbox} />
+          <input type='checkbox' className={styles.checkbox} />
           <p className={styles.agreementTxt}>
-            Нажимая на кнопку «Далее», я соглашаюсь с условиями{" "}
-            <span>Публичной оферты</span>и выражаю своё согласие на обработку
-            моих персональных данных в соответствии с{" "}
+            Нажимая на кнопку «Далее», я соглашаюсь с условиями <span>Публичной оферты</span>и
+            выражаю своё согласие на обработку моих персональных данных в соответствии с{' '}
             <span>Политикой конфиденциальности</span>
           </p>
         </div>
-        <Button
-          text="Далее"
-          onClick={handleRequest}
-        />
+        <Button text='Далее' onClick={handleRequest} />
       </div>
     </section>
   );

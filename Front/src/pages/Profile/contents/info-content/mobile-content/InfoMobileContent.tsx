@@ -1,20 +1,18 @@
-import React from "react";
-import styles from "./InfoMobileContent.module.scss";
-import DeliveryProfile from "@/components/delivary-profile/DeliveryProfile";
+import React from 'react';
+import styles from './InfoMobileContent.module.scss';
+import DeliveryProfile from '@/components/delivary-profile/DeliveryProfile';
 // import { openDrawer } from "@/store/slices/drawerSlice";
-import telegram from "@/assets/icons/telegram.svg";
-import ArrowToRight from "@/assets/icons/ArrowToRight.svg";
+import telegram from '@/assets/icons/telegram.svg';
+import ArrowToRight from '@/assets/icons/ArrowToRight.svg';
 // import { useDispatch } from "react-redux";
-import { TabId } from "@/pages/Profile/side-bar/SideBar";
-import { useScreenMatch } from "@/hooks/useScreenMatch";
+import { TabId } from '@/pages/Profile/side-bar/SideBar';
+import { useScreenMatch } from '@/hooks/useScreenMatch';
 
 interface InfoMobileContentProps {
   setOpenAccordion: React.Dispatch<React.SetStateAction<TabId | null>>; // ✅ type matches Sidebar
 }
 
-const InfoMobileContent: React.FC<InfoMobileContentProps> = ({
-  setOpenAccordion,
-}) => {
+const InfoMobileContent: React.FC<InfoMobileContentProps> = ({ setOpenAccordion }) => {
   // const dispatch = useDispatch();
   const isMobile = useScreenMatch(450);
 
@@ -70,14 +68,10 @@ const InfoMobileContent: React.FC<InfoMobileContentProps> = ({
       <article className={styles.telegramContainer}>
         <div className={styles.telegramwrapper}>
           <div className={styles.top}>
-            <img src={telegram} alt="telegram icon" className={styles.check} />
+            <img src={telegram} alt='telegram icon' className={styles.check} />
             <p>Авторизуйтесь через Телеграм</p>
           </div>
-          <img
-            src={ArrowToRight}
-            alt="ArrowToRight"
-            className={styles.ArrowToRight}
-          />
+          <img src={ArrowToRight} alt='ArrowToRight' className={styles.ArrowToRight} />
         </div>
         <p className={styles.desc}>
           Чтобы получать уведомления о доставке и специальные предложения

@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./InfoTestBlock.module.scss";
-import flower from "@/assets/icons/romashka.svg";
+import React from 'react';
+import styles from './InfoTestBlock.module.scss';
+import flower from '@/assets/icons/romashka.svg';
 
 export const InfoTest: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ export const InfoTest: React.FC = () => {
         <p> Подберите свой</p>
         <p> идеальный уход </p>
         <p>за кожей</p>
-        <img src={flower} alt={"Flower"} className={styles.romashka} />
+        <img src={flower} alt={'Flower'} className={styles.romashka} />
       </div>
       <div className={styles.btnWrapper}>
         <button className={styles.btnTest}>Пройти тест</button>

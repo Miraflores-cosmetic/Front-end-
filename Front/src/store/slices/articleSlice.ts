@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Article {
   id: number;
@@ -15,11 +15,11 @@ interface ArticleState {
 }
 
 const initialState: ArticleState = {
-  article: null,
+  article: null
 };
 
 const articleSlice = createSlice({
-  name: "articleSlice",
+  name: 'articleSlice',
   initialState,
   reducers: {
     setArticle(state, action: PayloadAction<Article>) {
@@ -27,8 +27,8 @@ const articleSlice = createSlice({
     },
     clearArticle(state) {
       state.article = null;
-    },
-  },
+    }
+  }
 });
 
 export const { setArticle, clearArticle } = articleSlice.actions;

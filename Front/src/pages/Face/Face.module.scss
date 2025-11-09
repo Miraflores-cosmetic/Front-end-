@@ -1,4 +1,4 @@
-@use "@/style/variables.scss" as *;
+@use '@/style/variables.scss' as *;
 
 .faceContainer {
   padding: 0 32px;
@@ -44,7 +44,7 @@
     padding-bottom: 240px;
   }
   .title {
-    font-family: "trial";
+    font-family: 'Oceanic', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
     font-weight: 300;
     font-size: 64px;
     margin-bottom: 64px;

@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./Input.module.scss";
+import React from 'react';
+import styles from './Input.module.scss';
 
 interface CustomInputProps {
   label?: string;
@@ -16,26 +16,26 @@ interface CustomInputProps {
 export const Input: React.FC<CustomInputProps> = ({
   label,
   value,
-  type = "text",
+  type = 'text',
   placeholder,
   imageSrc,
   buttonText,
   onButtonClick,
   onChange,
-  width, // 🔹 Receive width prop
+  width // 🔹 Receive width prop
 }) => {
   return (
     <div
       className={styles.wrapper}
       style={{ width }} // 🔹 Apply dynamic width
     >
-      {imageSrc && <img src={imageSrc} alt="icon" className={styles.icon} />}
+      {imageSrc && <img src={imageSrc} alt='icon' className={styles.icon} />}
       {label && <label className={styles.label}>{label}</label>}
 
       <div className={styles.inputRow}>
-        {type === "password" ? (
+        {type === 'password' ? (
           <div className={styles.passwordDisplay}>
-            {value.split("").map((_, i) => (
+            {value.split('').map((_, i) => (
               <span key={i} className={styles.dot}></span>
             ))}
           </div>
