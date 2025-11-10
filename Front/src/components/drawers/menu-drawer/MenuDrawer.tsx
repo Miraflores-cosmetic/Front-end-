@@ -6,10 +6,12 @@ import menuLine from '@/assets/icons/menuLine.svg';
 
 import { useScreenMatch } from '@/hooks/useScreenMatch';
 import MenuRightPart from './menu-right-part/MenuRightPart';
+import { useDispatch } from 'react-redux';
+import { closeDrawer } from '@/store/slices/drawerSlice';
 
 const MenuDrawer: React.FC = () => {
   const isMobile = useScreenMatch(450);
-
+  const dispatch = useDispatch()
   interface MenuSection {
     title: string;
     link?: string;
@@ -67,7 +69,7 @@ const MenuDrawer: React.FC = () => {
     <div className={styles.menuContainer}>
       {isMobile && (
         <div className={styles.menuMobileHeader}>
-          <img src={menuLine} alt='menuLine' />
+          <img src={menuLine} alt='menuLine' onClick={() => dispatch(closeDrawer())} />
           <img src={linToMenu} alt='linToMenu' />
         </div>
       )}

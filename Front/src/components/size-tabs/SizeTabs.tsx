@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './SizeTabs.module.scss';
 
-type Option = {
+export type Option = {
   id: string;
   label: string;
   price: number;
@@ -11,11 +11,16 @@ type Option = {
 
 interface ProductTabsProps {
   options: Option[];
+  onChange?: (option: Option) => void;
 }
 
-const SizeTabs: React.FC<ProductTabsProps> = ({ options }) => {
+const SizeTabs: React.FC<ProductTabsProps> = ({ options, onChange }) => {
   const [activeId, setActiveId] = useState(options[0].id);
   const activeOption = options.find(o => o.id === activeId)!;
+
+  useEffect(() => {
+    if (onChange) onChange(activeOption)
+  }, [activeId]);
 
   return (
     <div className={styles.wrapper}>

@@ -135,9 +135,13 @@
   justify-content: end;
   align-items: center;
   gap: 15px;
-  a {
+  a,
+  p {
     font-weight: 500;
+    display: flex;
     font-size: 16px;
+    align-items: center;
+    gap: 20px;
     &:hover {
       color: #297230;
     }

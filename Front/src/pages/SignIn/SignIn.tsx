@@ -8,6 +8,7 @@ import telegram from '@/assets/icons/telegram.svg';
 import { SocialButton } from '@/components/social-button/SocialButton';
 import { TextField } from '@/components/text-field/TextField';
 import { Button } from '@/components/button/Button';
+import goBackIcon from "@/assets/icons/go-back.svg" 
 
 const SignIn: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -24,6 +25,7 @@ const SignIn: React.FC = () => {
     <section className={styles.signInContainer}>
       <div className={styles.signInWrapper}>
         <div className={styles.imageWrapper}>
+          <div className={styles.goBackIcon}><img src={goBackIcon} alt="go_back_icon" className={""}  /></div>
           <img src={logo} alt='logo' className={styles.logo} onClick={handleNavigatetoHome} />
         </div>
         <h2 className={styles.title}>Вход в аккаунт</h2>

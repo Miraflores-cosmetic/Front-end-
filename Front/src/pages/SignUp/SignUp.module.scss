@@ -19,14 +19,31 @@ $transition-fast: 0.2s ease;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   margin: auto;
   padding: 0 12px;
+
+  @media (max-width:648px) {
+    align-items: start;
+  }
+
   .signUpWrapper {
-    margin-top: 230px;
     width: 452px;
+
+    @media (max-width:648px) {
+      padding: 18px;
+    }
+
     .imageWrapper {
       width: 100%;
+
+      @media (max-width:648px) {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        width: 100%;
+      }
+
       @media (max-width: 450px) {
         text-align: center;
       }
@@ -35,37 +52,55 @@ $transition-fast: 0.2s ease;
         cursor: pointer;
         width: 179px;
         height: 36px;
+        justify-self: center;
+      }
+
+      .goBackIcon {
+        display: none;
+        justify-self: start; // keep it on the left
+
+        @media (max-width: 648px) {
+          display: block;
+        }
       }
     }
+
     .title {
       margin-top: 32px;
       font-size: 24px;
       font-weight: 800;
       line-height: 32px;
+
       @media (max-width: 450px) {
         font-size: 20px;
       }
     }
+
     .login {
       margin-top: 16px;
       font-size: $font-base;
       color: $color-text;
+
       @media (max-width: 450px) {
         font-size: 14px;
       }
+
       span {
         color: $color-primary;
+
         &:hover {
           @include link-hover;
         }
       }
     }
+
     .socialButtonsWrapper {
       margin-top: 32px;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
+
     .textFieldWrapper {
       margin: 32px 0 24px;
       display: flex;
@@ -73,11 +108,13 @@ $transition-fast: 0.2s ease;
       gap: 40px;
     }
   }
+
   .agrrementWrapper {
     display: flex;
     align-items: flex-start;
     gap: 10px;
     margin-bottom: 32px;
+
     .checkbox {
       appearance: none;
       -webkit-appearance: none;
@@ -92,6 +129,7 @@ $transition-fast: 0.2s ease;
       &:hover {
         border-color: $color-border-hover;
       }
+
       &:checked {
         border-color: $color-border;
         background-color: $color-border;
@@ -100,15 +138,19 @@ $transition-fast: 0.2s ease;
         background-repeat: no-repeat;
       }
     }
+
     .agreementTxt {
       width: calc(100% - 34px);
       font-size: $font-base;
       color: $color-text;
+
       @media (max-width: 450px) {
-        font-size: 14px;
+        font-size: 12px;
       }
+
       span {
         color: $color-primary;
+
         &:hover {
           @include link-hover;
         }

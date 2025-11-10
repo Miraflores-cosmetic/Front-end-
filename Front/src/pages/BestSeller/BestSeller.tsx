@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './BestSeller.module.scss';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import footerImage from '@/assets/images/footerImage.webp';
 import krem from '@/assets/images/krem.webp';
 import girlwithsmile from '@/assets/images/girlsmile.webp';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '@/store/store';
 import StarRating from '@/components/rating/StarRating';
-import SizeTabs from '@/components/size-tabs/SizeTabs';
+import SizeTabs, { Option } from '@/components/size-tabs/SizeTabs';
 import check from '@/assets/icons/tick-circle.svg';
 import Etaps, { Etap } from '@/components/etpas/Etaps';
 import AddToCartButton from '@/components/add-tobasket-button/AddToBasket';
@@ -19,10 +19,13 @@ import BestSellerEtaps, {
 } from '@/components/bestseller-card/bestseller-etaps/BestsellerEtaps';
 import Bestsellers from '@/components/bestsellers/Bestsellers';
 import { useScreenMatch } from '@/hooks/useScreenMatch';
+import { addToCart } from '@/store/slices/cartSlice';
 
 const BestSeller: React.FC = () => {
   const { bestSeller } = useSelector((state: RootState) => state.bestSellerSlice);
-  console.log(bestSeller, 'bestSeller');
+  const [activeSize, setActiveSize] = useState<Option | null>(null);
+  const [added, setAdded] = useState(false);
+  const dispatch = useDispatch();
 
   const productOptions = [
     { id: '50', label: '50 мл', price: 3590, oldPrice: 4800, discount: 20 },
@@ -98,6 +101,7 @@ const BestSeller: React.FC = () => {
       oldPrice: 4600,
       discount: 22,
       image: krem,
+
       hoverImage: girlwithsmile
     },
     {
@@ -158,6 +162,22 @@ const BestSeller: React.FC = () => {
     }
   ];
   const isMobile = useScreenMatch(756);
+  const handleSizeChange = (option: Option) => {
+    setActiveSize(option);
+    setAdded(false);
+  };
+
+  const handleAddToCart = () => {
+    if (!activeSize || !bestSeller) return;
+    dispatch(
+      addToCart({
+        itemId: bestSeller.id,
+        product: bestSeller,
+        size: activeSize.label
+      })
+    );
+    setAdded(true);
+  };
 
   return (
     <article className={styles.bestSellerContainer}>
@@ -178,11 +198,18 @@ const BestSeller: React.FC = () => {
                 Мист для влажной, глянцевой кожи. Легкий, быстро впитывающийся гелевый мист,
                 котораый заметно увлажняет и поддерживает здоровый барьер кожи
               </p>
-              <SizeTabs options={productOptions} />
+              <SizeTabs options={productOptions} onChange={handleSizeChange} />
             </div>
             <div className={styles.bottomWrapper}>
               <Etaps items={etapsData} />
-              <AddToCartButton />
+              <AddToCartButton
+                onClick={handleAddToCart}
+                defaultText={activeSize ? 'Добавить в корзину' : 'Выберите размер'}
+                activeText={added ? 'Добавлено' : 'Добавить в корзину'}
+                hoverText={activeSize ? 'Оформить Заказ' : 'Выберите размер'}
+                // Disable button if no size selected
+                disabled={!activeSize}
+              />
             </div>
           </article>
         </section>

@@ -3,16 +3,24 @@
   flex-direction: column;
   gap: 24px;
 
+  @media (max-width:468px) {
+    max-width: 90vw;
+
+  }
+
   .titleWrapper {
     display: flex;
     gap: 24px;
+
     .menuTitle {
       font-family: 'Oceanic', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
       font-weight: 300;
       font-size: 36px;
       text-transform: uppercase;
+
       @media (max-width: 450px) {
         font-size: 24px;
+
       }
     }
 
@@ -20,6 +28,7 @@
       color: #297230;
       text-transform: uppercase;
     }
+
     .arraw {
       width: 32px;
       cursor: pointer;
@@ -34,6 +43,7 @@
     .mobileImage {
       width: 100%;
     }
+
     .mobileWrapperTxt {
       position: absolute;
       font-family: 'bimbo';
@@ -44,17 +54,21 @@
       width: 220px;
       left: 150px;
       top: -50px;
+
       @media (max-width: 400px) {
         left: 140px;
         top: -40px;
       }
+
       @media (max-width: 380px) {
         font-size: 18px;
       }
+
       @media (max-width: 340px) {
-        left: 110px;
+        left: 100px;
       }
     }
+
     .mobileBtn {
       width: 100%;
       height: 35px;

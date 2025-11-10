@@ -10,19 +10,24 @@ interface AddToCartButtonProps {
   hoverText?: string;
   activeText?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({
   defaultText = 'Добавить в корзину',
   hoverText = 'Оформить Заказ',
-  activeText = 'Добавлено'
+  activeText = 'Добавлено',
+  onClick,
+  disabled = false
 }) => {
   const [count, setCount] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [iconHovered, setIconHovered] = useState(false); // <— for the icon
 
   const handleAdd = () => {
+    if (disabled) return;
     setCount(prev => prev + 1);
+    if (onClick) onClick();
   };
 
   const handleRemove = () => {
@@ -40,6 +45,7 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           type='button'
+          disabled={disabled}
         >
           {buttonText}
         </button>

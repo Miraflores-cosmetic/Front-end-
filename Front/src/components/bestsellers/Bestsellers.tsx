@@ -2,12 +2,12 @@ import React from 'react';
 import Slider from 'react-slick';
 import styles from './Bestsellers.module.scss';
 import { ProductCard } from './product-card/ProductCard';
-import { ProductBasteller } from '@/types/types';
+import { Product } from '@/types/types';
 import { useScreenMatch } from '@/hooks/useScreenMatch';
 import { useWindowWidth } from '@/hooks/useWindowWidth';
 
 interface BestsellersProps {
-  products: ProductBasteller[];
+  products: Product[];
   isTitleHidden?: boolean;
   slidesToShow?: number;
 }

@@ -21,12 +21,14 @@ const AboutImage: React.FC<{
 
 const AboutMore: React.FC<{ isMobile?: boolean }> = ({ isMobile }) => (
   <div className={isMobile ? styles.mobileMore : styles.more}>
-    <Link to='/about'>БОЛЬШЕ О НАС</Link>
-    <img
-      src={arrowToRoght}
-      alt='arrowToRoght'
-      className={isMobile ? styles.mobileArrowToRoght : styles.arrowToRoght}
-    />
+    <Link to='/about'>
+      <p>БОЛЬШЕ О НАС</p>{' '}
+      <img
+        src={arrowToRoght}
+        alt='arrowToRoght'
+        className={isMobile ? styles.mobileArrowToRoght : styles.arrowToRoght}
+      />
+    </Link>
   </div>
 );
 

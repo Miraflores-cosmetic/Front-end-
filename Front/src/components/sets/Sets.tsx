@@ -4,6 +4,7 @@ import arrowToRight from '@/assets/icons/ArrowToRight.svg';
 import etap4 from '@/assets/images/etap4.webp';
 import krem from '@/assets/images/krem.webp';
 import { useScreenMatch } from '@/hooks/useScreenMatch';
+import { Link } from 'react-router-dom';
 
 interface SetData {
   title: string;
@@ -34,25 +35,32 @@ const LeftBlock: React.FC<{ isMobile: boolean }> = ({ isMobile }) => (
     )}
 
     <div className={styles.moreWrapper}>
-      <p>Больше наборов</p>
-      <img src={arrowToRight} alt='Показать больше наборов' />
+      <Link to='/'>
+        <p>Больше наборов</p>
+        <img src={arrowToRight} alt='Показать больше наборов' />
+      </Link>
     </div>
   </div>
 );
 
-const CenterBlock: React.FC<{ data: SetData; isMobile: boolean }> = ({ data, isMobile }) =>
-  isMobile ? null : (
+const CenterBlock: React.FC<{ data: SetData; isMobile: boolean }> = ({ data, isMobile }) => {
+  if (isMobile) return null;
+
+  return (
     <div className={styles.center}>
-      <img src={data.image} alt={data.title} />
-      <div className={styles.centerWrapper}>
-        <div className={styles.centerTitleWrapper}>
-          <p className={styles.centerTitle}>{data.title}</p>
-          <p className={styles.centerTitle}>{data.price}</p>
+      <Link to='/'>
+        <img src={data.image} alt={data.title} className={styles.image} />
+        <div className={styles.centerWrapper}>
+          <div className={styles.centerTitleWrapper}>
+            <p className={styles.centerTitle}>{data.title}</p>
+            <p className={styles.centerPrice}>{data.price}</p>
+          </div>
+          <p className={styles.centerDesc}>{data.description}</p>
         </div>
-        <p className={styles.centerDesc}>{data.description}</p>
-      </div>
+      </Link>
     </div>
   );
+};
 
 const RightBlock: React.FC<{ isMobile: boolean }> = ({ isMobile }) =>
   isMobile ? null : (

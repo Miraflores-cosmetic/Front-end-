@@ -5,18 +5,8 @@ import whiteGift from '@/assets/icons/whiteGift.webp';
 import { useDispatch } from 'react-redux';
 import { addBestSellerToList, setBestSeller } from '@/store/slices/bestSellerSlice';
 import { Link, useNavigate } from 'react-router-dom';
-
-interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  oldPrice?: number;
-  discount?: number;
-  label?: string;
-  image: string;
-  hoverImage: string;
-}
+import { addToCart } from '@/store/slices/cartSlice';
+import { Product } from '@/types/types';
 
 export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -25,7 +15,9 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const navigate = useNavigate();
 
   const handleAddToCart = () => {
-    dispatch(setBestSeller(product));
+    // choose a sensible default size; product.title was previously used incorrectly
+    const defaultSize = '50 мл';
+    dispatch(addToCart({ itemId: product.id, product: product, size: defaultSize }));
     dispatch(addBestSellerToList(product));
     navigate('/bestseller');
   };

@@ -1,22 +1,12 @@
+import { Product } from '@/types/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface ProductBestSeller {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  oldPrice?: number;
-  discount?: number;
-  label?: string;
-  image: string;
-  hoverImage: string;
-}
 
 interface BestSellerState {
   // для одного текущего выбранного
-  bestSeller: ProductBestSeller | null;
+  bestSeller: Product | null;
   // для массива всех выбранных
-  bestSellers: ProductBestSeller[];
+  bestSellers: Product[];
 }
 
 const initialState: BestSellerState = {
@@ -29,7 +19,7 @@ const bestSellerSlice = createSlice({
   initialState,
   reducers: {
     // заменяет текущее значение одиночного продукта
-    setBestSeller(state, action: PayloadAction<ProductBestSeller>) {
+    setBestSeller(state, action: PayloadAction<Product>) {
       state.bestSeller = action.payload;
     },
     clearChosenProduct(state) {
@@ -37,7 +27,7 @@ const bestSellerSlice = createSlice({
     },
 
     // ---------- массив ----------
-    addBestSellerToList(state, action: PayloadAction<ProductBestSeller>) {
+    addBestSellerToList(state, action: PayloadAction<Product>) {
       // добавляем только если такого id ещё нет
       const exists = state.bestSellers.some(p => p.id === action.payload.id);
       if (!exists) {

@@ -67,7 +67,7 @@ export const Reviews: React.FC = () => {
 
       {!isMobile && (
         <div className={styles.allWrapper}>
-          <p>все отзывы</p>
+          <p>ВСЕ ОТЗЫВЫ</p>
           <img src={ArrowToRight} alt='' />
         </div>
       )}
