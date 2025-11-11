@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './Step.module.scss';
-
 interface StepProps {
   image: string;
+  hoverImage?: string;
   title: string;
   description: string;
   etap: number;
 }
 
-const Step: React.FC<StepProps> = ({ image, title, description, etap }) => {
+const Step: React.FC<StepProps> = ({ image, hoverImage, title, description, etap }) => {
   return (
     <div className={styles.step}>
       <div className={styles.stepWrapper}>

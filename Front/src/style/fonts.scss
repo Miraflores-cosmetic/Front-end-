@@ -64,3 +64,18 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* === Bimbo Regular === */
+@font-face {
+  font-family: 'Bimbo';
+  src: url('@/assets/fonts/bimbo/Bimbo-Regular.eot'); /* IE9 Compat Modes */
+  src:
+    url('@/assets/fonts/bimbo/Bimbo-Regular.eot?#iefix') format('embedded-opentype'),
+    url('@/assets/fonts/bimbo/Bimbo-Regular.woff2') format('woff2'),
+    url('@/assets/fonts/bimbo/Bimbo-Regular.woff') format('woff'),
+    url('@/assets/fonts/bimbo/Bimbo-Regular.ttf') format('truetype'),
+    url('@/assets/fonts/bimbo/Bimbo-Regular.svg#Bimbo-Regular') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

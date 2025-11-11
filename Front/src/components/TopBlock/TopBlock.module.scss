@@ -94,6 +94,12 @@
   font-family: 'Oceanic', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
   font-size: 64px;
   color: rgba(41, 114, 48, 1);
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  .textIcon {
+    line-height: 60px;
+  }
 }
 
 .marqueeContent {

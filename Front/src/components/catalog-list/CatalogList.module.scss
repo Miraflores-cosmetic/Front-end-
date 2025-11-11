@@ -16,7 +16,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    @media (max-width: 768px) {
+      margin-bottom: 28px;
+    }
     .itemTitle {
       position: absolute;
       bottom: -30px;
@@ -24,6 +26,9 @@
       font-weight: 600;
       font-size: 16px;
       text-transform: uppercase;
+      @media (max-width: 768px) {
+        margin-top: 10px;
+      }
     }
 
     img {

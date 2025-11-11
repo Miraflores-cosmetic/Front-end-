@@ -129,8 +129,6 @@ export default function Bestsellers({
   };
   const width = useWindowWidth();
 
-  console.log(width);
-
   const isOversize = useScreenMatch(1536);
   const x = isOversize ? undefined : (width - 1536) / 2 - 16;
 

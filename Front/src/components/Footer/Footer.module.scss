@@ -7,13 +7,19 @@
   align-items: start;
   gap: 100px;
   max-width: 1536px;
-  margin: 0 auto;
-  margin-bottom: 16px;
+  margin: 0 auto 16px;
   @media (max-width: 1290px) {
     gap: 50px;
   }
   @media (max-width: 1100px) {
     gap: 25px;
+  }
+  @media (max-width: 1100px) {
+    padding: 0 12px;
+  }
+  @media (max-width: 480px) {
+    margin-bottom: 0;
+    height: 420px;
   }
 
   .footerMobile {
@@ -33,7 +39,7 @@
           bottom: 20px;
           @media (max-width: 656px) {
             bottom: 175px;
-            font-family: 'bimbo';
+            font-family: 'Bimbo', 'Avenir Next', sans-serif;
             font-size: 20px;
             font-weight: 400;
             color: #9747ff;
@@ -59,9 +65,13 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
+      @media (max-width: 480px) {
+        margin-top: 20px;
+      }
+
       p {
         color: #6e6d67;
-        font-size: 13px;
+        font-size: 14px;
       }
     }
   }
@@ -82,48 +92,46 @@
     }
   }
   .footerRightWrapper {
-    width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+
     .footerRight {
       display: flex;
       justify-content: space-between;
-      width: 100%;
-      gap: 10px;
+      align-items: flex-start;
+      gap: 80px; // 👈 увеличиваем отступ между колонками
     }
+
     .footerBottom {
       position: relative;
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      align-items: center;
+      margin-top: 60px;
+
       .fotterBottmotxt {
         font-size: 14px;
         color: #6e6d67;
       }
+
       .bimoTxt {
-        font-family: 'bimbo';
-        font-weight: 400;
         position: absolute;
+        left: -40px;
+        bottom: 190px;
+        transform: rotate(-10deg);
+        font-family: 'Bimbo', 'Avenir Next', sans-serif;
+        font-size: 22px;
         color: #9747ff;
-        transform: rotate(-10.45deg);
-        bottom: 160px;
-        left: -30px;
-        font-size: 20px;
-        @media (max-width: 1024px) {
-          left: -30px;
-          bottom: 150px;
-        }
+        font-weight: 400;
       }
+
       .lineTo {
-        height: 110px;
         position: absolute;
-        bottom: 20px;
-        left: 15px;
-      }
-      @media (max-width: 1024px) {
-        left: 25px;
+        left: -10px;
+        bottom: 40px;
+        height: 140px;
       }
     }
   }

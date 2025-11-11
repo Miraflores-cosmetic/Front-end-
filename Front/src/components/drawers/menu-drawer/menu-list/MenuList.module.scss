@@ -3,9 +3,8 @@
   flex-direction: column;
   gap: 24px;
 
-  @media (max-width:468px) {
+  @media (max-width: 468px) {
     max-width: 90vw;
-
   }
 
   .titleWrapper {
@@ -20,7 +19,6 @@
 
       @media (max-width: 450px) {
         font-size: 24px;
-
       }
     }
 
@@ -46,7 +44,7 @@
 
     .mobileWrapperTxt {
       position: absolute;
-      font-family: 'bimbo';
+      font-family: 'Bimbo', 'Avenir Next', sans-serif;
       font-weight: 400;
       font-size: 20px;
       transform: rotate(-11.16deg);

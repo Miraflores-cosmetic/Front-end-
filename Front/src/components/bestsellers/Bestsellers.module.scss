@@ -12,6 +12,8 @@
 
       @media (max-width: 450px) {
         padding-right: 12px;
+        width: 360px !important;
+        margin-right: 12px;
       }
     }
 
@@ -410,5 +412,11 @@
     right: 0;
     width: 79px;
     background: #0000003d;
+  }
+}
+
+.card {
+  @media (max-width: 768px) {
+    width: 360px;
   }
 }
