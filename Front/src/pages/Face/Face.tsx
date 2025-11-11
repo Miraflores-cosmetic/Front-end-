@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Face.module.scss';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import footerImage from '@/assets/images/footerImage.webp';
 import TabBar from '@/components/tab-bar/TabBar';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import krem from '@/assets/images/krem.webp';
 import kosmetika from '@/assets/images/kosmetika.webp';
@@ -19,6 +20,8 @@ import { useScreenMatch } from '@/hooks/useScreenMatch';
 
 const FacePage: React.FC = () => {
   const isMobile = useScreenMatch(756);
+  const [activeTab, setActiveTab] = useState('КРЕМ');
+
   const products = [
     {
       id: 1,
@@ -29,7 +32,8 @@ const FacePage: React.FC = () => {
       discount: 22,
       image: krem,
       hoverImage: girlwithsmile,
-      type: 'sun'
+      type: 'sun',
+      category: 'КРЕМ'
     },
     {
       id: 2,
@@ -40,7 +44,8 @@ const FacePage: React.FC = () => {
       discount: 22,
       image: kosmetika,
       hoverImage: girlwithsmile,
-      type: 'moon'
+      type: 'moon',
+      category: 'МАСЛО'
     },
     {
       id: 3,
@@ -51,7 +56,8 @@ const FacePage: React.FC = () => {
       discount: 23,
       image: krem,
       hoverImage: girlwithsmile,
-      type: 'sun'
+      type: 'sun',
+      category: 'ТОНИК-ЭССЕНЦИЯ'
     },
     {
       id: 4,
@@ -61,7 +67,8 @@ const FacePage: React.FC = () => {
       label: 'Новинка',
       image: kosmetika,
       hoverImage: girlwithsmile,
-      type: 'moon'
+      type: 'moon',
+      category: 'ТОНИК-ЭССЕНЦИЯ'
     },
     {
       id: 5,
@@ -71,7 +78,8 @@ const FacePage: React.FC = () => {
       label: 'Новинка',
       image: krem,
       hoverImage: girlwithsmile,
-      type: 'sun'
+      type: 'sun',
+      category: 'Крем'
     },
     {
       id: 6,
@@ -81,7 +89,8 @@ const FacePage: React.FC = () => {
       label: 'Новинка',
       image: krem,
       hoverImage: girlwithsmile,
-      type: 'sun'
+      type: 'sun',
+      category: 'Крем'
     }
   ];
 
@@ -129,18 +138,36 @@ const FacePage: React.FC = () => {
     slidesToShow: 3.5,
     slidesToScroll: 1
   };
+  const filtered = products.filter(p => p.category === activeTab);
+
   return (
     <article className={styles.faceContainer}>
       <Header />
       <p className={styles.title}>Лицо</p>
       <TabBar
         tabs={['КРЕМ', 'МАСЛО', 'ТОНИК-ЭССЕНЦИЯ']}
-        onChange={tab => console.log('Выбран:', tab)}
+        active={activeTab}
+        onChange={setActiveTab}
       />
+      {/*<section className={styles.wrapper}>*/}
+      {/*  {products.map(product => (*/}
+      {/*    <FaceCard key={product.id} product={product} />*/}
+      {/*  ))}*/}
+      {/*</section>*/}
       <section className={styles.wrapper}>
-        {products.map(product => (
-          <FaceCard key={product.id} product={product} />
-        ))}
+        <AnimatePresence mode='wait'>
+          {filtered.map(product => (
+            <motion.div
+              key={product.id}
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -30, scale: 0.9 }}
+              transition={{ duration: 0.4 }}
+            >
+              <FaceCard product={product} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </section>
       {!isMobile && (
         <section className={styles.categoryWrapper}>

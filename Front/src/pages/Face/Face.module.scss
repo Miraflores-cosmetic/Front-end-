@@ -104,3 +104,30 @@
     }
   }
 }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+  padding-top: 56px;
+  padding-bottom: 240px;
+
+  @media (max-width: 1150px) {
+    gap: 24px;
+  }
+
+  @media (max-width: 700px) {
+    gap: 16px;
+    padding-bottom: 80px;
+  }
+
+  .card {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+  }
+}

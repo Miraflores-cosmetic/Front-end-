@@ -14,6 +14,7 @@ import Articles from './pages/Articles/Articles';
 import ArticleDetail from './pages/ArticleDetail/ArticleDetail';
 import Order from './pages/Order/Order';
 import ProfilePage from './pages/Profile/Profile';
+import Layout from '@/components/Layout/Layout';
 
 const App: React.FC = () => {
   return (

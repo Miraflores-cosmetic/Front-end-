@@ -12,6 +12,7 @@ import kremgroup from '@/assets/images/kremGroupElipse.webp';
 import girlwithsmile from '@/assets/images/girlsmile.webp';
 import Bestsellers from '@/components/bestsellers/Bestsellers';
 import CatalogList from '@/components/catalog-list/CatalogList';
+import Layout from '@/components/Layout/Layout';
 
 const Catalog: React.FC = () => {
   const isMobile = useScreenMatch(768);
@@ -87,17 +88,19 @@ const Catalog: React.FC = () => {
   return (
     <main className={styles.catalogContainer}>
       <Header />
-      <p className={styles.title}>Каталог</p>
-      {isMobile && (
-        <div className={styles.elipseWrapper}>
-          <img src={Ellipse} alt='Ellipse' className={styles.elipsImage} />
-          <img src={kremgroup} alt='kremgroup' className={styles.kremgroup} />
-          <p className={styles.name}>Наборы</p>
-        </div>
-      )}
+      <Layout>
+        <p className={styles.title}>Каталог</p>
+        {isMobile && (
+          <div className={styles.elipseWrapper}>
+            <img src={Ellipse} alt='Ellipse' className={styles.elipsImage} />
+            <img src={kremgroup} alt='kremgroup' className={styles.kremgroup} />
+            <p className={styles.name}>Наборы</p>
+          </div>
+        )}
 
-      <CatalogList />
-      <Bestsellers products={products} />
+        <CatalogList />
+        <Bestsellers products={products} />
+      </Layout>
       <Footer footerImage={footerImageCatalog} />
     </main>
   );

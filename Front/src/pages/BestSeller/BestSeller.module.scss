@@ -13,8 +13,14 @@
   .bestSellerInfo {
     display: flex;
     gap: 32px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     .imagePart {
       width: 50%;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
       img {
         width: 100%;
         height: 100%;

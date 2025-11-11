@@ -10,6 +10,7 @@ import { RootState } from '@/store/store';
 import StarRating from '@/components/rating/StarRating';
 import SizeTabs, { Option } from '@/components/size-tabs/SizeTabs';
 import check from '@/assets/icons/tick-circle.svg';
+import itemImage from '@/assets/images/item-photo.jpg';
 import Etaps, { Etap } from '@/components/etpas/Etaps';
 import AddToCartButton from '@/components/add-tobasket-button/AddToBasket';
 import BestSellerTabs from '@/components/bestseller-card/bestseller-tabs/BestSellerTabs';
@@ -20,6 +21,8 @@ import BestSellerEtaps, {
 import Bestsellers from '@/components/bestsellers/Bestsellers';
 import { useScreenMatch } from '@/hooks/useScreenMatch';
 import { addToCart } from '@/store/slices/cartSlice';
+import slide3 from '@/assets/images/item-photo.jpg';
+import HeroSlider from '@/components/HeroSlider/HeroSlider';
 
 const BestSeller: React.FC = () => {
   const { bestSeller } = useSelector((state: RootState) => state.bestSellerSlice);
@@ -27,6 +30,7 @@ const BestSeller: React.FC = () => {
   const [added, setAdded] = useState(false);
   const dispatch = useDispatch();
 
+  const images = [slide3, slide3, slide3];
   const productOptions = [
     { id: '50', label: '50 мл', price: 3590, oldPrice: 4800, discount: 20 },
     { id: '140', label: '140 мл', price: 7990, oldPrice: 4800, discount: 20 },
@@ -184,11 +188,10 @@ const BestSeller: React.FC = () => {
       <Header />
       <main>
         <section className={styles.bestSellerInfo}>
-          {!isMobile && (
-            <article className={styles.imagePart}>
-              <img src={bestSeller?.hoverImage} alt='bestSeller image' />
-            </article>
-          )}
+          <article className={styles.imagePart}>
+            <HeroSlider images={[slide3, slide3, slide3]} />
+          </article>
+
           <article className={styles.infoPart}>
             <div className={styles.infoWrapper}>
               <p className={styles.title}>Цветочный мист с экстрактами розы</p>

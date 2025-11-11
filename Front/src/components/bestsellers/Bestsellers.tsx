@@ -133,7 +133,7 @@ export default function Bestsellers({
   const x = isOversize ? undefined : (width - 1536) / 2 - 16;
 
   return (
-    <section className={styles.bestsellers} style={isOversize ? undefined : { marginLeft: x }}>
+    <section className={styles.bestsellers} style={isOversize ? undefined : {}}>
       {!isTitleHidden && <h2 className={styles.title}>Бестселлеры</h2>}
       <Slider {...settings} className={styles.slider}>
         {products.map(product => (

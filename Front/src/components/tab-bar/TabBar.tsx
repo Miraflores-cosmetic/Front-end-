@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './TabBar.module.scss';
 
 interface TabBarProps {
   tabs: string[];
+  active?: string;
   onChange?: (active: string) => void;
 }
 
-const TabBar: React.FC<TabBarProps> = ({ tabs, onChange }) => {
-  const [active, setActive] = useState(tabs[0]);
+const TabBar: React.FC<TabBarProps> = ({ tabs, active: controlledActive, onChange }) => {
+  const [internalActive, setInternalActive] = useState(tabs[0]);
+
+  const active = controlledActive ?? internalActive;
+
+  useEffect(() => {
+    // если извне пришло новое значение active — обновим внутреннее
+    if (controlledActive) setInternalActive(controlledActive);
+  }, [controlledActive]);
 
   const handleClick = (tab: string) => {
-    setActive(tab);
+    setInternalActive(tab);
     onChange?.(tab);
   };
 
